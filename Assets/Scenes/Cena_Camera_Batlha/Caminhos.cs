@@ -42,14 +42,14 @@ public class Caminhos : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(4, 6));
 
-        currentPathIndex = (currentPathIndex + 1) % alternatePaths.Length; // Avança para o próximo caminho
+        currentPathIndex = (currentPathIndex + 1) % alternatePaths.Length; 
 
         var path = alternatePaths[currentPathIndex];
 
         cart.m_Path = path;
 
         shouldRestartSwitchTargets = true; // Ativa o reinício do foco em alvos quando o caminho é trocado
-        StartCoroutine(SwitchTargets()); // Reinicia o foco em alvos quando o caminho é trocado
+        //StartCoroutine(SwitchTargets()); // Reinicia o foco em alvos quando o caminho é trocado
     }
 
     public void SetPathAndTarget(CinemachineSmoothPath newPath, Transform newTarget)
