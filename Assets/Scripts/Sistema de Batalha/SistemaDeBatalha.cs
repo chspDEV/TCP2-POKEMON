@@ -386,7 +386,7 @@ public class SistemaDeBatalha : MonoBehaviour
 
     public void HandleUpdate()
     {
-        Debug.Log(state);
+        //Debug.Log(state);
 
         if (state == EstadoDeBatalha.ActionSelection)
         {

@@ -8,19 +8,20 @@ public class Caminhos : MonoBehaviour
     public float velCam;
     CinemachineDollyCart cart;
 
-    public Transform[] targets; // Adicione seus alvos aqui
+    public Transform[] targets;
     public CinemachineVirtualCamera virtualCamera;
 
     private int currentTargetIndex = 0;
-    private int currentPathIndex = 0; // Variável para controlar o índice do caminho
-    private bool shouldRestartSwitchTargets = true; // Variável para controlar o reinício do foco em alvos
+    [SerializeField] int currentPathIndex = -1;
+    private bool shouldRestartSwitchTargets = true;
     public CinemachineSmoothPath startPath;
     public CinemachineSmoothPath[] alternatePaths;
+
+    private Coroutine changeTrackCoroutine;
 
     private void Awake()
     {
         cart = GetComponent<CinemachineDollyCart>();
-
         Resetar();
     }
 
@@ -31,32 +32,65 @@ public class Caminhos : MonoBehaviour
 
     public void Resetar()
     {
-        StopAllCoroutines();
-
+        StopChangeTrackCoroutine(); 
+        currentPathIndex = -1;
         cart.m_Path = startPath;
+        StartChangeTrackCoroutine(); 
+    }
 
-        StartCoroutine(ChangeTrack());
+    public void ResetarCaminho()
+    {
+        StopChangeTrackCoroutine(); 
+        currentPathIndex = -1;
+        cart.m_Path = startPath;
+        StartChangeTrackCoroutine(); 
+    }
+
+    private void StartChangeTrackCoroutine()
+    {
+        if (changeTrackCoroutine != null)
+        {
+            StopCoroutine(changeTrackCoroutine);
+        }
+        changeTrackCoroutine = StartCoroutine(ChangeTrack());
+    }
+
+    private void StopChangeTrackCoroutine()
+    {
+        if (changeTrackCoroutine != null)
+        {
+            StopCoroutine(changeTrackCoroutine);
+            changeTrackCoroutine = null;
+        }
     }
 
     IEnumerator ChangeTrack()
     {
-        yield return new WaitForSeconds(Random.Range(4, 6));
+        yield return new WaitForSeconds(3f);
 
-        currentPathIndex = (currentPathIndex + 1) % alternatePaths.Length; 
+        currentPathIndex = (currentPathIndex + 1) % alternatePaths.Length;
 
-        var path = alternatePaths[currentPathIndex];
+        if (currentPathIndex <= 3)
+        {
+            var path = alternatePaths[currentPathIndex];
+            cart.m_Path = path;
+            shouldRestartSwitchTargets = true;
+        }
+        else
+        {
+            ResetarCaminho();
+            yield break;
+        }
 
-        cart.m_Path = path;
-
-        shouldRestartSwitchTargets = true; // Ativa o reinício do foco em alvos quando o caminho é trocado
-        //StartCoroutine(SwitchTargets()); // Reinicia o foco em alvos quando o caminho é trocado
+        Debug.Log(currentPathIndex);
+        StartChangeTrackCoroutine(); 
     }
 
     public void SetPathAndTarget(CinemachineSmoothPath newPath, Transform newTarget)
     {
         cart.m_Path = newPath;
         virtualCamera.LookAt = newTarget;
-        shouldRestartSwitchTargets = false; // Desativa o reinício do foco em alvos temporariamente
+        shouldRestartSwitchTargets = false;
     }
 
     IEnumerator SwitchTargets()
@@ -64,12 +98,9 @@ public class Caminhos : MonoBehaviour
         while (true)
         {
             Transform currentTarget = targets[currentTargetIndex];
-
             virtualCamera.LookAt = currentTarget;
-
             yield return new WaitForSeconds(velCam);
 
-            // Verifica se deve reiniciar o foco em alvos após a corrotina
             if (shouldRestartSwitchTargets)
             {
                 currentTargetIndex = (currentTargetIndex + 1) % targets.Length;
