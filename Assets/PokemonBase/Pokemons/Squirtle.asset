@@ -15,7 +15,8 @@ MonoBehaviour:
   nome: Squirtle
   descricao: 
   sprite: {fileID: 21300000, guid: 1fa26fc654210024d83c74552540c9ba, type: 3}
-  modelo3D: {fileID: 767617166466599780, guid: 61b232defb06bcd4cac1d047fe0f8c46, type: 3}
+  modelo3D: {fileID: 6136235724107700856, guid: 61b232defb06bcd4cac1d047fe0f8c46,
+    type: 3}
   tipo1: 3
   tipo2: 0
   vidaMax: 44
