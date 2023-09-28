@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee4663f244582488d1f24c59264ed9, type: 3}
+  m_Name: Caterpie
+  m_EditorClassIdentifier: 
+  nome: Caterpie
+  descricao: 
+  sprite: {fileID: 0}
+  modelo3D: {fileID: 6709155588211827057, guid: 39163e1101d4a0441a4f6de85198318e,
+    type: 3}
+  tipo1: 12
+  tipo2: 0
+  vidaMax: 10
+  ataque: 10
+  defesa: 10
+  spAtaque: 10
+  spDefesa: 10
+  velocidade: 10
+  golpesParaAprender:
+  - moveBase: {fileID: 11400000, guid: c4a72785aaabe384e975313e4f15919a, type: 2}
+    level: 1
