@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Charmander
   descricao: 
   sprite: {fileID: 21300000, guid: b0c4417fb93f09143ada52a45fd8cd79, type: 3}
-  modelo3D: {fileID: 1977021607911100736, guid: 22b46d1dd40db4e469e26b845b81c74c,
+  modelo3D: {fileID: 8429375444476875602, guid: 22b46d1dd40db4e469e26b845b81c74c,
     type: 3}
   tipo1: 2
   tipo2: 0

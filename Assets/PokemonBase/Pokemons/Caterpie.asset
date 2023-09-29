@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Caterpie
   descricao: 
   sprite: {fileID: 0}
-  modelo3D: {fileID: 6709155588211827057, guid: 39163e1101d4a0441a4f6de85198318e,
+  modelo3D: {fileID: 5475724060017869066, guid: 39163e1101d4a0441a4f6de85198318e,
     type: 3}
   tipo1: 12
   tipo2: 0

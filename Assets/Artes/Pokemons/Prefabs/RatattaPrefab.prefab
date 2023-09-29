@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7051497507705163963
+--- !u!1 &5280530170345657644
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7678676070574443009}
-  - component: {fileID: 6719362563826435492}
-  - component: {fileID: 8852687012906283374}
-  - component: {fileID: -5466345137955314645}
+  - component: {fileID: 4756899184821391254}
+  - component: {fileID: 8479219336178876467}
+  - component: {fileID: 5929211312830690553}
+  - component: {fileID: 5941202152342696248}
+  - component: {fileID: 1923895286115039878}
+  - component: {fileID: 8926354481786631999}
+  - component: {fileID: -8702016766675584425}
   m_Layer: 0
   m_Name: RatattaPrefab
-  m_TagString: Untagged
+  m_TagString: Pokemon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7678676070574443009
+--- !u!4 &4756899184821391254
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7051497507705163963}
+  m_GameObject: {fileID: 5280530170345657644}
   m_LocalRotation: {x: -0.3973532, y: 0.5849021, z: 0.39735317, w: 0.58490217}
-  m_LocalPosition: {x: -9.2255535, y: 11.502159, z: 14.082506}
+  m_LocalPosition: {x: 0, y: 0, z: -8.22802}
   m_LocalScale: {x: 0.02667921, y: 0.026679209, z: 0.026679209}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6719362563826435492
+--- !u!33 &8479219336178876467
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7051497507705163963}
-  m_Mesh: {fileID: -6484072080250736877, guid: ff641968854244a48a112ecb8dab198f, type: 3}
---- !u!23 &8852687012906283374
+  m_GameObject: {fileID: 5280530170345657644}
+  m_Mesh: {fileID: -6484072080250736877, guid: 215b47acce6bde544857a2f27ae0a584, type: 3}
+--- !u!23 &5929211312830690553
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7051497507705163963}
+  m_GameObject: {fileID: 5280530170345657644}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -84,17 +87,59 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-5466345137955314645
+--- !u!114 &5941202152342696248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7051497507705163963}
+  m_GameObject: {fileID: 5280530170345657644}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa1d35b8ae1b0594cb5921f7b6c7c2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  correcao: {x: 0, y: 0, z: 0}
-  velocidadeRotacao: 1
+  velocidadeRotacao: 50
+--- !u!65 &1923895286115039878
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280530170345657644}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1908.6826, y: 74.07925, z: 99.05244}
+  m_Center: {x: -873.3925, y: -15.289717, z: 20.47072}
+--- !u!136 &8926354481786631999
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280530170345657644}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 52.225792
+  m_Height: 74.07926
+  m_Direction: 1
+  m_Center: {x: 28.728386, y: -15.289715, z: 20.4707}
+--- !u!54 &-8702016766675584425
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280530170345657644}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 90
+  m_CollisionDetection: 0

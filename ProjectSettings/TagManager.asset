@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - InteractPlayer
+  - Pokemon
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Treinador
   - Interacao
   - NqueroBugCamera
-  - 
+  - Pokemon
   - 
   - 
   - 

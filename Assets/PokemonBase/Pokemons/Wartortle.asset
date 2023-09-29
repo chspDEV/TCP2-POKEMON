@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Wartortle
   descricao: 
   sprite: {fileID: 0}
-  modelo3D: {fileID: 3516970912357506468, guid: 876ad7ece15dba5429b2fce8d9279c0c,
+  modelo3D: {fileID: 4766020222414239909, guid: 876ad7ece15dba5429b2fce8d9279c0c,
     type: 3}
   tipo1: 3
   tipo2: 0

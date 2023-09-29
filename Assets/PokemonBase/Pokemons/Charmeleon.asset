@@ -15,7 +15,8 @@ MonoBehaviour:
   nome: Charmeleon
   descricao: 
   sprite: {fileID: 0}
-  modelo3D: {fileID: 304662758786166854, guid: 47b84a39f2485084e9ed4a80c94a2ad1, type: 3}
+  modelo3D: {fileID: 3785562476928520972, guid: 47b84a39f2485084e9ed4a80c94a2ad1,
+    type: 3}
   tipo1: 0
   tipo2: 0
   vidaMax: 1
