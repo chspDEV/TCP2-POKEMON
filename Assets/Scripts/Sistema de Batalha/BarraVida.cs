@@ -13,7 +13,7 @@ public class BarraVida : MonoBehaviour
 
     public void Awake()
     {
-       VidaPlayer = GameObject.Find("VidaPlayer");
+       VidaPlayer = GameObject.FindGameObjectWithTag("VidaPlayerBatalha");
     }
     public void SetHP(float hpNormalized)
     {
