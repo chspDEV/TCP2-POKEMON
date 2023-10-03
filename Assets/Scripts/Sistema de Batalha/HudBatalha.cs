@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class HudBatalha : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class HudBatalha : MonoBehaviour
     [SerializeField] Color slpColor;
 
     Pokemon _pokemon;
+    BarraVida _barraVida;
 
     Dictionary<ConditionID, Color> statusColors;
 
@@ -62,7 +64,14 @@ public class HudBatalha : MonoBehaviour
             yield return BarraHp.SetHPsmooth((float)_pokemon.HP / _pokemon.VidaMax);
             _pokemon.HpChanged = false;
         }
-       
+
+        if (_pokemon.HP > _pokemon.VidaMax / 4 && _pokemon.HP <= _pokemon.VidaMax / 2)
+        {
+            _barraVida.MudaCorAmarelo();
+        } else if (_pokemon.HP < _pokemon.VidaMax / 4)
+        {
+            _barraVida.MudaCorVermelho();
+        }
     }
 
 
