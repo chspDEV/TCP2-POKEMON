@@ -9,6 +9,7 @@ TagManager:
   - Pokemon
   - VidaPlayerBatalha
   - VidaInimigoBatalha
+  - Transicao
   layers:
   - Default
   - TransparentFX
