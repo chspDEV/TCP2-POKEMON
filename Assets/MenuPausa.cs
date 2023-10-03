@@ -7,23 +7,64 @@ using UnityEngine.SceneManagement;
 public class MenuPausa : MonoBehaviour
 {
     public GameObject Menu;
+    public GameObject Pokedex;
+    public GameObject Controles;
 
+
+    private bool pokedexAberta = false;
     private bool menuAberto = false;
+    private bool controlesAberto = false;
+
 
     void Update()
     {
+       
         if (Input.GetKeyDown(KeyCode.Escape))
+
         {
             if (!menuAberto)
             {
                 AbrirMenu();
+                FecharPokedex();
+                FecharControles();
             }
             else
             {
                 FecharMenu();
+                FecharPokedex();
+                FecharControles();
             }
         }
     }
+
+    public void AbrirPokedex()
+    { 
+        Pokedex.SetActive(true);
+        pokedexAberta = true;
+        Menu.SetActive(false);
+        menuAberto = false;
+    }
+
+    public void AbrirControles()
+    {
+        Controles.SetActive(true);
+        controlesAberto = true;
+        Menu.SetActive(false);
+        menuAberto = false;
+    }
+
+    public void FecharControles()
+    {
+        Controles.SetActive(false);
+        controlesAberto = false;
+    }
+
+    public void FecharPokedex()
+    {
+        Pokedex.SetActive(false);
+        pokedexAberta = false;
+    }
+
 
     public void AbrirMenu()
     {

@@ -601,7 +601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &221683327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1594,18 +1594,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
---- !u!114 &1470454765 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 242132537437028652, guid: 63aa036a07cf2ca46bc8bc7b041e5abd,
-    type: 3}
-  m_PrefabInstance: {fileID: 242132538835524289}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a200b19ca1a9685429ed7e043c28e904, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1483985751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,7 +1701,8 @@ MonoBehaviour:
   - {fileID: 1718784331}
   - {fileID: 460716997}
   virtualCamera: {fileID: 1483985753}
-  startPath: {fileID: 1470454765}
+  currentPathIndex: -1
+  startPath: {fileID: 0}
   alternatePaths:
   - {fileID: 0}
   - {fileID: 0}
