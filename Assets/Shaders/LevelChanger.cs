@@ -6,50 +6,45 @@ using UnityEngine.UI;
 
 public class LevelChanger : MonoBehaviour
 {
-
-    GameObject player;
-    bool playerInZone;
-
     [Header("Posição de destino do teletransporte")]
     [Space(15)]
     [SerializeField] Vector3 tpPoint;
 
-    [SerializeField] GameObject TransicaoGO;
-    [SerializeField] byte alpha;
+    GameObject player;
+    [SerializeField] GameObject tempObject;
 
-    
+    bool playerInZone;
+    [SerializeField] byte alpha;
 
     void Start()
     {
         playerInZone = false;
         player = GameObject.Find("Player");
-        TransicaoGO = GameObject.FindWithTag("Transicao");
-        
 
+        if (tempObject == null)
+        {
+            Debug.Log("FALHEI EM ACHAR TRANSICAO.");
+        }
+        else { tempObject.SetActive(false); } //Escondendo a transição
     }
 
     void Update()
     {
+
         if (playerInZone)
         {
+            tempObject.SetActive(true);
             player.transform.position = tpPoint;
-            StartCoroutine(Transicao());
+            StartCoroutine(ParandoTransicao());
         }
-
+        
     }
 
-    public IEnumerator Transicao()
+    public IEnumerator ParandoTransicao()
     {
-        TransicaoGO.SetActive(true);
-        var _imagem = TransicaoGO.GetComponent<Image>();
-        _imagem.color = new Color32(0, 0, 0, alpha);
-
-        if (alpha <= 0)
-        {
-            TransicaoGO.SetActive(false);
-            yield break;
-        }
-        else { alpha -= 1; _imagem.color = new Color32(0, 0, 0, alpha); }
+        yield return new WaitForSeconds(1f);
+        tempObject.SetActive(false);
+        yield break;
     }
 
     private void OnTriggerEnter(Collider collision)
