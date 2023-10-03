@@ -22,13 +22,16 @@ public class BattleUnit : MonoBehaviour
         Pokemon = pokemon;
         if (isPlayerUnit)
         {
-            instantiatedModel = Instantiate(pokemon.Base.Modelo3D, posicaoDeInstancia.transform.position, Quaternion.identity);
+            instantiatedModel = Instantiate(pokemon.Base.Modelo3D, posicaoDeInstancia.transform.position, pokemon.Base.Modelo3D.transform.rotation);
+
+            var  _pPoke = instantiatedModel.GetComponent<LookRef>();
+            _pPoke.IsPlayer = true;
         }
         else
         {
             Vector3 posicaoInstancia = posicaoDeInstancia.transform.position;
             posicaoInstancia.z += 13f; // Adiciona 15 ao eixo Z
-            instantiatedModel = Instantiate(pokemon.Base.Modelo3D, posicaoInstancia, Quaternion.identity);
+            instantiatedModel = Instantiate(pokemon.Base.Modelo3D, posicaoInstancia, pokemon.Base.Modelo3D.transform.rotation);
         }
 
         hud.SetData(pokemon);

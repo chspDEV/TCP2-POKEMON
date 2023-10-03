@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1d35b8ae1b0594cb5921f7b6c7c2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colidiu: 0
+  save_pos: {x: 0, y: 0, z: 0}
+  IsPlayer: 0
   velocidadeRotacao: 50
 --- !u!65 &-8605045074610811178
 BoxCollider:
@@ -111,8 +114,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 809.4203, y: 631.1704, z: 20.198044}
-  m_Center: {x: -387.673, y: -292.32068, z: 0.092785336}
+  m_Size: {x: 300.3268, y: 313.62283, z: 20.198044}
+  m_Center: {x: -183.38431, y: -133.54994, z: 0.092788085}
 --- !u!65 &5943992102502530600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -124,8 +127,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 46.56847, y: 35.42005, z: 20.198044}
-  m_Center: {x: -6.244183, y: 5.5563865, z: 0.09277836}
+  m_Size: {x: 46.568474, y: 28.706665, z: 20.198044}
+  m_Center: {x: -6.2441926, y: 2.1997235, z: 0.092778236}
 --- !u!54 &3688822255830242376
 Rigidbody:
   m_ObjectHideFlags: 0

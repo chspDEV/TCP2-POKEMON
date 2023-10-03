@@ -25,4 +25,6 @@ MonoBehaviour:
   spAtaque: 1
   spDefesa: 1
   velocidade: 1
-  golpesParaAprender: []
+  golpesParaAprender:
+  - moveBase: {fileID: 11400000, guid: c4a72785aaabe384e975313e4f15919a, type: 2}
+    level: 1

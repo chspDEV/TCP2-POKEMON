@@ -46,8 +46,6 @@ public class TrainerController : MonoBehaviour
         //Pegando o RIGIDBODY do meu alvo e parando ele:
         player = target.GetComponent<PlayerController>();
 
-        sistema.treinador_atual = GameObject.Find("Blue");
-
     }
 
     public void Update()
@@ -77,6 +75,10 @@ public class TrainerController : MonoBehaviour
                 {
                     canvasDialogo.SetActive(false); //Desativando canvas de dialogo
                     batalha.SetActive(true); //Ativando a cena
+
+                    //Dizendo pro sistema de batalha quem eu sou!
+                    sistema.treinador_atual = GameObject.Find("Blue");
+
                     sistema.StartTrainerBattle(target.GetComponent<PokemonParty>(), this.GetComponent<PokemonParty>());
 
                     player.velocidade = buVel;

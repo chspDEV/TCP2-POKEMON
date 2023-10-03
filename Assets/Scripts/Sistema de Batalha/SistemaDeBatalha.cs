@@ -34,9 +34,15 @@ public class SistemaDeBatalha : MonoBehaviour
     //  TrainerController trainer;
 
     public GameObject treinador_atual;
+    public GameObject Camera_Batalha;
 
 
     public int EscapeAttempts { get; set; }
+
+    public void Update()
+    {
+        ResetarTudo(); //Se a batalha nao esta ativa garantir que a cena de batalha esta zerada
+    }
 
     public void StartBattle(PokemonParty playerParty, Pokemon pokemonSelvagem)
     {
@@ -46,6 +52,26 @@ public class SistemaDeBatalha : MonoBehaviour
         this.pokemonSelvagem = pokemonSelvagem;
 
         StartCoroutine(SetupBattle()); // Preparar para porrada
+    }
+
+    public void ResetarTudo()
+    {
+        if (!Camera_Batalha.activeSelf)
+        {
+            Debug.Log("ESTOU APAGANDO TUDO E RESETANDO VARIAVEIS");
+
+            isTrainerBattle = false;
+            PossoFugir = true;
+            InimigoAtaca = true;
+
+            this.playerParty = null;
+            this.pokemonSelvagem = null;
+            this.trainerParty = null;
+
+            playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
+            enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
+        }
+    
     }
 
     public IEnumerator SetupBattle()
@@ -99,10 +125,17 @@ public class SistemaDeBatalha : MonoBehaviour
 
         if (treinador_atual != null)
         {
+            Debug.Log(treinador_atual);
+
             var _parar = treinador_atual.GetComponent<TrainerController>();
 
             _parar.PerdiBatalha = true;
+
+            treinador_atual = null;
+            isTrainerBattle = false;
         }
+
+        StopAllCoroutines();
     }
 
     public void ActionSelection()
@@ -213,9 +246,9 @@ public class SistemaDeBatalha : MonoBehaviour
         {
             //Reproduzir a animacao do ataque aqui 
             // -------- \\ 
-            caminhos.SetPathAndTarget(caminhos.alternatePaths[3], sourceUnit.transform); // O TARGET DA CAMERA DE CAMINHOS E CHAMADO AQUI!
+            caminhos.SetPathAndTarget(caminhos.alternatePaths[2], sourceUnit.transform); // O TARGET DA CAMERA DE CAMINHOS E CHAMADO AQUI!
             yield return new WaitForSeconds(1f);
-            caminhos.SetPathAndTarget(caminhos.alternatePaths[3], targetUnit.transform); // O TARGET DA CAMERA DE CAMINHOS E CHAMADO AQUI!
+            caminhos.SetPathAndTarget(caminhos.alternatePaths[2], targetUnit.transform); // O TARGET DA CAMERA DE CAMINHOS E CHAMADO AQUI!
             //Reproduzir a animacao do inimigo tomando dano aqui 
             // -------- \\ 
 
@@ -692,9 +725,11 @@ public class SistemaDeBatalha : MonoBehaviour
             dialogBox.SetDialog($"Fugiu sem problemas!");
           
             /* bs.*/
-            BattleOver(true);
+            
             playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
             enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
+
+            BattleOver(true);
         }
         else
         {
@@ -706,9 +741,11 @@ public class SistemaDeBatalha : MonoBehaviour
                 dialogBox.AtivarSelecaoAcao(false);
                 dialogBox.SetDialog($"Escapou em segurança!");
                 yield return new WaitForSeconds(2f);
-                BattleOver(true);
+                
                 playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
                 enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
+
+                BattleOver(true);
             }
             else
             {
