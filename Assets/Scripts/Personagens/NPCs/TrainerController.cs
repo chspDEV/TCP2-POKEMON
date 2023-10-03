@@ -11,22 +11,21 @@ public class TrainerController : MonoBehaviour
     [SerializeField] float stopDistance;
 
     [SerializeField] GameObject exclamation;
-    [SerializeField] GameObject target;
     [SerializeField] GameObject batalha;
     [SerializeField] GameObject canvasDialogo;
 
     [SerializeField] SistemaDeBatalha sistema;
-
-    Rigidbody rb;
-    PlayerController player;
 
     [SerializeField] bool posso_mostrar;
     [SerializeField] bool posso_ativar = false;
     [SerializeField] bool posso_batalha = false;
     public bool PerdiBatalha = false;
 
+    [SerializeField] GameObject target;
     short buVel;
     short buVelcor;
+    PlayerController player;
+    Rigidbody rb;
 
     [SerializeField] float _increase;
     [Range(1f, 1000f)]
@@ -35,6 +34,8 @@ public class TrainerController : MonoBehaviour
     //Character character;
     //private Quaternion currentRotation;
     //Transform targetPos;
+
+
 
 
     public void Start()

@@ -10,6 +10,8 @@ public class LookRef : MonoBehaviour
     public bool IsPlayer = false;
 
 
+
+
     public void Start()
     {
         if (IsPlayer == false)

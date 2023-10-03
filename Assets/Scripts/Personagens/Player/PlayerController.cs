@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
 {
     #region variaveis
     [Header("Configurações do Player")]
-    [SerializeField] public short velocidade;
-    [SerializeField] public short velocidadeCorrida;
+    public short velocidade;
+    public short velocidadeCorrida;
     [SerializeField] LayerMask GramaAlta;
     [SerializeField] LayerMask FovLayer; // TRIGER PARA DETECTAR SE O TREINADOR INIMIGO TE VIU
     [SerializeField] LayerMask Interagivel;

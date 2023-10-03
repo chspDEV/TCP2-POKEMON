@@ -10,22 +10,33 @@ public class LevelChanger : MonoBehaviour
     [Space(15)]
     [SerializeField] Vector3 tpPoint;
 
-    GameObject player;
+    GameObject target;
+    PlayerController player;
+    Animator anim;
     [SerializeField] GameObject tempObject;
 
     bool playerInZone;
     [SerializeField] byte alpha;
 
+    short buVel; //SALVANDO VELOCIDADE 
+    short buVelcor; //SALVANDO VELOCIDADE CORRIDA
+
     void Start()
     {
         playerInZone = false;
-        player = GameObject.Find("Player");
+        target = GameObject.Find("Player");
+        player = target.GetComponent<PlayerController>();
+
+        buVel = player.velocidade;
+        buVelcor = player.velocidadeCorrida;
 
         if (tempObject == null)
         {
             Debug.Log("FALHEI EM ACHAR TRANSICAO.");
         }
         else { tempObject.SetActive(false); } //Escondendo a transição
+
+        anim = tempObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -33,17 +44,30 @@ public class LevelChanger : MonoBehaviour
 
         if (playerInZone)
         {
-            tempObject.SetActive(true);
-            player.transform.position = tpPoint;
-            StartCoroutine(ParandoTransicao());
+            //anim.Play("Transicao");
+            target.transform.position = tpPoint;
+            StopAllCoroutines();
+            StartCoroutine(Transicao());
         }
         
     }
 
-    public IEnumerator ParandoTransicao()
+    public IEnumerator Transicao()
     {
-        yield return new WaitForSeconds(0.5f);
+        tempObject.SetActive(true);
+
+        //Impedindo jogador de andar
+        player.velocidade = 0;
+        player.velocidadeCorrida = 0;
+
+        yield return new WaitForSeconds(1f);
+
+        //Permitindo ele andar
+        player.velocidade = buVel;
+        player.velocidadeCorrida = buVelcor;
         tempObject.SetActive(false);
+
+        //anim.Play("Idle");
         yield break;
     }
 
