@@ -15,6 +15,8 @@ public class SistemaDeBatalha : MonoBehaviour
     [SerializeField] Caminhos caminhos;
 
 
+
+
     public event Action <bool> OnBattleOver;
 
     EstadoDeBatalha state;
@@ -36,6 +38,8 @@ public class SistemaDeBatalha : MonoBehaviour
     public GameObject treinador_atual;
     public GameObject Camera_Batalha;
 
+    [SerializeField] LevelChanger Transitor;
+
 
     public int EscapeAttempts { get; set; }
 
@@ -46,6 +50,8 @@ public class SistemaDeBatalha : MonoBehaviour
 
     public void StartBattle(PokemonParty playerParty, Pokemon pokemonSelvagem)
     {
+        //StartCoroutine(Transitor.Transicao());
+
         PossoFugir = true;
         InimigoAtaca = true;
         this.playerParty = playerParty;
@@ -91,6 +97,8 @@ public class SistemaDeBatalha : MonoBehaviour
 
     public void StartTrainerBattle(PokemonParty playerParty, PokemonParty trainerParty)
     {
+        //StartCoroutine(Transitor.Transicao());
+
         PossoFugir = true;
         this.playerParty = playerParty;
         this.trainerParty = trainerParty;
@@ -116,6 +124,8 @@ public class SistemaDeBatalha : MonoBehaviour
 
     void BattleOver(bool won)
     {
+        //StartCoroutine(Transitor.Transicao());
+
         state = EstadoDeBatalha.BattleOver;
         playerParty.Pokemons.ForEach(p => p.OnBattleOver());
         OnBattleOver(won);
@@ -246,9 +256,9 @@ public class SistemaDeBatalha : MonoBehaviour
         {
             //Reproduzir a animacao do ataque aqui 
             // -------- \\ 
-            caminhos.SetPathAndTarget(caminhos.alternatePaths[2], sourceUnit.transform); // O TARGET DA CAMERA DE CAMINHOS E CHAMADO AQUI!
+            //caminhos.SetPathAndTarget(caminhos.alternatePaths[2], sourceUnit.transform); // O TARGET DA CAMERA DE CAMINHOS E CHAMADO AQUI!
             yield return new WaitForSeconds(1f);
-            caminhos.SetPathAndTarget(caminhos.alternatePaths[2], targetUnit.transform); // O TARGET DA CAMERA DE CAMINHOS E CHAMADO AQUI!
+            //caminhos.SetPathAndTarget(caminhos.alternatePaths[2], targetUnit.transform); // O TARGET DA CAMERA DE CAMINHOS E CHAMADO AQUI!
             //Reproduzir a animacao do inimigo tomando dano aqui 
             // -------- \\ 
 

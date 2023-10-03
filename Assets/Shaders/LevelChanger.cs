@@ -41,7 +41,6 @@ public class LevelChanger : MonoBehaviour
 
     void Update()
     {
-
         if (playerInZone)
         {
             //anim.Play("Transicao");
@@ -65,6 +64,8 @@ public class LevelChanger : MonoBehaviour
         //Permitindo ele andar
         player.velocidade = buVel;
         player.velocidadeCorrida = buVelcor;
+
+
         tempObject.SetActive(false);
 
         //anim.Play("Idle");
