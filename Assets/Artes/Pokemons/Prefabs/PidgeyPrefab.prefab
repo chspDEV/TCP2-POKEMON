@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1648765134075426437}
   - component: {fileID: 3532335510662775375}
   - component: {fileID: 6923671479195040281}
-  - component: {fileID: -183682777761125448}
   - component: {fileID: -7457315334879263035}
   - component: {fileID: 3548780110905249733}
   m_Layer: 0
@@ -99,23 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1d35b8ae1b0594cb5921f7b6c7c2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colidiu: 0
   save_pos: {x: 0, y: 0, z: 0}
   IsPlayer: 0
-  velocidadeRotacao: 50
---- !u!65 &-183682777761125448
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3027997980262278042}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.346535, y: 4.325512, z: 9.333493}
-  m_Center: {x: 0, y: 2.2661583, z: 6.243362}
 --- !u!65 &-7457315334879263035
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -20,8 +20,17 @@ public class HudBatalha : MonoBehaviour
 
     Pokemon _pokemon;
     BarraVida _barraVida;
+    [SerializeField] GameObject VidaPlayer;
 
     Dictionary<ConditionID, Color> statusColors;
+
+    public void Update()
+    {
+        if (_pokemon.HP >= _pokemon.VidaMax / 2)
+        {
+            MudaCorVerde();
+        }
+    }
 
     public void SetData(Pokemon pokemon)
     {
@@ -57,6 +66,24 @@ public class HudBatalha : MonoBehaviour
         }
     }
 
+    public void MudaCorAmarelo()
+    {
+        var _Image = VidaPlayer.GetComponent<UnityEngine.UI.Image>();
+        _Image.color = Color.yellow;
+    }
+
+    public void MudaCorVermelho()
+    {
+        var _Image = VidaPlayer.GetComponent<UnityEngine.UI.Image>();
+        _Image.color = Color.red;
+    }
+
+    public void MudaCorVerde()
+    {
+        var _Image = VidaPlayer.GetComponent<UnityEngine.UI.Image>();
+        _Image.color = Color.green;
+    }
+
     public IEnumerator UpdateHP()
     {
         if (_pokemon.HpChanged)
@@ -65,14 +92,23 @@ public class HudBatalha : MonoBehaviour
             _pokemon.HpChanged = false;
         }
 
-        if (_pokemon.HP > _pokemon.VidaMax / 4 && _pokemon.HP <= _pokemon.VidaMax / 2)
+        if (_pokemon.HP <= _pokemon.VidaMax / 4)
         {
-            _barraVida.MudaCorAmarelo();
-        } else if (_pokemon.HP < _pokemon.VidaMax / 4)
+            MudaCorVermelho();
+            //BarraHp.MudaCorVermelho();
+        }
+        else if (_pokemon.HP >= _pokemon.VidaMax / 4 && _pokemon.HP <= _pokemon.VidaMax / 2)
         {
-            _barraVida.MudaCorVermelho();
+            MudaCorAmarelo();
+            //BarraHP.MudaCorAmarelo();
+        }
+        else if (_pokemon.HP >= _pokemon.VidaMax / 2)
+        {
+            MudaCorVerde();
         }
     }
+
+
 
 
 }

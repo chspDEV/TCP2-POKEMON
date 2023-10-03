@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 8479219336178876467}
   - component: {fileID: 5929211312830690553}
   - component: {fileID: 5941202152342696248}
-  - component: {fileID: 1923895286115039878}
-  - component: {fileID: 8926354481786631999}
   - component: {fileID: -8702016766675584425}
+  - component: {fileID: 6557164893388727801}
   m_Layer: 0
   m_Name: RatattaPrefab
   m_TagString: Pokemon
@@ -99,37 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1d35b8ae1b0594cb5921f7b6c7c2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colidiu: 0
   save_pos: {x: 0, y: 0, z: 0}
   IsPlayer: 0
-  velocidadeRotacao: 50
---- !u!65 &1923895286115039878
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5280530170345657644}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 183.0668, y: 74.07925, z: 99.05244}
-  m_Center: {x: -153.63445, y: -15.289717, z: 20.47072}
---- !u!136 &8926354481786631999
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5280530170345657644}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 52.225792
-  m_Height: 74.07926
-  m_Direction: 1
-  m_Center: {x: 28.728386, y: -15.289715, z: 20.4707}
 --- !u!54 &-8702016766675584425
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -146,3 +116,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 90
   m_CollisionDetection: 0
+--- !u!65 &6557164893388727801
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5280530170345657644}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 104.451584, y: 74.07926, z: 99.05243}
+  m_Center: {x: 28.728386, y: -15.289715, z: 20.4707}

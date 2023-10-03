@@ -13,8 +13,9 @@ public class BarraVida : MonoBehaviour
 
     public void Awake()
     {
-       VidaPlayer = GameObject.FindGameObjectWithTag("VidaPlayerBatalha");
+       //VidaPlayer = GameObject.FindGameObjectWithTag("VidaPlayerBatalha");
     }
+
     public void SetHP(float hpNormalized)
     {
         barraVida.transform.localScale = new Vector3(hpNormalized, 1f);
@@ -32,20 +33,7 @@ public class BarraVida : MonoBehaviour
             yield return null;
         }
         barraVida.transform.localScale = new Vector3(newHP, 1f);
-        
-      
-    }
-
-    public void MudaCorAmarelo()
-    {
-        var _Image = VidaPlayer.GetComponent<UnityEngine.UI.Image>();
-        _Image.color = new Color32(255, 255, 255, 100);
-    }
-
-    public void MudaCorVermelho()
-    {
-        var _Image = VidaPlayer.GetComponent<UnityEngine.UI.Image>();
-        _Image.color = new Color(1, 0, 0, 1);
+       
     }
 
 }

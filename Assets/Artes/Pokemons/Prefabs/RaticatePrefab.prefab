@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 6284863636082823183}
   - component: {fileID: 8132556877120431301}
   - component: {fileID: -710068271534672094}
-  - component: {fileID: -9065507774595058277}
-  - component: {fileID: 4872557942285784949}
   - component: {fileID: 404735602026372798}
+  - component: {fileID: 5339203915864782490}
   m_Layer: 0
   m_Name: RaticatePrefab
   m_TagString: Pokemon
@@ -99,37 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1d35b8ae1b0594cb5921f7b6c7c2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colidiu: 0
   save_pos: {x: 0, y: 0, z: 0}
   IsPlayer: 0
-  velocidadeRotacao: 50
---- !u!65 &-9065507774595058277
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7772185001361392912}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 85.95697, y: 76.47092, z: 197.10693}
-  m_Center: {x: -15.356508, y: -14.480578, z: 142.56458}
---- !u!136 &4872557942285784949
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7772185001361392912}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 56.046185
-  m_Height: 112.092384
-  m_Direction: 1
-  m_Center: {x: -20.035267, y: -14.480463, z: -18.198318}
 --- !u!54 &404735602026372798
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -146,3 +116,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 90
   m_CollisionDetection: 0
+--- !u!65 &5339203915864782490
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7772185001361392912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 85.95697, y: 76.47091, z: 91.80353}
+  m_Center: {x: -15.356244, y: -14.480346, z: -23.6639}
