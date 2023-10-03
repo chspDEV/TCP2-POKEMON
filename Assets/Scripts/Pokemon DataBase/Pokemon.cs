@@ -1,7 +1,10 @@
+using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+
 
 [System.Serializable]
 public class Pokemon
@@ -16,7 +19,7 @@ public class Pokemon
         get { return level;  }
     }
 
-    public int HP { get; set; }
+   [SerializeField] public int HP { get; set; }
     public List<Move> Moves { get; set; }
 
     public Move CurrentMove { get; set; }
@@ -153,7 +156,7 @@ public class Pokemon
     public DamageDetails TomarDano(Move move, Pokemon attacker)
     {
         float critical = 1f;
-        if (Random.value * 100f <= 6.25f)
+        if (UnityEngine.Random.value * 100f <= 6.25f) 
             critical = 2f;
 
         float type = TypeChart.GetEffectiveness(move.Base.Tipo, this.Base.Tipo1) * TypeChart.GetEffectiveness(move.Base.Tipo, this.Base.Tipo2);
@@ -168,13 +171,14 @@ public class Pokemon
         float attack = (move.Base.Categoria == MoveCategory.Special) ? attacker.SpAtaque : attacker.Ataque;
         float defense = (move.Base.Categoria == MoveCategory.Special) ? SpDefesa : Defesa;
 
-        float modifiers = Random.Range(0.85f, 1f) * type * critical;
+        float modifiers = UnityEngine.Random.Range(0.85f, 1f) * type * critical;
         float a = (2 * attacker.Level + 10) / 250f;
         float d = a * move.Base.Poder * ((float)attack / defense) + 2;
         int damage = Mathf.FloorToInt(d * modifiers);
 
         UpdateHP(damage);
 
+        
         return damageDetails;
     }
 
@@ -218,7 +222,7 @@ public class Pokemon
     {
         var movesWithPP = Moves.Where(x => x.PP > 0).ToList();
 
-        int r = Random.Range(0, movesWithPP.Count);
+        int r = UnityEngine.Random.Range(0, movesWithPP.Count);
         return movesWithPP[r];
     }
     public bool OnBeforeMove()
