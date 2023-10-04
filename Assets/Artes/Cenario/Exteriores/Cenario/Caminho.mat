@@ -13,7 +13,6 @@ Material:
   m_ValidKeywords:
   - TCP2_MATCAP
   - TCP2_MATCAP_MASK
-  - TCP2_RIM_LIGHTING
   - TCP2_RIM_LIGHTING_LIGHTMASK
   - TCP2_SHADOW_LIGHT_COLOR
   - TCP2_SPECULAR
@@ -130,7 +129,7 @@ Material:
     - _RampBandsSmoothing: 0.1
     - _RampOffset: 0
     - _RampScale: 1
-    - _RampSmoothing: 0.05
+    - _RampSmoothing: 0.633
     - _RampThreshold: 0.75
     - _RampType: 0
     - _ReceiveShadowsOff: 1
@@ -144,7 +143,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpecularMapType: 0
-    - _SpecularRoughness: 0.352
+    - _SpecularRoughness: 0
     - _SpecularToonSize: 0.005
     - _SpecularToonSmoothness: 0.024
     - _SpecularType: 0
@@ -160,7 +159,7 @@ Material:
     - _UseOcclusion: 0
     - _UseOutline: 0
     - _UseReflections: 0
-    - _UseRim: 1
+    - _UseRim: 0
     - _UseRimLightMask: 1
     - _UseShadowTexture: 0
     - _UseSpecular: 1

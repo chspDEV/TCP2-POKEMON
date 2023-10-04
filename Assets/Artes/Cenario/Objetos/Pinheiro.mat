@@ -130,7 +130,7 @@ Material:
     - _RampBandsSmoothing: 0.1
     - _RampOffset: 0
     - _RampScale: 1
-    - _RampSmoothing: 0.05
+    - _RampSmoothing: 0.661
     - _RampThreshold: 0.75
     - _RampType: 0
     - _ReceiveShadowsOff: 1
@@ -144,7 +144,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpecularMapType: 0
-    - _SpecularRoughness: 0.352
+    - _SpecularRoughness: 0
     - _SpecularToonSize: 0.005
     - _SpecularToonSmoothness: 0.024
     - _SpecularType: 0
