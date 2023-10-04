@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     [Header("Configurações do Player")]
     public short velocidade;
     public short velocidadeCorrida;
+    [Range(0.1f,10f)]
+    public float fallSpeed; // Ajuste esse valor para a velocidade desejada.
+
     [SerializeField] LayerMask GramaAlta;
     [SerializeField] LayerMask FovLayer; // TRIGER PARA DETECTAR SE O TREINADOR INIMIGO TE VIU
     [SerializeField] LayerMask Interagivel;
@@ -41,7 +44,8 @@ public class PlayerController : MonoBehaviour
         TenhoSapato = false;
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-        
+        rb.velocity = new Vector3(0, -fallSpeed, 0); // Ajuste os eixos e a velocidade conforme necessário.
+
     }
     public void HandleUpdate() 
     {
@@ -50,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        Position = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        Position = new Vector3(Input.GetAxisRaw("Horizontal"), -fallSpeed, Input.GetAxisRaw("Vertical"));
 
         // Correr se estiver apertando shift
         if (Input.GetKey(KeyCode.LeftShift) && TenhoSapato)
