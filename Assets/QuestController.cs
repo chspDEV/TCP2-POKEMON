@@ -13,12 +13,13 @@ public class QuestController : MonoBehaviour
     [SerializeField] GameObject mesaCarvalho;
     [SerializeField] GameObject escolhaPokemon;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject npcRota1;
     [SerializeField] PokemonParty pokemonParty;
 
 
     [SerializeField] public List<Pokemon> pokeInicial;
 
-    bool npcRota1 = true;
+   
 
     public void Start()
     {
@@ -30,7 +31,7 @@ public class QuestController : MonoBehaviour
         Time.timeScale = 1f;
         pokemonParty.pokemons.Insert(0, pokeInicial[0]);
         escolhaPokemon.SetActive(false);
-        npcRota1 = false;
+        Destroy(npcRota1);
     }
 
     public void Bulbassauro()
@@ -38,7 +39,7 @@ public class QuestController : MonoBehaviour
         Time.timeScale = 1f;
         pokemonParty.pokemons.Insert(1, pokeInicial[1]);
         escolhaPokemon.SetActive(false);
-        npcRota1 = false;
+        Destroy(npcRota1);
     }
 
     public void Charmannder()
@@ -46,6 +47,6 @@ public class QuestController : MonoBehaviour
         Time.timeScale = 1f;
         pokemonParty.pokemons.Insert(2, pokeInicial[2]);
         escolhaPokemon.SetActive(false);
-        npcRota1 = false;
+        Destroy(npcRota1);
     }
 }
