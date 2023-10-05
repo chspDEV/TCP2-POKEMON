@@ -12,13 +12,18 @@ public class MesaCarvalho : MonoBehaviour
 
     bool desligarColisao = false;
 
+    public void Awake()
+    {
+        //Comecando desativado
+        escolhaPokemon.SetActive(false);
+    }
 
     private void OnCollisionStay(Collision colisao)
     {
         if (colisao.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space) && desligarColisao == false)
-        {
-            Time.timeScale = 0f;
+        { 
             escolhaPokemon.SetActive(true);
+            Time.timeScale = 0f;
             desligarColisao = true; 
         }
     }

@@ -32,7 +32,9 @@ public class SistemaDeBatalha : MonoBehaviour
     bool isTrainerBattle = false;
     bool PossoFugir = true;
     bool InimigoAtaca = true;
+    public bool PlayerCanBattle = false;
     PlayerController player;
+    
     //  TrainerController trainer;
 
     public GameObject treinador_atual;

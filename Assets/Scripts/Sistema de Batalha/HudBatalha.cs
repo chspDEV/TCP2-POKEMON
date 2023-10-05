@@ -18,7 +18,7 @@ public class HudBatalha : MonoBehaviour
     [SerializeField] Color frzColor;
     [SerializeField] Color slpColor;
 
-    Pokemon _pokemon;
+    [SerializeField] Pokemon _pokemon;
     BarraVida _barraVida;
     [SerializeField] GameObject VidaPlayer;
 

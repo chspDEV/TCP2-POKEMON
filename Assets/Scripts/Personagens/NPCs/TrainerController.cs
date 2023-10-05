@@ -16,10 +16,11 @@ public class TrainerController : MonoBehaviour
 
     [SerializeField] SistemaDeBatalha sistema;
 
-    [SerializeField] bool posso_mostrar;
+    [SerializeField] bool posso_mostrar = false;
     [SerializeField] bool posso_ativar = false;
     [SerializeField] bool posso_batalha = false;
     public bool PerdiBatalha = false;
+    public bool _PlayerCanBattle = false;
 
     [SerializeField] GameObject target;
     short buVel;
@@ -35,9 +36,6 @@ public class TrainerController : MonoBehaviour
     //private Quaternion currentRotation;
     //Transform targetPos;
 
-
-
-
     public void Start()
     {
         target = GameObject.Find("Player");
@@ -47,12 +45,16 @@ public class TrainerController : MonoBehaviour
         //Pegando o RIGIDBODY do meu alvo e parando ele:
         player = target.GetComponent<PlayerController>();
 
+        _PlayerCanBattle = sistema.PlayerCanBattle;
+
     }
 
     public void Update()
     {
-        //Se ainda nao perdi a batalha
-        if(!PerdiBatalha)
+        _PlayerCanBattle = sistema.PlayerCanBattle;
+
+        //Se ainda nao perdi a batalha e player pode batalhar:
+        if (!PerdiBatalha && _PlayerCanBattle)
         {
             if (posso_mostrar)
             {
