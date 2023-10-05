@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 
@@ -11,3 +12,5 @@ public class CustomHeaderObject : MonoBehaviour
         EditorApplication.RepaintHierarchyWindow();
     }
 }
+
+#endif
