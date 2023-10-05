@@ -11,7 +11,31 @@ public class QuestController : MonoBehaviour
     [SerializeField] Camera cam;  // CAMERA DO JOGADOR PADRAO!!
     [SerializeField] GameObject mesaCarvalho;
     [SerializeField] GameObject escolhaPokemon;
-    [SerializeField] Interactor interactor;
-    
-   
+    [SerializeField] GameObject player;
+
+    [SerializeField] PokemonParty pokemonParty;
+
+
+    public void Start()
+    {
+        pokemonParty = player.getComponent<PokemonParty>();
+    }
+    public void Squirtle()
+    {
+        Time.timeScale = 1f;
+        escolhaPokemon.SetActive(false);
+        
+    }
+
+    public void Bulbassauro()
+    {
+        Time.timeScale = 1f;
+        escolhaPokemon.SetActive(false);
+    }
+
+    public void Charmannder()
+    {
+        Time.timeScale = 1f;
+        escolhaPokemon.SetActive(false);
+    }
 }
