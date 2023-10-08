@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Bulbasaur
   descricao: 
   sprite: {fileID: 21300000, guid: b815645e77a2e98458f9a672ff384af2, type: 3}
-  modelo3D: {fileID: 2480476245932458519, guid: 24bc6a50f6c736f4d8f4a32112a8b180,
+  modelo3D: {fileID: 6384733546732319797, guid: 24bc6a50f6c736f4d8f4a32112a8b180,
     type: 3}
   tipo1: 5
   tipo2: 8

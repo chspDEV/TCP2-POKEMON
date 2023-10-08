@@ -28,6 +28,8 @@ public class TrainerController : MonoBehaviour
     PlayerController player;
     Rigidbody rb;
 
+    BoxCollider col;
+
     [SerializeField] float _increase;
     [Range(1f, 1000f)]
     [SerializeField] float _increaseMax;
@@ -47,11 +49,19 @@ public class TrainerController : MonoBehaviour
 
         _PlayerCanBattle = sistema.PlayerCanBattle;
 
+        col = GetComponent<BoxCollider>();
+
     }
 
     public void Update()
     {
         _PlayerCanBattle = sistema.PlayerCanBattle;
+
+        if (!_PlayerCanBattle)
+        {
+            col.enabled = false;
+        }
+        else { col.enabled = true; }
 
         //Se ainda nao perdi a batalha e player pode batalhar:
         if (!PerdiBatalha && _PlayerCanBattle)

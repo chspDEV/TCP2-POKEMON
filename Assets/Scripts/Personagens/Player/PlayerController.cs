@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         TenhoSapato = false;
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-        rb.velocity = new Vector3(0, -fallSpeed, 0); // Ajuste os eixos e a velocidade conforme necessário.
+        rb.velocity = new Vector3(0, -fallSpeed, 0); // Ajuste os eixos e a velocidade conforme necessário./
 
     }
     public void HandleUpdate() 
@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+     
         Position = new Vector3(Input.GetAxisRaw("Horizontal"), -fallSpeed, Input.GetAxisRaw("Vertical"));
 
         // Correr se estiver apertando shift

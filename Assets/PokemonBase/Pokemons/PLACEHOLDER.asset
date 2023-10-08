@@ -15,8 +15,7 @@ MonoBehaviour:
   nome: PlaceHolder
   descricao: 
   sprite: {fileID: 0}
-  modelo3D: {fileID: 2480476245932458519, guid: 24bc6a50f6c736f4d8f4a32112a8b180,
-    type: 3}
+  modelo3D: {fileID: 0}
   tipo1: 0
   tipo2: 0
   vidaMax: 1
