@@ -18,7 +18,7 @@ public class MesaCarvalho : MonoBehaviour
         escolhaPokemon.SetActive(false);
     }
 
-    private void OnCollisionStay(Collision colisao)
+    private void OnTriggerStay(Collider colisao)
     {
         if (colisao.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space) && desligarColisao == false)
         { 

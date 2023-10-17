@@ -27,6 +27,8 @@ public class NPCControllerTESTE : MonoBehaviour, Interactable//, ISavable
     //Quest activeQuest;
 
     Character character;
+    private bool CheckSpace = false;
+    [SerializeField] GameObject SpaceBar;
     //ItemGiver itemGiver;
     //PokemonGiver pokemonGiver;
     //Healer healer;
@@ -124,6 +126,9 @@ public class NPCControllerTESTE : MonoBehaviour, Interactable//, ISavable
 
     private void Update()
     {
+        //Ativando e Desativando barra se posso interagir
+        SpaceBar.SetActive(CheckSpace);
+
         if (state == NPCState.Idle)
         {
             idleTimer += Time.deltaTime;
@@ -153,6 +158,24 @@ public class NPCControllerTESTE : MonoBehaviour, Interactable//, ISavable
 
             state = NPCState.Idle;
 
+        }
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            CheckSpace = true;
+        }
+        
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            CheckSpace = false;
         }
 
     }
