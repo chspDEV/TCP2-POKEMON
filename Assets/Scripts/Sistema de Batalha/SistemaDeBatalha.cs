@@ -8,42 +8,52 @@ public enum AcaoDeBatalha { Move, TrocarPokemon, UsarItem, Fugir }
 
 public class SistemaDeBatalha : MonoBehaviour
 {
+
+    [Header("Dialogo")]
+    [Space(15)]
+    [SerializeField] DialogoDeBatalha dialogBox;
+
+    [Header("Pokemons na Batalha")]
+    [Space(15)]
+    Pokemon pokemonSelvagem;
     [SerializeField] BattleUnit playerUnit;
     [SerializeField] BattleUnit enemyUnit;
-    [SerializeField] DialogoDeBatalha dialogBox;
+
+    [Header("Pokemon na Party")]
+    [Space(15)]
     [SerializeField] PartyScreen partyScreen;
+
+    PokemonParty playerParty;
+    PokemonParty trainerParty;
+
+    [Header("Jogador")]
+    [Space(15)]
+    public bool PlayerCanBattle = false;
+    bool PossoFugir = true;
+    PlayerController player;
+
+    [Header("Treinador/Inimigo")]
+    [Space(15)]
+    public GameObject treinador_atual;
+    bool isTrainerBattle = false;
+    bool InimigoAtaca = true;
+
+    [Header("Camera e Transicao")]
+    [Space(15)]
+    public GameObject batalha;
     [SerializeField] Caminhos caminhos;
+    [SerializeField] LevelChanger Transitor;
 
-
-
-
-    public event Action <bool> OnBattleOver;
-
+    //Outros
+    public event Action<bool> OnBattleOver;
     EstadoDeBatalha state;
     EstadoDeBatalha? prevState;
     int currentAction; // acao atual
     int currentMove; // acao atual
-    int currentMember; 
-
-    PokemonParty playerParty;
-    PokemonParty trainerParty;
-    Pokemon pokemonSelvagem;
-
-    bool isTrainerBattle = false;
-    bool PossoFugir = true;
-    bool InimigoAtaca = true;
-    public bool PlayerCanBattle = false;
-    PlayerController player;
-    
-    //  TrainerController trainer;
-
-    public GameObject treinador_atual;
-    public GameObject Camera_Batalha;
-
-    [SerializeField] LevelChanger Transitor;
-
+    int currentMember;
 
     public int EscapeAttempts { get; set; }
+
 
     public void Update()
     {
@@ -52,19 +62,26 @@ public class SistemaDeBatalha : MonoBehaviour
 
     public void StartBattle(PokemonParty playerParty, Pokemon pokemonSelvagem)
     {
-        //StartCoroutine(Transitor.Transicao());
+        if (PlayerCanBattle)
+        {
+            PlayerCanBattle = false;
+            Transitor = GetComponent<LevelChanger>();
+            StartCoroutine(Transitor.Transicao());
 
-        PossoFugir = true;
-        InimigoAtaca = true;
-        this.playerParty = playerParty;
-        this.pokemonSelvagem = pokemonSelvagem;
+            PossoFugir = true;
+            InimigoAtaca = true;
+            this.playerParty = playerParty;
+            this.pokemonSelvagem = pokemonSelvagem;
 
-        StartCoroutine(SetupBattle()); // Preparar para porrada
+
+            StartCoroutine(SetupBattle()); // Preparar para porrada
+        }
+        else { ResetarTudo(); }
     }
 
     public void ResetarTudo()
     {
-        if (!Camera_Batalha.activeSelf)
+        if (!PlayerCanBattle)
         {
             Debug.Log("ESTOU APAGANDO TUDO E RESETANDO VARIAVEIS");
 
@@ -84,6 +101,7 @@ public class SistemaDeBatalha : MonoBehaviour
 
     public IEnumerator SetupBattle()
     {
+        
         playerUnit.Setup(playerParty.GetHealthyPokemon());
         enemyUnit.Setup(pokemonSelvagem);
 
@@ -99,14 +117,20 @@ public class SistemaDeBatalha : MonoBehaviour
 
     public void StartTrainerBattle(PokemonParty playerParty, PokemonParty trainerParty)
     {
-        //StartCoroutine(Transitor.Transicao());
+        if (PlayerCanBattle)
+        {
+            PlayerCanBattle = false;
+            Transitor = GetComponent<LevelChanger>();
+            StartCoroutine(Transitor.Transicao());
 
-        PossoFugir = true;
-        this.playerParty = playerParty;
-        this.trainerParty = trainerParty;
+            PossoFugir = true;
+            this.playerParty = playerParty;
+            this.trainerParty = trainerParty;
 
-        isTrainerBattle = true;
-        StartCoroutine(SetupBattleTrainer()); // Preparar para porrada
+            isTrainerBattle = true;
+            StartCoroutine(SetupBattleTrainer()); // Preparar para porrada
+        }
+        else { ResetarTudo(); }
     }
     
 
@@ -126,27 +150,37 @@ public class SistemaDeBatalha : MonoBehaviour
 
     void BattleOver(bool won)
     {
-        //StartCoroutine(Transitor.Transicao());
-
+        StartCoroutine(Transitor.Transicao());
+        Transitor.DevolverVel(); 
         state = EstadoDeBatalha.BattleOver;
         playerParty.Pokemons.ForEach(p => p.OnBattleOver());
         OnBattleOver(won);
         playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
         enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
         PossoFugir = true;
+        //batalha.SetActive(false);
 
-        if (treinador_atual != null)
+        if (treinador_atual != null && won == true)
         {
             Debug.Log(treinador_atual);
 
             var _parar = treinador_atual.GetComponent<TrainerController>();
 
             _parar.PerdiBatalha = true;
-
+            _parar.posso_batalha = false;
             treinador_atual = null;
             isTrainerBattle = false;
         }
 
+        //Finalizando todas as co-rotinas
+        StartCoroutine(TerminandoBatalha());
+    }
+
+    public IEnumerator TerminandoBatalha()
+    {
+        yield return new WaitForSeconds(2f);
+        
+        Transitor.tempObject.SetActive(false);
         StopAllCoroutines();
     }
 
@@ -402,12 +436,14 @@ public class SistemaDeBatalha : MonoBehaviour
             }
             else
             {
+                PlayerCanBattle = false;
                 BattleOver(false);
             }
         }
         else
         {
             BattleOver(true);
+            PlayerCanBattle = true;
         }
     }
     IEnumerator ShowDamageDetails(DamageDetails damageDetails)

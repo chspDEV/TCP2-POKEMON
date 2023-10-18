@@ -18,7 +18,7 @@ public class TrainerController : MonoBehaviour
 
     [SerializeField] bool posso_mostrar = false;
     [SerializeField] bool posso_ativar = false;
-    [SerializeField] bool posso_batalha = false;
+    public bool posso_batalha = false;
     public bool PerdiBatalha = false;
     public bool _PlayerCanBattle = false;
 
@@ -86,6 +86,7 @@ public class TrainerController : MonoBehaviour
             {
                 if (posso_batalha)
                 {
+                    col.enabled = false;
                     canvasDialogo.SetActive(false); //Desativando canvas de dialogo
                     batalha.SetActive(true); //Ativando a cena
 
@@ -97,6 +98,8 @@ public class TrainerController : MonoBehaviour
                     player.velocidade = buVel;
                     player.velocidadeCorrida = buVelcor;
                     posso_ativar = false;
+                    posso_batalha = false;
+                    
                 }
             }
             //Temporizador até começar a batalha

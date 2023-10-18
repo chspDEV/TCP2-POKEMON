@@ -1674,7 +1674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c771c30f1539124ea2b3c342d7d093e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidade: 10
+  velocidade: 15
   velocidadeCorrida: 16
   fallSpeed: 0.3
   GramaAlta:
@@ -1764,8 +1764,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156747406}
-  m_LocalRotation: {x: 0.3420201, y: -0, z: -0, w: 0.9396927}
-  m_LocalPosition: {x: 465.9, y: -38.081, z: 76.11}
+  m_LocalRotation: {x: -0.4972851, y: 0.38748246, z: -0.26396042, w: -0.72999305}
+  m_LocalPosition: {x: -31.399994, y: -31.8, z: 50.650005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1830,9 +1830,9 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 77
   orthographic: 0
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -37542,6 +37542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 953182107}
   - component: {fileID: 953182108}
+  - component: {fileID: 953182109}
   m_Layer: 0
   m_Name: SistemaDeBatalha
   m_TagString: Untagged
@@ -37581,15 +37582,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87226caea2615b4197652c9f8612519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogBox: {fileID: 1670293290}
   playerUnit: {fileID: 377989247}
   enemyUnit: {fileID: 448533026}
-  dialogBox: {fileID: 1670293290}
   partyScreen: {fileID: 430969015}
-  caminhos: {fileID: 1041505195}
   PlayerCanBattle: 0
   treinador_atual: {fileID: 448533024}
-  Camera_Batalha: {fileID: 156747406}
+  batalha: {fileID: 953182106}
+  caminhos: {fileID: 1041505195}
   Transitor: {fileID: 0}
+--- !u!114 &953182109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953182106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff99d58bfe8de846a56f0136d371e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tpPoint: {x: 0, y: 0, z: 0}
+  tempObject: {fileID: 2052360147}
+  alpha: 0
 --- !u!1 &958684665
 GameObject:
   m_ObjectHideFlags: 0
@@ -41955,6 +41971,8 @@ MonoBehaviour:
   dialog:
     lines:
     - "Eu adoro a cidade de Pallet! O ar aqui \xE9 t\xE3o puro..."
+    - sdfihasoifj
+    - asdasdasdf
   dialog_manager: {fileID: 0}
   movementPattern:
   - {x: 5, y: 0, z: 0}
@@ -44261,6 +44279,7 @@ GameObject:
   - component: {fileID: 1663302642}
   - component: {fileID: 1663302641}
   - component: {fileID: 1663302643}
+  - component: {fileID: 1663302644}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -44316,6 +44335,21 @@ MonoBehaviour:
   dialogBox: {fileID: 1786220272}
   dialogText: {fileID: 442091343}
   lettersPerSecond: 45
+--- !u!114 &1663302644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663302640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff99d58bfe8de846a56f0136d371e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tpPoint: {x: 0, y: 0, z: 0}
+  tempObject: {fileID: 0}
+  alpha: 0
 --- !u!1 &1670293285
 GameObject:
   m_ObjectHideFlags: 0

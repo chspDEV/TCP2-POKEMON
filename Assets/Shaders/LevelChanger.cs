@@ -13,7 +13,7 @@ public class LevelChanger : MonoBehaviour
     GameObject target;
     PlayerController player;
     Animator anim;
-    [SerializeField] GameObject tempObject;
+    public GameObject tempObject;
 
     bool playerInZone;
     [SerializeField] byte alpha;
@@ -46,25 +46,32 @@ public class LevelChanger : MonoBehaviour
             //anim.Play("Transicao");
             target.transform.position = tpPoint;
             StopAllCoroutines();
+
             StartCoroutine(Transicao());
         }
         
     }
 
+    public void DevolverVel()
+    {
+        //Permitindo ele andar
+        player.velocidade = buVel;
+        player.velocidadeCorrida = buVelcor;
+    }
+
     public IEnumerator Transicao()
     {
         tempObject.SetActive(true);
-
-        //Impedindo jogador de andar
-        player.velocidade = 0;
-        player.velocidadeCorrida = 0;
+        
+         //Impedindo jogador de andar
+         player.velocidade = 0;
+         player.velocidadeCorrida = 0;
 
         yield return new WaitForSeconds(1f);
 
         //Permitindo ele andar
         player.velocidade = buVel;
         player.velocidadeCorrida = buVelcor;
-
 
         tempObject.SetActive(false);
 

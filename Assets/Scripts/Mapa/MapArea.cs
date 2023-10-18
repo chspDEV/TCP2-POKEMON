@@ -8,8 +8,8 @@ public class MapArea : MonoBehaviour
 
     public Pokemon GetRandomWildPokemon()
     {
-        var pokemonSelvagem = pokemonSelvagens[Random.Range(0, pokemonSelvagens.Count)];
-        pokemonSelvagem.Init();
-        return pokemonSelvagem;
+            var pokemonSelvagem = pokemonSelvagens[Random.Range(0, pokemonSelvagens.Count)];
+            pokemonSelvagem.Init();
+            return pokemonSelvagem;
     }
 }
