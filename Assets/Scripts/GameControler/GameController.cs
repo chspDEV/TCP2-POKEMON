@@ -99,8 +99,7 @@ public class GameController : MonoBehaviour
                playerController.seMovendo = false;
                 return;
             }
-            
-           
+             
         }
         else if (state == GameState.Battle)
         {
