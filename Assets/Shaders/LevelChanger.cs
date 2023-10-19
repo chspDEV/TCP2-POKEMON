@@ -10,7 +10,7 @@ public class LevelChanger : MonoBehaviour
     [Space(15)]
     [SerializeField] Vector3 tpPoint;
 
-    GameObject target;
+    [SerializeField] GameObject target;
     PlayerController player;
     Animator anim;
     public GameObject tempObject;
@@ -36,42 +36,65 @@ public class LevelChanger : MonoBehaviour
         }
         else { tempObject.SetActive(false); } //Escondendo a transição
 
-        anim = tempObject.GetComponent<Animator>();
+        //anim = tempObject.GetComponent<Animator>();
     }
 
     void Update()
     {
+        target = GameObject.Find("Player");
+        player = target.GetComponent<PlayerController>();
+
         if (playerInZone)
         {
-            //anim.Play("Transicao");
-            target.transform.position = tpPoint;
-            StopAllCoroutines();
-
+            Teleporte();
             StartCoroutine(Transicao());
         }
         
     }
 
+    public void Teleporte()
+    {
+        //anim.Play("Transicao");
+        target.transform.position = tpPoint;
+        StopAllCoroutines(); 
+    }
+
     public void DevolverVel()
     {
+        var _target = GameObject.Find("Player");
+        var _player = target.GetComponent<PlayerController>();
+
         //Permitindo ele andar
-        player.velocidade = buVel;
-        player.velocidadeCorrida = buVelcor;
+        _player.velocidade = buVel;
+        _player.velocidadeCorrida = buVelcor;
+    }
+
+    public void TirarVel()
+    {
+        var _target = GameObject.Find("Player");
+        var _player = target.GetComponent<PlayerController>();
+
+        //Permitindo ele andar
+        _player.velocidade = 0;
+        _player.velocidadeCorrida = 0;
     }
 
     public IEnumerator Transicao()
     {
         tempObject.SetActive(true);
-        
-         //Impedindo jogador de andar
-         player.velocidade = 0;
-         player.velocidadeCorrida = 0;
 
-        yield return new WaitForSeconds(1f);
+        var _target = GameObject.Find("Player");
+        var _player = target.GetComponent<PlayerController>();
+
+        //Impedindo jogador de andar
+        _player.velocidade = 0;
+        _player.velocidadeCorrida = 0;
+
+        yield return new WaitForSeconds(0.8f);
 
         //Permitindo ele andar
-        player.velocidade = buVel;
-        player.velocidadeCorrida = buVelcor;
+        _player.velocidade = buVel;
+        _player.velocidadeCorrida = buVelcor;
 
         tempObject.SetActive(false);
 

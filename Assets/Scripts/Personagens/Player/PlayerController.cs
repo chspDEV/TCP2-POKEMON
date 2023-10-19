@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     public GameObject InteractOBJ;
     public bool encontrouPokemon = false;
 
+    [SerializeField] SistemaDeBatalha sistema;
+
     public Vector3 Position;
     private Quaternion currentRotation;
     [SerializeField] private short rotationSpeed; //45
@@ -33,18 +35,12 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-    //by Nathan:
-    /* o metodo HandleUpdate não e um update, ele so tem esse nome porem e um metodo comum q e 
-       chamado atraves de outro script, caso na sua cena não tenha um script cahamado Gamecontroller 
-       e por conta disso q a movimentação não funcionava, pois o HandleUpadate do player e chamado atraves de outro script.
-    */
-
     private void Start()
     {
         TenhoSapato = false;
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-        rb.velocity = new Vector3(0, -fallSpeed, 0); // Ajuste os eixos e a velocidade conforme necessário./
+        rb.velocity = new Vector3(0, -fallSpeed * Time.fixedDeltaTime, 0); // Ajuste os eixos e a velocidade conforme necessário./
 
     }
     public void HandleUpdate() 
@@ -60,11 +56,11 @@ public class PlayerController : MonoBehaviour
         // Correr se estiver apertando shift
         if (Input.GetKey(KeyCode.LeftShift) && TenhoSapato)
         {
-            rb.velocity = Position * velocidadeCorrida;
+            rb.velocity = (Position * velocidadeCorrida * 10) * Time.fixedDeltaTime;
         }
         else // Não tenho sapato T-T
         {
-            rb.velocity = Position * velocidade;
+            rb.velocity = (Position * velocidade * 10) * Time.fixedDeltaTime;
         }
 
         // nathan: simplifiquei a gambiarra 
@@ -99,7 +95,7 @@ public class PlayerController : MonoBehaviour
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, 0.5f, GramaAlta);
 
-            if (colliders.Length > 0 && UnityEngine.Random.Range(1, 101) <= 10 && seMovendo)
+            if (colliders.Length > 0 && UnityEngine.Random.Range(1, 101) <= 10 && seMovendo && sistema.PlayerCanBattle == true)
             {
                     Debug.Log("Um pokemon selvagem apareceu");
                 //Animação ficara falsa aqui!

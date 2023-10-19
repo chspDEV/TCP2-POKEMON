@@ -31,6 +31,7 @@ public class SistemaDeBatalha : MonoBehaviour
     public bool PlayerCanBattle = false;
     bool PossoFugir = true;
     PlayerController player;
+    GameObject pp;
 
     [Header("Treinador/Inimigo")]
     [Space(15)]
@@ -43,6 +44,7 @@ public class SistemaDeBatalha : MonoBehaviour
     public GameObject batalha;
     [SerializeField] Caminhos caminhos;
     [SerializeField] LevelChanger Transitor;
+    [SerializeField] LevelChanger Transitor2;
 
     //Outros
     public event Action<bool> OnBattleOver;
@@ -55,9 +57,10 @@ public class SistemaDeBatalha : MonoBehaviour
     public int EscapeAttempts { get; set; }
 
 
-    public void Update()
+    public void Start()
     {
-        ResetarTudo(); //Se a batalha nao esta ativa garantir que a cena de batalha esta zerada
+        pp = GameObject.Find("Player");
+        player = pp.GetComponent<PlayerController>();
     }
 
     public void StartBattle(PokemonParty playerParty, Pokemon pokemonSelvagem)
@@ -65,14 +68,14 @@ public class SistemaDeBatalha : MonoBehaviour
         if (PlayerCanBattle)
         {
             PlayerCanBattle = false;
-            Transitor = GetComponent<LevelChanger>();
-            StartCoroutine(Transitor.Transicao());
+            //Transitor = GetComponent<LevelChanger>();
+            //StartCoroutine(Transitor.Transicao());
+            //Transitor.TirarVel();
 
             PossoFugir = true;
             InimigoAtaca = true;
             this.playerParty = playerParty;
             this.pokemonSelvagem = pokemonSelvagem;
-
 
             StartCoroutine(SetupBattle()); // Preparar para porrada
         }
@@ -92,6 +95,8 @@ public class SistemaDeBatalha : MonoBehaviour
             this.playerParty = null;
             this.pokemonSelvagem = null;
             this.trainerParty = null;
+
+            //Transitor.DevolverVel();
 
             playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
             enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
@@ -120,14 +125,17 @@ public class SistemaDeBatalha : MonoBehaviour
         if (PlayerCanBattle)
         {
             PlayerCanBattle = false;
-            Transitor = GetComponent<LevelChanger>();
-            StartCoroutine(Transitor.Transicao());
+            //Transitor = GetComponent<LevelChanger>();
+            //StartCoroutine(Transitor.Transicao());
+            //Transitor.TirarVel();
 
             PossoFugir = true;
             this.playerParty = playerParty;
             this.trainerParty = trainerParty;
 
             isTrainerBattle = true;
+            
+
             StartCoroutine(SetupBattleTrainer()); // Preparar para porrada
         }
         else { ResetarTudo(); }
@@ -150,11 +158,12 @@ public class SistemaDeBatalha : MonoBehaviour
 
     void BattleOver(bool won)
     {
-        StartCoroutine(Transitor.Transicao());
-        Transitor.DevolverVel(); 
+        //StartCoroutine(Transitor2.Transicao());
+
         state = EstadoDeBatalha.BattleOver;
         playerParty.Pokemons.ForEach(p => p.OnBattleOver());
         OnBattleOver(won);
+
         playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
         enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
         PossoFugir = true;
@@ -172,16 +181,10 @@ public class SistemaDeBatalha : MonoBehaviour
             isTrainerBattle = false;
         }
 
-        //Finalizando todas as co-rotinas
-        StartCoroutine(TerminandoBatalha());
-    }
-
-    public IEnumerator TerminandoBatalha()
-    {
-        yield return new WaitForSeconds(2f);
-        
-        Transitor.tempObject.SetActive(false);
-        StopAllCoroutines();
+        if (won == false)//Perdi e meus pokemons morreram = voltar pra casa
+        {
+            Transitor.Teleporte();
+        }
     }
 
     public void ActionSelection()
@@ -209,10 +212,11 @@ public class SistemaDeBatalha : MonoBehaviour
 
     public void MoveSelection()
     {
-        state = EstadoDeBatalha.MoveSelection;
+        
         dialogBox.AtivarSelecaoAcao(false);
         dialogBox.AtivarTextoDialogo(false);
         dialogBox.AtivarSelecaoGolpe(true);
+        state = EstadoDeBatalha.MoveSelection;
     }
 
     public IEnumerator RunTurns(AcaoDeBatalha playerAction)

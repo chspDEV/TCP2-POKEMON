@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public enum GameState { FreeRoam, Battle, Dialog, Cutscene }
 public class GameController : MonoBehaviour
@@ -59,6 +59,18 @@ public class GameController : MonoBehaviour
         sistemaDeBatalha.StartBattle(playerParty, pokemonSelvagem);
     }
 
+    public void StartBattleTrainer(PokemonParty _tParty)
+    {
+        state = GameState.Battle;
+        sistemaDeBatalha.gameObject.SetActive(true);
+        cam.gameObject.SetActive(false);
+
+        var playerParty = playerController.GetComponent<PokemonParty>();
+        var trainerParty = _tParty;
+
+        sistemaDeBatalha.StartTrainerBattle(playerParty, trainerParty);
+    }
+
     void EndBattle(bool won)
     {
         state = GameState.FreeRoam;
@@ -75,6 +87,8 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+        //REINICIANDO O JOGO
+        if (Input.GetKeyDown(KeyCode.F5)) { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
 
         if (state == GameState.FreeRoam)
         {

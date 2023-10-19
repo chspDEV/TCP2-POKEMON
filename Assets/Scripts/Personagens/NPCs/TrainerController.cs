@@ -14,6 +14,8 @@ public class TrainerController : MonoBehaviour
     [SerializeField] GameObject batalha;
     [SerializeField] GameObject canvasDialogo;
 
+    //
+    [SerializeField] GameController gm;
     [SerializeField] SistemaDeBatalha sistema;
 
     [SerializeField] bool posso_mostrar = false;
@@ -56,6 +58,7 @@ public class TrainerController : MonoBehaviour
     public void Update()
     {
         _PlayerCanBattle = sistema.PlayerCanBattle;
+        target = GameObject.Find("Player");
 
         if (!_PlayerCanBattle)
         {
@@ -93,7 +96,8 @@ public class TrainerController : MonoBehaviour
                     //Dizendo pro sistema de batalha quem eu sou!
                     sistema.treinador_atual = GameObject.Find("Blue");
 
-                    sistema.StartTrainerBattle(target.GetComponent<PokemonParty>(), this.GetComponent<PokemonParty>());
+                    gm.StartBattleTrainer(this.GetComponent<PokemonParty>());
+                    //sistema.StartTrainerBattle(target.GetComponent<PokemonParty>(), this.GetComponent<PokemonParty>());
 
                     player.velocidade = buVel;
                     player.velocidadeCorrida = buVelcor;
@@ -134,7 +138,7 @@ public class TrainerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Player") && posso_ativar == false)
+        if (collision.gameObject.CompareTag("Player") && posso_ativar == false && _PlayerCanBattle)
         {
             posso_mostrar = true; //Começa a co-rotina
             posso_ativar = true; // Garante que nao rode esse codigo novamente
