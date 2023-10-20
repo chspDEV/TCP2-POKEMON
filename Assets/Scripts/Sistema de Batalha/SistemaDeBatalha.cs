@@ -541,8 +541,6 @@ public class SistemaDeBatalha : MonoBehaviour
         #endregion
 
         dialogBox.UpdateActionSelection(currentAction);
-        //ActionSelection();
-
     }
 
 
@@ -586,7 +584,6 @@ public class SistemaDeBatalha : MonoBehaviour
         
 
         #endregion
-
 
     }
 

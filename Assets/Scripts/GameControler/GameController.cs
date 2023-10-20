@@ -32,19 +32,6 @@ public class GameController : MonoBehaviour
             state = GameState.FreeRoam;
         };
 
-     /*   playerController.OnEnterTrainersView += (Collider trainerCollider) =>
-        {
-           var trainer = trainerCollider.GetComponentInParent<TrainerController>();
-            if (trainer != null)
-            {
-              StartCoroutine(trainer.TriggerTrainerBattle(playerController));
-                if (trainer != null)
-                {
-                    state = GameState.Cutscene;
-                    StartCoroutine(trainer.TriggerTrainerBattle(playerController));
-                }
-            }
-        }; */
     }
 
     void StartBattle()
@@ -97,7 +84,7 @@ public class GameController : MonoBehaviour
             {
                playerController.rb.velocity = Vector3.zero;
                playerController.seMovendo = false;
-                return;
+               return;
             }
              
         }
