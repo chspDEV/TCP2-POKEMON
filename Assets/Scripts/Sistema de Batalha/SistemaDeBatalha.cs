@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.VirtualTexturing;
 
 public enum EstadoDeBatalha { Start, ActionSelection, MoveSelection, RunningTurn, Busy, PartyScreen, BattleOver }
 public enum AcaoDeBatalha { Move, TrocarPokemon, UsarItem, Fugir }
@@ -9,6 +10,9 @@ public enum AcaoDeBatalha { Move, TrocarPokemon, UsarItem, Fugir }
 public class SistemaDeBatalha : MonoBehaviour
 {
 
+
+    [SerializeField]  QuestController quest;
+    
     [Header("Dialogo")]
     [Space(15)]
     [SerializeField] DialogoDeBatalha dialogBox;
@@ -18,6 +22,7 @@ public class SistemaDeBatalha : MonoBehaviour
     Pokemon pokemonSelvagem;
     [SerializeField] BattleUnit playerUnit;
     [SerializeField] BattleUnit enemyUnit;
+    
 
     [Header("Pokemon na Party")]
     [Space(15)]
@@ -181,9 +186,23 @@ public class SistemaDeBatalha : MonoBehaviour
             isTrainerBattle = false;
         }
 
-        if (won == false)//Perdi e meus pokemons morreram = voltar pra casa
+        if (won == false &&  quest.centroPokemon == false)//Perdi e meus pokemons morreram = voltar pra casa
         {
             Transitor.Teleporte();
+            foreach (Pokemon p in playerParty.pokemons)
+            {
+                p.HP = p.VidaMax;
+            }
+            PlayerCanBattle = true;
+        }
+        else if (won == false && quest.centroPokemon == true) 
+                { 
+                    Transitor.TeleporteCentroPokemon();
+                    foreach (Pokemon p in playerParty.pokemons)
+                    {
+                        p.HP = p.VidaMax;
+                    }
+            PlayerCanBattle = true;
         }
     }
 

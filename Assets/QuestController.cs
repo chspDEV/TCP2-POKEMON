@@ -25,6 +25,10 @@ public class QuestController : MonoBehaviour
     [SerializeField] GameObject npcRota1;
     [SerializeField] public List<Pokemon> pokeInicial;
     [SerializeField] GameObject Arbursto1;
+    [SerializeField] GameObject tpPointCentro;
+
+//
+    public bool centroPokemon = false;
 
    
     public void Start()
