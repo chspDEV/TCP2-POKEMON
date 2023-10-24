@@ -38,11 +38,12 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         TenhoSapato = false;
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         rb.velocity = new Vector3(0, -fallSpeed * Time.fixedDeltaTime, 0); // Ajuste os eixos e a velocidade conforme necessário./
 
     }
+
     public void HandleUpdate() 
     {
         Move();   
@@ -57,10 +58,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) && TenhoSapato)
         {
             rb.velocity = (Position * velocidadeCorrida * 10) * Time.fixedDeltaTime;
+
         }
         else // Não tenho sapato T-T
         {
             rb.velocity = (Position * velocidade * 10) * Time.fixedDeltaTime;
+
         }
 
         // nathan: simplifiquei a gambiarra 
@@ -74,7 +77,9 @@ public class PlayerController : MonoBehaviour
 
         // Atualizando a var seMovendo
         seMovendo = Position.sqrMagnitude > 0.1f;
+        anim.SetBool("andando",seMovendo);
         OnMoveOver();
+
     }
 
 
