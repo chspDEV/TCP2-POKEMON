@@ -21,6 +21,8 @@ MonoBehaviour:
   tipo2: 0
   vidaMax: 1
   ataque: 1
+  xpAtual: 0
+  xpGiven: 100
   defesa: 1
   spAtaque: 1
   spDefesa: 1

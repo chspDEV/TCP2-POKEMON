@@ -186,7 +186,24 @@ public class SistemaDeBatalha : MonoBehaviour
             isTrainerBattle = false;
         }
 
-        if (won == false &&  quest.centroPokemon == false)//Perdi e meus pokemons morreram = voltar pra casa
+        //RODAR XP
+        foreach (Pokemon p in playerParty.pokemons)
+        {
+            for (var i = 0; i < trainerParty.pokemons[0].xpGiven;i++)
+            { 
+                p.xpAtual += i;
+
+                if (p.xpAtual >= p.level * 100)
+                {
+                    p.xpAtual = 0;
+                    p.level++;
+                }
+            }
+            
+        }
+
+            #region TELEPORTE PÓS MORTE
+            if (won == false &&  quest.centroPokemon == false)//Perdi e meus pokemons morreram = voltar pra casa
         {
             Transitor.Teleporte();
             foreach (Pokemon p in playerParty.pokemons)
@@ -204,6 +221,7 @@ public class SistemaDeBatalha : MonoBehaviour
                     }
             PlayerCanBattle = true;
         }
+        #endregion
     }
 
     public void ActionSelection()

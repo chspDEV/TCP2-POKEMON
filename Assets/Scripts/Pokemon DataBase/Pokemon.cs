@@ -10,7 +10,7 @@ using UnityEngine;
 public class Pokemon
 {
     [SerializeField] PokemonBase _base;
-    [SerializeField] int level;
+    [SerializeField] public int level;
 
     public PokemonBase Base {
         get { return _base; }
@@ -23,6 +23,9 @@ public class Pokemon
     public List<Move> Moves { get; set; }
 
     public Move CurrentMove { get; set; }
+
+    public int xpAtual { get; set; }
+    public int xpGiven { get; set; }
 
     public Dictionary<Stat, int> Stats { get; private set; }
     public Dictionary<Stat, int> StatBoosts { get; private set; }

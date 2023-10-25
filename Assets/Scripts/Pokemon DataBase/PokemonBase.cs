@@ -31,6 +31,9 @@ public class PokemonBase : ScriptableObject
     [Space(10)]
     [SerializeField] int vidaMax; // Vida maxima 
     [SerializeField] int ataque; // Ataque
+    [SerializeField] int xpAtual; // XP ATUAL
+    [SerializeField] int xpGiven; // XP Dado
+
     [SerializeField] int defesa; // Defesa
     [SerializeField] int spAtaque; // Special Ataque
     [SerializeField] int spDefesa; // Special Defesa
@@ -81,6 +84,18 @@ public class PokemonBase : ScriptableObject
     {
         get { return ataque; }
     }
+
+    //XP--------
+    public int XpAtual
+    {
+        get { return xpAtual; }
+    }
+
+    public int XpGiven
+    {
+        get { return xpGiven; }
+    }
+    //---------
 
     public int Defesa
     {
