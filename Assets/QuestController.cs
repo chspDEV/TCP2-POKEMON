@@ -17,6 +17,7 @@ public class QuestController : MonoBehaviour
     [Space(15)]
     [SerializeField] SistemaDeBatalha sistemaDeBatalha;
     [SerializeField] Camera cam;  // CAMERA DO JOGADOR PADRAO!!
+    [SerializeField] GameObject tpPointCentro;
 
     [Header("Quest [1]")]
     [Space(15)]
@@ -25,7 +26,7 @@ public class QuestController : MonoBehaviour
     [SerializeField] GameObject npcRota1;
     [SerializeField] public List<Pokemon> pokeInicial;
     [SerializeField] GameObject Arbursto1;
-    [SerializeField] GameObject tpPointCentro;
+    [SerializeField] GameObject[] Pokebolas;
 
 //
     public bool centroPokemon = false;
@@ -52,6 +53,10 @@ public class QuestController : MonoBehaviour
         //DESTRUINDO ARBUSTOS
         Destroy(Arbursto1);
 
+
+        //DESTRUINDO POKEBOLAS
+        Destroy(Pokebolas[0]);
+
         //Dizendo que meu jogador pode comecar suas batalhas!
         sistemaDeBatalha.PlayerCanBattle = true;
 
@@ -75,8 +80,12 @@ public class QuestController : MonoBehaviour
         //DESTRUINDO ARBUSTOS
         Destroy(Arbursto1);
 
+        //DESTRUINDO POKEBOLAS
+        Destroy(Pokebolas[1]);
+
         //Dizendo que meu jogador pode comecar suas batalhas!
         sistemaDeBatalha.PlayerCanBattle = true;
+
 
         //Destruindo Canvas
         Destroy(escolhaPokemon);
@@ -97,6 +106,9 @@ public class QuestController : MonoBehaviour
 
         //DESTRUINDO ARBUSTOS
         Destroy(Arbursto1);
+
+        //DESTRUINDO POKEBOLAS
+        Destroy(Pokebolas[2]);
 
         //Dizendo que meu jogador pode comecar suas batalhas!
         sistemaDeBatalha.PlayerCanBattle = true;

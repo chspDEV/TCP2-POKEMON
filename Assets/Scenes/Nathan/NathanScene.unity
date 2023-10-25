@@ -30166,7 +30166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
-  m_LocalPosition: {x: 92.31, y: 26.332, z: -2.6499996}
+  m_LocalPosition: {x: -68.439995, y: 64.852005, z: 164.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30260,17 +30260,17 @@ PrefabInstance:
     - target: {fileID: 1033158169058891403, guid: a7fa53812de0f9d439fb6592332ee8c5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.709999
+      value: -151.04
       objectReference: {fileID: 0}
     - target: {fileID: 1033158169058891403, guid: a7fa53812de0f9d439fb6592332ee8c5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1300001
+      value: 39.65
       objectReference: {fileID: 0}
     - target: {fileID: 1033158169058891403, guid: a7fa53812de0f9d439fb6592332ee8c5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.8
+      value: 174.7
       objectReference: {fileID: 0}
     - target: {fileID: 1033158169058891403, guid: a7fa53812de0f9d439fb6592332ee8c5,
         type: 3}
@@ -42146,6 +42146,7 @@ MonoBehaviour:
   pokemonParty: {fileID: 1101043966}
   sistemaDeBatalha: {fileID: 953182108}
   cam: {fileID: 330585545}
+  tpPointCentro: {fileID: 0}
   mesaCarvalho: {fileID: 1953717710175664271}
   escolhaPokemon: {fileID: 987525199}
   npcRota1: {fileID: 1447779022}
@@ -42157,7 +42158,10 @@ MonoBehaviour:
   - _base: {fileID: 11400000, guid: 74cd546d8f38cfd40bc828f60e86ee27, type: 2}
     level: 1
   Arbursto1: {fileID: 202690628}
-  tpPointCentro: {fileID: 0}
+  Pokebolas:
+  - {fileID: 2143178066787282040}
+  - {fileID: 1756183052533549116}
+  - {fileID: 791614908843127572}
   centroPokemon: 0
 --- !u!1 &1222564992
 GameObject:
@@ -42892,7 +42896,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290358451}
   m_LocalRotation: {x: 0.3420201, y: -0, z: -0, w: 0.9396927}
-  m_LocalPosition: {x: 92.31, y: 26.332, z: -2.6499996}
+  m_LocalPosition: {x: -68.439995, y: 64.852005, z: 164.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
