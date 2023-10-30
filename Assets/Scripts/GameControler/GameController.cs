@@ -61,8 +61,7 @@ public class GameController : MonoBehaviour
     void EndBattle(bool won)
     {
         state = GameState.FreeRoam;
-        sistemaDeBatalha.gameObject.SetActive(false);
-        cam.gameObject.SetActive(true);
+
 
         PlayerBattleUnit.DestroyInstantiatedModel();
         EnemyBattleUnit.DestroyInstantiatedModel();
@@ -70,6 +69,9 @@ public class GameController : MonoBehaviour
         // gambiarra pra resetar a booleana de encontrar pokemon     
         StartCoroutine(playerController.ResetEncontroPokemon());
         caminhos.Resetar();
+
+        sistemaDeBatalha.gameObject.SetActive(false);
+        cam.gameObject.SetActive(true);
     }
 
     void Update()

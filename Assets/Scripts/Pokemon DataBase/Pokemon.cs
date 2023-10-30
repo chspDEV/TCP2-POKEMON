@@ -24,9 +24,6 @@ public class Pokemon
 
     public Move CurrentMove { get; set; }
 
-    public int xpAtual { get; set; }
-    public int xpGiven { get; set; }
-
     public Dictionary<Stat, int> Stats { get; private set; }
     public Dictionary<Stat, int> StatBoosts { get; private set; }
 
@@ -40,7 +37,11 @@ public class Pokemon
 
     public Queue<string> StatusChanges { get; private set; } = new Queue<string>();
 
+    public float XpAtual { get; set; }
+    public float XpGiven { get; set; }
+
     public bool HpChanged { get; set; }
+    public bool XpChanged { get; set; }
 
     public event System.Action OnStatusChanged;
 
@@ -59,6 +60,8 @@ public class Pokemon
         CalcularStatus();
 
         HP = VidaMax;
+        XpAtual = 0f;
+        XpGiven = 100f;
 
         ResetStatBoost();
 

@@ -169,6 +169,8 @@ public class SistemaDeBatalha : MonoBehaviour
         playerParty.Pokemons.ForEach(p => p.OnBattleOver());
         OnBattleOver(won);
 
+        if (won == true && treinador_atual == null) { UparPokemon(); }
+
         playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
         enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
         PossoFugir = true;
@@ -180,27 +182,18 @@ public class SistemaDeBatalha : MonoBehaviour
 
             var _parar = treinador_atual.GetComponent<TrainerController>();
 
+            UparPokemon();
+
             _parar.PerdiBatalha = true;
             _parar.posso_batalha = false;
             treinador_atual = null;
             isTrainerBattle = false;
-        }
-
-        //RODAR XP
-        foreach (Pokemon p in playerParty.pokemons)
-        {
-            for (var i = 0; i < trainerParty.pokemons[0].xpGiven;i++)
-            { 
-                p.xpAtual += i;
-
-                if (p.xpAtual >= p.level * 100)
-                {
-                    p.xpAtual = 0;
-                    p.level++;
-                }
-            }
             
         }
+
+        
+
+
 
             #region TELEPORTE PÓS MORTE
             if (won == false &&  quest.centroPokemon == false)//Perdi e meus pokemons morreram = voltar pra casa
@@ -231,6 +224,52 @@ public class SistemaDeBatalha : MonoBehaviour
        // StartCoroutine(dialogBox.TypeDialog("Escolha sua ação"));
         dialogBox.SetDialog("Escolha sua ação...");
     }
+
+    
+    public void UparPokemon()
+    {
+        //Estou batalhando com um treinador
+        if (treinador_atual != null)
+
+        {
+            //RODAR XP
+            foreach (Pokemon p in playerParty.pokemons)
+            {
+                for (var i = 0; i < trainerParty.pokemons[0].XpGiven; i++)
+                {
+                    p.XpAtual ++;
+
+                    if (p.XpAtual >= p.level * 100)
+                    {
+                        p.XpAtual = 0;
+                        p.level++;
+                    }
+                }
+
+            }
+        }//Estou contra um pokemon selvagem
+        else if (pokemonSelvagem != null)
+        {
+            //RODAR XP
+            foreach (Pokemon p in playerParty.pokemons)
+            {
+                for (var i = 0; i < pokemonSelvagem.XpGiven; i++)
+                {
+                    p.XpAtual ++;
+
+                    if (p.XpAtual >= p.level * 100)
+                    {
+                        p.XpAtual = 0;
+                        p.level++;
+                    }
+                }
+
+            }
+        }
+        else { Debug.Log("Não estou contra pokemon selvagem nem treinador, Falhei em upar pokemon"); }
+       
+    }
+    
 
     public void OpenPartyScreen()
     {
@@ -347,6 +386,7 @@ public class SistemaDeBatalha : MonoBehaviour
             {
                 var damageDetails = targetUnit.Pokemon.TomarDano(move, sourceUnit.Pokemon);
                 yield return targetUnit.Hud.UpdateHP();
+               // yield return sourceUnit.Hud.UpdateXP();
                 yield return ShowDamageDetails(damageDetails);
             }
 
@@ -368,6 +408,7 @@ public class SistemaDeBatalha : MonoBehaviour
                 yield return new WaitForSeconds(2f);
 
                 targetUnit.DestroyInstantiatedModel();
+                //sourceUnit.Hud.UpdateXP();
 
                 CheckForBattleOver(targetUnit);
             }
@@ -484,6 +525,7 @@ public class SistemaDeBatalha : MonoBehaviour
         else
         {
             BattleOver(true);
+
             PlayerCanBattle = true;
         }
     }

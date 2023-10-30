@@ -46,7 +46,12 @@ public class PlayerController : MonoBehaviour
 
     public void HandleUpdate() 
     {
-        Move();   
+        Move();
+
+        #region HACK
+        if (Input.GetKeyDown(KeyCode.F1)) { transform.position = new Vector3(-123.09f, 19.53f, 176.67f); }//lab
+        if (Input.GetKeyDown(KeyCode.F2)) { transform.position = new Vector3(93f, 15f, 40f); }//meio pallet
+        #endregion
     }
 
     private void Move()

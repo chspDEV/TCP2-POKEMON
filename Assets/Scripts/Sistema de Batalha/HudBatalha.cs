@@ -11,6 +11,7 @@ public class HudBatalha : MonoBehaviour
     [SerializeField] TextMeshProUGUI TextoLevel;
     [SerializeField] TextMeshProUGUI TextoStatus;
     [SerializeField] BarraVida BarraHp;
+    [SerializeField] BarraXP BarraXp;
 
     [SerializeField] Color psnColor;
     [SerializeField] Color brnColor;
@@ -40,6 +41,8 @@ public class HudBatalha : MonoBehaviour
         TextoNome.text = pokemon.Base.Nome;
         TextoLevel.text = "Lvl " + pokemon.Level;
         BarraHp.SetHP((float) pokemon.HP / pokemon.VidaMax);
+
+        BarraXp.SetXP(pokemon.XpAtual);
 
         statusColors = new Dictionary<ConditionID, Color>()
         {
@@ -107,8 +110,5 @@ public class HudBatalha : MonoBehaviour
             MudaCorVerde();
         }
     }
-
-
-
 
 }
