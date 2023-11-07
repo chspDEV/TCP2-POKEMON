@@ -17,10 +17,9 @@ public class PokemonBase : ScriptableObject
     [TextArea]
     [SerializeField] string descricao;
 
-    [SerializeField] Sprite sprite;  // obs: colocar o modelo 3D quando ele estiver pronto
+    public Sprite sprite;  // obs: colocar o modelo 3D quando ele estiver pronto
 
     [SerializeField] GameObject modelo3D;
-
 
     [SerializeField] TipoDePokemon tipo1;
     [SerializeField] TipoDePokemon tipo2;
@@ -59,6 +58,7 @@ public class PokemonBase : ScriptableObject
     {
         get { return sprite; }
     }
+   
 
     public GameObject Modelo3D
     {

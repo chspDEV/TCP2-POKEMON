@@ -19,7 +19,7 @@ public class PokeHeal : MonoBehaviour
             //pq q vc colocou aqui ent eu só comentei
             //Time.timeScale = 0f;
             playerParty = colisao.GetComponent<PokemonParty>();
-
+            Debug.Log("CURANDO!");
             foreach (Pokemon p in playerParty.pokemons)
             {
                 p.HP = p.VidaMax;

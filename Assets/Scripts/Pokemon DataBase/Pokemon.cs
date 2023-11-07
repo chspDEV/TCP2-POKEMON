@@ -24,6 +24,9 @@ public class Pokemon
 
     public Move CurrentMove { get; set; }
 
+    public Sprite sprite;
+    public string nome;
+
     public Dictionary<Stat, int> Stats { get; private set; }
     public Dictionary<Stat, int> StatBoosts { get; private set; }
 
@@ -67,6 +70,8 @@ public class Pokemon
 
         Status = null;
         VolatileStatus = null;
+        sprite = _base.sprite;
+        nome = _base.Nome;
     }
 
     void CalcularStatus()
@@ -158,7 +163,11 @@ public class Pokemon
     {
         get; private set; 
     }
-    
+    public Sprite Sprite
+    {
+        get { return sprite; }
+    }
+
     public DamageDetails TomarDano(Move move, Pokemon attacker)
     {
         float critical = 1f;
