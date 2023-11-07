@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Squirtle
   m_EditorClassIdentifier: 
   nome: Squirtle
-  descricao: 
+  descricao: "Quando ele retrai o seu pesco\xE7o longo para dentro de seu casco,
+    libera \xE1gua com uma for\xE7a vigorosa."
   sprite: {fileID: 21300000, guid: 1fa26fc654210024d83c74552540c9ba, type: 3}
   modelo3D: {fileID: 4069354838987687669, guid: 61b232defb06bcd4cac1d047fe0f8c46,
     type: 3}
@@ -30,11 +31,9 @@ MonoBehaviour:
   golpesParaAprender:
   - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
     level: 1
-  - moveBase: {fileID: 11400000, guid: 00c1e85973175f741a9b1e2c0d16cacf, type: 2}
-    level: 3
-  - moveBase: {fileID: 11400000, guid: 56c345ce20a1ab1448401c21247a0347, type: 2}
-    level: 7
-  - moveBase: {fileID: 11400000, guid: 3f30598dcd1986d4e819194a56a99182, type: 2}
-    level: 8
+  - moveBase: {fileID: 11400000, guid: 2c6381610df8b0e4182c70b1a638d568, type: 2}
+    level: 4
   - moveBase: {fileID: 11400000, guid: add97b25840204d4ea671c0b060269d1, type: 2}
-    level: 14
+    level: 7
+  - moveBase: {fileID: 11400000, guid: 1046878292cf35644925e1f64ed363af, type: 2}
+    level: 13

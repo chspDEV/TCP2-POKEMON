@@ -13,17 +13,24 @@ MonoBehaviour:
   m_Name: Butterfree ( Sem Modelo )
   m_EditorClassIdentifier: 
   nome: Butterfree
-  descricao: 
+  descricao: "Ele ama o nectar das flores e pode localizar manchas de flores que
+    contenham at\xE9 mesmo pequenas quantidades de p\xF3len."
   sprite: {fileID: 0}
   modelo3D: {fileID: 0}
-  tipo1: 0
-  tipo2: 0
-  vidaMax: 0
-  ataque: 0
+  tipo1: 12
+  tipo2: 10
+  vidaMax: 60
+  ataque: 45
   xpAtual: 0
-  xpGiven: 0
-  defesa: 0
-  spAtaque: 0
-  spDefesa: 0
-  velocidade: 0
-  golpesParaAprender: []
+  xpGiven: 100
+  defesa: 50
+  spAtaque: 80
+  spDefesa: 80
+  velocidade: 70
+  golpesParaAprender:
+  - moveBase: {fileID: 11400000, guid: 1d8c7ccfe6a40544eaf7aae92fb300e4, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 6267e59f36c12ac45be3a39de95148d4, type: 2}
+    level: 13
+  - moveBase: {fileID: 11400000, guid: e79ff21f506d6e449b1119cca5b05acf, type: 2}
+    level: 14

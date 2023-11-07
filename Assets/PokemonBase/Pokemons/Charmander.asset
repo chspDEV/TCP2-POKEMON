@@ -13,17 +13,18 @@ MonoBehaviour:
   m_Name: Charmander
   m_EditorClassIdentifier: 
   nome: Charmander
-  descricao: 
+  descricao: "Ele tem prefer\xEAncia por coisas quentes. Quando chove, dizem que
+    fuma\xE7a surge da ponta da sua cauda."
   sprite: {fileID: 21300000, guid: b0c4417fb93f09143ada52a45fd8cd79, type: 3}
   modelo3D: {fileID: 2367900409435859178, guid: 22b46d1dd40db4e469e26b845b81c74c,
     type: 3}
   tipo1: 2
   tipo2: 0
-  vidaMax: 39
-  ataque: 52
+  vidaMax: 40
+  ataque: 51
   xpAtual: 0
   xpGiven: 100
-  defesa: 43
+  defesa: 47
   spAtaque: 60
   spDefesa: 50
   velocidade: 65
@@ -31,12 +32,8 @@ MonoBehaviour:
   - moveBase: {fileID: 11400000, guid: 057f4473d0c79e04bad27174e89b300c, type: 2}
     level: 1
   - moveBase: {fileID: 11400000, guid: 00c1e85973175f741a9b1e2c0d16cacf, type: 2}
-    level: 20
-  - moveBase: {fileID: 11400000, guid: c4a72785aaabe384e975313e4f15919a, type: 2}
-    level: 4
+    level: 1
   - moveBase: {fileID: 11400000, guid: d1ea85a385698cb459946315c00937f5, type: 2}
     level: 7
-  - moveBase: {fileID: 11400000, guid: fdf604c65b67051418c503939608a24d, type: 2}
-    level: 9
   - moveBase: {fileID: 11400000, guid: cbe391d50e08ee047903dd84905301ad, type: 2}
-    level: 14
+    level: 13

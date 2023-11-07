@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Bulbasaur
   m_EditorClassIdentifier: 
   nome: Bulbasaur
-  descricao: 
+  descricao: "Uma semente curiosa foi plantada em suas costas desde o nascimento.
+    Uma planta germina e cresce junto a esse pok\xE9mon."
   sprite: {fileID: 21300000, guid: b815645e77a2e98458f9a672ff384af2, type: 3}
   modelo3D: {fileID: 6384733546732319797, guid: 24bc6a50f6c736f4d8f4a32112a8b180,
     type: 3}
@@ -30,9 +31,9 @@ MonoBehaviour:
   golpesParaAprender:
   - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
     level: 1
+  - moveBase: {fileID: 11400000, guid: 00c1e85973175f741a9b1e2c0d16cacf, type: 2}
+    level: 4
   - moveBase: {fileID: 11400000, guid: 3f551c76e870b2e4eaa184aba4478ea1, type: 2}
-    level: 3
+    level: 7
   - moveBase: {fileID: 11400000, guid: 88cf8bb2c5e3f9d408626db3bdf4dd51, type: 2}
-    level: 5
-  - moveBase: {fileID: 11400000, guid: f86ab336847b15e4b9d8d0d9ec6a183a, type: 2}
-    level: 5
+    level: 13

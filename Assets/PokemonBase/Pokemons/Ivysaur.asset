@@ -12,18 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fee4663f244582488d1f24c59264ed9, type: 3}
   m_Name: Ivysaur
   m_EditorClassIdentifier: 
-  nome: 
-  descricao: 
+  nome: Ivysaur
+  descricao: "Quando o bulbo em suas costas cresce, ele parece perder a capacidade
+    de ficar em p\xE9 com as patas traseiras."
   sprite: {fileID: 0}
-  modelo3D: {fileID: 0}
-  tipo1: 0
-  tipo2: 0
-  vidaMax: 0
-  ataque: 0
+  modelo3D: {fileID: 7513549494535694026, guid: bda8136e310d5c04d80f199cb1f8c866,
+    type: 3}
+  tipo1: 5
+  tipo2: 8
+  vidaMax: 60
+  ataque: 62
   xpAtual: 0
-  xpGiven: 0
-  defesa: 0
-  spAtaque: 0
-  spDefesa: 0
-  velocidade: 0
-  golpesParaAprender: []
+  xpGiven: 100
+  defesa: 63
+  spAtaque: 80
+  spDefesa: 80
+  velocidade: 60
+  golpesParaAprender:
+  - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 00c1e85973175f741a9b1e2c0d16cacf, type: 2}
+    level: 4
+  - moveBase: {fileID: 11400000, guid: 3f551c76e870b2e4eaa184aba4478ea1, type: 2}
+    level: 7
+  - moveBase: {fileID: 11400000, guid: 88cf8bb2c5e3f9d408626db3bdf4dd51, type: 2}
+    level: 13

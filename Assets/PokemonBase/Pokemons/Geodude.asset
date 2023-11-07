@@ -12,18 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fee4663f244582488d1f24c59264ed9, type: 3}
   m_Name: Geodude
   m_EditorClassIdentifier: 
-  nome: 
-  descricao: 
+  nome: Geodude
+  descricao: "Geralmente visto em trilhas montanhosas e semelhantes. Se voc\xEA pisar
+    em um por acidente, ele ficar\xE1 bravo."
   sprite: {fileID: 0}
-  modelo3D: {fileID: 0}
-  tipo1: 0
+  modelo3D: {fileID: 7562797709509656274, guid: 15941fde01d3987459c6cf9bbd5c5a87,
+    type: 3}
+  tipo1: 13
   tipo2: 0
-  vidaMax: 0
-  ataque: 0
+  vidaMax: 40
+  ataque: 80
   xpAtual: 0
-  xpGiven: 0
-  defesa: 0
-  spAtaque: 0
-  spDefesa: 0
-  velocidade: 0
-  golpesParaAprender: []
+  xpGiven: 100
+  defesa: 100
+  spAtaque: 30
+  spDefesa: 30
+  velocidade: 20
+  golpesParaAprender:
+  - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 15b4160b6ddcd2048b8dadf9aa74b959, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 5aed6a8ae5fcc8144a498bf4c15bbb4f, type: 2}
+    level: 11

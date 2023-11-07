@@ -12,18 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fee4663f244582488d1f24c59264ed9, type: 3}
   m_Name: Pidgey
   m_EditorClassIdentifier: 
-  nome: 
-  descricao: 
+  nome: Pidgey
+  descricao: "Muito d\xF3cil. Se atacado, geralmente vai jogar areia para se proteger
+    do que lutar de volta."
   sprite: {fileID: 0}
-  modelo3D: {fileID: 0}
-  tipo1: 0
-  tipo2: 0
-  vidaMax: 0
-  ataque: 0
+  modelo3D: {fileID: 3027997980262278042, guid: f452db6697b3aef4c99e3f92b3fdd416,
+    type: 3}
+  tipo1: 1
+  tipo2: 10
+  vidaMax: 40
+  ataque: 45
   xpAtual: 0
-  xpGiven: 0
-  defesa: 0
-  spAtaque: 0
-  spDefesa: 0
-  velocidade: 0
-  golpesParaAprender: []
+  xpGiven: 100
+  defesa: 40
+  spAtaque: 35
+  spDefesa: 35
+  velocidade: 56
+  golpesParaAprender:
+  - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: f649f5ee6609f4241bb1f31a06cbaad3, type: 2}
+    level: 5
+  - moveBase: {fileID: 11400000, guid: 0051659294dec2e498196ea77af4974f, type: 2}
+    level: 7
+  - moveBase: {fileID: 11400000, guid: c4a72785aaabe384e975313e4f15919a, type: 2}
+    level: 13

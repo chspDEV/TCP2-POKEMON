@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: Charmeleon
   m_EditorClassIdentifier: 
   nome: Charmeleon
-  descricao: 
+  descricao: "Ele tem uma natureza barb\xE1rica. Em batalha, balan\xE7a sua cauda
+    flamejante e corta com suas garras afiadas."
   sprite: {fileID: 0}
   modelo3D: {fileID: 3785562476928520972, guid: 47b84a39f2485084e9ed4a80c94a2ad1,
     type: 3}
-  tipo1: 0
+  tipo1: 2
   tipo2: 0
-  vidaMax: 1
-  ataque: 1
+  vidaMax: 59
+  ataque: 64
   xpAtual: 0
   xpGiven: 100
-  defesa: 1
-  spAtaque: 1
-  spDefesa: 1
-  velocidade: 1
+  defesa: 61
+  spAtaque: 80
+  spDefesa: 65
+  velocidade: 80
   golpesParaAprender:
-  - moveBase: {fileID: 11400000, guid: c4a72785aaabe384e975313e4f15919a, type: 2}
+  - moveBase: {fileID: 11400000, guid: 057f4473d0c79e04bad27174e89b300c, type: 2}
     level: 1
+  - moveBase: {fileID: 11400000, guid: 00c1e85973175f741a9b1e2c0d16cacf, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: d1ea85a385698cb459946315c00937f5, type: 2}
+    level: 7
+  - moveBase: {fileID: 11400000, guid: cbe391d50e08ee047903dd84905301ad, type: 2}
+    level: 13

@@ -12,18 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fee4663f244582488d1f24c59264ed9, type: 3}
   m_Name: Rattata
   m_EditorClassIdentifier: 
-  nome: 
-  descricao: 
+  nome: Rattata
+  descricao: "Vai rosnar para tudo com as suas presas. Se voc\xEA ver um, pode ter
+    certeza que mais quarenta est\xE3o por perto."
   sprite: {fileID: 0}
-  modelo3D: {fileID: 0}
-  tipo1: 0
+  modelo3D: {fileID: 5280530170345657644, guid: 47a7560ffca65f94995164fe83d3dbbf,
+    type: 3}
+  tipo1: 1
   tipo2: 0
-  vidaMax: 0
-  ataque: 0
+  vidaMax: 30
+  ataque: 56
   xpAtual: 0
-  xpGiven: 0
-  defesa: 0
-  spAtaque: 0
-  spDefesa: 0
-  velocidade: 0
-  golpesParaAprender: []
+  xpGiven: 100
+  defesa: 35
+  spAtaque: 25
+  spDefesa: 35
+  velocidade: 72
+  golpesParaAprender:
+  - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 2c6381610df8b0e4182c70b1a638d568, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: c4a72785aaabe384e975313e4f15919a, type: 2}
+    level: 7
+  - moveBase: {fileID: 11400000, guid: fd2f7a2ace2f7a545ab56c3305c8d127, type: 2}
+    level: 13

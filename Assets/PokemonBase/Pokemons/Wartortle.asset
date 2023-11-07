@@ -13,20 +13,27 @@ MonoBehaviour:
   m_Name: Wartortle
   m_EditorClassIdentifier: 
   nome: Wartortle
-  descricao: 
+  descricao: "Ele \xE9 reconhecido como um s\xEDmbolo de longevidade. Se o seu casco
+    tem alga nele, esse wartortle \xE9 muito velho."
   sprite: {fileID: 0}
   modelo3D: {fileID: 4766020222414239909, guid: 876ad7ece15dba5429b2fce8d9279c0c,
     type: 3}
   tipo1: 3
   tipo2: 0
-  vidaMax: 10
-  ataque: 10
+  vidaMax: 59
+  ataque: 63
   xpAtual: 0
   xpGiven: 100
-  defesa: 10
-  spAtaque: 10
-  spDefesa: 10
-  velocidade: 10
+  defesa: 80
+  spAtaque: 65
+  spDefesa: 80
+  velocidade: 58
   golpesParaAprender:
-  - moveBase: {fileID: 11400000, guid: c4a72785aaabe384e975313e4f15919a, type: 2}
+  - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
     level: 1
+  - moveBase: {fileID: 11400000, guid: 2c6381610df8b0e4182c70b1a638d568, type: 2}
+    level: 4
+  - moveBase: {fileID: 11400000, guid: add97b25840204d4ea671c0b060269d1, type: 2}
+    level: 7
+  - moveBase: {fileID: 11400000, guid: 1046878292cf35644925e1f64ed363af, type: 2}
+    level: 13

@@ -13,17 +13,19 @@ MonoBehaviour:
   m_Name: Kakuna ( Sem Modelo )
   m_EditorClassIdentifier: 
   nome: Kakuna
-  descricao: 
+  descricao: "Enquanto aguarda a evolu\xE7\xE3o, ele se esconde sob folhas e galhos."
   sprite: {fileID: 0}
   modelo3D: {fileID: 0}
-  tipo1: 0
-  tipo2: 0
-  vidaMax: 0
-  ataque: 0
+  tipo1: 12
+  tipo2: 8
+  vidaMax: 45
+  ataque: 25
   xpAtual: 0
-  xpGiven: 0
-  defesa: 0
-  spAtaque: 0
-  spDefesa: 0
-  velocidade: 0
-  golpesParaAprender: []
+  xpGiven: 100
+  defesa: 50
+  spAtaque: 25
+  spDefesa: 25
+  velocidade: 35
+  golpesParaAprender:
+  - moveBase: {fileID: 11400000, guid: df1e6829d4647ef44bd594f8de7a8a0d, type: 2}
+    level: 1

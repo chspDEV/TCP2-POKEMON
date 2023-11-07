@@ -12,18 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fee4663f244582488d1f24c59264ed9, type: 3}
   m_Name: Metapod
   m_EditorClassIdentifier: 
-  nome: 
-  descricao: 
+  nome: Metapod
+  descricao: "Est\xE1 esperando o momento de evoluir. Nesta fase, ele s\xF3 pode
+    endurecer, por isso permanece im\xF3vel para evitar ataques."
   sprite: {fileID: 0}
-  modelo3D: {fileID: 0}
-  tipo1: 0
+  modelo3D: {fileID: 8825188213955645411, guid: 9eb60a047a4a40b4bb8751fe3a2de230,
+    type: 3}
+  tipo1: 12
   tipo2: 0
-  vidaMax: 0
-  ataque: 0
+  vidaMax: 50
+  ataque: 20
   xpAtual: 0
-  xpGiven: 0
-  defesa: 0
-  spAtaque: 0
-  spDefesa: 0
-  velocidade: 0
-  golpesParaAprender: []
+  xpGiven: 100
+  defesa: 55
+  spAtaque: 25
+  spDefesa: 25
+  velocidade: 30
+  golpesParaAprender:
+  - moveBase: {fileID: 11400000, guid: df1e6829d4647ef44bd594f8de7a8a0d, type: 2}
+    level: 1
