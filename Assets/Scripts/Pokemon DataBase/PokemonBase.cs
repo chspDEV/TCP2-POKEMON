@@ -166,15 +166,15 @@ public enum TipoDePokemon
 
 public enum Stat
 {
-    Attack,
-    Defense,
-    SpAttack,
-    SpDefense,
-    Speed,
+    Ataque,
+    Defesa,
+    AtaqueEspecial,
+    DefesaEspecial,
+    Velocidade,
 
     // Esses status não são para buffar ou debuffar, são para o moveAccuracy (precisão do golpe)
-    Accuracy,
-    Evasion
+    Precisão,
+    Evasão
 }
 
 public class TypeChart

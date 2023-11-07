@@ -77,11 +77,11 @@ public class Pokemon
     void CalcularStatus()
     {
         Stats = new Dictionary<Stat, int>();
-        Stats.Add(Stat.Attack, Mathf.FloorToInt((Base.Ataque * Level) / 100f )+ 5);
-        Stats.Add(Stat.Defense, Mathf.FloorToInt((Base.Defesa * Level) / 100f) + 5);
-        Stats.Add(Stat.SpAttack, Mathf.FloorToInt((Base.SpAtaque * Level) / 100f) + 5);
-        Stats.Add(Stat.SpDefense, Mathf.FloorToInt((Base.SpDefesa * Level) / 100f) + 5);
-        Stats.Add(Stat.Speed, Mathf.FloorToInt((Base.Velocidade * Level) / 100f) + 5);
+        Stats.Add(Stat.Ataque, Mathf.FloorToInt((Base.Ataque * Level) / 100f )+ 5);
+        Stats.Add(Stat.Defesa, Mathf.FloorToInt((Base.Defesa * Level) / 100f) + 5);
+        Stats.Add(Stat.AtaqueEspecial, Mathf.FloorToInt((Base.SpAtaque * Level) / 100f) + 5);
+        Stats.Add(Stat.DefesaEspecial, Mathf.FloorToInt((Base.SpDefesa * Level) / 100f) + 5);
+        Stats.Add(Stat.Velocidade, Mathf.FloorToInt((Base.Velocidade * Level) / 100f) + 5);
 
         VidaMax = Mathf.FloorToInt((Base.VidaMax * Level) / 100f ) + 10 + Level;
     }
@@ -90,13 +90,13 @@ public class Pokemon
     {
         StatBoosts = new Dictionary<Stat, int>()
         {
-             { Stat.Attack, 0 },
-             { Stat.Defense, 0 },
-             { Stat.SpAttack, 0 },
-             { Stat.SpDefense, 0 },
-             { Stat.Speed, 0 },
-             { Stat.Accuracy, 0 },
-             { Stat.Evasion, 0 }
+             { Stat.Ataque, 0 },
+             { Stat.Defesa, 0 },
+             { Stat.AtaqueEspecial, 0 },
+             { Stat.DefesaEspecial, 0 },
+             { Stat.Velocidade, 0 },
+             { Stat.Precisão, 0 },
+             { Stat.Evasão, 0 }
         };
     }
     int GetStat(Stat stat)
@@ -129,11 +129,11 @@ public class Pokemon
              StatBoosts[stat] = Mathf.Clamp(StatBoosts[stat] + boost, -6, 6);
             if (boost > 0)
             {
-                StatusChanges.Enqueue($"{Base.Nome} {stat} aumentou!");
+                StatusChanges.Enqueue($"{stat} de {Base.Nome}  aumentou!");
             }
             else
             {
-                StatusChanges.Enqueue($"{Base.Nome} {stat} caiu!");
+                StatusChanges.Enqueue($"{stat} de {Base.Nome}  caiu!");
             }
             Debug.Log($"{stat} foi boostado para {StatBoosts[stat]}");
         }
@@ -141,23 +141,23 @@ public class Pokemon
 
     public int Ataque
     {
-        get { return GetStat(Stat.Attack); }
+        get { return GetStat(Stat.Ataque); }
     }
     public int Defesa
     {
-        get { return GetStat(Stat.Defense); }
+        get { return GetStat(Stat.Defesa); }
     }
     public int SpAtaque
     {
-        get { return GetStat(Stat.SpAttack); }
+        get { return GetStat(Stat.AtaqueEspecial); }
     }
-    public int SpDefesa
+    public int DefesaEspecial
     {
-        get { return GetStat(Stat.SpDefense); }
+        get { return GetStat(Stat.DefesaEspecial); }
     }
     public int Velocidade
     {
-        get { return GetStat(Stat.Speed); }
+        get { return GetStat(Stat.Velocidade); }
     }
     public int VidaMax
     {
@@ -168,7 +168,7 @@ public class Pokemon
         get { return sprite; }
     }
 
-    public DamageDetails TomarDano(Move move, Pokemon attacker)
+    public DamageDetails TomarDano(Move move, Pokemon Attacker)
     {
         float critical = 1f;
         if (UnityEngine.Random.value * 100f <= 6.25f) 
@@ -183,12 +183,12 @@ public class Pokemon
             Fainted = false
         };
 
-        float attack = (move.Base.Categoria == MoveCategory.Special) ? attacker.SpAtaque : attacker.Ataque;
-        float defense = (move.Base.Categoria == MoveCategory.Special) ? SpDefesa : Defesa;
+        float Ataque = (move.Base.Categoria == MoveCategory.Special) ? Attacker.SpAtaque : Attacker.Ataque;
+        float _Defesa = (move.Base.Categoria == MoveCategory.Special) ? DefesaEspecial : Defesa;
 
         float modifiers = UnityEngine.Random.Range(0.85f, 1f) * type * critical;
-        float a = (2 * attacker.Level + 10) / 250f;
-        float d = a * move.Base.Poder * ((float)attack / defense) + 2;
+        float a = (2 * Attacker.Level + 10) / 250f; 
+        float d = a * move.Base.Poder * ((float)Ataque / _Defesa) + 2;
         int damage = Mathf.FloorToInt(d * modifiers);
 
         UpdateHP(damage);

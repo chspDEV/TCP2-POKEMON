@@ -23,7 +23,7 @@ public class SistemaDeBatalha : MonoBehaviour
     [Header("Pokemons na Batalha")]
     [Space(15)]
     Pokemon pokemonSelvagem;
-    [SerializeField] BattleUnit playerUnit;
+    public BattleUnit playerUnit;
     [SerializeField] BattleUnit enemyUnit;
     
 
@@ -180,13 +180,10 @@ public class SistemaDeBatalha : MonoBehaviour
         playerParty.Pokemons.ForEach(p => p.OnBattleOver());
         OnBattleOver(won);
 
+        //Venci Batalha selvagem
         if (won == true && treinador_atual == null) { UparPokemon(); }
 
-        playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
-        enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
-        PossoFugir = true;
-        //batalha.SetActive(false);
-
+        //Venci batalha com treinador
         if (treinador_atual != null && won == true)
         {
             Debug.Log(treinador_atual);
@@ -202,12 +199,14 @@ public class SistemaDeBatalha : MonoBehaviour
             
         }
 
-        
+        playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
+        enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
+        PossoFugir = true;
+        //batalha.SetActive(false);
 
 
-
-            #region TELEPORTE PÓS MORTE
-            if (won == false &&  quest.centroPokemon == false)//Perdi e meus pokemons morreram = voltar pra casa
+        #region TELEPORTE PÓS MORTE
+        if (won == false &&  quest.centroPokemon == false)//Perdi e meus pokemons morreram = voltar pra casa
         {
             Transitor.Teleporte();
             foreach (Pokemon p in playerParty.pokemons)
@@ -501,8 +500,8 @@ public class SistemaDeBatalha : MonoBehaviour
 
         float moveAccuracy = move.Base.Precisao;
 
-        int accuracy = source.StatBoosts[Stat.Accuracy];
-        int evasion = target.StatBoosts[Stat.Evasion];
+        int accuracy = source.StatBoosts[Stat.Precisão];
+        int evasion = target.StatBoosts[Stat.Evasão];
 
         var boostValues = new float[] { 1f, 4f / 3f, 5f / 3f, 2f, 7f / 3f, 8f / 3f, 3f };
 
