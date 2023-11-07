@@ -15,7 +15,9 @@ public class PokeHeal : MonoBehaviour
     {
         if (colisao.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space) && sistema.PlayerCanBattle == false)
         {
-            Time.timeScale = 0f;
+            //era iss aqui que tava travando o jogo, n entendi
+            //pq q vc colocou aqui ent eu só comentei
+            //Time.timeScale = 0f;
             playerParty = colisao.GetComponent<PokemonParty>();
 
             foreach (Pokemon p in playerParty.pokemons)
