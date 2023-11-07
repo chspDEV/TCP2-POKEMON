@@ -72,11 +72,15 @@ public class SistemaDeBatalha : MonoBehaviour
         player = pp.GetComponent<PlayerController>();
     }
 
+    public void AttPokebola()
+    {
+        textPokebola.GetComponentInChildren<TextMeshProUGUI>().text = "x " + gm.pokeballs.ToString("n0");
+    }
     public void StartBattle(PokemonParty playerParty, Pokemon pokemonSelvagem)
     {
         if (PlayerCanBattle)
         {
-            textPokebola.GetComponentInChildren<TextMeshProUGUI>().text = "x" + gm.pokeballs.ToString("n0");
+            AttPokebola();
             PlayerCanBattle = false;
             //Transitor = GetComponent<LevelChanger>();
             //StartCoroutine(Transitor.Transicao());
@@ -91,6 +95,7 @@ public class SistemaDeBatalha : MonoBehaviour
         }
         else { ResetarTudo(); }
     }
+
 
     public void ResetarTudo()
     {
@@ -134,6 +139,7 @@ public class SistemaDeBatalha : MonoBehaviour
     {
         if (PlayerCanBattle)
         {
+            AttPokebola();
             PlayerCanBattle = false;
             //Transitor = GetComponent<LevelChanger>();
             //StartCoroutine(Transitor.Transicao());
@@ -274,8 +280,21 @@ public class SistemaDeBatalha : MonoBehaviour
         else { Debug.Log("Não estou contra pokemon selvagem nem treinador, Falhei em upar pokemon"); }
        
     }
-    
 
+    public void GanharPokemon()
+    {
+        //Checar se tenho espaço na party
+        if (playerParty.Pokemons.Count <= 5)
+        {
+            playerParty.pokemons.Add(pokemonSelvagem);
+            pokemonSelvagem.Init(); 
+        }
+        else //Vai mandar pro PC
+        {
+            gm.PC.Add(pokemonSelvagem);
+            pokemonSelvagem.Init();
+        }
+    }
     public void OpenPartyScreen()
     {
         state = EstadoDeBatalha.PartyScreen;
@@ -547,7 +566,7 @@ public class SistemaDeBatalha : MonoBehaviour
         }
         else if (damageDetails.TypeEffectiveness < 1f)
         {
-            yield return dialogBox.TypeDialog("Não é muito efetivo!");
+            yield return dialogBox.TypeDialog("Não foi muito efetivo!");
         }
           
             
@@ -818,6 +837,105 @@ public class SistemaDeBatalha : MonoBehaviour
             dialogBox.AtivarSelecaoAcao(false);
             StartCoroutine(TryToEscape());
         }
+    }
+
+    public void Captura()
+    {
+        dialogBox.AtivarSelecaoAcao(false);
+        StartCoroutine(TryToCatch());
+    }
+
+    public IEnumerator TryToCatch()
+    {
+        if (isTrainerBattle)
+        {
+            yield return dialogBox.TypeDialog($"Você não pode capturar pokemons de um treinador!");
+            yield return new WaitForSeconds(2f);
+
+
+            // Turno do inimigo
+
+            state = EstadoDeBatalha.RunningTurn;
+
+            partyScreen.gameObject.SetActive(false);
+
+            //Desativando canvas
+            dialogBox.AtivarSelecaoAcao(false);
+
+            var enemyMove = enemyUnit.Pokemon.GetRandomMove();
+            yield return RunMove(enemyUnit, playerUnit, enemyMove);
+            yield return RunAfterTurn(enemyUnit);
+            yield return new WaitForSeconds(2f);
+
+            ActionSelection();
+            yield break;
+        }
+        else
+        {
+            //Entao perde uma pokebola
+
+
+            int playerSpeed = playerUnit.Pokemon.Velocidade;
+            int enemySpeed = enemyUnit.Pokemon.Velocidade;
+
+            if (enemySpeed < playerSpeed)
+            {
+                dialogBox.SetDialog($"Capturou sem problemas!");
+
+                /* bs.*/
+
+
+
+                playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
+                enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
+
+                BattleOver(true);
+
+                GanharPokemon();
+            }
+            else
+            {
+                float f = (playerSpeed * 128) / enemySpeed + 30;
+                f = f % 256;
+
+                if (UnityEngine.Random.Range(0, 256) < f)
+                {
+                    dialogBox.AtivarSelecaoAcao(false);
+                    dialogBox.SetDialog($"Capturou!");
+                    yield return new WaitForSeconds(2f);
+
+                    playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
+                    enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
+
+                    BattleOver(true);
+
+                    GanharPokemon();
+                }
+                else
+                {
+                    dialogBox.SetDialog($"Não conseguiu capturar...");
+                    yield return new WaitForSeconds(2f);
+                    PossoFugir = true;
+
+                    // Turno do inimigo
+
+                    state = EstadoDeBatalha.RunningTurn;
+                    //partyScreen.gameObject.SetActive(false);
+
+                    //Desativando canvas
+                    dialogBox.AtivarSelecaoAcao(false);
+
+                    var enemyMove = enemyUnit.Pokemon.GetRandomMove();
+                    yield return RunMove(enemyUnit, playerUnit, enemyMove);
+                    yield return RunAfterTurn(enemyUnit);
+                    yield return new WaitForSeconds(2f);
+
+                    ActionSelection();
+                    yield break;
+                }
+            }
+        }
+
     }
 
     public IEnumerator TryToEscape()
