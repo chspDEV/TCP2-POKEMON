@@ -197,6 +197,7 @@ MonoBehaviour:
   stopDistance: 4.5
   exclamation: {fileID: 2781475349770979389}
   batalha: {fileID: 0}
+  eu: {fileID: 2781475348899587502}
   canvasDialogo: {fileID: 0}
   gm: {fileID: 0}
   sistema: {fileID: 0}

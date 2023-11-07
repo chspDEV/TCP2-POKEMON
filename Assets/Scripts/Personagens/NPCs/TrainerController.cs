@@ -12,6 +12,7 @@ public class TrainerController : MonoBehaviour
 
     [SerializeField] GameObject exclamation;
     [SerializeField] GameObject batalha;
+    [SerializeField] GameObject eu;
     [SerializeField] GameObject canvasDialogo;
 
     //
@@ -94,7 +95,7 @@ public class TrainerController : MonoBehaviour
                     batalha.SetActive(true); //Ativando a cena
 
                     //Dizendo pro sistema de batalha quem eu sou!
-                    sistema.treinador_atual = GameObject.Find("Blue");
+                    sistema.treinador_atual = eu;
 
                     gm.StartBattleTrainer(this.GetComponent<PokemonParty>());
                     //sistema.StartTrainerBattle(target.GetComponent<PokemonParty>(), this.GetComponent<PokemonParty>());
