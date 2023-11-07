@@ -709,7 +709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 519, y: 767}
+  m_AnchoredPosition: {x: 650, y: 767}
   m_SizeDelta: {x: 196, y: 69.2}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &55638976
@@ -1477,6 +1477,8 @@ GameObject:
   - component: {fileID: 105974774}
   - component: {fileID: 105974775}
   - component: {fileID: 105974776}
+  - component: {fileID: 105974777}
+  - component: {fileID: 105974778}
   m_Layer: 0
   m_Name: Golpe 3
   m_TagString: Untagged
@@ -1567,7 +1569,7 @@ MonoBehaviour:
   m_fontSizeMax: 45
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1669,6 +1671,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &105974777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105974772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3325a9bbe743bf24abed3bbcb8ea3d3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bt: {fileID: 953182108}
+  dbt: {fileID: 1670293290}
+  index: 2
+--- !u!65 &105974778
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105974772}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!850595691 &115692382
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -29012,7 +29042,7 @@ MonoBehaviour:
   m_fontSizeMax: 55.6
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -31816,6 +31846,8 @@ GameObject:
   - component: {fileID: 395377983}
   - component: {fileID: 395377984}
   - component: {fileID: 395377985}
+  - component: {fileID: 395377986}
+  - component: {fileID: 395377987}
   m_Layer: 0
   m_Name: Golpe 1
   m_TagString: Untagged
@@ -31906,7 +31938,7 @@ MonoBehaviour:
   m_fontSizeMax: 45
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -32008,6 +32040,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &395377986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395377981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3325a9bbe743bf24abed3bbcb8ea3d3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bt: {fileID: 953182108}
+  dbt: {fileID: 1670293290}
+  index: 0
+--- !u!65 &395377987
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395377981}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &396075643
 GameObject:
   m_ObjectHideFlags: 0
@@ -47711,7 +47771,7 @@ MonoBehaviour:
   PlayerBattleUnit: {fileID: 377989247}
   EnemyBattleUnit: {fileID: 448533026}
   caminhos: {fileID: 1041505195}
-  pokeballs: 1
+  pokeballs: 100
   PC: []
 --- !u!4 &1663302642
 Transform:
@@ -48434,6 +48494,8 @@ GameObject:
   - component: {fileID: 1720642027}
   - component: {fileID: 1720642028}
   - component: {fileID: 1720642029}
+  - component: {fileID: 1720642030}
+  - component: {fileID: 1720642031}
   m_Layer: 0
   m_Name: Golpe 4
   m_TagString: Untagged
@@ -48526,7 +48588,7 @@ MonoBehaviour:
   m_fontSizeMax: 45
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -48628,6 +48690,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1720642030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720642025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3325a9bbe743bf24abed3bbcb8ea3d3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bt: {fileID: 953182108}
+  dbt: {fileID: 1670293290}
+  index: 3
+--- !u!65 &1720642031
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720642025}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1728637706
 GameObject:
   m_ObjectHideFlags: 0
@@ -54241,7 +54331,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 24.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -55084,7 +55174,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -55130,6 +55220,8 @@ GameObject:
   - component: {fileID: 1844517207}
   - component: {fileID: 1844517208}
   - component: {fileID: 1844517209}
+  - component: {fileID: 1844517210}
+  - component: {fileID: 1844517211}
   m_Layer: 0
   m_Name: Golpe 2
   m_TagString: Untagged
@@ -55222,7 +55314,7 @@ MonoBehaviour:
   m_fontSizeMax: 45
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -55324,6 +55416,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1844517210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844517205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3325a9bbe743bf24abed3bbcb8ea3d3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bt: {fileID: 953182108}
+  dbt: {fileID: 1670293290}
+  index: 1
+--- !u!65 &1844517211
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844517205}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1849258292
 GameObject:
   m_ObjectHideFlags: 0
@@ -56289,7 +56409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1930401032
 Transform:
   m_ObjectHideFlags: 0
