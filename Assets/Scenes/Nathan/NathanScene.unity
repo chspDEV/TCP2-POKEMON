@@ -30219,6 +30219,11 @@ PrefabInstance:
       objectReference: {fileID: 1510761945}
     - target: {fileID: 6792837526059413948, guid: d6d0170b07f4a7449bd6354d0496c325,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1101043967}
+    - target: {fileID: 6792837526059413948, guid: d6d0170b07f4a7449bd6354d0496c325,
+        type: 3}
       propertyPath: slot.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -33539,6 +33544,11 @@ PrefabInstance:
       propertyPath: slot.Array.data[5]
       value: 
       objectReference: {fileID: 1510761945}
+    - target: {fileID: 6792837526059413948, guid: d6d0170b07f4a7449bd6354d0496c325,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1101043967}
     - target: {fileID: 6792837526059413948, guid: d6d0170b07f4a7449bd6354d0496c325,
         type: 3}
       propertyPath: slot.Array.size
@@ -43235,6 +43245,11 @@ PrefabInstance:
       objectReference: {fileID: 1510761945}
     - target: {fileID: 6792837526059413948, guid: d6d0170b07f4a7449bd6354d0496c325,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1101043967}
+    - target: {fileID: 6792837526059413948, guid: d6d0170b07f4a7449bd6354d0496c325,
+        type: 3}
       propertyPath: slot.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -45106,6 +45121,11 @@ PrefabInstance:
       objectReference: {fileID: 1510761945}
     - target: {fileID: 6792837526059413948, guid: d6d0170b07f4a7449bd6354d0496c325,
         type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1101043967}
+    - target: {fileID: 6792837526059413948, guid: d6d0170b07f4a7449bd6354d0496c325,
+        type: 3}
       propertyPath: slot.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -45577,7 +45597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1479330541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45961,6 +45981,11 @@ PrefabInstance:
       propertyPath: slot.Array.data[5]
       value: 
       objectReference: {fileID: 1510761945}
+    - target: {fileID: 6792837526059413948, guid: d6d0170b07f4a7449bd6354d0496c325,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1101043967}
     - target: {fileID: 6792837526059413948, guid: d6d0170b07f4a7449bd6354d0496c325,
         type: 3}
       propertyPath: slot.Array.size
@@ -47195,6 +47220,11 @@ PrefabInstance:
       propertyPath: slot.Array.data[5]
       value: 
       objectReference: {fileID: 1510761945}
+    - target: {fileID: 6792837526059413948, guid: d6d0170b07f4a7449bd6354d0496c325,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1101043967}
     - target: {fileID: 6792837526059413948, guid: d6d0170b07f4a7449bd6354d0496c325,
         type: 3}
       propertyPath: slot.Array.size

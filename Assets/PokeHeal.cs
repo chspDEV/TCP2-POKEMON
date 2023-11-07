@@ -13,7 +13,7 @@ public class PokeHeal : MonoBehaviour
 
     private void OnTriggerStay(Collider colisao)
     {
-        if (colisao.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space) && sistema.PlayerCanBattle == false)
+        if (colisao.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space))
         {
             //era iss aqui que tava travando o jogo, n entendi
             //pq q vc colocou aqui ent eu só comentei
