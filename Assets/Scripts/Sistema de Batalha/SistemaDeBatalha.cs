@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.Rendering.VirtualTexturing;
 
 public enum EstadoDeBatalha { Start, ActionSelection, MoveSelection, RunningTurn, Busy, PartyScreen, BattleOver }
@@ -12,7 +13,9 @@ public class SistemaDeBatalha : MonoBehaviour
 
 
     [SerializeField]  QuestController quest;
-    
+    [SerializeField]  GameController gm;
+    [SerializeField]  GameObject textPokebola;
+
     [Header("Dialogo")]
     [Space(15)]
     [SerializeField] DialogoDeBatalha dialogBox;
@@ -37,6 +40,7 @@ public class SistemaDeBatalha : MonoBehaviour
     bool PossoFugir = true;
     PlayerController player;
     GameObject pp;
+    
 
     [Header("Treinador/Inimigo")]
     [Space(15)]
@@ -72,6 +76,7 @@ public class SistemaDeBatalha : MonoBehaviour
     {
         if (PlayerCanBattle)
         {
+            textPokebola.GetComponentInChildren<TextMeshProUGUI>().text = "x" + gm.pokeballs.ToString("n0");
             PlayerCanBattle = false;
             //Transitor = GetComponent<LevelChanger>();
             //StartCoroutine(Transitor.Transicao());
