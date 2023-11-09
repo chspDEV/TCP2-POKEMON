@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Rendering.VirtualTexturing;
 
+
 public enum EstadoDeBatalha { Start, ActionSelection, MoveSelection, RunningTurn, Busy, PartyScreen, BattleOver }
 public enum AcaoDeBatalha { Move, TrocarPokemon, UsarItem, Fugir }
 
@@ -872,7 +873,7 @@ public class SistemaDeBatalha : MonoBehaviour
         else
         {
             //Entao perde uma pokebola
-
+            gm.pokeballs--;
 
             int playerSpeed = playerUnit.Pokemon.Velocidade;
             int enemySpeed = enemyUnit.Pokemon.Velocidade;
@@ -882,8 +883,6 @@ public class SistemaDeBatalha : MonoBehaviour
                 dialogBox.SetDialog($"Capturou sem problemas!");
 
                 /* bs.*/
-
-
 
                 playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
                 enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
@@ -896,6 +895,8 @@ public class SistemaDeBatalha : MonoBehaviour
             {
                 float f = (playerSpeed * 128) / enemySpeed + 30;
                 f = f % 256;
+
+                gm.pokeballs--;
 
                 if (UnityEngine.Random.Range(0, 256) < f)
                 {
