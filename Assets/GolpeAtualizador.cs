@@ -6,30 +6,30 @@ public class GolpeAtualizador : MonoBehaviour
 {
     [SerializeField] SistemaDeBatalha bt;
     [SerializeField] DialogoDeBatalha dbt;
-    [SerializeField] int index;
+    public List<int> index;
 
 
-    private void Update()
+    public void DizerGolpe1()
     {
-      
+        bt.currentMove = index[0];
+        dbt.UpdateMoveSelection(bt.playerUnit.Pokemon.Moves[index[0]]);
     }
 
-    // Start is called before the first frame update
-    public void OnMouseEnter()
+    public void DizerGolpe2()
     {
-        Debug.Log("Entrada do mouse");
-        dbt.UpdateMoveSelection(index, bt.playerUnit.Pokemon.Moves[index]);
+        bt.currentMove = index[1];
+        dbt.UpdateMoveSelection(bt.playerUnit.Pokemon.Moves[index[1]]);
     }
 
-    public void OnMouseOver()
+    public void DizerGolpe3()
     {
-        Debug.Log("MOUSE OVERRR");
+        bt.currentMove = index[2];
+        dbt.UpdateMoveSelection(bt.playerUnit.Pokemon.Moves[index[2]]);
     }
 
-    void OnMouseExit()
+    public void DizerGolpe4()
     {
-        Debug.Log("MOUSE sai");
+        bt.currentMove = index[3];
+        dbt.UpdateMoveSelection(bt.playerUnit.Pokemon.Moves[index[3]]);
     }
-
-
 }

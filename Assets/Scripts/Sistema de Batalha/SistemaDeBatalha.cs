@@ -57,10 +57,10 @@ public class SistemaDeBatalha : MonoBehaviour
 
     //Outros
     public event Action<bool> OnBattleOver;
-    EstadoDeBatalha state;
+    [SerializeField] EstadoDeBatalha state;
     EstadoDeBatalha? prevState;
     int currentAction; // acao atual
-    int currentMove; // acao atual
+    public int currentMove; // acao atual
     int currentMember;
 
     public int EscapeAttempts { get; set; }
@@ -703,7 +703,7 @@ public class SistemaDeBatalha : MonoBehaviour
     public void S1()
     {
         //new WaitForSecond(2f);
-        currentMove = 0;
+        //currentMove = 0;
         currentMember = 0;
     }
     public void S2()
@@ -714,13 +714,13 @@ public class SistemaDeBatalha : MonoBehaviour
 
     public void S3()
     {
-        currentMove = 2;
+        //currentMove = 2;
         currentMember = 2;
     }
 
     public void S4()
     {
-        currentMove = 3;
+        //currentMove = 3;
         currentMember = 3;
     }
 
@@ -943,26 +943,26 @@ public class SistemaDeBatalha : MonoBehaviour
 
         if (isTrainerBattle)
         {
-         yield return dialogBox.TypeDialog($"Você não pode fugir de batalhas com treinadores!");
-         yield return new WaitForSeconds(2f);
-         PossoFugir = true;
+             yield return dialogBox.TypeDialog($"Você não pode fugir de batalhas com treinadores!");
+             yield return new WaitForSeconds(2f);
+             PossoFugir = true;
 
-        // Turno do inimigo
+            // Turno do inimigo
 
-        state = EstadoDeBatalha.RunningTurn;
+            state = EstadoDeBatalha.RunningTurn;
 
-        partyScreen.gameObject.SetActive(false);
+            partyScreen.gameObject.SetActive(false);
 
-        //Desativando canvas
-        dialogBox.AtivarSelecaoAcao(false);
+            //Desativando canvas
+            dialogBox.AtivarSelecaoAcao(false);
 
-        var enemyMove = enemyUnit.Pokemon.GetRandomMove();
-        yield return RunMove(enemyUnit, playerUnit, enemyMove);
-        yield return RunAfterTurn(enemyUnit);
-        yield return new WaitForSeconds(2f);
+            var enemyMove = enemyUnit.Pokemon.GetRandomMove();
+            yield return RunMove(enemyUnit, playerUnit, enemyMove);
+            yield return RunAfterTurn(enemyUnit);
+            yield return new WaitForSeconds(2f);
         
-        ActionSelection();
-        yield break;
+            ActionSelection();
+            yield break;
         }
      
       ++EscapeAttempts;

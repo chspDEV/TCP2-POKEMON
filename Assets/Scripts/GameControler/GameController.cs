@@ -64,7 +64,6 @@ public class GameController : MonoBehaviour
     {
         state = GameState.FreeRoam;
 
-
         PlayerBattleUnit.DestroyInstantiatedModel();
         EnemyBattleUnit.DestroyInstantiatedModel();
 

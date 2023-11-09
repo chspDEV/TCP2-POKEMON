@@ -70,19 +70,10 @@ public class DialogoDeBatalha : MonoBehaviour
     }
 
     
-    public void UpdateMoveSelection(int selectedMove, Move move)
+    public void UpdateMoveSelection(Move move)
     {
         for (int i = 0; i < textosDeGolpes.Count; ++i)
         {
-            if (i == selectedMove)
-            {
-                textosDeGolpes[i].color = CorBrilhante;
-            }
-            else
-            {
-                textosDeGolpes[i].color = Color.white;
-            }
-
             ppText.text = $"PP {move.PP}/{move.Base.PP}";
             tipoText.text = move.Base.Tipo.ToString();
             //  Debug.Log(ppText);

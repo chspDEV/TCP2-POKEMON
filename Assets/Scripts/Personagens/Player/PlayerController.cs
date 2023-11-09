@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
     }
     private void EncontrarPokemons()  // Falta fazer o encontro de pokemons resetar a variavel para false depois de encontrar algum pokemon!
     {
-        if (!encontrouPokemon)
+        if (encontrouPokemon == false)
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, 0.5f, GramaAlta);
 
@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator ResetEncontroPokemon()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         encontrouPokemon = false;
     }
     
