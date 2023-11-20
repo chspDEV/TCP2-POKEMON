@@ -7,6 +7,8 @@ public enum GameState { FreeRoam, Battle, Dialog, Cutscene }
 public class GameController : MonoBehaviour
 {
     [SerializeField] PlayerController playerController;  // controle do jogador 
+    [SerializeField] VFXController vfxController;  // controle de vfx
+
     [SerializeField] SistemaDeBatalha sistemaDeBatalha;
     [SerializeField] Camera cam;  // CAMERA DO JOGADOR PADRAO!!
     [SerializeField] BattleUnit PlayerBattleUnit;

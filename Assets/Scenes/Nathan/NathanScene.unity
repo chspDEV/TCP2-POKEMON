@@ -39918,6 +39918,7 @@ MonoBehaviour:
   Transitor: {fileID: 953182109}
   Transitor2: {fileID: 953182110}
   state: 0
+  item_atual: {fileID: 0}
   currentMove: 0
 --- !u!114 &953182109
 MonoBehaviour:
@@ -48089,13 +48090,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1101043967}
+  vfxController: {fileID: 2097811493}
   sistemaDeBatalha: {fileID: 953182108}
   cam: {fileID: 330585545}
   PlayerBattleUnit: {fileID: 377989247}
   EnemyBattleUnit: {fileID: 448533026}
   caminhos: {fileID: 1041505195}
-  pokeballs: 100
   PC: []
+  MOCHILA: []
+  moedas: 0
 --- !u!4 &1663302642
 Transform:
   m_ObjectHideFlags: 0
@@ -55376,7 +55379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1811490938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58954,7 +58957,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097811492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 120.62819, y: 11.573566, z: 220.2195}
+  m_LocalPosition: {x: 123.85, y: 20.19, z: 220.2195}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
