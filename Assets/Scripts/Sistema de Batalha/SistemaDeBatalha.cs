@@ -60,6 +60,7 @@ public class SistemaDeBatalha : MonoBehaviour
     public event Action<bool> OnBattleOver;
     [SerializeField] EstadoDeBatalha state;
     EstadoDeBatalha? prevState;
+    public ItemBase item_atual;
     int currentAction; // acao atual
     public int currentMove; // acao atual
     int currentMember;
@@ -75,7 +76,7 @@ public class SistemaDeBatalha : MonoBehaviour
 
     public void AttPokebola()
     {
-        textPokebola.GetComponentInChildren<TextMeshProUGUI>().text = "x " + gm.pokeballs.ToString("n0");
+       // textPokebola.GetComponentInChildren<TextMeshProUGUI>().text = "x " + gm.pokeballs.ToString("n0");
     }
     public void StartBattle(PokemonParty playerParty, Pokemon pokemonSelvagem)
     {
@@ -709,7 +710,7 @@ public class SistemaDeBatalha : MonoBehaviour
     }
     public void S2()
     {
-        currentMove = 1;
+        //currentMove = 1;
         currentMember = 1;
     }
 
@@ -847,6 +848,7 @@ public class SistemaDeBatalha : MonoBehaviour
 
     public IEnumerator TryToCatch()
     {
+        //Nao da pra capturar do treinador
         if (isTrainerBattle)
         {
             yield return dialogBox.TypeDialog($"Você não pode capturar pokemons de um treinador!");
@@ -873,14 +875,15 @@ public class SistemaDeBatalha : MonoBehaviour
         else
         {
             //Entao perde uma pokebola
-            gm.pokeballs--;
+            //gm.pokeballs--;
 
-            int playerSpeed = playerUnit.Pokemon.Velocidade;
-            int enemySpeed = enemyUnit.Pokemon.Velocidade;
+            
+             var ConseguiCapturar = item_atual.Captura(enemyUnit.Pokemon);
 
-            if (enemySpeed < playerSpeed)
+            if (ConseguiCapturar)
             {
-                dialogBox.SetDialog($"Capturou sem problemas!");
+                dialogBox.SetDialog($"{enemyUnit.name} foi capturado!");
+                yield return new WaitForSeconds(2f);
 
                 /* bs.*/
 
@@ -891,49 +894,30 @@ public class SistemaDeBatalha : MonoBehaviour
 
                 GanharPokemon();
             }
-            else
+            else if (!ConseguiCapturar)
             {
-                float f = (playerSpeed * 128) / enemySpeed + 30;
-                f = f % 256;
+               
+                dialogBox.SetDialog($"Não conseguiu capturar...");
+                yield return new WaitForSeconds(2f);
 
-                gm.pokeballs--;
+                // Turno do inimigo
 
-                if (UnityEngine.Random.Range(0, 256) < f)
-                {
-                    dialogBox.AtivarSelecaoAcao(false);
-                    dialogBox.SetDialog($"Capturou!");
-                    yield return new WaitForSeconds(2f);
+                state = EstadoDeBatalha.RunningTurn;
+                //partyScreen.gameObject.SetActive(false);
 
-                    playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
-                    enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
+                //Desativando canvas
+                dialogBox.AtivarSelecaoAcao(false);
 
-                    BattleOver(true);
+                var enemyMove = enemyUnit.Pokemon.GetRandomMove();
+                yield return RunMove(enemyUnit, playerUnit, enemyMove);
+                yield return RunAfterTurn(enemyUnit);
+                yield return new WaitForSeconds(2f);
 
-                    GanharPokemon();
-                }
-                else
-                {
-                    dialogBox.SetDialog($"Não conseguiu capturar...");
-                    yield return new WaitForSeconds(2f);
-                    PossoFugir = true;
-
-                    // Turno do inimigo
-
-                    state = EstadoDeBatalha.RunningTurn;
-                    //partyScreen.gameObject.SetActive(false);
-
-                    //Desativando canvas
-                    dialogBox.AtivarSelecaoAcao(false);
-
-                    var enemyMove = enemyUnit.Pokemon.GetRandomMove();
-                    yield return RunMove(enemyUnit, playerUnit, enemyMove);
-                    yield return RunAfterTurn(enemyUnit);
-                    yield return new WaitForSeconds(2f);
-
-                    ActionSelection();
-                    yield break;
-                }
+                ActionSelection();
+                yield break;
+                
             }
+            
         }
 
     }

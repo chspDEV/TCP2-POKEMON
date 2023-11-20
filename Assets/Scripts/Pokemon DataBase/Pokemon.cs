@@ -43,6 +43,8 @@ public class Pokemon
     public float XpAtual { get; set; }
     public float XpGiven { get; set; }
 
+    public float ChanceCaptura { get; set; }
+
     public bool HpChanged { get; set; }
     public bool XpChanged { get; set; }
 
@@ -72,6 +74,7 @@ public class Pokemon
         VolatileStatus = null;
         sprite = _base.sprite;
         nome = _base.Nome;
+        ChanceCaptura = _base.ChanceCaptura;
     }
 
     void CalcularStatus()

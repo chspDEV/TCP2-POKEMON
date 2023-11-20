@@ -8,17 +8,10 @@ public class VFXController : MonoBehaviour
     public VisualEffectAsset visualEffectAsset;
     private VisualEffect visualEffect;
 
-    // Start is called before the first frame update
-    void Start()
+    public void RodarVFX(VisualEffectAsset vfxAsset)
     {
-        visualEffect.visualEffectAsset = visualEffectAsset;
+        visualEffect.visualEffectAsset = vfxAsset;
 
-        visualEffect.Play(); 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        visualEffect.Play();
     }
 }

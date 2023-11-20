@@ -8,6 +8,8 @@ public class Condition
     public ConditionID Id { get; set; }
     public string Nome { get; set; }
 
+    public float ChanceCaptura { get; set; }
+
     public string Descricao { get; set; }
 
     public string StartMessage { get; set; }

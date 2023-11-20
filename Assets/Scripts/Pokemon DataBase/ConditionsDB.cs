@@ -21,6 +21,7 @@ public class ConditionsDB
              new Condition()
              {
                  Nome = "Envenenado",
+                 ChanceCaptura = 1.5f,
                  StartMessage = "foi envenenado",
                  OnAfterTurn = (Pokemon pokemon) =>
                  {
@@ -35,6 +36,7 @@ public class ConditionsDB
              new Condition()
              {
                  Nome = "Queimando",
+                 ChanceCaptura = 1.5f,
                  StartMessage = "esta queimando",
                  OnAfterTurn = (Pokemon pokemon) =>
                  {
@@ -49,6 +51,7 @@ public class ConditionsDB
              new Condition()
              {
                  Nome = "Paralizado",
+                 ChanceCaptura = 1.5f,
                  StartMessage = "esta paralizado",
                  OnBeforeMove = (Pokemon pokemon) =>
                  {
@@ -68,6 +71,7 @@ public class ConditionsDB
              new Condition()
              {
                  Nome = "Congelado",
+                 ChanceCaptura = 1f,
                  StartMessage = "esta congelado",
                  OnBeforeMove = (Pokemon pokemon) =>
                  {
@@ -88,6 +92,7 @@ public class ConditionsDB
              new Condition()
              {
                  Nome = "Dormindo",
+                 ChanceCaptura = 1f,
                  StartMessage = "esta dormindo",
                  OnStart = (Pokemon pokemon) =>
                  {
@@ -116,6 +121,7 @@ public class ConditionsDB
             new Condition()
             {
                 Nome = "Confusão",
+                ChanceCaptura = 1f,
                 StartMessage = "esta confuso",
                 OnStart = (Pokemon pokemon) =>
                 {
