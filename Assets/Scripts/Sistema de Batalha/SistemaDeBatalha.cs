@@ -46,7 +46,7 @@ public class SistemaDeBatalha : MonoBehaviour
     [Header("Treinador/Inimigo")]
     [Space(15)]
     public GameObject treinador_atual;
-    bool isTrainerBattle = false;
+    public bool isTrainerBattle = false;
     bool InimigoAtaca = true;
 
     [Header("Camera e Transicao")]
@@ -95,7 +95,7 @@ public class SistemaDeBatalha : MonoBehaviour
 
             StartCoroutine(SetupBattle()); // Preparar para porrada
         }
-        else { ResetarTudo(); }
+        //else { ResetarTudo(); }
     }
 
 
@@ -112,6 +112,9 @@ public class SistemaDeBatalha : MonoBehaviour
             this.playerParty = null;
             this.pokemonSelvagem = null;
             this.trainerParty = null;
+            treinador_atual = null;
+            PlayerCanBattle = true;
+
 
             //Transitor.DevolverVel();
 
@@ -156,7 +159,8 @@ public class SistemaDeBatalha : MonoBehaviour
 
             StartCoroutine(SetupBattleTrainer()); // Preparar para porrada
         }
-        else { ResetarTudo(); }
+        //else { ResetarTudo(); }
+        
     }
     
 
@@ -183,7 +187,7 @@ public class SistemaDeBatalha : MonoBehaviour
         OnBattleOver(won);
 
         //Venci Batalha selvagem
-        if (won == true && treinador_atual == null) { UparPokemon(); }
+        if (won == true && treinador_atual == null) { UparPokemon(); PlayerCanBattle = true; }
 
         //Venci batalha com treinador
         if (treinador_atual != null && won == true)
@@ -197,9 +201,14 @@ public class SistemaDeBatalha : MonoBehaviour
             _parar.PerdiBatalha = true;
             _parar.posso_batalha = false;
             treinador_atual = null;
-            isTrainerBattle = false;
-            
+            //
+            //
+            //PlayerCanBattle = true;
+
+
         }
+        
+        
 
         playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
         enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
@@ -225,8 +234,12 @@ public class SistemaDeBatalha : MonoBehaviour
                         p.HP = p.VidaMax;
                     }
             PlayerCanBattle = true;
+            
         }
         #endregion
+        ResetarTudo();
+        isTrainerBattle = false;
+
     }
 
     public void ActionSelection()
