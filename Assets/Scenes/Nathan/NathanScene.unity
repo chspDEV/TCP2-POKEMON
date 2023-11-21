@@ -39849,18 +39849,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pokemonSelvagens:
-  - _base: {fileID: 11400000, guid: 5a6bdae4c4293fe479c6cc610f3ea911, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 96ba0225b6c78e0469e693b0634c74be, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 74cd546d8f38cfd40bc828f60e86ee27, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
   - _base: {fileID: 11400000, guid: 5fd15a2ed78656e4a9ebb43067efcaa8, type: 2}
     level: 1
     sprite: {fileID: 0}
@@ -46116,7 +46104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1479330541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46164,7 +46152,7 @@ RectTransform:
   m_GameObject: {fileID: 1479330540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.00040197631}
-  m_LocalScale: {x: 5, y: 5, z: 15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 577954336}
@@ -55379,7 +55367,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1811490938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56106,6 +56094,7 @@ MonoBehaviour:
   Menu: {fileID: 1479330540}
   Pokedex: {fileID: 1471958469}
   Controles: {fileID: 1705348754}
+  playerCon: {fileID: 1101043967}
 --- !u!114 &1852262774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58426,7 +58415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2052360148
 RectTransform:
   m_ObjectHideFlags: 0

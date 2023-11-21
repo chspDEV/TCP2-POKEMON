@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1d35b8ae1b0594cb5921f7b6c7c2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  save_pos: {x: 0, y: 90, z: 0}
+  save_pos: {x: 0, y: -90, z: 0}
   IsPlayer: 0
 --- !u!65 &3550900989269221492
 BoxCollider:
