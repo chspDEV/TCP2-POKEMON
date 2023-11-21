@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -56,6 +57,10 @@ public class TrainerController : MonoBehaviour
 
     }
 
+    public void ExclamationOff() 
+    { 
+    exclamation.SetActive(false);
+    }
     public void Update()
     {
         _PlayerCanBattle = sistema.PlayerCanBattle;
@@ -72,7 +77,7 @@ public class TrainerController : MonoBehaviour
         {
             if (posso_mostrar)
             {
-                StartCoroutine(MoveTowardsPlayer());
+                //StartCoroutine(MoveTowardsPlayer());
 
                 buVel = player.velocidade;
                 buVelcor = player.velocidadeCorrida;
@@ -121,21 +126,21 @@ public class TrainerController : MonoBehaviour
 
     }
 
-    private IEnumerator MoveTowardsPlayer()
-    {
-        // Mantém o movimento enquanto o jogador estiver dentro do trigger.
-        while (Vector3.Distance(transform.position, player.transform.position) > stopDistance)
-        {
-            // Calcula a direção do jogador em relação a este objeto.
-            Vector3 direction = (player.transform.position - transform.position).normalized;
+    //private IEnumerator MoveTowardsPlayer()
+    //{
+    //    // Mantém o movimento enquanto o jogador estiver dentro do trigger.
+    //    while (Vector3.Distance(transform.position, player.transform.position) > stopDistance)
+    //    {
+    //        // Calcula a direção do jogador em relação a este objeto.
+    //        Vector3 direction = (player.transform.position - transform.position).normalized;
 
-            // Move o objeto em direção ao jogador com a velocidade especificada.
-            rb.velocity = direction * speed;
+    //        // Move o objeto em direção ao jogador com a velocidade especificada.
+    //        rb.velocity = direction * speed;
 
-            // Aguarda o próximo quadro antes de continuar o movimento.
-            yield return null;
-        }
-    }
+    //        // Aguarda o próximo quadro antes de continuar o movimento.
+    //        yield return null;
+    //    }
+    //}
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -145,6 +150,9 @@ public class TrainerController : MonoBehaviour
             posso_ativar = true; // Garante que nao rode esse codigo novamente
 
             exclamation.SetActive(true); //Mostra a exclamacao
+            Invoke("ExclamationOff", 0.5f);
         }
     }
+
+   
 }
