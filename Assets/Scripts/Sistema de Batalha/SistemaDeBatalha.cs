@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Rendering.VirtualTexturing;
-
+using UnityEditor.TerrainTools;
 
 public enum EstadoDeBatalha { Start, ActionSelection, MoveSelection, RunningTurn, Busy, PartyScreen, BattleOver }
 public enum AcaoDeBatalha { Move, TrocarPokemon, UsarItem, Fugir }
@@ -12,7 +12,7 @@ public enum AcaoDeBatalha { Move, TrocarPokemon, UsarItem, Fugir }
 public class SistemaDeBatalha : MonoBehaviour
 {
 
-
+    [SerializeField] TextMeshProUGUI textoAcao;
     [SerializeField]  QuestController quest;
     [SerializeField]  GameController gm;
     [SerializeField]  GameObject textPokebola;
@@ -753,14 +753,21 @@ public class SistemaDeBatalha : MonoBehaviour
 
     public void SairParty()
     {
-        partyScreen.gameObject.SetActive(false);
         ActionSelection();
+        partyScreen.gameObject.SetActive(false);
+        textoAcao.enabled = true;
+        
+        
     }
 
     public void SairGolpe()
     {
-        dialogBox.AtivarSelecaoGolpe(false);
         ActionSelection();
+        dialogBox.AtivarSelecaoGolpe(false);
+        textoAcao.enabled = true;
+        
+        
+
     }
 
     #endregion
