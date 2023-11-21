@@ -33366,6 +33366,7 @@ GameObject:
   - component: {fileID: 354745875}
   - component: {fileID: 354745877}
   - component: {fileID: 354745876}
+  - component: {fileID: 354745878}
   m_Layer: 0
   m_Name: InfoPokemon
   m_TagString: Untagged
@@ -33433,6 +33434,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354745874}
   m_CullTransparentMesh: 1
+--- !u!114 &354745878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354745874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0d7c04a2349284a97fe83dd90d63b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nome: {fileID: 35609381}
+  lvl: {fileID: 449442241}
+  hp: {fileID: 1210691549}
+  golpes:
+  - {fileID: 826099163}
+  - {fileID: 261437913}
+  - {fileID: 819779844}
+  - {fileID: 1276092503}
 --- !u!1 &358845340
 GameObject:
   m_ObjectHideFlags: 0
