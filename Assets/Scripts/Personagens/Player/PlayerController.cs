@@ -31,10 +31,10 @@ public class PlayerController : MonoBehaviour
     public Vector3 Position;
     private Quaternion currentRotation;
     [SerializeField] private short rotationSpeed; //45
-    
+
 
     #endregion
-
+    public bool moveEnabled = true;
     private void Start()
     {
         TenhoSapato = false;
@@ -54,7 +54,8 @@ public class PlayerController : MonoBehaviour
         #endregion
     }
 
-    private void Move()
+
+    public void Move()
     {
      
         Position = new Vector3(Input.GetAxisRaw("Horizontal"), -fallSpeed, Input.GetAxisRaw("Vertical"));
