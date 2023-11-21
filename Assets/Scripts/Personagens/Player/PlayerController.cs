@@ -57,34 +57,38 @@ public class PlayerController : MonoBehaviour
 
     public void Move()
     {
-     
-        Position = new Vector3(Input.GetAxisRaw("Horizontal"), -fallSpeed, Input.GetAxisRaw("Vertical"));
-
-        // Correr se estiver apertando shift
-        if (Input.GetKey(KeyCode.LeftShift) && TenhoSapato)
+        if (moveEnabled == true)
         {
-            rb.velocity = (Position * velocidadeCorrida * 10) * Time.fixedDeltaTime;
 
+
+            Position = new Vector3(Input.GetAxisRaw("Horizontal"), -fallSpeed, Input.GetAxisRaw("Vertical"));
+
+            // Correr se estiver apertando shift
+            if (Input.GetKey(KeyCode.LeftShift) && TenhoSapato)
+            {
+                rb.velocity = (Position * velocidadeCorrida * 10) * Time.fixedDeltaTime;
+
+            }
+            else // Não tenho sapato T-T
+            {
+                rb.velocity = (Position * velocidade * 10) * Time.fixedDeltaTime;
+
+            }
+
+            // nathan: simplifiquei a gambiarra 
+            float angle = Mathf.Atan2(Position.x, Position.z) * Mathf.Rad2Deg;
+
+            if (Position.sqrMagnitude > 0.1f)
+            {
+                currentRotation.eulerAngles = new Vector3(0, angle, 0);
+                transform.rotation = currentRotation;
+            }
+
+            // Atualizando a var seMovendo
+            seMovendo = Position.sqrMagnitude > 0.1f;
+            anim.SetBool("andando", seMovendo);
+            OnMoveOver();
         }
-        else // Não tenho sapato T-T
-        {
-            rb.velocity = (Position * velocidade * 10) * Time.fixedDeltaTime;
-
-        }
-
-        // nathan: simplifiquei a gambiarra 
-        float angle = Mathf.Atan2(Position.x, Position.z) * Mathf.Rad2Deg;
-
-        if (Position.sqrMagnitude > 0.1f) 
-        {
-            currentRotation.eulerAngles = new Vector3(0, angle, 0);
-            transform.rotation = currentRotation;
-        }
-
-        // Atualizando a var seMovendo
-        seMovendo = Position.sqrMagnitude > 0.1f;
-        anim.SetBool("andando",seMovendo);
-        OnMoveOver();
 
     }
 

@@ -10,7 +10,9 @@ public class MenuPausa : MonoBehaviour
     public GameObject Pokedex;
     public GameObject Controles;
 
+    [SerializeField] PlayerController playerCon;
 
+    
     private bool pokedexAberta = false;
     private bool menuAberto = false;
     private bool controlesAberto = false;
@@ -22,18 +24,22 @@ public class MenuPausa : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
 
         {
+          
             if (!menuAberto)
             {
+               
                 AbrirMenu();
                 FecharPokedex();
                 FecharControles();
             }
             else
             {
+                
                 FecharMenu();
                 FecharPokedex();
                 FecharControles();
             }
+            
         }
     }
 
@@ -72,6 +78,7 @@ public class MenuPausa : MonoBehaviour
         Menu.SetActive(true);
         menuAberto = true;
         Debug.Log("Menu aberto");
+        playerCon.moveEnabled = false;
     }
 
     public void FecharMenu()
@@ -79,7 +86,7 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1f; 
         Menu.SetActive(false);
         menuAberto = false;
-        Debug.Log("Menu fechado");
+        playerCon.moveEnabled = true;
     }
 
     public void VoltaMenuPrincipal()
