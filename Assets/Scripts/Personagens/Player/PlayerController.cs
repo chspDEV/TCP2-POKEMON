@@ -59,33 +59,30 @@ public class PlayerController : MonoBehaviour
     {
         if (moveEnabled == true)
         {
-
-
-            Position = new Vector3(Input.GetAxisRaw("Horizontal"), -fallSpeed, Input.GetAxisRaw("Vertical"));
+            // Normaliza o vetor de entrada
+            Vector3 inputVector = new Vector3(Input.GetAxisRaw("Horizontal"), -fallSpeed, Input.GetAxisRaw("Vertical")).normalized;
 
             // Correr se estiver apertando shift
             if (Input.GetKey(KeyCode.LeftShift) && TenhoSapato)
             {
-                rb.velocity = (Position * velocidadeCorrida * 10) * Time.fixedDeltaTime;
-
+                rb.velocity = (inputVector * velocidadeCorrida * 10) * Time.fixedDeltaTime;
             }
             else // Não tenho sapato T-T
             {
-                rb.velocity = (Position * velocidade * 10) * Time.fixedDeltaTime;
-
+                rb.velocity = (inputVector * velocidade * 10) * Time.fixedDeltaTime;
             }
 
             // nathan: simplifiquei a gambiarra 
-            float angle = Mathf.Atan2(Position.x, Position.z) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(inputVector.x, inputVector.z) * Mathf.Rad2Deg;
 
-            if (Position.sqrMagnitude > 0.1f)
+            if (inputVector.sqrMagnitude > 0.1f)
             {
                 currentRotation.eulerAngles = new Vector3(0, angle, 0);
                 transform.rotation = currentRotation;
             }
 
             // Atualizando a var seMovendo
-            seMovendo = Position.sqrMagnitude > 0.1f;
+            seMovendo = Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f;
             anim.SetBool("andando", seMovendo);
             OnMoveOver();
         }

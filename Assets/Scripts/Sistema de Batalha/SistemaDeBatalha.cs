@@ -892,53 +892,66 @@ public class SistemaDeBatalha : MonoBehaviour
             ActionSelection();
             yield break;
         }
+
+
+
         else
         {
             //Entao perde uma pokebola
             //gm.pokeballs--;
 
             
-             var ConseguiCapturar = item_atual.Captura(enemyUnit.Pokemon);
-
-            if (ConseguiCapturar)
-            {
-                dialogBox.SetDialog($"{enemyUnit.name} foi capturado!");
-                yield return new WaitForSeconds(2f);
-
-                /* bs.*/
-
-                playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
-                enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
-
-                BattleOver(true);
-
-                GanharPokemon();
-            }
-            else if (!ConseguiCapturar)
-            {
-               
-                dialogBox.SetDialog($"Não conseguiu capturar...");
-                yield return new WaitForSeconds(2f);
-
-                // Turno do inimigo
-
-                state = EstadoDeBatalha.RunningTurn;
-                //partyScreen.gameObject.SetActive(false);
-
-                //Desativando canvas
-                dialogBox.AtivarSelecaoAcao(false);
-
-                var enemyMove = enemyUnit.Pokemon.GetRandomMove();
-                yield return RunMove(enemyUnit, playerUnit, enemyMove);
-                yield return RunAfterTurn(enemyUnit);
-                yield return new WaitForSeconds(2f);
-
-                ActionSelection();
-                yield break;
-                
-            }
             
-        }
+                var ConseguiCapturar = item_atual.Captura(enemyUnit.Pokemon);
+
+                if (ConseguiCapturar)
+                {
+                    dialogBox.SetDialog($"{enemyUnit.name} foi capturado!");
+                    yield return new WaitForSeconds(2f);
+
+                    /* bs.*/
+
+                    playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
+                    enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
+
+                    BattleOver(true);
+
+                    GanharPokemon();
+                    Debug.Log("to funcionadno");
+                }
+                else if (!ConseguiCapturar)
+                {
+
+                    dialogBox.SetDialog($"Não conseguiu capturar...");
+                    yield return new WaitForSeconds(2f);
+
+                    // Turno do inimigo
+
+                    state = EstadoDeBatalha.RunningTurn;
+                    //partyScreen.gameObject.SetActive(false);
+
+                    //Desativando canvas
+                    dialogBox.AtivarSelecaoAcao(false);
+
+                    var enemyMove = enemyUnit.Pokemon.GetRandomMove();
+                    yield return RunMove(enemyUnit, playerUnit, enemyMove);
+                    yield return RunAfterTurn(enemyUnit);
+                    yield return new WaitForSeconds(2f);
+
+                    ActionSelection();
+                    textoAcao.enabled = true;
+                    Debug.Log("to funcionadno1");
+                    yield break;
+
+                }
+                else
+                {
+                    // Trate a situação onde item_atual é nulo (talvez exiba uma mensagem de erro ou tome alguma ação padrão)
+                    Debug.LogError("item_atual é nulo.");
+                }
+                Debug.Log("to funcionadno3");
+            }
+        
 
     }
 
