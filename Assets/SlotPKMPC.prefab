@@ -142,6 +142,13 @@ MonoBehaviour:
   slot: []
   info: {fileID: 0}
   slotImage: {fileID: 7272010273106793097}
+  bgImage: {fileID: 344735890, guid: b317846aa7f698449b6df970ebf0d92f, type: 3}
+  essePkm:
+    _base: {fileID: 0}
+    level: 0
+    sprite: {fileID: 0}
+    nome: 
+  index: 0
 --- !u!114 &1127326514116950147
 MonoBehaviour:
   m_ObjectHideFlags: 0
