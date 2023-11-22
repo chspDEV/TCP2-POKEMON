@@ -54,10 +54,25 @@ public class SlotPKM : MonoBehaviour
 
     public void OnClick()
     {
-        info.ControlarBotao(false, true);
-
+        
         var _pkm = info.DescobrirPkmParty(index);
-        if (_pkm != null) info.pkm_selecionado = _pkm;
+        if (_pkm != null && _pkm.nome != "PlaceHolder")
+        {
+            info.pkm_selecionado = _pkm;
+
+            info.ControlarBotao(false, true);
+
+            //Resetando a cor do slot que vai ser deselecionado
+            if (info.slot_selecionado != null)
+            info.slot_selecionado.GetComponent<Image>().color = new Color(255, 255, 255, 1f);
+
+            //Pasando o novo slot selecionado e colocar em vermelho
+            var _slot = info.GetSlotParty(index);
+            info.slot_selecionado = _slot;
+            _slot.GetComponent<Image>().color = Color.red;  
+        }
+       
+            
     }
 
 

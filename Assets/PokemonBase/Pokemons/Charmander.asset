@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Charmander
   descricao: "Ele tem prefer\xEAncia por coisas quentes. Quando chove, dizem que
     fuma\xE7a surge da ponta da sua cauda."
-  sprite: {fileID: 21300000, guid: b0c4417fb93f09143ada52a45fd8cd79, type: 3}
+  sprite: {fileID: 1901833353, guid: 48b10665ff38aec489c131f1bf5522c9, type: 3}
   modelo3D: {fileID: 2367900409435859178, guid: 22b46d1dd40db4e469e26b845b81c74c,
     type: 3}
   tipo1: 2
@@ -24,6 +24,7 @@ MonoBehaviour:
   ataque: 51
   xpAtual: 0
   xpGiven: 100
+  chanceCaptura: 0
   defesa: 47
   spAtaque: 60
   spDefesa: 50

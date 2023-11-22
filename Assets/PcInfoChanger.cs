@@ -20,6 +20,7 @@ public class PcInfoChanger : MonoBehaviour
     public GameObject adicionar;
     public GameObject remover;
     public Pokemon pkm_selecionado;
+    public GameObject slot_selecionado;
 
     public TextMeshProUGUI[] golpes; //NomeGolpe (Tipo)
 
@@ -134,7 +135,10 @@ public class PcInfoChanger : MonoBehaviour
         gm.PC.Remove(pkm_selecionado);
 
         pkm_selecionado = null;
+        var _slot = slot_selecionado.GetComponent<Image>().color;
+        _slot = new Color(_slot.r,_slot.g,_slot.b,1f);
         ControlarBotao(false, false);
+        slot_selecionado.GetComponent<Image>().color = new Color(255, 255, 255, 1f);
 
     }
 
@@ -146,6 +150,27 @@ public class PcInfoChanger : MonoBehaviour
 
         pkm_selecionado = null;
         ControlarBotao(false, false);
+        slot_selecionado.GetComponent<Image>().color = new Color(255, 255, 255, 1f);
+    }
+
+    public GameObject GetSlotPC(int _index)
+    {
+        if (_index < gm.PC.Count)
+        {
+            return slotsPC[_index];
+        }
+        else return null;
+    }
+
+    public GameObject GetSlotParty(int _index)
+    {
+        PokemonParty _pt = player.GetComponent<PokemonParty>();
+
+        if (_index < _pt.pokemons.Count)
+        {
+            return slotsParty[_index];
+        }
+        else return null;
     }
 
 

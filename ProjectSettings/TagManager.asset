@@ -11,6 +11,7 @@ TagManager:
   - VidaInimigoBatalha
   - Transicao
   - NPC
+  - PC
   layers:
   - Default
   - TransparentFX

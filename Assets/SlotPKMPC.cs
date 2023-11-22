@@ -53,10 +53,24 @@ public class SlotPKMPC : MonoBehaviour
 
     public void OnClick()
     {
-        info.ControlarBotao(true, false);
-
         var _pkm = info.DescobrirPkmPC(index);
-        if (_pkm != null) info.pkm_selecionado = _pkm;
+        if (_pkm != null && _pkm.nome != "PlaceHolder")
+        {
+            info.pkm_selecionado = _pkm;
+
+            info.ControlarBotao(true, false);
+
+            //Resetando a cor do slot que vai ser deselecionado
+            if (info.slot_selecionado != null) 
+            info.slot_selecionado.GetComponent<Image>().color = new Color(255, 255, 255, 1f);
+
+            //Pasando o novo slot selecionado e colocar em vermelho
+            var _slot = info.GetSlotPC(index);
+            info.slot_selecionado = _slot;
+
+            if (info.slot_selecionado != null)
+            _slot.GetComponent<Image>().color = Color.red;
+        }
     }
 
 }

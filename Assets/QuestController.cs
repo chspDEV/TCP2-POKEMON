@@ -26,7 +26,13 @@ public class QuestController : MonoBehaviour
     [SerializeField] GameObject npcRota1;
     [SerializeField] public List<Pokemon> pokeInicial;
     [SerializeField] GameObject Arbursto1;
+    
     [SerializeField] GameObject[] Pokebolas;
+
+    [SerializeField] GameObject MenuConfirmacao;
+    [SerializeField] bool confirmacao = false;
+    [SerializeField] int escolhido = -1;
+
 
 //
     public bool centroPokemon = false;
@@ -37,85 +43,144 @@ public class QuestController : MonoBehaviour
         pokemonParty = player.GetComponent<PokemonParty>();
     }
 
+    public void Update()
+    {
+        if (confirmacao == true)
+        {
+            switch (escolhido)
+            {
+                //squirtle
+                case 0:
+                    Squirtle();
+                    confirmacao = false;
+                    break;
+
+                //bulba
+                case 1:
+                    Bulbassauro();
+                    confirmacao = false;
+                    break;
+
+                //charmand
+                case 2:
+                    Charmannder();
+                    confirmacao = false;
+                    break;
+
+            }
+        }
+
+    }
+
     public void Squirtle()
     {
-        Time.timeScale = 1f;
-        pokemonParty.pokemons.Remove(pokemonParty.pokemons[0]);
-        pokemonParty.pokemons.Add(pokeInicial[0]);
-        escolhaPokemon.SetActive(false);
+        if (confirmacao)
+        {
+            Time.timeScale = 1f;
+            pokemonParty.pokemons.Remove(pokemonParty.pokemons[0]);
+            pokemonParty.pokemons.Add(pokeInicial[0]);
+            escolhaPokemon.SetActive(false);
 
-        //Iniciando POKEMON
-        pokemonParty.pokemons[0].Init();
+            //Iniciando POKEMON
+            pokemonParty.pokemons[0].Init();
 
-        //DESTRUINDO NPC
-        Destroy(npcRota1);
+            //DESTRUINDO NPC
+            Destroy(npcRota1);
 
-        //DESTRUINDO ARBUSTOS
-        Destroy(Arbursto1);
+            //DESTRUINDO ARBUSTOS
+            Destroy(Arbursto1);
 
 
-        //DESTRUINDO POKEBOLAS
-        Destroy(Pokebolas[0]);
+            //DESTRUINDO POKEBOLAS
+            Destroy(Pokebolas[0]);
 
-        //Dizendo que meu jogador pode comecar suas batalhas!
-        sistemaDeBatalha.PlayerCanBattle = true;
+            //Dizendo que meu jogador pode comecar suas batalhas!
+            sistemaDeBatalha.PlayerCanBattle = true;
 
-        //Destruindo Canvas
-        Destroy(escolhaPokemon);
+            //Destruindo Canvas
+            Destroy(escolhaPokemon);
+        }
+        else
+        { escolhido = 0; }
+        
     }
 
     public void Bulbassauro()
     {
-        Time.timeScale = 1f;
-        pokemonParty.pokemons.Remove(pokemonParty.pokemons[0]);
-        pokemonParty.pokemons.Add(pokeInicial[1]);
+        if (confirmacao)
+        {
+            Time.timeScale = 1f;
+            pokemonParty.pokemons.Remove(pokemonParty.pokemons[0]);
+            pokemonParty.pokemons.Add(pokeInicial[1]);
+
+
+            //Iniciando POKEMON
+            pokemonParty.pokemons[0].Init();
+
+            //DESTRUINDO NPC
+            Destroy(npcRota1);
+
+            //DESTRUINDO ARBUSTOS
+            Destroy(Arbursto1);
+
+            //DESTRUINDO POKEBOLAS
+            Destroy(Pokebolas[1]);
+
+            //Dizendo que meu jogador pode comecar suas batalhas!
+            sistemaDeBatalha.PlayerCanBattle = true;
+
+
+            //Destruindo Canvas
+            Destroy(escolhaPokemon);
+        }
+        else { escolhido = 1; }
         
-
-        //Iniciando POKEMON
-        pokemonParty.pokemons[0].Init();
-
-        //DESTRUINDO NPC
-        Destroy(npcRota1);
-
-        //DESTRUINDO ARBUSTOS
-        Destroy(Arbursto1);
-
-        //DESTRUINDO POKEBOLAS
-        Destroy(Pokebolas[1]);
-
-        //Dizendo que meu jogador pode comecar suas batalhas!
-        sistemaDeBatalha.PlayerCanBattle = true;
-
-
-        //Destruindo Canvas
-        Destroy(escolhaPokemon);
 
     }
 
     public void Charmannder()
     {
-        Time.timeScale = 1f;
-        pokemonParty.pokemons.Remove(pokemonParty.pokemons[0]);
-        pokemonParty.pokemons.Add(pokeInicial[2]);
+        if (confirmacao)
+        {
+            Time.timeScale = 1f;
+            pokemonParty.pokemons.Remove(pokemonParty.pokemons[0]);
+            pokemonParty.pokemons.Add(pokeInicial[2]);
 
-        //Iniciando POKEMON
-        pokemonParty.pokemons[0].Init();
+            //Iniciando POKEMON
+            pokemonParty.pokemons[0].Init();
 
-        //DESTRUINDO NPC
-        Destroy(npcRota1);
+            //DESTRUINDO NPC
+            Destroy(npcRota1);
 
-        //DESTRUINDO ARBUSTOS
-        Destroy(Arbursto1);
+            //DESTRUINDO ARBUSTOS
+            Destroy(Arbursto1);
 
-        //DESTRUINDO POKEBOLAS
-        Destroy(Pokebolas[2]);
+            //DESTRUINDO POKEBOLAS
+            Destroy(Pokebolas[2]);
 
-        //Dizendo que meu jogador pode comecar suas batalhas!
-        sistemaDeBatalha.PlayerCanBattle = true;
+            //Dizendo que meu jogador pode comecar suas batalhas!
+            sistemaDeBatalha.PlayerCanBattle = true;
 
-        //Destruindo Canvas
-        Destroy(escolhaPokemon);
+            //Destruindo Canvas
+            Destroy(escolhaPokemon);
+        }
+        else { escolhido = 2; }
+        
 
     }
+
+    public void RevelarMenuConfirmacao()
+    {
+        MenuConfirmacao.SetActive(true);
+    }
+    public void ApagarMenuConfirmacao()
+    {
+        MenuConfirmacao.SetActive(false);
+    }
+    public void Confirmar()
+    {
+        confirmacao = true;   
+    }
+
 
 }
