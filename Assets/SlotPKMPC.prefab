@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.36, y: -1.189}
+  m_AnchoredPosition: {x: -0.36, y: -10.7}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8103593926118552447
@@ -86,9 +86,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7778002788143899154}
   - component: {fileID: 2239653978203965244}
-  - component: {fileID: 4288827766411523464}
   - component: {fileID: 1127326514116950147}
   - component: {fileID: 8642973014090057835}
+  - component: {fileID: 389084357784924254}
   m_Layer: 5
   m_Name: SlotPKMPC
   m_TagString: Untagged
@@ -126,29 +126,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906226006269295559}
   m_CullTransparentMesh: 1
---- !u!114 &4288827766411523464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1906226006269295559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 730451a8f5ffb7c4f882510cc5c5cb03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gm: {fileID: 0}
-  slot: []
-  info: {fileID: 0}
-  slotImage: {fileID: 7272010273106793097}
-  bgImage: {fileID: 344735890, guid: b317846aa7f698449b6df970ebf0d92f, type: 3}
-  essePkm:
-    _base: {fileID: 0}
-    level: 0
-    sprite: {fileID: 0}
-    nome: 
-  index: 0
 --- !u!114 &1127326514116950147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +169,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
+--- !u!114 &389084357784924254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906226006269295559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730451a8f5ffb7c4f882510cc5c5cb03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info: {fileID: 0}
+  index: 0
+  minhaImagem: {fileID: 7272010273106793097}
 --- !u!1 &7100160527067485151
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +219,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59, y: 35}
+  m_AnchoredPosition: {x: 59, y: 40.9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2023568289750881230
@@ -269,12 +261,12 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
+  m_enableVertexGradient: 1
+  m_colorMode: 1
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 1, g: 0.8349056, b: 0.8349056, a: 1}
     topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 0.8349056, b: 0.8349056, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
@@ -285,13 +277,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 33.57
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 11
   m_fontSizeMax: 15
-  m_fontStyle: 33
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -321,7 +313,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.3343506, y: 21.810688, z: 117.41584, w: 8.10292}
+  m_margin: {x: -14.886665, y: 12.259754, z: 102.53284, w: -3.1618032}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

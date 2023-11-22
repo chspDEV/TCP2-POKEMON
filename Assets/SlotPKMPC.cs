@@ -10,28 +10,25 @@ using UnityEngine.Events;
 
 public class SlotPKMPC : MonoBehaviour
 {
-    [SerializeField] GameObject gm;
-    [SerializeField] GameObject[] slot;
+
     [SerializeField] PcInfoChanger info;
-    [SerializeField] Image slotImage;
-    [SerializeField] Sprite bgImage;
-    [SerializeField] Pokemon essePkm;
     [SerializeField] int index;
-
-
+    public Image minhaImagem;
 
     public void Start()
     {
-        info = GameObject.Find("InfoPokemon").GetComponent<PcInfoChanger>();
-        AddEvent(gameObject, EventTriggerType.PointerEnter, delegate { OnEnter(essePkm); });
+        //info = GameObject.Find("InfoPokemon").GetComponent<PcInfoChanger>();
+        AddEvent(gameObject, EventTriggerType.PointerEnter, delegate { OnEnter(); });
         AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExit(); });
+        AddEvent(gameObject, EventTriggerType.PointerClick, delegate { OnClick(); });
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        AtualizarSlot();
+         info.UpdateSlotPC(index);
     }
+
     protected void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
     {
         EventTrigger trigger = obj.GetComponent<EventTrigger>();
@@ -42,45 +39,24 @@ public class SlotPKMPC : MonoBehaviour
         trigger.triggers.Add(eventTrigger);
     }
 
-    public void OnEnter(Pokemon pkm)
+    public void OnEnter()
     {
-        info.UpdateText(pkm);
+        var _pkm = info.DescobrirPkmPC(index);
+
+        if (_pkm != null) info.UpdateTextInfo(_pkm);
     }
 
     public void OnExit()
     {
-        info.DeleteText();
+        info.DeleteTextInfo();
     }
 
-    public void AtualizarSlot()
+    public void OnClick()
     {
-        GameController _gm = gm.GetComponent<GameController>();
-        if (_gm.PC[index] != null) { essePkm = _gm.PC[index]; _gm.PC[index].Init(); }
-        
+        info.ControlarBotao(true, false);
 
-        for (int i = 0; i < _gm.PC.Count; i++)
-        {
-            Debug.Log(_gm.PC[i]);
-            if (_gm.PC[i] != null) 
-            { 
-
-                if (_gm.PC[i].Sprite != null && _gm.PC[i].nome != "PlaceHolder")
-                {
-                    slot[i].GetComponent<SlotPKMPC>().slotImage.sprite = _gm.PC[i].Sprite;
-                }
-                else { slot[i].GetComponentInChildren<Image>().sprite = bgImage; }
-
-                if (_gm.PC[i].nome != null && _gm.PC[i].nome != "PlaceHolder")
-                {
-                    slot[i].GetComponentInChildren<TextMeshProUGUI>().text = _gm.PC[i].nome + " Lv " + _gm.PC[i].level.ToString("n0");
-
-                    //slot[i].GetComponentInParent<TextMeshProUGUI>().text = _gm.PC[i].HP.ToString("n0") + " / " + _gm.PC[i].VidaMax.ToString("n0");
-
-                }
-                else { slot[i].GetComponentInChildren<TextMeshProUGUI>().text = ""; }
-
-            }
-        }
-
+        var _pkm = info.DescobrirPkmPC(index);
+        if (_pkm != null) info.pkm_selecionado = _pkm;
     }
+
 }
