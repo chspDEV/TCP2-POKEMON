@@ -24,6 +24,7 @@ MonoBehaviour:
   ataque: 20
   xpAtual: 0
   xpGiven: 100
+  chanceCaptura: 120
   defesa: 55
   spAtaque: 25
   spDefesa: 25
