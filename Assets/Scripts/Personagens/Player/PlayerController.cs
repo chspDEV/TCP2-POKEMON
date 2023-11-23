@@ -57,36 +57,41 @@ public class PlayerController : MonoBehaviour
 
     public void Move()
     {
-        if (moveEnabled == true)
+        if (moveEnabled)
         {
-            // Normaliza o vetor de entrada
-            Vector3 inputVector = new Vector3(Input.GetAxisRaw("Horizontal"), -fallSpeed, Input.GetAxisRaw("Vertical")).normalized;
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
+
+            Position = new Vector3(horizontal, -fallSpeed, vertical);
 
             // Correr se estiver apertando shift
             if (Input.GetKey(KeyCode.LeftShift) && TenhoSapato)
             {
-                rb.velocity = (inputVector * velocidadeCorrida * 10) * Time.fixedDeltaTime;
+                // Se movendo na diagonal, divide a velocidade por 2
+                float diagonalFactor = (Mathf.Abs(horizontal) > 0 && Mathf.Abs(vertical) > 0) ? 2f : 1f;
+                rb.velocity = ((Position * velocidadeCorrida * 10) / diagonalFactor) * Time.fixedDeltaTime;
             }
             else // Não tenho sapato T-T
             {
-                rb.velocity = (inputVector * velocidade * 10) * Time.fixedDeltaTime;
+                // Se movendo na diagonal, divide a velocidade por 2
+                float diagonalFactor = (Mathf.Abs(horizontal) > 0 && Mathf.Abs(vertical) > 0) ? 2f : 1f;
+                rb.velocity = ((Position * velocidade * 10)/diagonalFactor) * Time.fixedDeltaTime;
             }
 
             // nathan: simplifiquei a gambiarra 
-            float angle = Mathf.Atan2(inputVector.x, inputVector.z) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(Position.x, Position.z) * Mathf.Rad2Deg;
 
-            if (inputVector.sqrMagnitude > 0.1f)
+            if (Position.sqrMagnitude > 0.1f)
             {
                 currentRotation.eulerAngles = new Vector3(0, angle, 0);
                 transform.rotation = currentRotation;
             }
 
             // Atualizando a var seMovendo
-            seMovendo = Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f;
+            seMovendo = Position.sqrMagnitude > 0.1f;
             anim.SetBool("andando", seMovendo);
             OnMoveOver();
         }
-
     }
 
 
