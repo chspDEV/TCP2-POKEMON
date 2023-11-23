@@ -14,12 +14,16 @@ public class GameController : MonoBehaviour
     [SerializeField] BattleUnit PlayerBattleUnit;
     [SerializeField] BattleUnit EnemyBattleUnit;
     [SerializeField] Caminhos caminhos;
-    
-    public List<Pokemon> PC;
+
+    //MOCHILA
+    public ItemBase item_atual;
+    public Pokemon pkm_selecionado;
     public List<ItemBase> MOCHILA;
 
-    public int moedas;
+    public List<Pokemon> PC;
+    
 
+    public int moedas;
     GameState state;
 
     public void Awake()

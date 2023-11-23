@@ -1,0 +1,77 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+using UnityEngine.EventSystems;
+using System.Runtime.InteropServices.ComTypes;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
+public class Mochila : MonoBehaviour
+{
+    public GameController gm;
+    public GameObject[] slots;
+
+    public GameObject party;
+    public GameObject botao;
+    public GameObject slot_selecionado;
+
+    public TextMeshProUGUI textoItem;
+
+    public void Awake()
+    {
+        gm = GameObject.Find("GameController").GetComponent<GameController>();
+        
+    }
+
+    public void UpdateSlot(int _index)
+    {
+        if (_index < gm.MOCHILA.Count && gm.PC[_index].nome != "PlaceHolder")
+        {
+            //Atualizando imagem do ITEM na MOCHILA
+            slots[_index].GetComponent<SlotPKMPC>().minhaImagem.sprite = gm.MOCHILA[_index].sprite;
+            var imgColor = slots[_index].GetComponent<SlotPKMPC>().minhaImagem.color;
+            slots[_index].GetComponent<SlotPKMPC>().minhaImagem.color = new Color(imgColor.r, imgColor.g, imgColor.b, 1f);
+        }
+        else
+        {
+            //Se não existe pokemon nesse index, deixe tudo em branco!
+            slots[_index].GetComponent<SlotPKMPC>().minhaImagem.sprite = null;
+            slots[_index].GetComponent<SlotPKMPC>().minhaImagem.color = new Color(1, 1, 1, 0f); 
+        }
+
+    }
+
+    public ItemBase DescobrirItem(int _index)
+    {
+        if (_index < gm.MOCHILA.Count) { return gm.MOCHILA[_index]; }
+        else { return null; }
+    }
+
+    public void UpdateTextInfo(ItemBase _item)
+    {
+        textoItem.text = _item.descricao;
+    }
+
+    public void DeleteTextInfo()
+    {
+        textoItem.text = "";
+    }
+
+    public void ControlarBotao(bool valor)
+    {
+        botao.SetActive(valor);
+    }
+
+    public GameObject GetSlot(int _index)
+    {
+        if (_index < gm.MOCHILA.Count)
+        {
+            return slots[_index];
+        }
+        else return null;
+    }
+
+
+}

@@ -60,7 +60,7 @@ public class SistemaDeBatalha : MonoBehaviour
     public event Action<bool> OnBattleOver;
     [SerializeField] EstadoDeBatalha state;
     EstadoDeBatalha? prevState;
-    public ItemBase item_atual;
+    
     int currentAction; // acao atual
     public int currentMove; // acao atual
     int currentMember;
@@ -756,8 +756,13 @@ public class SistemaDeBatalha : MonoBehaviour
         ActionSelection();
         partyScreen.gameObject.SetActive(false);
         textoAcao.enabled = true;
-        
-        
+    }
+
+    public void SairMochila()
+    {
+        dialogBox.AtivarSelecaoMochila(false);
+        dialogBox.AtivarSelecaoAcao(true);
+        textoAcao.enabled = true;
     }
 
     public void SairGolpe()
@@ -765,9 +770,6 @@ public class SistemaDeBatalha : MonoBehaviour
         ActionSelection();
         dialogBox.AtivarSelecaoGolpe(false);
         textoAcao.enabled = true;
-        
-        
-
     }
 
     #endregion
@@ -860,10 +862,12 @@ public class SistemaDeBatalha : MonoBehaviour
         }
     }
 
-    public void Captura()
+    public void Mochila()
     {
         dialogBox.AtivarSelecaoAcao(false);
-        StartCoroutine(TryToCatch());
+        dialogBox.AtivarSelecaoMochila(true);
+
+        //StartCoroutine(TryToCatch());
     }
 
     public IEnumerator TryToCatch()
@@ -900,9 +904,7 @@ public class SistemaDeBatalha : MonoBehaviour
             //Entao perde uma pokebola
             //gm.pokeballs--;
 
-            
-            
-                var ConseguiCapturar = item_atual.Captura(enemyUnit.Pokemon);
+                var ConseguiCapturar = gm.item_atual.Captura(enemyUnit.Pokemon);
 
                 if (ConseguiCapturar)
                 {

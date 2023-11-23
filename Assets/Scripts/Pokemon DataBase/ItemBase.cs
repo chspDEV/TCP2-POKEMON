@@ -29,14 +29,13 @@ public class ItemBase : ScriptableObject
 
     [Header("Graficos")]
 
+    [TextArea]
+    public string descricao;
+
     public Sprite sprite;
     public GameObject modelo3D;
     public VisualEffectAsset vfx;
     
-
-
-
-
     public bool Captura(Pokemon enemy)
     {
         var tentativas = 0;
