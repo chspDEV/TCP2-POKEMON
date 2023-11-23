@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
         EncontrarPokemons();
         ChecandoEncontroDeTreinador();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             StartCoroutine(Interact());
         }

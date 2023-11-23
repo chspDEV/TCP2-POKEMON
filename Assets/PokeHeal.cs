@@ -9,11 +9,12 @@ public class PokeHeal : MonoBehaviour
 
     [SerializeField] SistemaDeBatalha sistema;
     [SerializeField] PokemonParty playerParty;
+    [SerializeField] GameObject pressSpace;
 
 
     private void OnTriggerStay(Collider colisao)
     {
-        if (colisao.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space))
+        if (colisao.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
             //era iss aqui que tava travando o jogo, n entendi
             //pq q vc colocou aqui ent eu só comentei
@@ -26,6 +27,22 @@ public class PokeHeal : MonoBehaviour
             }
 
             sistema.PlayerCanBattle = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider colisao)
+    {
+        if (colisao.gameObject.CompareTag("Player"))
+        {
+            pressSpace.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider colisao)
+    {
+        if (colisao.gameObject.CompareTag("Player"))
+        {
+            pressSpace.SetActive(false);
         }
     }
 }

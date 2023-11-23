@@ -9,6 +9,7 @@ public class MesaCarvalho : MonoBehaviour
 
     [SerializeField] GameObject questController;   
     [SerializeField] GameObject escolhaPokemon;
+    [SerializeField] GameObject pressSpace;
 
     bool desligarColisao = false;
 
@@ -20,11 +21,27 @@ public class MesaCarvalho : MonoBehaviour
 
     private void OnTriggerStay(Collider colisao)
     {
-        if (colisao.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space) && desligarColisao == false)
+        if (colisao.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.E) && desligarColisao == false)
         { 
             escolhaPokemon.SetActive(true);
             Time.timeScale = 0f;
             desligarColisao = true; 
+        }
+    }
+
+    private void OnTriggerEnter(Collider colisao)
+    {
+        if (colisao.gameObject.CompareTag("Player"))
+        {
+            pressSpace.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider colisao)
+    {
+        if (colisao.gameObject.CompareTag("Player"))
+        {
+            pressSpace.SetActive(false);
         }
     }
 }

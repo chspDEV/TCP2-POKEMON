@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     [SerializeField] VFXController vfxController;  // controle de vfx
 
     [SerializeField] SistemaDeBatalha sistemaDeBatalha;
-    [SerializeField] Camera cam;  // CAMERA DO JOGADOR PADRAO!!
+    public Camera cam;  // CAMERA DO JOGADOR PADRAO!!
     [SerializeField] BattleUnit PlayerBattleUnit;
     [SerializeField] BattleUnit EnemyBattleUnit;
     [SerializeField] Caminhos caminhos;

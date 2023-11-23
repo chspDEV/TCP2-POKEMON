@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class ComputadorController : MonoBehaviour
 {
     [SerializeField] GameObject pc;
+    [SerializeField] GameObject pressSpace;
 
     public void AbrirPC()
     {
@@ -19,14 +20,30 @@ public class ComputadorController : MonoBehaviour
 
     private void OnTriggerStay(Collider colisao)
     {
-        if (colisao.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.Space))
+        if (colisao.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
             AbrirPC();
         }
+    }
 
-        if (colisao.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.Escape))
+    private void OnTriggerEnter(Collider colisao)
+    {
+        if (colisao.gameObject.CompareTag("Player"))
         {
-            FecharPC();
+            pressSpace.SetActive(true);
+        }
+
+        if (colisao.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
+        {
+            AbrirPC();
+        }
+    }
+
+    private void OnTriggerExit(Collider colisao)
+    {
+        if (colisao.gameObject.CompareTag("Player"))
+        {
+            pressSpace.SetActive(false);
         }
     }
 }
