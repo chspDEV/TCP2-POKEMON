@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Rendering.VirtualTexturing;
-using UnityEditor.TerrainTools;
+//using UnityEditor.TerrainTools;
 
 public enum EstadoDeBatalha { Start, ActionSelection, MoveSelection, RunningTurn, Busy, PartyScreen, BattleOver }
 public enum AcaoDeBatalha { Move, TrocarPokemon, UsarItem, Fugir }
