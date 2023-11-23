@@ -9,6 +9,7 @@ public class MenuPausa : MonoBehaviour
     public GameObject Menu;
     public GameObject Pokedex;
     public GameObject Controles;
+    public GameObject Mochila;
 
     [SerializeField] PlayerController playerCon;
 
@@ -16,6 +17,7 @@ public class MenuPausa : MonoBehaviour
     private bool pokedexAberta = false;
     private bool menuAberto = false;
     private bool controlesAberto = false;
+    private bool mochilaAberta = false;
 
 
     void Update()
@@ -31,6 +33,7 @@ public class MenuPausa : MonoBehaviour
                 AbrirMenu();
                 FecharPokedex();
                 FecharControles();
+                FecharMochila();
             }
             else
             {
@@ -38,6 +41,7 @@ public class MenuPausa : MonoBehaviour
                 FecharMenu();
                 FecharPokedex();
                 FecharControles();
+                FecharMochila();
             }
             
         }
@@ -49,6 +53,16 @@ public class MenuPausa : MonoBehaviour
         pokedexAberta = true;
         Menu.SetActive(false);
         menuAberto = false;
+       
+    }
+
+    public void AbrirMochila()
+    {
+        Mochila.SetActive(true);
+        mochilaAberta = true;
+        Menu.SetActive(false);
+        menuAberto = false;
+        
     }
 
     public void AbrirControles()
@@ -57,6 +71,13 @@ public class MenuPausa : MonoBehaviour
         controlesAberto = true;
         Menu.SetActive(false);
         menuAberto = false;
+        
+    }
+
+    public void FecharMochila()
+    {
+        Mochila.SetActive(false);
+        mochilaAberta = false;
     }
 
     public void FecharControles()

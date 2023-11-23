@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class MesaCarvalho : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class MesaCarvalho : MonoBehaviour
     [SerializeField] GameObject pressSpace;
 
     bool desligarColisao = false;
+    
+    
 
     public void Awake()
     {
@@ -25,23 +28,37 @@ public class MesaCarvalho : MonoBehaviour
         { 
             escolhaPokemon.SetActive(true);
             Time.timeScale = 0f;
-            desligarColisao = true; 
+            desligarColisao = true;
+            Destroy(pressSpace);
         }
     }
 
+    //void DestroyE()
+    //{
+    //    if (desligarE == true)
+    //    {
+    //        Destroy(pressSpace);
+    //    }
+    //}
     private void OnTriggerEnter(Collider colisao)
     {
-        if (colisao.gameObject.CompareTag("Player"))
-        {
-            pressSpace.SetActive(true);
-        }
+        
+            if (colisao.gameObject.CompareTag("Player"))
+            {
+                pressSpace.SetActive(true);
+            }
+        
+        
     }
 
     private void OnTriggerExit(Collider colisao)
     {
-        if (colisao.gameObject.CompareTag("Player"))
-        {
-            pressSpace.SetActive(false);
-        }
+        
+            if (colisao.gameObject.CompareTag("Player"))
+            {
+                pressSpace.SetActive(false);
+            }
+       
+        
     }
 }
