@@ -19,7 +19,7 @@ public class SistemaDeBatalha : MonoBehaviour
 
     [Header("Dialogo")]
     [Space(15)]
-    [SerializeField] DialogoDeBatalha dialogBox;
+    public DialogoDeBatalha dialogBox;
 
     [Header("Pokemons na Batalha")]
     [Space(15)]

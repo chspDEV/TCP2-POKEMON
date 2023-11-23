@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5a399e71effec4eb7c7f92b7f91b6b, type: 3}
   m_Name: Doce raro
   m_EditorClassIdentifier: 
+  nome: Doce Raro
   tipoItem: 0
   statsUP: 0
   quantiaStatsUP: 1
   valorCaptura: 0
   preco: 50
+  descricao: "Um doce extremamente doce, t\xE3o doce que faz o seu pokemon melhorar."
   sprite: {fileID: -1315466811, guid: c2dadc152018d784b8c6787c8d7f05a2, type: 3}
   modelo3D: {fileID: 0}
   vfx: {fileID: 0}

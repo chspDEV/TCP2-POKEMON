@@ -24,7 +24,7 @@ public class GameController : MonoBehaviour
     
 
     public int moedas;
-    GameState state;
+    public GameState state;
 
     public void Awake()
     {
@@ -58,6 +58,48 @@ public class GameController : MonoBehaviour
         sistemaDeBatalha.StartBattle(playerParty, pokemonSelvagem);
     }
 
+    public void UsarItem()
+    {
+        switch (state)
+        {
+            case GameState.FreeRoam:
+                if (item_atual.tipoItem == TIPO_ITEM.CONSUMIVEL)
+                {
+                    item_atual.StatsUp(pkm_selecionado);
+                    LimparInfoMochila();
+                    break;
+                }
+                
+                break;
+            case GameState.Battle:
+                if (item_atual.tipoItem == TIPO_ITEM.CONSUMIVEL)
+                {
+                    item_atual.StatsUp(pkm_selecionado);
+                    LimparInfoMochila();
+                    break;
+                } 
+
+                if (item_atual.tipoItem == TIPO_ITEM.POKEBOLA)
+                {
+                    sistemaDeBatalha.StartCoroutine(sistemaDeBatalha.TryToCatch());
+                    sistemaDeBatalha.dialogBox.AtivarSelecaoMochila(false);
+                    sistemaDeBatalha.dialogBox.AtivarSelecaoAcao(false);
+                    break;
+                }
+                    
+                break;
+            case GameState.Dialog:
+                break;
+            case GameState.Cutscene:
+                break;
+        }
+    }
+
+    public void LimparInfoMochila()
+    {
+        item_atual = null;
+        pkm_selecionado = null;
+    }
     public void StartBattleTrainer(PokemonParty _tParty)
     {
         state = GameState.Battle;

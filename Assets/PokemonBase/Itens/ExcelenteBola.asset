@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5a399e71effec4eb7c7f92b7f91b6b, type: 3}
   m_Name: ExcelenteBola
   m_EditorClassIdentifier: 
+  nome: ExcelenteBola
   tipoItem: 1
   statsUP: 2
   quantiaStatsUP: 0
   valorCaptura: 1.5
   preco: 10
+  descricao: "Ela \xE9 excelente..."
   sprite: {fileID: 1637009489, guid: d06984ceebb6e1b4d98f6a9c75a58293, type: 3}
   modelo3D: {fileID: 0}
   vfx: {fileID: 0}

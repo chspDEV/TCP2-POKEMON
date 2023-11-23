@@ -16,29 +16,37 @@ public class Mochila : MonoBehaviour
     public GameObject party;
     public GameObject botao;
     public GameObject slot_selecionado;
+    public Pokemon pkm_selecionado;
+    public ItemBase item_selecionado;
 
     public TextMeshProUGUI textoItem;
 
     public void Awake()
     {
         gm = GameObject.Find("GameController").GetComponent<GameController>();
-        
+        pkm_selecionado = GetComponent<PcInfoChanger>().pkm_selecionado;
+    }
+
+    public void Update()
+    {
+        gm.pkm_selecionado = pkm_selecionado;
+        gm.item_atual = item_selecionado;
     }
 
     public void UpdateSlot(int _index)
     {
-        if (_index < gm.MOCHILA.Count && gm.PC[_index].nome != "PlaceHolder")
+        if (_index < gm.MOCHILA.Count)
         {
             //Atualizando imagem do ITEM na MOCHILA
-            slots[_index].GetComponent<SlotPKMPC>().minhaImagem.sprite = gm.MOCHILA[_index].sprite;
-            var imgColor = slots[_index].GetComponent<SlotPKMPC>().minhaImagem.color;
-            slots[_index].GetComponent<SlotPKMPC>().minhaImagem.color = new Color(imgColor.r, imgColor.g, imgColor.b, 1f);
+            slots[_index].GetComponent<SlotMochila>().minhaImagem.sprite = gm.MOCHILA[_index].sprite;
+            var imgColor = slots[_index].GetComponent<SlotMochila>().minhaImagem.color;
+            slots[_index].GetComponent<SlotMochila>().minhaImagem.color = new Color(imgColor.r, imgColor.g, imgColor.b, 1f);
         }
         else
         {
             //Se não existe pokemon nesse index, deixe tudo em branco!
-            slots[_index].GetComponent<SlotPKMPC>().minhaImagem.sprite = null;
-            slots[_index].GetComponent<SlotPKMPC>().minhaImagem.color = new Color(1, 1, 1, 0f); 
+            slots[_index].GetComponent<SlotMochila>().minhaImagem.sprite = null;
+            slots[_index].GetComponent<SlotMochila>().minhaImagem.color = new Color(1, 1, 1, 0f); 
         }
 
     }
@@ -51,7 +59,7 @@ public class Mochila : MonoBehaviour
 
     public void UpdateTextInfo(ItemBase _item)
     {
-        textoItem.text = _item.descricao;
+        textoItem.text = _item.nome + ": " + _item.descricao;
     }
 
     public void DeleteTextInfo()

@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5a399e71effec4eb7c7f92b7f91b6b, type: 3}
   m_Name: PokeBola
   m_EditorClassIdentifier: 
+  nome: Pokebola
   tipoItem: 1
   statsUP: 2
   quantiaStatsUP: 0
   valorCaptura: 1
   preco: 10
+  descricao: "Compartimentos de forma esf\xE9rica que servem para armazenar pokemons
+    selvagens!"
   sprite: {fileID: -956675702, guid: d06984ceebb6e1b4d98f6a9c75a58293, type: 3}
   modelo3D: {fileID: 0}
   vfx: {fileID: 0}

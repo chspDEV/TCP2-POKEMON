@@ -17,9 +17,10 @@ public enum STATUS_AUMENTAR
 [CreateAssetMenu(fileName = "ItemNovo", menuName = "Pokemon/Criar um Item")]
 public class ItemBase : ScriptableObject
 {
+    public string nome;
     public TIPO_ITEM tipoItem;
     public STATUS_AUMENTAR statsUP;
-
+    
     [Header("Valores")]
     public float quantiaStatsUP;
     public float valorCaptura;

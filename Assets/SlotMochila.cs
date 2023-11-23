@@ -18,8 +18,6 @@ public class SlotMochila : MonoBehaviour
     public void Start()
     {
         //info = GameObject.Find("InfoPokemon").GetComponent<PcInfoChanger>();
-        AddEvent(gameObject, EventTriggerType.PointerEnter, delegate { OnEnter(); });
-        AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExit(); });
         AddEvent(gameObject, EventTriggerType.PointerClick, delegate { OnClick(); });
     }
 
@@ -39,25 +37,14 @@ public class SlotMochila : MonoBehaviour
         trigger.triggers.Add(eventTrigger);
     }
 
-    public void OnEnter()
-    {
-        var _pkm = info.DescobrirItem(index);
-
-        if (_pkm != null) info.UpdateTextInfo(_pkm);
-    }
-
-    public void OnExit()
-    {
-        info.DeleteTextInfo();
-    }
-
     public void OnClick()
     {
         var _pkm = info.DescobrirItem(index);
 
         if (_pkm != null)
         {
-            info.gm.item_atual = _pkm;
+            info.UpdateTextInfo(_pkm);
+            info.item_selecionado = _pkm;
 
             info.ControlarBotao(true);
 
