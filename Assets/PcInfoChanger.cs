@@ -29,6 +29,10 @@ public class PcInfoChanger : MonoBehaviour
     public GameObject[] slotsPC;
     public Sprite bgPCslot;
 
+    public void Update()
+    {
+        gm.pkm_selecionado = pkm_selecionado;
+    }
     public void UpdateTextInfo(Pokemon pkm)
     {
         if (pkm.nome != "PlaceHolder")

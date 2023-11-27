@@ -36,24 +36,37 @@ public class ItemBase : ScriptableObject
     public Sprite sprite;
     public GameObject modelo3D;
     public VisualEffectAsset vfx;
+    public float C, F;
     
     public bool Captura(Pokemon enemy)
     {
         var tentativas = 0;
         var tentativas_max = 4;
         var consegui = false;
+        
+       
 
         //CAPTURA
-        var C = ((3 * enemy.VidaMax - 2 * enemy.HP) * (enemy.ChanceCaptura * valorCaptura) * enemy.Status.ChanceCaptura) / 3 * enemy.VidaMax;
+        if (enemy.Status != null)
+        {
+            C = (3 * enemy.VidaMax - 2 * enemy.HP) * (enemy.ChanceCaptura * valorCaptura) * enemy.Status.ChanceCaptura / 3 * enemy.VidaMax;
+        }
+        else 
+        {
+            C = (3 * enemy.VidaMax - 2 * enemy.HP) * (enemy.ChanceCaptura * valorCaptura) / 3 * enemy.VidaMax; 
+        }
 
         //CONTENCAO
-        var F = 1048560 / Mathf.Sqrt(Mathf.Sqrt(16711680 / C));
+        F = 1048560 / Mathf.Sqrt( Mathf.Sqrt(16711680 / C) );
 
-        while(tentativas < tentativas_max)
+        Debug.Log(F);
+
+        while (tentativas < tentativas_max)
         {
             var _resultado = Random.Range(0, 65526);
+            Debug.Log(_resultado);
 
-            if (_resultado > F)//consegui capturar
+            if (_resultado < F)//consegui capturar
             {
                 consegui = true;
                 break;
@@ -62,16 +75,25 @@ public class ItemBase : ScriptableObject
             tentativas++;
         }
 
+        Debug.Log(consegui);
+
         //SE O VALOR SORTEADO FOR MAIOR QUE F ENTAO FALSE
-        if (!consegui) { return false; } else { return true; }
+        C = 0f;
+        F = 0f;
+
+        return consegui;
     }
 
     public void StatsUp(Pokemon myPokemon)
     {
+
+        Debug.Log("Rodei statusUp");
+
         switch (statsUP)
         {
             case STATUS_AUMENTAR.LEVEL:
                 myPokemon.level += Mathf.RoundToInt(quantiaStatsUP);
+                myPokemon.AttGolpes();
                 break;
 
             case STATUS_AUMENTAR.VIDA:

@@ -13,13 +13,17 @@ public class BattleUnit : MonoBehaviour
     public bool IsPlayerUnit {get { return isPlayerUnit; } }
     public HudBatalha Hud { get { return hud; } }
 
-   
 
-    public Pokemon Pokemon { get; set; }
+
+     public Pokemon Pokemon { get; set; }
+    //public Pokemon pokeatual;
 
     public void Setup(Pokemon pokemon)
     {
         Pokemon = pokemon;
+        //pokeatual = pokemon;
+        pokemon.Init();
+
         if (isPlayerUnit)
         {
             instantiatedModel = Instantiate(pokemon.Base.Modelo3D, posicaoDeInstancia.transform.position, pokemon.Base.Modelo3D.transform.rotation);
