@@ -49675,22 +49675,6 @@ MonoBehaviour:
     level: 1
     sprite: {fileID: 0}
     nome: 
-  - _base: {fileID: 11400000, guid: 6cd27206a78a9d6479c460b23728da22, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 5a6bdae4c4293fe479c6cc610f3ea911, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 2a98a7fc35d6fb943b0f973668e2853c, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 1195c57f8ed5da447be11ac61b548657, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
 --- !u!1 &964213751
 GameObject:
   m_ObjectHideFlags: 0
