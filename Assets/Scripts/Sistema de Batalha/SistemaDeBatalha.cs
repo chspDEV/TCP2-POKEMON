@@ -139,6 +139,7 @@ public class SistemaDeBatalha : MonoBehaviour
         
         playerUnit.Setup(playerParty.GetHealthyPokemon());
         enemyUnit.Setup(pokemonSelvagem);
+        playerUnit.Hud.setarVida();
 
         partyScreen.Init();
 
@@ -178,7 +179,7 @@ public class SistemaDeBatalha : MonoBehaviour
     {
         playerUnit.Setup(playerParty.GetHealthyPokemon());
         enemyUnit.Setup(trainerParty.GetHealthyPokemon());
-
+        playerUnit.Hud.setarVida();
         partyScreen.Init();
 
         dialogBox.SetMoveNames(playerUnit.Pokemon.Moves);
