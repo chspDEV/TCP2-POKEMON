@@ -3681,7 +3681,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156747406}
   m_LocalRotation: {x: 0.3420201, y: -0, z: -0, w: 0.9396927}
-  m_LocalPosition: {x: 390.1, y: 2.102005, z: 256.45}
+  m_LocalPosition: {x: 390.1, y: 2.102005, z: 256.40698}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34845,6 +34845,16 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.62789106
       objectReference: {fileID: 0}
+    - target: {fileID: 8116506426761374510, guid: a7fa53812de0f9d439fb6592332ee8c5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 8116506426761374510, guid: a7fa53812de0f9d439fb6592332ee8c5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.22
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7fa53812de0f9d439fb6592332ee8c5, type: 3}
 --- !u!4 &335133034 stripped
@@ -39367,6 +39377,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481718361}
   m_Mesh: {fileID: 3613567641014311022, guid: e2407894fb734a74bb39c4f125841a74, type: 3}
+--- !u!114 &483149192 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8125681469047005023, guid: 5ea489523cc18a440809959c20c979f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 4549848264120076061}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &503814284
 GameObject:
   m_ObjectHideFlags: 0
@@ -47465,7 +47487,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34806
+  m_Name: pb_Mesh58892
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -49424,6 +49446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoAcao: {fileID: 1131312479}
+  HpText: {fileID: 483149192}
   quest: {fileID: 1217950716}
   gm: {fileID: 1663302641}
   textPokebola: {fileID: 0}
@@ -49637,8 +49660,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958684665}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.86, y: -19.9, z: 0.584}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.860008, y: -19.900005, z: 0.58399695}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49671,7 +49694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pokemonSelvagens:
-  - _base: {fileID: 11400000, guid: 5fd15a2ed78656e4a9ebb43067efcaa8, type: 2}
+  - _base: {fileID: 11400000, guid: 78389d76e3a132a41a13d5d5f327dad3, type: 2}
     level: 1
     sprite: {fileID: 0}
     nome: 
@@ -54858,7 +54881,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh33962
+  m_Name: pb_Mesh58034
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -62069,19 +62092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pokemonSelvagens:
-  - _base: {fileID: 11400000, guid: 5a6bdae4c4293fe479c6cc610f3ea911, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 96ba0225b6c78e0469e693b0634c74be, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 74cd546d8f38cfd40bc828f60e86ee27, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 5fd15a2ed78656e4a9ebb43067efcaa8, type: 2}
+  - _base: {fileID: 11400000, guid: 78389d76e3a132a41a13d5d5f327dad3, type: 2}
     level: 1
     sprite: {fileID: 0}
     nome: 
@@ -64004,19 +64015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pokemonSelvagens:
-  - _base: {fileID: 11400000, guid: 5a6bdae4c4293fe479c6cc610f3ea911, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 96ba0225b6c78e0469e693b0634c74be, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 74cd546d8f38cfd40bc828f60e86ee27, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 5fd15a2ed78656e4a9ebb43067efcaa8, type: 2}
+  - _base: {fileID: 11400000, guid: 78389d76e3a132a41a13d5d5f327dad3, type: 2}
     level: 1
     sprite: {fileID: 0}
     nome: 
@@ -70474,19 +70473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pokemonSelvagens:
-  - _base: {fileID: 11400000, guid: 5a6bdae4c4293fe479c6cc610f3ea911, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 96ba0225b6c78e0469e693b0634c74be, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 74cd546d8f38cfd40bc828f60e86ee27, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 5fd15a2ed78656e4a9ebb43067efcaa8, type: 2}
+  - _base: {fileID: 11400000, guid: 78389d76e3a132a41a13d5d5f327dad3, type: 2}
     level: 1
     sprite: {fileID: 0}
     nome: 
@@ -74867,19 +74854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pokemonSelvagens:
-  - _base: {fileID: 11400000, guid: 5a6bdae4c4293fe479c6cc610f3ea911, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 96ba0225b6c78e0469e693b0634c74be, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 74cd546d8f38cfd40bc828f60e86ee27, type: 2}
-    level: 1
-    sprite: {fileID: 0}
-    nome: 
-  - _base: {fileID: 11400000, guid: 5fd15a2ed78656e4a9ebb43067efcaa8, type: 2}
+  - _base: {fileID: 11400000, guid: 78389d76e3a132a41a13d5d5f327dad3, type: 2}
     level: 1
     sprite: {fileID: 0}
     nome: 
@@ -75828,7 +75803,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31916
+  m_Name: pb_Mesh55856
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

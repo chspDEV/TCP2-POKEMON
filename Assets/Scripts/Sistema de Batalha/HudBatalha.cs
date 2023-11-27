@@ -8,6 +8,7 @@ using System;
 public class HudBatalha : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI TextoNome;
+    [SerializeField] TextMeshProUGUI TextoVida;
     [SerializeField] TextMeshProUGUI TextoLevel;
     [SerializeField] TextMeshProUGUI TextoStatus;
     [SerializeField] BarraVida BarraHp;
@@ -56,6 +57,11 @@ public class HudBatalha : MonoBehaviour
         _pokemon.OnStatusChanged += SetStatusText;
     }
 
+    public void setarVida()
+    {
+        TextoVida.SetText(_pokemon.HP + "/" + _pokemon.VidaMax);
+    }
+
     void SetStatusText()
     {
         if (_pokemon.Status == null)
@@ -89,10 +95,15 @@ public class HudBatalha : MonoBehaviour
 
     public IEnumerator UpdateHP()
     {
+       
         if (_pokemon.HpChanged)
         {
             yield return BarraHp.SetHPsmooth((float)_pokemon.HP / _pokemon.VidaMax);
             _pokemon.HpChanged = false;
+            if (TextoVida != null)
+            {
+                TextoVida.SetText(_pokemon.HP + "/" + _pokemon.VidaMax);
+            }
         }
 
         if (_pokemon.HP <= _pokemon.VidaMax / 4)
