@@ -77,6 +77,20 @@ public class Pokemon
         ChanceCaptura = _base.ChanceCaptura;
     }
 
+    public void AttGolpes()
+    {
+        // Geração de Golpes
+        Moves = new List<Move>();
+        foreach (var move in Base.GolpesParaAprender)
+        {
+            if (move.Level <= Level)
+                Moves.Add(new Move(move.Base));
+
+            if (Moves.Count >= 4)
+                break;
+        }
+    }
+
     void CalcularStatus()
     {
         Stats = new Dictionary<Stat, int>();

@@ -23,7 +23,7 @@ public class SistemaDeBatalha : MonoBehaviour
 
     [Header("Pokemons na Batalha")]
     [Space(15)]
-    Pokemon pokemonSelvagem;
+    [SerializeField] Pokemon pokemonSelvagem;
     public BattleUnit playerUnit;
     [SerializeField] BattleUnit enemyUnit;
     
@@ -72,6 +72,16 @@ public class SistemaDeBatalha : MonoBehaviour
     {
         pp = GameObject.Find("Player");
         player = pp.GetComponent<PlayerController>();
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Debug.Log(pokemonSelvagem);
+            Debug.Log(pokemonSelvagem.nome);
+            
+        }
     }
 
     public void AttPokebola()
@@ -896,19 +906,16 @@ public class SistemaDeBatalha : MonoBehaviour
             ActionSelection();
             yield break;
         }
-
-
-
         else
         {
             //Entao perde uma pokebola
             //gm.pokeballs--;
 
-                var ConseguiCapturar = gm.item_atual.Captura(enemyUnit.Pokemon);
+                var ConseguiCapturar = gm.item_atual.Captura(pokemonSelvagem);
 
                 if (ConseguiCapturar)
                 {
-                    dialogBox.SetDialog($"{enemyUnit.name} foi capturado!");
+                    dialogBox.SetDialog($"{pokemonSelvagem.nome} foi capturado!");
                     yield return new WaitForSeconds(2f);
 
                     /* bs.*/

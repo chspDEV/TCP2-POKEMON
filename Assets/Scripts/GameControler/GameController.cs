@@ -69,7 +69,6 @@ public class GameController : MonoBehaviour
                     LimparInfoMochila();
                     break;
                 }
-                
                 break;
             case GameState.Battle:
                 if (item_atual.tipoItem == TIPO_ITEM.CONSUMIVEL)
@@ -84,6 +83,7 @@ public class GameController : MonoBehaviour
                     sistemaDeBatalha.StartCoroutine(sistemaDeBatalha.TryToCatch());
                     sistemaDeBatalha.dialogBox.AtivarSelecaoMochila(false);
                     sistemaDeBatalha.dialogBox.AtivarSelecaoAcao(false);
+                    LimparInfoMochila();
                     break;
                 }
                     

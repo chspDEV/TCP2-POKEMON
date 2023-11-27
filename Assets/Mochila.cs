@@ -29,7 +29,6 @@ public class Mochila : MonoBehaviour
 
     public void Update()
     {
-        gm.pkm_selecionado = pkm_selecionado;
         gm.item_atual = item_selecionado;
     }
 
