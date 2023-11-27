@@ -14,6 +14,7 @@ public class SlotMochila : MonoBehaviour
     [SerializeField] Mochila info;
     [SerializeField] int index;
     public Image minhaImagem;
+    public TextMeshProUGUI meuTexto;
 
     public void Start()
     {
@@ -59,6 +60,7 @@ public class SlotMochila : MonoBehaviour
             if (info.slot_selecionado != null)
                 _slot.GetComponent<Image>().color = Color.red;
         }
+
     }
 
 }

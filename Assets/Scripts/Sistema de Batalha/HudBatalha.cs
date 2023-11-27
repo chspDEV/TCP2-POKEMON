@@ -57,9 +57,9 @@ public class HudBatalha : MonoBehaviour
         _pokemon.OnStatusChanged += SetStatusText;
     }
 
-    public void setarVida()
+    public void SetarVida(Pokemon pkm)
     {
-        TextoVida.SetText(_pokemon.HP + "/" + _pokemon.VidaMax);
+        TextoVida.SetText(pkm.HP + "/" + pkm.VidaMax);
     }
 
     void SetStatusText()
@@ -95,14 +95,14 @@ public class HudBatalha : MonoBehaviour
 
     public IEnumerator UpdateHP()
     {
-       
         if (_pokemon.HpChanged)
         {
             yield return BarraHp.SetHPsmooth((float)_pokemon.HP / _pokemon.VidaMax);
             _pokemon.HpChanged = false;
+
             if (TextoVida != null)
             {
-                TextoVida.SetText(_pokemon.HP + "/" + _pokemon.VidaMax);
+                SetarVida(_pokemon);
             }
         }
 

@@ -40,14 +40,21 @@ public class Mochila : MonoBehaviour
             slots[_index].GetComponent<SlotMochila>().minhaImagem.sprite = gm.MOCHILA[_index].sprite;
             var imgColor = slots[_index].GetComponent<SlotMochila>().minhaImagem.color;
             slots[_index].GetComponent<SlotMochila>().minhaImagem.color = new Color(imgColor.r, imgColor.g, imgColor.b, 1f);
+            slots[_index].GetComponent<SlotMochila>().meuTexto.text = $"x{gm.MOCHILA[_index].amount}";
         }
         else
         {
             //Se não existe pokemon nesse index, deixe tudo em branco!
             slots[_index].GetComponent<SlotMochila>().minhaImagem.sprite = null;
-            slots[_index].GetComponent<SlotMochila>().minhaImagem.color = new Color(1, 1, 1, 0f); 
+            slots[_index].GetComponent<SlotMochila>().minhaImagem.color = new Color(1, 1, 1, 0f);
+            slots[_index].GetComponent<SlotMochila>().meuTexto.text = $"";
         }
 
+    }
+
+    public void ResetarCorSlot()
+    {
+        slot_selecionado.GetComponent<Image>().color = new Color(255, 255, 255, 1f);
     }
 
     public ItemBase DescobrirItem(int _index)

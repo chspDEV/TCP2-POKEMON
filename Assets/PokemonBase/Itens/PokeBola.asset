@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PokeBola
   m_EditorClassIdentifier: 
   nome: Pokebola
+  amount: 1
   tipoItem: 1
   statsUP: 2
   quantiaStatsUP: 0
@@ -23,3 +24,5 @@ MonoBehaviour:
   sprite: {fileID: -956675702, guid: d06984ceebb6e1b4d98f6a9c75a58293, type: 3}
   modelo3D: {fileID: 0}
   vfx: {fileID: 0}
+  C: 0
+  F: 0

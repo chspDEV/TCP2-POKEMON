@@ -112,6 +112,15 @@ public class PcInfoChanger : MonoBehaviour
 
     }
 
+    public void ResetarCorSlots()
+    {
+        foreach (var item in slotsParty)
+        {
+            if(item.GetComponent<Image>().color.a != 0f) //SE NAO ESTA TRANSPARENTE 
+            item.GetComponent<Image>().color = new Color(255, 255, 255, 1f);
+        }
+    }
+
     public Pokemon DescobrirPkmParty(int _index)
     {
         PokemonParty _pt = player.GetComponent<PokemonParty>();

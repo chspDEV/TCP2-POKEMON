@@ -18,6 +18,7 @@ public enum STATUS_AUMENTAR
 public class ItemBase : ScriptableObject
 {
     public string nome;
+    public int amount;
     public TIPO_ITEM tipoItem;
     public STATUS_AUMENTAR statsUP;
     

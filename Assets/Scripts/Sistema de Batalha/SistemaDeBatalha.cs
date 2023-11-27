@@ -139,7 +139,8 @@ public class SistemaDeBatalha : MonoBehaviour
         
         playerUnit.Setup(playerParty.GetHealthyPokemon());
         enemyUnit.Setup(pokemonSelvagem);
-        playerUnit.Hud.setarVida();
+
+        playerUnit.Hud.SetarVida(playerUnit.Pokemon);
 
         partyScreen.Init();
 
@@ -179,7 +180,9 @@ public class SistemaDeBatalha : MonoBehaviour
     {
         playerUnit.Setup(playerParty.GetHealthyPokemon());
         enemyUnit.Setup(trainerParty.GetHealthyPokemon());
-        playerUnit.Hud.setarVida();
+
+        playerUnit.Hud.SetarVida(playerUnit.Pokemon);
+
         partyScreen.Init();
 
         dialogBox.SetMoveNames(playerUnit.Pokemon.Moves);
@@ -881,31 +884,37 @@ public class SistemaDeBatalha : MonoBehaviour
         //StartCoroutine(TryToCatch());
     }
 
+    public IEnumerator TurnoInimigo()
+    {
+        yield return new WaitForSeconds(2f);
+
+
+        // Turno do inimigo
+
+        state = EstadoDeBatalha.RunningTurn;
+
+        partyScreen.gameObject.SetActive(false);
+
+        //Desativando canvas
+        dialogBox.AtivarSelecaoAcao(false);
+
+        var enemyMove = enemyUnit.Pokemon.GetRandomMove();
+        yield return RunMove(enemyUnit, playerUnit, enemyMove);
+        yield return RunAfterTurn(enemyUnit);
+        yield return new WaitForSeconds(2f);
+
+        ActionSelection();
+        yield break;
+    }
+
     public IEnumerator TryToCatch()
     {
         //Nao da pra capturar do treinador
         if (isTrainerBattle)
         {
             yield return dialogBox.TypeDialog($"Você não pode capturar pokemons de um treinador!");
-            yield return new WaitForSeconds(2f);
 
-
-            // Turno do inimigo
-
-            state = EstadoDeBatalha.RunningTurn;
-
-            partyScreen.gameObject.SetActive(false);
-
-            //Desativando canvas
-            dialogBox.AtivarSelecaoAcao(false);
-
-            var enemyMove = enemyUnit.Pokemon.GetRandomMove();
-            yield return RunMove(enemyUnit, playerUnit, enemyMove);
-            yield return RunAfterTurn(enemyUnit);
-            yield return new WaitForSeconds(2f);
-
-            ActionSelection();
-            yield break;
+            StartCoroutine(TurnoInimigo());
         }
         else
         {

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: "Po\xE7\xE3o"
   m_EditorClassIdentifier: 
   nome: "Po\xE7\xE3o"
+  amount: 1
   tipoItem: 0
   statsUP: 1
   quantiaStatsUP: 50
@@ -22,3 +23,5 @@ MonoBehaviour:
   sprite: {fileID: -510211806, guid: c2dadc152018d784b8c6787c8d7f05a2, type: 3}
   modelo3D: {fileID: 0}
   vfx: {fileID: 0}
+  C: 0
+  F: 0

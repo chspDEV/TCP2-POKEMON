@@ -1688,7 +1688,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -47, y: -41.999878}
+  m_AnchoredPosition: {x: -47, y: -42}
   m_SizeDelta: {x: 196, y: 69.2}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &55056858
@@ -3680,8 +3680,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156747406}
-  m_LocalRotation: {x: 0.3420201, y: -0, z: -0, w: 0.9396927}
-  m_LocalPosition: {x: 390.1, y: 2.102005, z: 256.40698}
+  m_LocalRotation: {x: -0.4972851, y: 0.38748246, z: -0.26396042, w: -0.72999305}
+  m_LocalPosition: {x: -31.399994, y: -31.8, z: 50.650005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3746,9 +3746,9 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 77
   orthographic: 0
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -45747,7 +45747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -742.87006, y: 16.500046}
+  m_AnchoredPosition: {x: -742.8701, y: 16.5}
   m_SizeDelta: {x: -1299.5999, y: 415.3601}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &807704614
@@ -49446,11 +49446,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoAcao: {fileID: 1131312479}
-  HpText: {fileID: 483149192}
   quest: {fileID: 1217950716}
   gm: {fileID: 1663302641}
   textPokebola: {fileID: 0}
   dialogBox: {fileID: 1670293290}
+  pokemonSelvagem:
+    _base: {fileID: 0}
+    level: 0
+    sprite: {fileID: 0}
+    nome: 
   playerUnit: {fileID: 377989247}
   enemyUnit: {fileID: 448533026}
   partyScreen: {fileID: 430969015}
@@ -63522,6 +63526,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d0fa846fa184d464282c76a4851d904c, type: 2}
   - {fileID: 11400000, guid: d4044536cb2226c4c9302ba09c29cc6c, type: 2}
   - {fileID: 11400000, guid: 751ea36bd2b7b4445b30f1d8e8f2ca7e, type: 2}
+  mochila: {fileID: 610202218}
   PC:
   - _base: {fileID: 11400000, guid: 5a6bdae4c4293fe479c6cc610f3ea911, type: 2}
     level: 11
@@ -83699,6 +83704,11 @@ PrefabInstance:
       propertyPath: TextoNome
       value: 
       objectReference: {fileID: 1353612626}
+    - target: {fileID: 4549848263771877762, guid: 5ea489523cc18a440809959c20c979f2,
+        type: 3}
+      propertyPath: TextoVida
+      value: 
+      objectReference: {fileID: 483149192}
     - target: {fileID: 4549848263771877762, guid: 5ea489523cc18a440809959c20c979f2,
         type: 3}
       propertyPath: TextoLevel

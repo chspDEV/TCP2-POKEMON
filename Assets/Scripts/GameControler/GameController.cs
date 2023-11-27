@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
     public ItemBase item_atual;
     public Pokemon pkm_selecionado;
     public List<ItemBase> MOCHILA;
+    public Mochila mochila;
 
     public List<Pokemon> PC;
     
@@ -74,6 +75,9 @@ public class GameController : MonoBehaviour
                 if (item_atual.tipoItem == TIPO_ITEM.CONSUMIVEL)
                 {
                     item_atual.StatsUp(pkm_selecionado);
+                    sistemaDeBatalha.dialogBox.AtivarSelecaoMochila(false);
+                    sistemaDeBatalha.dialogBox.AtivarSelecaoAcao(false);
+                    StartCoroutine(sistemaDeBatalha.TurnoInimigo());
                     LimparInfoMochila();
                     break;
                 } 
@@ -97,6 +101,10 @@ public class GameController : MonoBehaviour
 
     public void LimparInfoMochila()
     {
+        RemoverItem();
+        mochila.ResetarCorSlot();
+        mochila.GetComponent<PcInfoChanger>().ResetarCorSlots();
+        
         item_atual = null;
         pkm_selecionado = null;
     }
@@ -125,6 +133,24 @@ public class GameController : MonoBehaviour
 
         sistemaDeBatalha.gameObject.SetActive(false);
         cam.gameObject.SetActive(true);
+    }
+
+    public void RemoverItem()
+    {
+        if (item_atual.amount > 1)
+        {
+            item_atual.amount--;
+        }
+        else
+        {
+            for (int i = 0; i < MOCHILA.Count; i++)
+            {
+                if (MOCHILA[i].name == item_atual.name)
+                {
+                    MOCHILA.Remove(item_atual);
+                }
+            } 
+        }
     }
 
     void Update()

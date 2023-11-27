@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Doce raro
   m_EditorClassIdentifier: 
   nome: Doce Raro
+  amount: 1
   tipoItem: 0
   statsUP: 0
   quantiaStatsUP: 1
@@ -22,3 +23,5 @@ MonoBehaviour:
   sprite: {fileID: -1315466811, guid: c2dadc152018d784b8c6787c8d7f05a2, type: 3}
   modelo3D: {fileID: 0}
   vfx: {fileID: 0}
+  C: 0
+  F: 0
