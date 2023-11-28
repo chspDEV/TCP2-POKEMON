@@ -64,6 +64,9 @@ public class SistemaDeBatalha : MonoBehaviour
     int currentAction; // acao atual
     public int currentMove; // acao atual
     int currentMember;
+    
+    //adicionei isso pra falar que, se capturou, ele não roda as falas
+    bool capturou = false;
 
     public int EscapeAttempts { get; set; }
 
@@ -215,13 +218,13 @@ public class SistemaDeBatalha : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        if (won == true) 
+        if (won == true && capturou) 
         { 
             dialogBox.SetDialog("Você venceu a batalha!");
             yield return new WaitForSeconds(0.5f);
 
         }
-        else { dialogBox.SetDialog("Você perdeu a batalha..."); }
+        else if (!won && capturou) { dialogBox.SetDialog("Você perdeu a batalha..."); }
 
         yield return new WaitForSeconds(1f);
         //Venci Batalha selvagem
@@ -980,18 +983,20 @@ public class SistemaDeBatalha : MonoBehaviour
 
                 if (ConseguiCapturar)
                 {
+                    
                     dialogBox.SetDialog($"{pokemonSelvagem.nome} foi capturado!");
                     yield return new WaitForSeconds(2f);
+                    capturou = true;
 
-                    /* bs.*/
+                /* bs.*/
 
-                    playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
+                playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
                     enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
 
                     BattleOver(true);
 
                     GanharPokemon();
-                    Debug.Log("to funcionadno");
+                    
                 }
                 else if (!ConseguiCapturar)
                 {
@@ -1014,7 +1019,7 @@ public class SistemaDeBatalha : MonoBehaviour
 
                     ActionSelection();
                     textoAcao.enabled = true;
-                    Debug.Log("to funcionadno1");
+                   
                     yield break;
 
                 }
@@ -1023,7 +1028,7 @@ public class SistemaDeBatalha : MonoBehaviour
                     // Trate a situação onde item_atual é nulo (talvez exiba uma mensagem de erro ou tome alguma ação padrão)
                     Debug.LogError("item_atual é nulo.");
                 }
-                Debug.Log("to funcionadno3");
+               
             }
         
 
