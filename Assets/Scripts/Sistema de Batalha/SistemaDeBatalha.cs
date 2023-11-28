@@ -205,6 +205,7 @@ public class SistemaDeBatalha : MonoBehaviour
         state = EstadoDeBatalha.BattleOver;
         playerParty.Pokemons.ForEach(p => p.OnBattleOver());
         StartCoroutine(TerminarCombate(won));
+        playerUnit.DestroyInstantiatedModel();
 
     }
 
@@ -224,7 +225,11 @@ public class SistemaDeBatalha : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         //Venci Batalha selvagem
-        if (won == true && treinador_atual == null) { UparPokemon(); PlayerCanBattle = true; }
+        if (won == true && treinador_atual == null) 
+        {
+            UparPokemon(); 
+            PlayerCanBattle = true;
+        }
 
         //Venci batalha com treinador
         if (treinador_atual != null && won == true)
