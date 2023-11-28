@@ -65,8 +65,8 @@ public class Pokemon
         CalcularStatus();
 
         HP = VidaMax;
-        XpAtual = 0f;
-        XpGiven = 100f;
+        
+        XpGiven = Mathf.RoundToInt(UnityEngine.Random.Range(58 + (2 * level) ,68 + (5 * level) ) / 10);
 
         ResetStatBoost();
 
@@ -75,6 +75,16 @@ public class Pokemon
         sprite = _base.sprite;
         nome = _base.Nome;
         ChanceCaptura = _base.ChanceCaptura;
+    }
+
+    public void RecuperarVidaLevelUp()
+    {
+        var amount = HP += VidaMax / 2;
+
+        if (HP + amount <= VidaMax)
+        {
+            HP += amount;
+        }
     }
 
     public void AttGolpes()
@@ -91,7 +101,15 @@ public class Pokemon
         }
     }
 
-    void CalcularStatus()
+    public void UsarPocao(int amount)
+    {
+        if (HP + amount <= VidaMax)
+        {
+            HP += amount;
+        }
+    }
+
+    public void CalcularStatus()
     {
         Stats = new Dictionary<Stat, int>();
         Stats.Add(Stat.Ataque, Mathf.FloorToInt((Base.Ataque * Level) / 100f )+ 5);

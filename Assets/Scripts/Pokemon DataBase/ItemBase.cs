@@ -94,12 +94,13 @@ public class ItemBase : ScriptableObject
         {
             case STATUS_AUMENTAR.LEVEL:
                 myPokemon.level += Mathf.RoundToInt(quantiaStatsUP);
+                myPokemon.CalcularStatus(); 
                 myPokemon.AttGolpes();
+                myPokemon.RecuperarVidaLevelUp();
                 break;
 
             case STATUS_AUMENTAR.VIDA:
-                //usando a funcao de dano pra curar :P
-                myPokemon.UpdateHP(Mathf.RoundToInt(quantiaStatsUP) * -1);
+                myPokemon.UsarPocao((int)quantiaStatsUP);
                 break;
 
             default:

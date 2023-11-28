@@ -149,6 +149,9 @@ public class SistemaDeBatalha : MonoBehaviour
 
         yield return dialogBox.TypeDialog($"Um {enemyUnit.Pokemon.Base.Nome} apareceu!");
 
+        yield return new WaitForSeconds(1.5f);
+
+        Debug.Log("ActionSelection!");
         ActionSelection();
     }
 
@@ -189,6 +192,9 @@ public class SistemaDeBatalha : MonoBehaviour
 
         yield return dialogBox.TypeDialog($"Um {enemyUnit.Pokemon.Base.Nome} apareceu!");
 
+        yield return new WaitForSeconds(1.5f);
+
+        Debug.Log("ActionSelectionTrainerBattle!");
         ActionSelection();
     }
 
@@ -198,8 +204,25 @@ public class SistemaDeBatalha : MonoBehaviour
 
         state = EstadoDeBatalha.BattleOver;
         playerParty.Pokemons.ForEach(p => p.OnBattleOver());
-        OnBattleOver(won);
+        StartCoroutine(TerminarCombate(won));
 
+    }
+
+    public IEnumerator TerminarCombate(bool won)
+    {
+        dialogBox.AtivarSelecaoAcao(false);
+
+        yield return new WaitForSeconds(1f);
+
+        if (won == true) 
+        { 
+            dialogBox.SetDialog("Você venceu a batalha!");
+            yield return new WaitForSeconds(0.5f);
+
+        }
+        else { dialogBox.SetDialog("Você perdeu a batalha..."); }
+
+        yield return new WaitForSeconds(1f);
         //Venci Batalha selvagem
         if (won == true && treinador_atual == null) { UparPokemon(); PlayerCanBattle = true; }
 
@@ -215,14 +238,12 @@ public class SistemaDeBatalha : MonoBehaviour
             _parar.PerdiBatalha = true;
             _parar.posso_batalha = false;
             treinador_atual = null;
-            //
-            //
             //PlayerCanBattle = true;
-
-
         }
-        
-        
+
+        dialogBox.SetDialog("");
+
+
 
         playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
         enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
@@ -231,7 +252,7 @@ public class SistemaDeBatalha : MonoBehaviour
 
 
         #region TELEPORTE PÓS MORTE
-        if (won == false &&  quest.centroPokemon == false)//Perdi e meus pokemons morreram = voltar pra casa
+        if (won == false && quest.centroPokemon == false)//Perdi e meus pokemons morreram = voltar pra casa
         {
             Transitor.Teleporte();
             foreach (Pokemon p in playerParty.pokemons)
@@ -240,28 +261,32 @@ public class SistemaDeBatalha : MonoBehaviour
             }
             PlayerCanBattle = true;
         }
-        else if (won == false && quest.centroPokemon == true) 
-                { 
-                    Transitor.TeleporteCentroPokemon();
-                    foreach (Pokemon p in playerParty.pokemons)
-                    {
-                        p.HP = p.VidaMax;
-                    }
+        else if (won == false && quest.centroPokemon == true)
+        {
+            Transitor.TeleporteCentroPokemon();
+            foreach (Pokemon p in playerParty.pokemons)
+            {
+                p.HP = p.VidaMax;
+            }
             PlayerCanBattle = true;
-            
+
         }
         #endregion
+
+        OnBattleOver(won);
         ResetarTudo();
         isTrainerBattle = false;
-
     }
 
     public void ActionSelection()
     {
         state = EstadoDeBatalha.ActionSelection;
+        
         dialogBox.AtivarSelecaoAcao(true);
        // StartCoroutine(dialogBox.TypeDialog("Escolha sua ação"));
-        dialogBox.SetDialog("Escolha sua ação...");
+        dialogBox.SetDialog("Escolha sua ação.");
+
+        Debug.Log("Rodei ActionSelection!");
     }
 
     
@@ -277,8 +302,11 @@ public class SistemaDeBatalha : MonoBehaviour
                 for (var i = 0; i < trainerParty.pokemons[0].XpGiven; i++)
                 {
                     p.XpAtual ++;
+                    playerUnit.Hud.BarraXp.SetXP((float)p.XpAtual / Mathf.Pow(p.level, 3));
 
-                    if (p.XpAtual >= p.level * 100)
+                    var CondicaoUp = Math.Pow(p.level, 3); //Quantia de xp pra upar:  level ao cubo
+
+                    if (p.XpAtual >= CondicaoUp)
                     {
                         p.XpAtual = 0;
                         p.level++;
@@ -454,15 +482,37 @@ public class SistemaDeBatalha : MonoBehaviour
 
             if (targetUnit.Pokemon.HP <= 0)
             {
-                yield return dialogBox.TypeDialog($"{targetUnit.Pokemon.Base.Nome} foi derrotado");
-                //Reproduzir a animacao de desmaio aqui 
-                // ---------\\ 
-                yield return new WaitForSeconds(2f);
+                if (targetUnit.Pokemon == enemyUnit.Pokemon)
+                {
+                    dialogBox.SetDialog($"{targetUnit.Pokemon.Base.Nome} foi derrotado!");
+                    yield return new WaitForSeconds(2f);
+                    dialogBox.SetDialog($"Você ganhou {targetUnit.Pokemon.XpGiven} de experiência.");
+                    yield return new WaitForSeconds(1f);
+                    var _moedas = UnityEngine.Random.Range(2 * targetUnit.Pokemon.level, 10 * targetUnit.Pokemon.level);
+                    gm.moedas += Mathf.RoundToInt(_moedas);
+                    dialogBox.SetDialog($"Você ganhou {_moedas} moedas.");
+                    //Reproduzir a animacao de desmaio aqui 
+                    // ---------\\ 
+                    yield return new WaitForSeconds(1f);
 
-                targetUnit.DestroyInstantiatedModel();
-                //sourceUnit.Hud.UpdateXP();
+                    targetUnit.DestroyInstantiatedModel();
+                    //sourceUnit.Hud.UpdateXP();
 
-                CheckForBattleOver(targetUnit);
+                    CheckForBattleOver(targetUnit);
+                }
+                else //Seu pokemon foi de base
+                {
+                    dialogBox.SetDialog($"Seu {targetUnit.Pokemon.Base.Nome} foi derrotado...");
+                    //Reproduzir a animacao de desmaio aqui 
+                    // ---------\\ 
+                    yield return new WaitForSeconds(2f);
+
+                    targetUnit.DestroyInstantiatedModel();
+                    //sourceUnit.Hud.UpdateXP();
+
+                    CheckForBattleOver(targetUnit);
+                }
+
             }
         }
         else

@@ -43,7 +43,7 @@ public class MesaCarvalho : MonoBehaviour
     private void OnTriggerEnter(Collider colisao)
     {
         
-            if (colisao.gameObject.CompareTag("Player"))
+            if (colisao.gameObject.CompareTag("Player") && pressSpace != null)
             {
                 pressSpace.SetActive(true);
             }
@@ -54,7 +54,7 @@ public class MesaCarvalho : MonoBehaviour
     private void OnTriggerExit(Collider colisao)
     {
         
-            if (colisao.gameObject.CompareTag("Player"))
+            if (colisao.gameObject.CompareTag("Player") && pressSpace != null)
             {
                 pressSpace.SetActive(false);
             }

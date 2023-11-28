@@ -19,7 +19,6 @@ public class BarraXP: MonoBehaviour
     public void SetXP(float xpNormalized)
     {
         barraXP.transform.localScale = new Vector3(xpNormalized, 1f);
-        //  barraVida.fillAmount = hpNormalized;
     }
     public IEnumerator SetXPsmooth(float newXP)
     {
