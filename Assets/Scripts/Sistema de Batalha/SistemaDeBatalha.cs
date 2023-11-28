@@ -990,7 +990,7 @@ public class SistemaDeBatalha : MonoBehaviour
 
                 /* bs.*/
 
-                playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
+                    playerUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do player
                     enemyUnit.DestroyInstantiatedModel(); // sumindo com os modelos 3d do inimigo
 
                     BattleOver(true);
