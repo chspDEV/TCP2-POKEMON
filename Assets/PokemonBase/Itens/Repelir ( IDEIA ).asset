@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab5a399e71effec4eb7c7f92b7f91b6b, type: 3}
-  m_Name: PokeBola
+  m_Name: Repelir ( IDEIA )
   m_EditorClassIdentifier: 
-  nome: Pokebola
-  amount: 1
-  tipoItem: 1
+  nome: Repelir
+  amount: 0
+  tipoItem: 0
   statsUP: 2
   quantiaStatsUP: 0
-  valorCaptura: 1
-  preco: 10
-  descricao: "Compartimentos de forma esf\xE9rica que servem para armazenar pokemons
-    selvagens!"
-  sprite: {fileID: -956675702, guid: d06984ceebb6e1b4d98f6a9c75a58293, type: 3}
+  valorCaptura: 0
+  preco: 0
+  descricao: "Item b\xE1sico para previnir ataques de pok\xE9mons selvagens. Protege
+    o seu usu\xE1rio por at\xE9 45 segundos."
+  sprite: {fileID: 0}
   modelo3D: {fileID: 0}
   vfx: {fileID: 0}
   C: 0
