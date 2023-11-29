@@ -18,7 +18,7 @@ MonoBehaviour:
   statsUP: 0
   quantiaStatsUP: 1
   valorCaptura: 0
-  preco: 50
+  preco: 10000
   descricao: "Um doce extremamente doce, t\xE3o doce que faz o seu pokemon melhorar."
   sprite: {fileID: -1315466811, guid: c2dadc152018d784b8c6787c8d7f05a2, type: 3}
   modelo3D: {fileID: 0}

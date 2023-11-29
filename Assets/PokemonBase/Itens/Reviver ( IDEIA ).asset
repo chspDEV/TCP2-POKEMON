@@ -18,7 +18,7 @@ MonoBehaviour:
   statsUP: 1
   quantiaStatsUP: 0
   valorCaptura: 0
-  preco: 0
+  preco: 1500
   descricao: "Medicamentos para acordar um pok\xE9mon desmaiado. Restaura metade
     dos pontos de vida m\xE1xima."
   sprite: {fileID: 0}

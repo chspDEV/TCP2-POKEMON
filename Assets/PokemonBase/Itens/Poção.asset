@@ -16,9 +16,9 @@ MonoBehaviour:
   amount: 1
   tipoItem: 0
   statsUP: 1
-  quantiaStatsUP: 50
+  quantiaStatsUP: 20
   valorCaptura: 0
-  preco: 10
+  preco: 300
   descricao: Cura seu pokemon.
   sprite: {fileID: -510211806, guid: c2dadc152018d784b8c6787c8d7f05a2, type: 3}
   modelo3D: {fileID: 0}

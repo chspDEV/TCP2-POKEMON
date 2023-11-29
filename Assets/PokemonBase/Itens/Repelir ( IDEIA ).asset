@@ -18,7 +18,7 @@ MonoBehaviour:
   statsUP: 2
   quantiaStatsUP: 0
   valorCaptura: 0
-  preco: 0
+  preco: 350
   descricao: "Item b\xE1sico para previnir ataques de pok\xE9mons selvagens. Protege
     o seu usu\xE1rio por at\xE9 45 segundos."
   sprite: {fileID: 0}
