@@ -158,6 +158,25 @@ public class SistemaDeBatalha : MonoBehaviour
         ActionSelection();
     }
 
+    public Pokemon GetPokemonPlayer(Pokemon pkm)
+    {
+
+        if (pkm.nome == playerUnit.Pokemon.nome)
+        {
+            Debug.Log(playerUnit.Pokemon.HP);
+            return playerUnit.Pokemon;
+            
+        }
+        else
+        {
+            Debug.Log("Pkmns nao sao iguais");
+            return null;
+        }
+        
+        Debug.Log("retornei nulo");
+        return null;
+    }
+
     public void StartTrainerBattle(PokemonParty playerParty, PokemonParty trainerParty)
     {
         if (PlayerCanBattle)
@@ -830,10 +849,16 @@ public class SistemaDeBatalha : MonoBehaviour
         textoAcao.enabled = true;
     }
 
+    public IEnumerator Esperar(float espera)
+    {
+        yield return new WaitForSeconds(espera);
+    }
+
     public void SairMochila()
     {
         dialogBox.AtivarSelecaoMochila(false);
         dialogBox.AtivarSelecaoAcao(true);
+        gm.LimparInfoMochila();
         textoAcao.enabled = true;
     }
 

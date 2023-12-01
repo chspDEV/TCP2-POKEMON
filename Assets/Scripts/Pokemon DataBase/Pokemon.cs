@@ -77,6 +77,13 @@ public class Pokemon
         ChanceCaptura = _base.ChanceCaptura;
     }
 
+    public void InitSlot()
+    {
+        AttGolpes();
+        sprite = _base.sprite;
+        nome = _base.Nome;
+    }
+
     public void RecuperarVidaLevelUp()
     {
         var amount = HP += VidaMax / 2;
@@ -98,14 +105,6 @@ public class Pokemon
 
             if (Moves.Count >= 4)
                 break;
-        }
-    }
-
-    public void UsarPocao(int amount)
-    {
-        if (HP + amount <= VidaMax)
-        {
-            HP += amount;
         }
     }
 

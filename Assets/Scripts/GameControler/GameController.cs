@@ -59,6 +59,9 @@ public class GameController : MonoBehaviour
         sistemaDeBatalha.StartBattle(playerParty, pokemonSelvagem);
     }
 
+
+
+
     public void UsarItem()
     {
         switch (state)
@@ -66,7 +69,9 @@ public class GameController : MonoBehaviour
             case GameState.FreeRoam:
                 if (item_atual.tipoItem == TIPO_ITEM.CONSUMIVEL)
                 {
+                    Debug.Log("USEI CONSUMIVEL");
                     item_atual.StatsUp(pkm_selecionado);
+                    
                     LimparInfoMochila();
                     break;
                 }
@@ -74,9 +79,20 @@ public class GameController : MonoBehaviour
             case GameState.Battle:
                 if (item_atual.tipoItem == TIPO_ITEM.CONSUMIVEL)
                 {
-                    item_atual.StatsUp(pkm_selecionado);
+                    Debug.Log("USEI CONSUMIVEL EM BATALHA");
+
+                    var pkm = sistemaDeBatalha.GetPokemonPlayer(pkm_selecionado);
+
+                    Debug.Log(pkm.HP);
+                    item_atual.StatsUp(pkm);
+
                     sistemaDeBatalha.dialogBox.AtivarSelecaoMochila(false);
                     sistemaDeBatalha.dialogBox.AtivarSelecaoAcao(false);
+
+                    //Esperar curar
+                    StartCoroutine(sistemaDeBatalha.Esperar(2f));
+                    sistemaDeBatalha.dialogBox.SetDialog($"Você usou {item_atual.name}.");
+
                     StartCoroutine(sistemaDeBatalha.TurnoInimigo());
                     LimparInfoMochila();
                     break;
@@ -86,6 +102,7 @@ public class GameController : MonoBehaviour
                 {
                     sistemaDeBatalha.StartCoroutine(sistemaDeBatalha.TryToCatch());
                     sistemaDeBatalha.dialogBox.AtivarSelecaoMochila(false);
+                    Debug.Log("USEI POKEBOLA");
                     sistemaDeBatalha.dialogBox.AtivarSelecaoAcao(false);
                     LimparInfoMochila();
                     break;
@@ -104,7 +121,7 @@ public class GameController : MonoBehaviour
         RemoverItem();
         mochila.ResetarCorSlot();
         mochila.GetComponent<PcInfoChanger>().ResetarCorSlots();
-        
+        Debug.Log("LIMPARINFOMOCHILA");
         item_atual = null;
         pkm_selecionado = null;
     }

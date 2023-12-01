@@ -23,7 +23,7 @@ public class ItemBase : ScriptableObject
     public STATUS_AUMENTAR statsUP;
     
     [Header("Valores")]
-    public float quantiaStatsUP;
+    public int quantiaStatsUP;
     public float valorCaptura;
     public float preco;
 
@@ -85,6 +85,25 @@ public class ItemBase : ScriptableObject
         return consegui;
     }
 
+    public void UsarPocao(int amount, Pokemon pkm)
+    {
+        Debug.Log($" Vida atual pkm: { pkm.HP}");
+        Debug.Log($" Vida max pkm: { pkm.VidaMax}");
+
+        if (pkm.HP < pkm.VidaMax)
+        {
+            Debug.Log("Rodei UsarPocao");
+            pkm.HP += amount;
+            Mathf.Clamp(pkm.HP, 0, pkm.VidaMax);
+        }
+        else
+        {
+            Debug.Log("Nao posso usar pocao pois estou de vida cheia!");
+        }
+
+    }
+
+
     public void StatsUp(Pokemon myPokemon)
     {
 
@@ -94,13 +113,16 @@ public class ItemBase : ScriptableObject
         {
             case STATUS_AUMENTAR.LEVEL:
                 myPokemon.level += Mathf.RoundToInt(quantiaStatsUP);
+                Debug.Log("Rodei UPAR LVL");
                 myPokemon.CalcularStatus(); 
                 myPokemon.AttGolpes();
                 myPokemon.RecuperarVidaLevelUp();
                 break;
 
             case STATUS_AUMENTAR.VIDA:
-                myPokemon.UsarPocao((int)quantiaStatsUP);
+                Debug.Log("Rodei UPAR VIDA");
+                Debug.Log(myPokemon.HP);
+                UsarPocao(quantiaStatsUP, myPokemon);
                 break;
 
             default:

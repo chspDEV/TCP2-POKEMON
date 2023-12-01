@@ -63526,6 +63526,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d0fa846fa184d464282c76a4851d904c, type: 2}
   - {fileID: 11400000, guid: d4044536cb2226c4c9302ba09c29cc6c, type: 2}
   - {fileID: 11400000, guid: 751ea36bd2b7b4445b30f1d8e8f2ca7e, type: 2}
+  - {fileID: 11400000, guid: d0fa846fa184d464282c76a4851d904c, type: 2}
+  - {fileID: 11400000, guid: d0fa846fa184d464282c76a4851d904c, type: 2}
+  - {fileID: 11400000, guid: d0fa846fa184d464282c76a4851d904c, type: 2}
+  - {fileID: 11400000, guid: d0fa846fa184d464282c76a4851d904c, type: 2}
   mochila: {fileID: 610202218}
   PC:
   - _base: {fileID: 11400000, guid: 5a6bdae4c4293fe479c6cc610f3ea911, type: 2}
