@@ -15,13 +15,18 @@ public class BattleUnit : MonoBehaviour
 
 
 
-     public Pokemon Pokemon { get; set; }
+    public Pokemon Pokemon { get; set; }
     //public Pokemon pokeatual;
+    public int HP;
+
+    private void Update()
+    {
+        HP = Pokemon.HP;
+    }
 
     public void Setup(Pokemon pokemon)
     {
         Pokemon = pokemon;
-        //pokeatual = pokemon;
         pokemon.Init();
 
         if (isPlayerUnit)

@@ -28,6 +28,7 @@ public class SlotPKM : MonoBehaviour
     public void Update()
     {
         info.UpdateSlotParty(index);
+
     }
 
     protected void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)

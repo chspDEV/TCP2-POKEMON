@@ -92,7 +92,7 @@ public class PcInfoChanger : MonoBehaviour
         if (_index < _pt.pokemons.Count && _pt.pokemons[_index].nome != "PlaceHolder")
         {
             //Iniciando o pokemon!
-            _pt.pokemons[_index].Init();
+            _pt.pokemons[_index].InitSlot();
 
             //Atualizando imagem do pokemon no PC
             slotsParty[_index].GetComponent<SlotPKM>().minhaImagem.sprite = _pt.pokemons[_index].sprite;

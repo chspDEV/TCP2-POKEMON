@@ -82,7 +82,7 @@ public class Caminhos : MonoBehaviour
             yield break;
         }
 
-        Debug.Log(currentPathIndex);
+        //Debug.Log(currentPathIndex);
         StartChangeTrackCoroutine(); 
     }
 
