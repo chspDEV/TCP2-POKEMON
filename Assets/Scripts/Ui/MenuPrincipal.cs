@@ -19,6 +19,6 @@ public class MenuPrincipal : MonoBehaviour
 
     private void ChangeScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
