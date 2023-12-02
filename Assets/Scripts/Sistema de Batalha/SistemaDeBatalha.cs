@@ -316,6 +316,38 @@ public class SistemaDeBatalha : MonoBehaviour
         Debug.Log("Rodei ActionSelection!");
     }
 
+    public IEnumerator ChecarEvolucao(Pokemon pkm)
+    {
+        if (pkm.level == pkm.LevelEvolucao)
+        {
+            Debug.Log("VOU EVOLUIR");
+            playerParty.pokemons.Remove(pkm);
+
+            var _pkm = pkm.Evolucao;
+            _pkm.level = pkm.level;
+            playerParty.pokemons.Add(_pkm);
+
+            yield return new WaitForSeconds(0.5f);
+
+            playerUnit.DestroyInstantiatedModel();
+            _pkm.Init();
+            if (state != EstadoDeBatalha.BattleOver)
+            {
+                //BOTA O MONSTRO PRA JOGO!!
+                playerUnit.Setup(_pkm);
+            }
+
+            dialogBox.SetDialog($"Seu {pkm.nome} evoluiu para... {_pkm.nome}!");
+
+            yield return new WaitForSeconds(2f);
+        }
+        else
+        {
+            //ooomaga
+            Debug.Log("Nao chegou no nivel para evoluir");
+        }
+    }
+
     
     public void UparPokemon()
     {
@@ -337,6 +369,7 @@ public class SistemaDeBatalha : MonoBehaviour
                     {
                         p.XpAtual = 0;
                         p.level++;
+                        StartCoroutine(ChecarEvolucao(p));
                     }
                 }
 

@@ -44,6 +44,9 @@ public class Pokemon
     public float XpGiven { get; set; }
 
     public float ChanceCaptura { get; set; }
+    public int LevelEvolucao { get; set; }
+    public Pokemon Evolucao { get; set; }
+    public string Descricao { get; set; }
 
     public bool HpChanged { get; set; }
     public bool XpChanged { get; set; }
@@ -75,6 +78,12 @@ public class Pokemon
         sprite = _base.sprite;
         nome = _base.Nome;
         ChanceCaptura = _base.ChanceCaptura;
+        LevelEvolucao = _base.LevelEvolucao;
+        Evolucao = _base.Evolucao;
+        Descricao = _base.Descricao;
+
+        //Evolucao.level = level;
+        
     }
 
     public void InitSlot()

@@ -109,7 +109,7 @@ public class DialogoDeBatalha : MonoBehaviour
             }
             else
             {
-                textosDeGolpes[i].text = "-";
+                textosDeGolpes[i].text = "";
             }
         }
     }

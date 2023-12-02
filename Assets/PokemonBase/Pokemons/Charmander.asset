@@ -25,6 +25,12 @@ MonoBehaviour:
   xpAtual: 0
   xpGiven: 100
   chanceCaptura: 0
+  levelEvolucao: 16
+  evolucao:
+    _base: {fileID: 11400000, guid: f35ddc6599676d441b8a959543147093, type: 2}
+    level: 16
+    sprite: {fileID: 0}
+    nome: Charmeleon
   defesa: 47
   spAtaque: 60
   spDefesa: 50
@@ -38,5 +44,3 @@ MonoBehaviour:
     level: 7
   - moveBase: {fileID: 11400000, guid: cbe391d50e08ee047903dd84905301ad, type: 2}
     level: 13
-  - moveBase: {fileID: 11400000, guid: 1d8c7ccfe6a40544eaf7aae92fb300e4, type: 2}
-    level: 2

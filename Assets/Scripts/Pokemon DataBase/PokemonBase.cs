@@ -32,7 +32,9 @@ public class PokemonBase : ScriptableObject
     [SerializeField] int ataque; // Ataque
     [SerializeField] int xpAtual; // XP ATUAL
     [SerializeField] int xpGiven; // XP Dado
-    [SerializeField] int chanceCaptura; // XP Dado
+    [SerializeField] int chanceCaptura; // Chance capturar
+    [SerializeField] int levelEvolucao; // Chance capturar
+    [SerializeField] Pokemon evolucao; // minha evolucao
 
     [SerializeField] int defesa; // Defesa
     [SerializeField] int spAtaque; // Special Ataque
@@ -101,6 +103,17 @@ public class PokemonBase : ScriptableObject
     {
         get { return chanceCaptura; }
     }
+
+    public int LevelEvolucao
+    {
+        get { return levelEvolucao; }
+    }
+
+    public Pokemon Evolucao
+    {
+        get { return evolucao; }
+    }
+
     //---------
 
     public int Defesa

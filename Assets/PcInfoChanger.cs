@@ -16,6 +16,7 @@ public class PcInfoChanger : MonoBehaviour
     public TextMeshProUGUI nome;
     public TextMeshProUGUI lvl; //Lv. level
     public TextMeshProUGUI hp;
+    public TextMeshProUGUI descricao;
 
     public GameObject adicionar;
     public GameObject remover;
@@ -40,6 +41,7 @@ public class PcInfoChanger : MonoBehaviour
             nome.text = pkm.nome;
             lvl.text = $"Lv. {pkm.level}";
             hp.text = $"{pkm.HP}/{pkm.VidaMax}";
+            descricao.text = pkm.Descricao;
 
             for (int i = 0; i < pkm.Moves.Count; i++)
             {
@@ -53,7 +55,7 @@ public class PcInfoChanger : MonoBehaviour
         nome.text = "";
         lvl.text = "";
         hp.text = $"";
-
+        descricao.text = "";
         for (int i = 0; i < golpes.Length; i++)
         {
             golpes[i].text = $"{i+1}. ";
@@ -101,6 +103,7 @@ public class PcInfoChanger : MonoBehaviour
 
             //Atualizando nome e nivel
             slotsParty[_index].GetComponentInChildren<TextMeshProUGUI>().text = _pt.pokemons[_index].nome + "\n Lv. " + _pt.pokemons[_index].level.ToString("n0");
+
         }
         else
         {

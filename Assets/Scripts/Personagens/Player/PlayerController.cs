@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift) && TenhoSapato)
             {
                 // Se movendo na diagonal, divide a velocidade por 2
-                float diagonalFactor = (Mathf.Abs(horizontal) > 0 && Mathf.Abs(vertical) > 0) ? 2f : 1f;
+                float diagonalFactor = (Mathf.Abs(horizontal) > 0 && Mathf.Abs(vertical) > 0) ? 1.3f : 1f;
                 rb.velocity = ((Position * velocidadeCorrida * 10) / diagonalFactor) * Time.fixedDeltaTime;
             }
             else // Não tenho sapato T-T

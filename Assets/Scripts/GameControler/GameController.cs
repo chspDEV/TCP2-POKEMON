@@ -84,6 +84,13 @@ public class GameController : MonoBehaviour
 
                     Debug.Log(pkm.HP);
                     item_atual.StatsUp(pkm);
+
+                    if (item_atual.tipoItem == TIPO_ITEM.CONSUMIVEL && item_atual.statsUP == STATUS_AUMENTAR.LEVEL)
+                    {
+                        StartCoroutine(sistemaDeBatalha.ChecarEvolucao(pkm));
+                        
+                    }
+
                     sistemaDeBatalha.playerUnit.Hud.SetarLevel(pkm_selecionado);
 
                     sistemaDeBatalha.dialogBox.AtivarSelecaoMochila(false);
