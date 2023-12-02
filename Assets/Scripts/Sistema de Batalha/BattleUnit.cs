@@ -21,7 +21,7 @@ public class BattleUnit : MonoBehaviour
 
     private void Update()
     {
-        HP = Pokemon.HP;
+        //HP = Pokemon.HP;
     }
 
     public void Setup(Pokemon pokemon)

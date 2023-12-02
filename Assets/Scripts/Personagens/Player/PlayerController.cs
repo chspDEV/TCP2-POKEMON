@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] GameController gm;
     #region variaveis
     [Header("Configurações do Player")]
     public short velocidade;
@@ -161,5 +162,21 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(3);
         encontrouPokemon = false;
     }
-    
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "GramaAlta")
+        {
+            gm.area = other.GetComponent<MapArea>();
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "GramaAlta")
+        {
+            gm.area = null;
+        }
+    }
+
 }

@@ -12,6 +12,7 @@ TagManager:
   - Transicao
   - NPC
   - PC
+  - GramaAlta
   layers:
   - Default
   - TransparentFX

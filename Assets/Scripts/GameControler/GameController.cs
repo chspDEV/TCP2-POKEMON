@@ -22,7 +22,8 @@ public class GameController : MonoBehaviour
     public Mochila mochila;
 
     public List<Pokemon> PC;
-    
+
+    public MapArea area;
 
     public int moedas;
     public GameState state;
@@ -35,6 +36,7 @@ public class GameController : MonoBehaviour
     {
         playerController.OnEncountered += StartBattle;
         sistemaDeBatalha.OnBattleOver += EndBattle;
+
         DialogManager.Instance.OnShowDialog += () =>
         {
             state = GameState.Dialog;
@@ -54,7 +56,7 @@ public class GameController : MonoBehaviour
         cam.gameObject.SetActive(false);
 
         var playerParty = playerController.GetComponent<PokemonParty>();
-        var pokemonSelvagem = FindObjectOfType<MapArea>().GetComponent<MapArea>().GetRandomWildPokemon();
+        var pokemonSelvagem = area.GetRandomWildPokemon();
 
         sistemaDeBatalha.StartBattle(playerParty, pokemonSelvagem);
     }
