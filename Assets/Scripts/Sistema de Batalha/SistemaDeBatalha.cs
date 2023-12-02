@@ -7,7 +7,7 @@ using UnityEngine.Rendering.VirtualTexturing;
 //using UnityEditor.TerrainTools;
 
 public enum EstadoDeBatalha { Start, ActionSelection, MoveSelection, RunningTurn, Busy, PartyScreen, BattleOver }
-public enum AcaoDeBatalha { Move, TrocarPokemon, UsarItem, Fugir }
+public enum AcaoDeBatalha { Move, TrocarPokemon, Fugir }
 
 public class SistemaDeBatalha : MonoBehaviour
 {
@@ -858,6 +858,7 @@ public class SistemaDeBatalha : MonoBehaviour
     {
         dialogBox.AtivarSelecaoMochila(false);
         dialogBox.AtivarSelecaoAcao(true);
+        dialogBox.AtivarSelecaoMochilaUsar(false);
         gm.LimparInfoMochila();
         textoAcao.enabled = true;
     }

@@ -38,7 +38,7 @@ public class HudBatalha : MonoBehaviour
     {
         _pokemon = pokemon;
 
-        Debug.Log("SetData chamado");
+        //Debug.Log("SetData chamado");
         TextoNome.text = pokemon.Base.Nome;
         TextoLevel.text = "Lvl " + pokemon.Level;
         BarraHp.SetHP((float) pokemon.HP / pokemon.VidaMax);
@@ -61,6 +61,11 @@ public class HudBatalha : MonoBehaviour
     public void SetarVida(Pokemon pkm)
     {
         TextoVida.SetText(pkm.HP + "/" + pkm.VidaMax);
+    }
+
+    public void SetarLevel(Pokemon pkm)
+    {
+        TextoLevel.text = "Lvl " + pkm.Level;
     }
 
     void SetStatusText()

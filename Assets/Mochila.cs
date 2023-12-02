@@ -15,9 +15,13 @@ public class Mochila : MonoBehaviour
 
     public GameObject party;
     public GameObject botao;
+
+
     public GameObject slot_selecionado;
     public Pokemon pkm_selecionado;
     public ItemBase item_selecionado;
+
+
 
     public TextMeshProUGUI textoItem;
 

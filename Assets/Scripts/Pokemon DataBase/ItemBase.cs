@@ -117,6 +117,7 @@ public class ItemBase : ScriptableObject
                 myPokemon.CalcularStatus(); 
                 myPokemon.AttGolpes();
                 myPokemon.RecuperarVidaLevelUp();
+
                 break;
 
             case STATUS_AUMENTAR.VIDA:

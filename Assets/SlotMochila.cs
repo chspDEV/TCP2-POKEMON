@@ -47,8 +47,17 @@ public class SlotMochila : MonoBehaviour
             info.UpdateTextInfo(_pkm);
             info.item_selecionado = _pkm;
 
-            info.ControlarBotao(true);
-
+            if (_pkm.tipoItem == TIPO_ITEM.POKEBOLA)
+            {
+                info.party.SetActive(false);
+                info.ControlarBotao(true);
+            }
+            else if (info.pkm_selecionado != null)
+            {
+                info.ControlarBotao(false);
+                info.party.SetActive(true);
+            }
+           
             //Resetando a cor do slot que vai ser deselecionado
             if (info.slot_selecionado != null)
                 info.slot_selecionado.GetComponent<Image>().color = new Color(255, 255, 255, 1f);

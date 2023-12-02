@@ -59,9 +59,6 @@ public class GameController : MonoBehaviour
         sistemaDeBatalha.StartBattle(playerParty, pokemonSelvagem);
     }
 
-
-
-
     public void UsarItem()
     {
         switch (state)
@@ -85,6 +82,7 @@ public class GameController : MonoBehaviour
 
                     Debug.Log(pkm.HP);
                     item_atual.StatsUp(pkm);
+                    sistemaDeBatalha.playerUnit.Hud.SetarLevel(pkm_selecionado);
 
                     sistemaDeBatalha.dialogBox.AtivarSelecaoMochila(false);
                     sistemaDeBatalha.dialogBox.AtivarSelecaoAcao(false);
@@ -122,6 +120,8 @@ public class GameController : MonoBehaviour
         mochila.ResetarCorSlot();
         mochila.GetComponent<PcInfoChanger>().ResetarCorSlots();
         Debug.Log("LIMPARINFOMOCHILA");
+        mochila.textoItem.text = "";
+        mochila.party.SetActive(false);
         item_atual = null;
         pkm_selecionado = null;
     }
@@ -154,26 +154,51 @@ public class GameController : MonoBehaviour
 
     public void RemoverItem()
     {
-        if (item_atual.amount > 1)
+        if (item_atual != null)
         {
-            item_atual.amount--;
-        }
-        else
-        {
-            for (int i = 0; i < MOCHILA.Count; i++)
+            if (item_atual.amount > 1)
             {
-                if (MOCHILA[i].name == item_atual.name)
+                item_atual.amount--;
+            }
+            else
+            {
+                for (int i = 0; i < MOCHILA.Count; i++)
                 {
-                    MOCHILA.Remove(item_atual);
+                    if (MOCHILA[i].name == item_atual.name)
+                    {
+                        MOCHILA.Remove(item_atual);
+                        break;
+                    }
                 }
-            } 
+            }
         }
+    }
+
+    public void AdicionarItem(ItemBase item)
+    {
+        var igual = false;
+
+        for (int i = 0; i < MOCHILA.Count; i++)
+        {
+            if (MOCHILA[i].name == item.name)
+            {
+                igual = true;
+                MOCHILA[i].amount++;
+                break;
+            }
+        }
+
+        //Nao tem nenhum item igual na mochila
+        if(igual == false)
+        MOCHILA.Add(item);
+        
     }
 
     void Update()
     {
         //REINICIANDO O JOGO
         if (Input.GetKeyDown(KeyCode.F5)) { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
+        if (Input.GetKeyDown(KeyCode.F6)) { AdicionarItem(item_atual); }
 
         if (state == GameState.FreeRoam)
         {

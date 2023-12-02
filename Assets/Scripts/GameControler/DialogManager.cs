@@ -8,9 +8,12 @@ using TMPro;
 public class DialogManager : MonoBehaviour
 {
     [SerializeField] GameObject dialogBox;
+    //[SerializeField] GameObject player;
+    
   //  [SerializeField] ChoiceBox choiceBox;
     [SerializeField] TextMeshProUGUI dialogText;
     [SerializeField] int lettersPerSecond;
+    [SerializeField] Animator playerAnim;
 
     public event Action OnShowDialog;
     public event Action OnDialogFinished;
@@ -19,7 +22,7 @@ public class DialogManager : MonoBehaviour
     public static DialogManager Instance { get; private set; }
     private void Awake()
     {
-        Instance = this;
+        Instance = this;  
     }
 
     public bool IsShowing { get; private set; }
@@ -29,6 +32,7 @@ public class DialogManager : MonoBehaviour
     {
         OnShowDialog?.Invoke();
         IsShowing = true;
+        playerAnim.SetBool("andando", false);
         dialogBox.SetActive(true);
 
       //  AudioManager.i.PlaySfx(AudioId.UISelect);
@@ -63,6 +67,7 @@ public class DialogManager : MonoBehaviour
 
         OnShowDialog?.Invoke();
         IsShowing = true;
+        playerAnim.SetBool("andando", false);
         dialogBox.SetActive(true);
 
         foreach (var line in dialog.Lines)

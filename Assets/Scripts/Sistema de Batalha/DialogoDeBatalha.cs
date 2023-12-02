@@ -15,6 +15,7 @@ public class DialogoDeBatalha : MonoBehaviour
    [SerializeField] GameObject SelecaoDeGolpe;
    [SerializeField] GameObject DetalheDeGolpes;
    [SerializeField] GameObject Mochila;
+   [SerializeField] GameObject MochilaUsar;
 
    [SerializeField] List<TextMeshProUGUI> textosDeAcao;
    [SerializeField] List<TextMeshProUGUI> textosDeGolpes;
@@ -52,6 +53,12 @@ public class DialogoDeBatalha : MonoBehaviour
     public void AtivarSelecaoMochila(bool ativo)
     {
         Mochila.SetActive(ativo);
+        
+    }
+
+    public void AtivarSelecaoMochilaUsar(bool ativo)
+    {
+        MochilaUsar.SetActive(ativo);
     }
 
     public void AtivarSelecaoGolpe (bool ativo)

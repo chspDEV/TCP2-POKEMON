@@ -17,19 +17,32 @@ public class GolpeAtualizador : MonoBehaviour
 
     public void DizerGolpe2()
     {
-        bt.currentMove = index[1];
-        dbt.UpdateMoveSelection(bt.playerUnit.Pokemon.Moves[index[1]]);
+        if (1 < bt.playerUnit.Pokemon.Moves.Count)
+        {
+            bt.currentMove = index[1];
+
+            dbt.UpdateMoveSelection(bt.playerUnit.Pokemon.Moves[index[1]]);
+        }
+
     }
 
     public void DizerGolpe3()
     {
-        bt.currentMove = index[2];
-        dbt.UpdateMoveSelection(bt.playerUnit.Pokemon.Moves[index[2]]);
+        if (2 < bt.playerUnit.Pokemon.Moves.Count)
+        {
+            bt.currentMove = index[2];
+
+            dbt.UpdateMoveSelection(bt.playerUnit.Pokemon.Moves[index[2]]);
+        }
     }
 
     public void DizerGolpe4()
     {
-        bt.currentMove = index[3];
-        dbt.UpdateMoveSelection(bt.playerUnit.Pokemon.Moves[index[3]]);
+        if (3 < bt.playerUnit.Pokemon.Moves.Count)
+        {
+            bt.currentMove = index[3];
+
+            dbt.UpdateMoveSelection(bt.playerUnit.Pokemon.Moves[index[3]]);
+        }
     }
 }

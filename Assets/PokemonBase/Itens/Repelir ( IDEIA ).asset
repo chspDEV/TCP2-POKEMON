@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Repelir ( IDEIA )
   m_EditorClassIdentifier: 
   nome: Repelir
-  amount: 0
+  amount: 1
   tipoItem: 0
   statsUP: 2
   quantiaStatsUP: 0

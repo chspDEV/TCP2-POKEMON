@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71305e32d1a4e97438c105200787058d, type: 3}
-  m_Name: Ronronar
+  m_Name: Rosnar
   m_EditorClassIdentifier: 
-  nome: Ronronar
+  nome: Rosnar
   descricao: 
   tipo: 1
   poder: 0

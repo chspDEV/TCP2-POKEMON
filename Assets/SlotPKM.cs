@@ -59,9 +59,16 @@ public class SlotPKM : MonoBehaviour
         var _pkm = info.DescobrirPkmParty(index);
         if (_pkm != null && _pkm.nome != "PlaceHolder")
         {
+
+            //Se ja selecionei um item e preciso selecionar um pokemon -> ligar botao usar
+            
+
             info.pkm_selecionado = _pkm;
 
             info.ControlarBotao(false, true);
+
+            if (info.gm.pkm_selecionado == _pkm && info.gm.item_atual != null)
+            info.gm.mochila.botao.SetActive(true);
 
             //Resetando a cor do slot que vai ser deselecionado
             if (info.slot_selecionado != null)

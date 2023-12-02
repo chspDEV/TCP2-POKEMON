@@ -30,6 +30,7 @@ public class TrainerController : MonoBehaviour
     short buVel;
     short buVelcor;
     PlayerController player;
+    [SerializeField] Animator playerAnim;
     Rigidbody rb;
 
     BoxCollider col;
@@ -86,8 +87,11 @@ public class TrainerController : MonoBehaviour
                 player.velocidade = 0;
                 player.velocidadeCorrida = 0;
 
+
                 //Chamando dialogo
+                playerAnim.SetBool("andando", false);
                 StartCoroutine(DialogManager.Instance.ShowDialog(dialog));
+                
                 posso_mostrar = false;
 
             }
