@@ -25,6 +25,12 @@ MonoBehaviour:
   xpAtual: 0
   xpGiven: 100
   chanceCaptura: 255
+  levelEvolucao: 16
+  evolucao:
+    _base: {fileID: 11400000, guid: 57fc1dba7a58952469cfdf962adca06d, type: 2}
+    level: 16
+    sprite: {fileID: 0}
+    nome: Wartortle
   defesa: 65
   spAtaque: 50
   spDefesa: 64

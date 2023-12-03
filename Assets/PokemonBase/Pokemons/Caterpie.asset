@@ -25,6 +25,12 @@ MonoBehaviour:
   xpAtual: 0
   xpGiven: 100
   chanceCaptura: 255
+  levelEvolucao: 7
+  evolucao:
+    _base: {fileID: 11400000, guid: b30ec66a48af70c44a5e226c14bac7df, type: 2}
+    level: 7
+    sprite: {fileID: 0}
+    nome: Metapod
   defesa: 35
   spAtaque: 20
   spDefesa: 20

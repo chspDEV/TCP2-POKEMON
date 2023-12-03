@@ -25,6 +25,12 @@ MonoBehaviour:
   xpAtual: 0
   xpGiven: 100
   chanceCaptura: 120
+  levelEvolucao: 10
+  evolucao:
+    _base: {fileID: 11400000, guid: 2a98a7fc35d6fb943b0f973668e2853c, type: 2}
+    level: 10
+    sprite: {fileID: 0}
+    nome: Butterfree
   defesa: 55
   spAtaque: 25
   spDefesa: 25

@@ -25,6 +25,12 @@ MonoBehaviour:
   xpAtual: 0
   xpGiven: 100
   chanceCaptura: 255
+  levelEvolucao: 20
+  evolucao:
+    _base: {fileID: 11400000, guid: 1195c57f8ed5da447be11ac61b548657, type: 2}
+    level: 20
+    sprite: {fileID: 0}
+    nome: Raticate
   defesa: 35
   spAtaque: 25
   spDefesa: 35

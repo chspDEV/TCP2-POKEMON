@@ -24,6 +24,13 @@ MonoBehaviour:
   ataque: 63
   xpAtual: 0
   xpGiven: 100
+  chanceCaptura: 0
+  levelEvolucao: 999
+  evolucao:
+    _base: {fileID: 0}
+    level: 999
+    sprite: {fileID: 0}
+    nome: 
   defesa: 80
   spAtaque: 65
   spDefesa: 80

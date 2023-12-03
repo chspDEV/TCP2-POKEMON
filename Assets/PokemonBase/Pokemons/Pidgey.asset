@@ -25,6 +25,12 @@ MonoBehaviour:
   xpAtual: 0
   xpGiven: 100
   chanceCaptura: 255
+  levelEvolucao: 18
+  evolucao:
+    _base: {fileID: 11400000, guid: 5ec3b08b82d813447a21f0f193c8f66e, type: 2}
+    level: 18
+    sprite: {fileID: 0}
+    nome: Pidgeotto
   defesa: 40
   spAtaque: 35
   spDefesa: 35

@@ -25,6 +25,12 @@ MonoBehaviour:
   xpAtual: 0
   xpGiven: 100
   chanceCaptura: 255
+  levelEvolucao: 7
+  evolucao:
+    _base: {fileID: 11400000, guid: daa49d0ca8da2d24aad5357fc9ff053c, type: 2}
+    level: 7
+    sprite: {fileID: 0}
+    nome: Kakuna
   defesa: 30
   spAtaque: 20
   spDefesa: 20

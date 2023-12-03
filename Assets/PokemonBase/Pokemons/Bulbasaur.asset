@@ -25,12 +25,12 @@ MonoBehaviour:
   xpAtual: 0
   xpGiven: 100
   chanceCaptura: 255
-  levelEvolucao: 0
+  levelEvolucao: 16
   evolucao:
-    _base: {fileID: 0}
-    level: 0
+    _base: {fileID: 11400000, guid: 245781edfd134214596376e7e3ee05d5, type: 2}
+    level: 16
     sprite: {fileID: 0}
-    nome: 
+    nome: Ivysaur
   defesa: 49
   spAtaque: 65
   spDefesa: 65

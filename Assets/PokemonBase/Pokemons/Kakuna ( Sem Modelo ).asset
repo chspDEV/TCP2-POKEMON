@@ -23,6 +23,12 @@ MonoBehaviour:
   xpAtual: 0
   xpGiven: 100
   chanceCaptura: 120
+  levelEvolucao: 10
+  evolucao:
+    _base: {fileID: 11400000, guid: 6cd27206a78a9d6479c460b23728da22, type: 2}
+    level: 10
+    sprite: {fileID: 0}
+    nome: Beedrill
   defesa: 50
   spAtaque: 25
   spDefesa: 25
