@@ -12,6 +12,7 @@ public class MenuPausa : MonoBehaviour
     public GameObject Mochila;
 
     [SerializeField] PlayerController playerCon;
+    [SerializeField] SistemaDeBatalha sistema;
 
     
     private bool pokedexAberta = false;
@@ -58,10 +59,13 @@ public class MenuPausa : MonoBehaviour
 
     public void AbrirMochila()
     {
-        Mochila.SetActive(true);
-        mochilaAberta = true;
-        Menu.SetActive(false);
-        menuAberto = false;
+        if (sistema.batalhando == false)
+        {
+            Mochila.SetActive(true);
+            mochilaAberta = true;
+            Menu.SetActive(false);
+            menuAberto = false;
+        }
         
     }
 
@@ -76,8 +80,13 @@ public class MenuPausa : MonoBehaviour
 
     public void FecharMochila()
     {
-        Mochila.SetActive(false);
-        mochilaAberta = false;
+       if(sistema.batalhando == false)
+        { 
+            Mochila.SetActive(false);
+            mochilaAberta = false;
+            
+
+        }
     }
 
     public void FecharControles()

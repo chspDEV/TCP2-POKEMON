@@ -60,6 +60,7 @@ public class SistemaDeBatalha : MonoBehaviour
     public event Action<bool> OnBattleOver;
     [SerializeField] EstadoDeBatalha state;
     EstadoDeBatalha? prevState;
+    [SerializeField] public bool batalhando = false;
     
     int currentAction; // acao atual
     public int currentMove; // acao atual
@@ -103,6 +104,7 @@ public class SistemaDeBatalha : MonoBehaviour
 
             PossoFugir = true;
             InimigoAtaca = true;
+            batalhando = true;
             this.playerParty = playerParty;
             this.pokemonSelvagem = pokemonSelvagem;
 
@@ -127,6 +129,7 @@ public class SistemaDeBatalha : MonoBehaviour
             this.trainerParty = null;
             treinador_atual = null;
             PlayerCanBattle = true;
+            batalhando = false;
 
 
             //Transitor.DevolverVel();
@@ -156,6 +159,7 @@ public class SistemaDeBatalha : MonoBehaviour
 
         Debug.Log("ActionSelection!");
         ActionSelection();
+        batalhando = true;
     }
 
     public Pokemon GetPokemonPlayer(Pokemon pkm)
@@ -192,7 +196,8 @@ public class SistemaDeBatalha : MonoBehaviour
             this.trainerParty = trainerParty;
 
             isTrainerBattle = true;
-            
+            batalhando = true;
+
 
             StartCoroutine(SetupBattleTrainer()); // Preparar para porrada
         }
@@ -218,6 +223,7 @@ public class SistemaDeBatalha : MonoBehaviour
 
         Debug.Log("ActionSelectionTrainerBattle!");
         ActionSelection();
+        batalhando = true;
     }
 
     void BattleOver(bool won)
@@ -689,6 +695,7 @@ public class SistemaDeBatalha : MonoBehaviour
             BattleOver(true);
 
             PlayerCanBattle = true;
+            
         }
     }
     IEnumerator ShowDamageDetails(DamageDetails damageDetails)
@@ -889,11 +896,14 @@ public class SistemaDeBatalha : MonoBehaviour
 
     public void SairMochila()
     {
-        dialogBox.AtivarSelecaoMochila(false);
-        dialogBox.AtivarSelecaoAcao(true);
-        dialogBox.AtivarSelecaoMochilaUsar(false);
-        gm.LimparInfoMochila();
-        textoAcao.enabled = true;
+        if (batalhando == true)
+        {
+            dialogBox.AtivarSelecaoMochila(false);
+            dialogBox.AtivarSelecaoAcao(true);
+            dialogBox.AtivarSelecaoMochilaUsar(false);
+            gm.LimparInfoMochila();
+            textoAcao.enabled = true;
+        }
     }
 
     public void SairGolpe()
@@ -995,9 +1005,11 @@ public class SistemaDeBatalha : MonoBehaviour
 
     public void Mochila()
     {
-        dialogBox.AtivarSelecaoAcao(false);
-        dialogBox.AtivarSelecaoMochila(true);
-
+        if (batalhando == true)
+        {
+            dialogBox.AtivarSelecaoAcao(false);
+            dialogBox.AtivarSelecaoMochila(true);
+        }
         //StartCoroutine(TryToCatch());
     }
 
