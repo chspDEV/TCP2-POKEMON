@@ -8,17 +8,17 @@ public class LevelChanger : MonoBehaviour
 {
     [Header("Posição de destino do teletransporte")]
     [Space(15)]
-    [SerializeField] Vector3 tpPoint;
-    Vector3 tpPointCentro;
+    [SerializeField] GameObject tpPoint;
+    [SerializeField] GameObject tpPointCentro;
     
 
     GameObject target;
     PlayerController player;
     Animator anim;
-     GameObject tempObject;
+    GameObject tempObject;
 
     bool playerInZone;
-    [SerializeField] byte alpha;
+    byte alpha;
 
     short buVel; //SALVANDO VELOCIDADE 
     short buVelcor; //SALVANDO VELOCIDADE CORRIDA
@@ -57,13 +57,16 @@ public class LevelChanger : MonoBehaviour
     public void Teleporte()
     {
         //anim.Play("Transicao");
-        target.transform.position = tpPoint;
+
+        var _posicao = tpPoint.transform.position;
+        target.transform.position = _posicao;
         StopAllCoroutines(); 
     }
 
     public void TeleporteCentroPokemon()
     {
-        target.transform.position = tpPointCentro;
+        var _posicao = tpPointCentro.transform.position;
+        target.transform.position = _posicao;
         StopAllCoroutines();
     }
 
