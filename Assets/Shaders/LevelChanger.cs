@@ -9,13 +9,13 @@ public class LevelChanger : MonoBehaviour
     [Header("Posição de destino do teletransporte")]
     [Space(15)]
     [SerializeField] Vector3 tpPoint;
-    [SerializeField] Vector3 tpPointCentro;
+    Vector3 tpPointCentro;
     
 
-    [SerializeField] GameObject target;
+    GameObject target;
     PlayerController player;
     Animator anim;
-    public GameObject tempObject;
+     GameObject tempObject;
 
     bool playerInZone;
     [SerializeField] byte alpha;
