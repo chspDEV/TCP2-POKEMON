@@ -50,8 +50,13 @@ public class PlayerController : MonoBehaviour
         Move();
 
         #region HACK
-        if (Input.GetKeyDown(KeyCode.F1)) { transform.position = new Vector3(-123.09f, 19.53f, 176.67f); }//lab
-        if (Input.GetKeyDown(KeyCode.F2)) { transform.position = new Vector3(93f, 15f, 40f); }//meio pallet
+        if (Input.GetKeyDown(KeyCode.F1)) { transform.position = new Vector3(-109.15f, 0.52f, -0.38f); }//casa
+        if (Input.GetKeyDown(KeyCode.F2)) { transform.position = new Vector3(-6.12f, 3.66f, 0f); }//meio pallet
+        if (Input.GetKeyDown(KeyCode.F3)) { transform.position = new Vector3(-143.13f, 0.52f, -0.38f); }//laboratorio
+        if (Input.GetKeyDown(KeyCode.F4)) { transform.position = new Vector3(-127f, 0.52f, -2.42f); }//pokecenter
+        if (Input.GetKeyDown(KeyCode.F5)) { transform.position = new Vector3(-159.4f, 0.52f, -2.42f); }//pokemart
+        if (Input.GetKeyDown(KeyCode.F6)) { transform.position = new Vector3(-159.4f, 0.52f, -2.42f); }//ginasio
+        //adicionar viridian qnd tiver
         #endregion
     }
 
@@ -144,14 +149,19 @@ public class PlayerController : MonoBehaviour
             Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.green); // Desenha o raio em verde
 
             Interactable interactable = hit.collider.GetComponent<Interactable>();
+            Debug.Log("Acertei algo");
+
             if (interactable != null)
             {
-                yield return interactable?.Interact(transform);  
+                yield return interactable?.Interact(transform);
+                Debug.Log("Interagi");
+                
             }
         }
         else
         {
             Debug.DrawRay(transform.position, transform.forward * 2f, Color.red); // Desenha o raio em vermelho quando não atinge nada
+            Debug.Log("Nao Interagi");
         }
     }
 

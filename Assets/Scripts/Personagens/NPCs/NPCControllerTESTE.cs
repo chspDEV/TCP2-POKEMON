@@ -58,66 +58,6 @@ public class NPCControllerTESTE : MonoBehaviour, Interactable//, ISavable
             
             Debug.Log("Estou rodando");
 
-            #region Quests
-            /*
-     if (questToComplete != null)
-    {
-        var quest = new Quest(questToComplete);
-        yield return quest.CompleteQuest(initiator);
-        questToComplete = null;
-
-        Debug.Log($"{quest.Base.Name} completed");
-    }
-
-    if (itemGiver != null && itemGiver.CanBeGiven())
-    {
-        yield return itemGiver.GiveItem(initiator.GetComponent<PlayerController>());
-    }
-    else if (pokemonGiver != null && pokemonGiver.CanBeGiven())
-    {
-        yield return pokemonGiver.GivePokemon(initiator.GetComponent<PlayerController>());
-    }
-    else if (questToStart != null)
-    {
-        activeQuest = new Quest(questToStart);
-        yield return activeQuest.StartQuest();
-        questToStart = null;
-
-        if (activeQuest.CanBeCompleted())
-        {
-            yield return activeQuest.CompleteQuest(initiator);
-            activeQuest = null;
-        }
-    }
-    else if (activeQuest != null)
-    {
-        if (activeQuest.CanBeCompleted())
-        {
-            yield return activeQuest.CompleteQuest(initiator);
-            activeQuest = null;
-        }
-        else
-        {
-            yield return DialogManager.Instance.ShowDialog(activeQuest.Base.InProgressDialogue);
-        }
-    }
-    else if (healer != null)
-    {
-        yield return healer.Heal(initiator, dialog);
-    }
-    else if (merchant != null)
-    {
-        yield return merchant.Trade();
-    }
-    else
-    {
-        yield return DialogManager.Instance.ShowDialog(dialog);
-    }
-
-    */
-
-            #endregion
-
             idleTimer = 0f;
             state = NPCState.Idle;
             //startdl = false;

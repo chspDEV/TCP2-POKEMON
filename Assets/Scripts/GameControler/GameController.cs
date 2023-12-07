@@ -206,8 +206,8 @@ public class GameController : MonoBehaviour
     void Update()
     {
         //REINICIANDO O JOGO
-        if (Input.GetKeyDown(KeyCode.F5)) { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
-        if (Input.GetKeyDown(KeyCode.F6)) { AdicionarItem(item_atual); }
+        if (Input.GetKeyDown(KeyCode.F9)) { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
+        if (Input.GetKeyDown(KeyCode.F8)) { AdicionarItem(item_atual); }
 
         if (state == GameState.FreeRoam)
         {

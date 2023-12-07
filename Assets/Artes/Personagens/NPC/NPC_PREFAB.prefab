@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4344647234682007865}
   - component: {fileID: 4344647234682007867}
   - component: {fileID: 4344647234682007864}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: NPC_CORPO
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -323,6 +323,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SPACEBAR
+      objectReference: {fileID: 0}
+    - target: {fileID: 8324489585696743515, guid: ca617e6e5ff373543b6d6373400fe13a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8324489585696743515, guid: ca617e6e5ff373543b6d6373400fe13a,
         type: 3}
