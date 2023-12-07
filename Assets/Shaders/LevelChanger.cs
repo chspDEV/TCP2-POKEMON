@@ -15,7 +15,7 @@ public class LevelChanger : MonoBehaviour
     GameObject target;
     PlayerController player;
     Animator anim;
-    GameObject tempObject;
+    [SerializeField] GameObject tempObject; //Transicao
 
     bool playerInZone;
     byte alpha;

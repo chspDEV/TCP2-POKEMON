@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator Interact()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 4f, Interagivel))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 2f, Interagivel))
         {
             Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.green); // Desenha o raio em verde
 
