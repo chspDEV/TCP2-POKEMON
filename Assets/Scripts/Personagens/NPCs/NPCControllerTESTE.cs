@@ -107,6 +107,8 @@ public class NPCControllerTESTE : MonoBehaviour, Interactable//, ISavable
         if (other.gameObject.tag == "Player")
         {
             CheckSpace = true;
+            other.GetComponent<PlayerController>().CanInteract = true;
+            other.GetComponent<PlayerController>().InteractOBJ = gameObject;
         }
         
     }
@@ -116,6 +118,8 @@ public class NPCControllerTESTE : MonoBehaviour, Interactable//, ISavable
         if (other.gameObject.tag == "Player")
         {
             CheckSpace = false;
+            other.GetComponent<PlayerController>().CanInteract = false;
+            other.GetComponent<PlayerController>().InteractOBJ = null;
         }
 
     }

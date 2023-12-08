@@ -26,6 +26,8 @@ public class QuestController : MonoBehaviour
     [SerializeField] GameObject npcRota1;
     [SerializeField] public List<Pokemon> pokeInicial;
     [SerializeField] GameObject Arbursto1;
+    [SerializeField] GameObject Blue;
+    [SerializeField] PokemonParty BlueParty;
     
     [SerializeField] GameObject[] Pokebolas;
 
@@ -79,11 +81,20 @@ public class QuestController : MonoBehaviour
             Time.timeScale = 1f;
             pokemonParty.pokemons.Remove(pokemonParty.pokemons[0]);
             pokemonParty.pokemons.Add(pokeInicial[0]);
+
+            //Configurando RIVAL
+            BlueParty.pokemons.Remove(pokemonParty.pokemons[0]);
+            BlueParty.pokemons.Add(pokeInicial[2]);
+            BlueParty.pokemons[0].Init();
+
+            //Ativando o RIVAL
+            Blue.SetActive(true);
+
             escolhaPokemon.SetActive(false);
 
             //Iniciando POKEMON
             pokemonParty.pokemons[0].Init();
-
+            
             //DESTRUINDO NPC
             Destroy(npcRota1);
 
@@ -99,6 +110,8 @@ public class QuestController : MonoBehaviour
 
             //Destruindo Canvas
             Destroy(escolhaPokemon);
+
+            
         }
         else
         { escolhido = 0; }
@@ -112,6 +125,14 @@ public class QuestController : MonoBehaviour
             Time.timeScale = 1f;
             pokemonParty.pokemons.Remove(pokemonParty.pokemons[0]);
             pokemonParty.pokemons.Add(pokeInicial[1]);
+
+            //Configurando RIVAL
+            BlueParty.pokemons.Remove(pokemonParty.pokemons[0]);
+            BlueParty.pokemons.Add(pokeInicial[0]);
+            BlueParty.pokemons[0].Init();
+
+            //Ativando o RIVAL
+            Blue.SetActive(true);
 
 
             //Iniciando POKEMON
@@ -145,6 +166,14 @@ public class QuestController : MonoBehaviour
             Time.timeScale = 1f;
             pokemonParty.pokemons.Remove(pokemonParty.pokemons[0]);
             pokemonParty.pokemons.Add(pokeInicial[2]);
+
+            //Configurando RIVAL
+            BlueParty.pokemons.Remove(pokemonParty.pokemons[0]);
+            BlueParty.pokemons.Add(pokeInicial[1]);
+            BlueParty.pokemons[0].Init();
+
+            //Ativando o RIVAL
+            Blue.SetActive(true);   
 
             //Iniciando POKEMON
             pokemonParty.pokemons[0].Init();

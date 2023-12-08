@@ -22,15 +22,12 @@ public class MesaCarvalho : MonoBehaviour
         escolhaPokemon.SetActive(false);
     }
 
-    private void OnTriggerStay(Collider colisao)
+    public void Ativar()
     {
-        if (colisao.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.E) && desligarColisao == false)
-        { 
-            escolhaPokemon.SetActive(true);
-            Time.timeScale = 0f;
-            desligarColisao = true;
-            Destroy(pressSpace);
-        }
+        escolhaPokemon.SetActive(true);
+        Time.timeScale = 0f;
+        desligarColisao = true;
+        Destroy(pressSpace);
     }
 
     //void DestroyE()
@@ -46,7 +43,9 @@ public class MesaCarvalho : MonoBehaviour
             if (colisao.gameObject.CompareTag("Player") && pressSpace != null)
             {
                 pressSpace.SetActive(true);
-            }
+                colisao.GetComponent<PlayerController>().CanInteract = true;
+                colisao.GetComponent<PlayerController>().InteractOBJ = gameObject;
+        }
         
         
     }
@@ -57,7 +56,9 @@ public class MesaCarvalho : MonoBehaviour
             if (colisao.gameObject.CompareTag("Player") && pressSpace != null)
             {
                 pressSpace.SetActive(false);
-            }
+                colisao.GetComponent<PlayerController>().CanInteract = false;
+                colisao.GetComponent<PlayerController>().InteractOBJ = null;
+        }
        
         
     }

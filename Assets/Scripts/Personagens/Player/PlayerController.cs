@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour
     [Header("Configurações do Player")]
     public short velocidade;
     public short velocidadeCorrida;
+
+    public bool CanInteract = false;
+    public GameObject InteractObject;
+
     [Range(0.1f,10f)]
     public float fallSpeed; // Ajuste esse valor para a velocidade desejada.
 
@@ -143,25 +147,38 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Interact()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 2f, Interagivel))
+        if (CanInteract)
         {
-            Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.green); // Desenha o raio em verde
+            //Para NPCS
+            Interactable interactable = InteractOBJ.GetComponent<Interactable>();
 
-            Interactable interactable = hit.collider.GetComponent<Interactable>();
-            Debug.Log("Acertei algo");
+            //Para MESA
+            MesaCarvalho mesa = InteractOBJ.GetComponent<MesaCarvalho>();
+
+            //Para PC
+            ComputadorController pc = InteractOBJ.GetComponent<ComputadorController>();
+
+            Debug.Log("Interagi");
 
             if (interactable != null)
             {
-                yield return interactable?.Interact(transform);
-                Debug.Log("Interagi");
-                
+                yield return interactable.Interact(transform);
             }
+
+            if (mesa != null)
+            {
+                mesa.Ativar();
+            }
+
+            if (pc != null)
+            {
+                pc.AbrirPC();
+            }
+
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.forward * 2f, Color.red); // Desenha o raio em vermelho quando não atinge nada
-            Debug.Log("Nao Interagi");
+            Debug.Log("N interagi");
         }
     }
 

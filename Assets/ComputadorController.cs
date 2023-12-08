@@ -18,24 +18,13 @@ public class ComputadorController : MonoBehaviour
         pc.SetActive(false);
     }
 
-    private void OnTriggerStay(Collider colisao)
-    {
-        if (colisao.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
-        {
-            AbrirPC();
-        }
-    }
-
     private void OnTriggerEnter(Collider colisao)
     {
         if (colisao.gameObject.CompareTag("Player"))
         {
             pressSpace.SetActive(true);
-        }
-
-        if (colisao.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
-        {
-            AbrirPC();
+            colisao.GetComponent<PlayerController>().InteractOBJ = gameObject;
+            colisao.GetComponent<PlayerController>().CanInteract = true;
         }
     }
 
@@ -44,6 +33,8 @@ public class ComputadorController : MonoBehaviour
         if (colisao.gameObject.CompareTag("Player"))
         {
             pressSpace.SetActive(false);
+            colisao.GetComponent<PlayerController>().InteractOBJ = null;
+            colisao.GetComponent<PlayerController>().CanInteract = false;
         }
     }
 }
