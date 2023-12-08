@@ -37716,6 +37716,77 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1112081477}
   m_Mesh: {fileID: 302342974128760400, guid: bf864c8267104bd47899b468e152a026, type: 3}
+--- !u!1 &1113944960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1113944963}
+  - component: {fileID: 1113944962}
+  - component: {fileID: 1113944961}
+  m_Layer: 8
+  m_Name: AcharPoke
+  m_TagString: GramaAlta
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1113944961
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113944960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.370116, y: 4.0706525, z: 0.30252233}
+  m_Center: {x: 1.6459767, y: 1.5353258, z: -0.035447307}
+--- !u!114 &1113944962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113944960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa521f4e5325feb4d9372b4751ace7eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pokemonSelvagens:
+  - _base: {fileID: 11400000, guid: 96ba0225b6c78e0469e693b0634c74be, type: 2}
+    level: 1
+    sprite: {fileID: 0}
+    nome: 
+  - _base: {fileID: 11400000, guid: b30ec66a48af70c44a5e226c14bac7df, type: 2}
+    level: 1
+    sprite: {fileID: 0}
+    nome: 
+  - _base: {fileID: 11400000, guid: d362f36890704084d8464b06ee8458fb, type: 2}
+    level: 1
+    sprite: {fileID: 0}
+    nome: 
+--- !u!4 &1113944963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113944960}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.5, y: 2.51, z: 51.11}
+  m_LocalScale: {x: 3.5, y: 0.35, z: 14}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1118876362
 GameObject:
   m_ObjectHideFlags: 0
