@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 6347e9e0e3028f244803f7562933887e
   - enabled: 1
-    path: Assets/Scenes/Nathan/NathanScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Main.unity
+    guid: 3e1bd5c7cd1d13f4e9f0de64b1e9fa66
   m_configObjects: {}

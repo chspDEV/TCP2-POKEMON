@@ -14,6 +14,7 @@ public class SlotPKM : MonoBehaviour
     [SerializeField] PcInfoChanger info;
     [SerializeField] int index;
     public Image minhaImagem;
+    public Slider minhaVida;
 
 
     public void Start()

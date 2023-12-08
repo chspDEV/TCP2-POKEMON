@@ -79,7 +79,7 @@ public class QuestController : MonoBehaviour
         if (confirmacao)
         {
             Time.timeScale = 1f;
-            pokemonParty.pokemons.Remove(pokemonParty.pokemons[0]);
+            //pokemonParty.pokemons.Remove(pokemonParty.pokemons[0]);
             pokemonParty.pokemons.Add(pokeInicial[0]);
 
             //Configurando RIVAL
@@ -123,7 +123,7 @@ public class QuestController : MonoBehaviour
         if (confirmacao)
         {
             Time.timeScale = 1f;
-            pokemonParty.pokemons.Remove(pokemonParty.pokemons[0]);
+            //pokemonParty.pokemons.Remove(pokemonParty.pokemons[0]);
             pokemonParty.pokemons.Add(pokeInicial[1]);
 
             //Configurando RIVAL
@@ -164,7 +164,7 @@ public class QuestController : MonoBehaviour
         if (confirmacao)
         {
             Time.timeScale = 1f;
-            pokemonParty.pokemons.Remove(pokemonParty.pokemons[0]);
+            //pokemonParty.pokemons.Remove(pokemonParty.pokemons[0]);
             pokemonParty.pokemons.Add(pokeInicial[2]);
 
             //Configurando RIVAL

@@ -14,11 +14,8 @@ public class MenuPausa : MonoBehaviour
     [SerializeField] PlayerController playerCon;
     [SerializeField] SistemaDeBatalha sistema;
 
-    
-    private bool pokedexAberta = false;
-    private bool menuAberto = false;
-    private bool controlesAberto = false;
-    private bool mochilaAberta = false;
+    [SerializeField] private bool menuAberto = false;
+
 
 
     void Update()
@@ -27,22 +24,23 @@ public class MenuPausa : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
 
         {
-          
             if (!menuAberto)
             {
-               
-                AbrirMenu();
+                Debug.Log("Menu aberto");
+                
                 FecharPokedex();
                 FecharControles();
                 FecharMochila();
+                AbrirMenu();
             }
             else
             {
+                Debug.Log("Menu fechado");
                 
-                FecharMenu();
                 FecharPokedex();
                 FecharControles();
                 FecharMochila();
+                FecharMenu();
             }
             
         }
@@ -51,54 +49,41 @@ public class MenuPausa : MonoBehaviour
     public void AbrirPokedex()
     { 
         Pokedex.SetActive(true);
-        pokedexAberta = true;
         Menu.SetActive(false);
         menuAberto = false;
-       
     }
 
     public void AbrirMochila()
     {
-        if (sistema.batalhando == false)
-        {
-            Mochila.SetActive(true);
-            mochilaAberta = true;
-            Menu.SetActive(false);
-            menuAberto = false;
-        }
-        
+        Mochila.SetActive(true);
+        Menu.SetActive(false);
+        menuAberto = false;   
     }
 
     public void AbrirControles()
     {
         Controles.SetActive(true);
-        controlesAberto = true;
         Menu.SetActive(false);
         menuAberto = false;
-        
     }
 
     public void FecharMochila()
     {
-       if(sistema.batalhando == false)
-        { 
-            Mochila.SetActive(false);
-            mochilaAberta = false;
-            
-
-        }
+       Mochila.SetActive(false);
+       Menu.SetActive(true);
+       menuAberto = true;
     }
 
     public void FecharControles()
     {
         Controles.SetActive(false);
-        controlesAberto = false;
+        menuAberto = true;
     }
 
     public void FecharPokedex()
     {
         Pokedex.SetActive(false);
-        pokedexAberta = false;
+        menuAberto = true;
     }
 
 
@@ -107,7 +92,6 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 0f; 
         Menu.SetActive(true);
         menuAberto = true;
-        Debug.Log("Menu aberto");
         playerCon.moveEnabled = false;
     }
 

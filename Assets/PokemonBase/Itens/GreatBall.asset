@@ -20,7 +20,7 @@ MonoBehaviour:
   valorCaptura: 1.5
   preco: 600
   descricao: "Ela \xE9 excelente..."
-  sprite: {fileID: 1637009489, guid: d06984ceebb6e1b4d98f6a9c75a58293, type: 3}
+  sprite: {fileID: 21300000, guid: 66054af3511adaf489891ad5d6c68927, type: 3}
   modelo3D: {fileID: 0}
   vfx: {fileID: 0}
   C: 0

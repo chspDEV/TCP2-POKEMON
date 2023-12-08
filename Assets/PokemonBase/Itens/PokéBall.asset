@@ -21,7 +21,7 @@ MonoBehaviour:
   preco: 200
   descricao: "Compartimentos de forma esf\xE9rica que servem para armazenar pokemons
     selvagens!"
-  sprite: {fileID: -956675702, guid: d06984ceebb6e1b4d98f6a9c75a58293, type: 3}
+  sprite: {fileID: 21300000, guid: f247f6d73a7de3b428fbdd669436fec6, type: 3}
   modelo3D: {fileID: 0}
   vfx: {fileID: 0}
   C: 0

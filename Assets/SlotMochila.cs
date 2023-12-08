@@ -47,10 +47,13 @@ public class SlotMochila : MonoBehaviour
             info.UpdateTextInfo(_pkm);
             info.item_selecionado = _pkm;
 
+            //Checando se for uma pokebola e tem um inimigo contra
             if (_pkm.tipoItem == TIPO_ITEM.POKEBOLA)
             {
                 info.party.SetActive(false);
-                info.ControlarBotao(true);
+
+                if(info.gm.sistemaDeBatalha.enemyUnit.Pokemon != null)
+                    info.ControlarBotao(true);
             }
             else if (info.pkm_selecionado != null)
             {

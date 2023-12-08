@@ -20,7 +20,7 @@ MonoBehaviour:
   valorCaptura: 0
   preco: 300
   descricao: Cura seu pokemon.
-  sprite: {fileID: -510211806, guid: c2dadc152018d784b8c6787c8d7f05a2, type: 3}
+  sprite: {fileID: 21300000, guid: b20c62deb79abf0479b2f4fde753d8f4, type: 3}
   modelo3D: {fileID: 0}
   vfx: {fileID: 0}
   C: 0

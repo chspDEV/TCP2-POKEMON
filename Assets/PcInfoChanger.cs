@@ -52,14 +52,21 @@ public class PcInfoChanger : MonoBehaviour
 
     public void DeleteTextInfo()
     {
-        nome.text = "";
-        lvl.text = "";
-        hp.text = $"";
-        descricao.text = "";
-        for (int i = 0; i < golpes.Length; i++)
+        if (nome != null)
         {
-            golpes[i].text = $"{i+1}. ";
+            nome.text = "";
+            lvl.text = "";
+            hp.text = $"";
+
+            if(descricao != null)
+            descricao.text = "";
+
+            for (int i = 0; i < golpes.Length; i++)
+            {
+                golpes[i].text = $"{i + 1}. ";
+            }
         }
+
     }
 
     public void UpdateSlotPC(int _index)
@@ -91,13 +98,19 @@ public class PcInfoChanger : MonoBehaviour
     {
         PokemonParty _pt = player.GetComponent<PokemonParty>();
 
-        if (_index < _pt.pokemons.Count && _pt.pokemons[_index].nome != "PlaceHolder")
+        if (_index <= _pt.pokemons.Count - 1 && _pt.pokemons[_index].nome != "PlaceHolder")
         {
             //Iniciando o pokemon!
             _pt.pokemons[_index].InitSlot();
 
+            slotsParty[_index].SetActive(true);
+
             //Atualizando imagem do pokemon no PC
             slotsParty[_index].GetComponent<SlotPKM>().minhaImagem.sprite = _pt.pokemons[_index].sprite;
+
+            slotsParty[_index].GetComponent<SlotPKM>().minhaVida.enabled = true;
+            slotsParty[_index].GetComponent<SlotPKM>().minhaVida.value = _pt.pokemons[_index].HP / _pt.pokemons[_index].VidaMax;
+
             var imgColor = slotsParty[_index].GetComponent<SlotPKM>().minhaImagem.color;
             slotsParty[_index].GetComponent<SlotPKM>().minhaImagem.color = new Color(imgColor.r, imgColor.g, imgColor.b, 1f);
 
@@ -107,8 +120,11 @@ public class PcInfoChanger : MonoBehaviour
         }
         else
         {
+            slotsParty[_index].SetActive(false);
             //Se não existe pokemon nesse index, deixe tudo em branco!
             slotsParty[_index].GetComponent<SlotPKM>().minhaImagem.sprite = null;
+
+            slotsParty[_index].GetComponent<SlotPKM>().minhaVida.value = 0;
             slotsParty[_index].GetComponent<SlotPKM>().minhaImagem.color = new Color(1, 1, 1, 0f);
             slotsParty[_index].GetComponentInChildren<TextMeshProUGUI>().text = "";
         }

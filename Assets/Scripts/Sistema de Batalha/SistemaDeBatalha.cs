@@ -25,7 +25,7 @@ public class SistemaDeBatalha : MonoBehaviour
     [Space(15)]
     [SerializeField] Pokemon pokemonSelvagem;
     public BattleUnit playerUnit;
-    [SerializeField] BattleUnit enemyUnit;
+    public BattleUnit enemyUnit;
     
 
     [Header("Pokemon na Party")]

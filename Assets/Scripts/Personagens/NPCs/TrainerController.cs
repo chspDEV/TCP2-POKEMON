@@ -8,8 +8,8 @@ public class TrainerController : MonoBehaviour
     [SerializeField] Dialog dialog;
     //[SerializeField] DialogManager dialog_manager;
 
-    [SerializeField] float speed;
-    [SerializeField] float stopDistance;
+    //[SerializeField] float speed;
+    //[SerializeField] float stopDistance;
 
     [SerializeField] GameObject exclamation;
     [SerializeField] GameObject batalha;
@@ -35,9 +35,9 @@ public class TrainerController : MonoBehaviour
 
     BoxCollider col;
 
-    [SerializeField] float _increase;
-    [Range(1f, 1000f)]
-    [SerializeField] float _increaseMax;
+    //[SerializeField] float _increase;
+    //[Range(1f, 1000f)]
+    //[SerializeField] float _increaseMax;
 
     //Character character;
     //private Quaternion currentRotation;
@@ -85,6 +85,7 @@ public class TrainerController : MonoBehaviour
 
                 //Parando o jogador
                 player.velocidade = 0;
+                player.rb.velocity = Vector3.zero;
                 player.velocidadeCorrida = 0;
 
 
@@ -116,14 +117,11 @@ public class TrainerController : MonoBehaviour
                     
                 }
             }
+
             //Temporizador até começar a batalha
-            if (posso_ativar)
+            if (Input.GetKeyDown(KeyCode.E) && !posso_batalha)
             {
-                if (_increase <= _increaseMax)
-                {
-                    _increase += 0.01f;
-                }
-                else { posso_batalha = true; }
+                posso_batalha = true;
             }
 
         }

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab5a399e71effec4eb7c7f92b7f91b6b, type: 3}
-  m_Name: Doce raro
+  m_Name: "Super Po\xE7\xE3o"
   m_EditorClassIdentifier: 
-  nome: Doce Raro
+  nome: "Super Po\xE7\xE3o"
   amount: 1
   tipoItem: 0
-  statsUP: 0
-  quantiaStatsUP: 1
+  statsUP: 1
+  quantiaStatsUP: 50
   valorCaptura: 0
-  preco: 10000
-  descricao: "Um doce extremamente doce, t\xE3o doce que faz o seu pokemon melhorar."
-  sprite: {fileID: 21300000, guid: 25ae4343213c2f742a1685c4d048725c, type: 3}
+  preco: 450
+  descricao: Cura seu pokemon.
+  sprite: {fileID: 21300000, guid: 45b66ce2c348c274cac35747319a8878, type: 3}
   modelo3D: {fileID: 0}
   vfx: {fileID: 0}
   C: 0

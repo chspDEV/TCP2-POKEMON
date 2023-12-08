@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     [SerializeField] PlayerController playerController;  // controle do jogador 
     [SerializeField] VFXController vfxController;  // controle de vfx
 
-    [SerializeField] SistemaDeBatalha sistemaDeBatalha;
+    public SistemaDeBatalha sistemaDeBatalha;
     public Camera cam;  // CAMERA DO JOGADOR PADRAO!!
     [SerializeField] BattleUnit PlayerBattleUnit;
     [SerializeField] BattleUnit EnemyBattleUnit;
@@ -158,6 +158,7 @@ public class GameController : MonoBehaviour
         caminhos.Resetar();
 
         sistemaDeBatalha.gameObject.SetActive(false);
+        
         cam.gameObject.SetActive(true);
     }
 
