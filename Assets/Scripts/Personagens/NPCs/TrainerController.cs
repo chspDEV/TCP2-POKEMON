@@ -25,6 +25,7 @@ public class TrainerController : MonoBehaviour
     public bool posso_batalha = false;
     public bool PerdiBatalha = false;
     public bool _PlayerCanBattle = false;
+    public bool falei = false;
 
     [SerializeField] GameObject target;
     short buVel;
@@ -33,7 +34,7 @@ public class TrainerController : MonoBehaviour
     [SerializeField] Animator playerAnim;
     Rigidbody rb;
 
-    BoxCollider col;
+    public BoxCollider col;
 
     //[SerializeField] float _increase;
     //[Range(1f, 1000f)]
@@ -48,30 +49,44 @@ public class TrainerController : MonoBehaviour
         target = GameObject.Find("Player");
         //character = GetComponent<Character>();
         rb = GetComponent<Rigidbody>();
-
+        col = GetComponent<BoxCollider>();
         //Pegando o RIGIDBODY do meu alvo e parando ele:
         player = target.GetComponent<PlayerController>();
-
         _PlayerCanBattle = sistema.PlayerCanBattle;
-
-        col = GetComponent<BoxCollider>();
-
     }
 
     public void ExclamationOff() 
     { 
-    exclamation.SetActive(false);
+        exclamation.SetActive(false);
     }
+
     public void Update()
     {
         _PlayerCanBattle = sistema.PlayerCanBattle;
         target = GameObject.Find("Player");
 
-        if (!_PlayerCanBattle)
+        //Temporizador até começar a batalha
+        if (Input.GetKeyDown(KeyCode.E) && !falei && posso_ativar)
+        {
+            falei = true;
+            posso_batalha = true;
+
+            //Checando batalha pela segunda vez (deve iniciar aqui)
+            CheckForBattle();
+        }
+
+    }
+
+    public void CheckForBattle()
+    {
+        //Desativando e ativando colisao
+        /*
+        if (!_PlayerCanBattle || PerdiBatalha)
         {
             col.enabled = false;
         }
         else { col.enabled = true; }
+        */
 
         //Se ainda nao perdi a batalha e player pode batalhar:
         if (!PerdiBatalha && _PlayerCanBattle)
@@ -92,8 +107,8 @@ public class TrainerController : MonoBehaviour
                 //Chamando dialogo
                 playerAnim.SetBool("andando", false);
                 StartCoroutine(DialogManager.Instance.ShowDialog(dialog));
-                
-                posso_mostrar = false;
+
+                posso_mostrar = false; 
 
             }
             else if (posso_ativar)
@@ -114,35 +129,24 @@ public class TrainerController : MonoBehaviour
                     player.velocidadeCorrida = buVelcor;
                     posso_ativar = false;
                     posso_batalha = false;
-                    
+
+                }
+                else
+                {
+                    Debug.Log("Nao posso batalhar.");
                 }
             }
-
-            //Temporizador até começar a batalha
-            if (Input.GetKeyDown(KeyCode.E) && !posso_batalha)
+            else
             {
-                posso_batalha = true;
+                Debug.Log("Nao posso ativar.");
             }
 
         }
-
+        else
+        {
+            Debug.Log("Ja perdi nao posso batalhar");
+        }
     }
-
-    //private IEnumerator MoveTowardsPlayer()
-    //{
-    //    // Mantém o movimento enquanto o jogador estiver dentro do trigger.
-    //    while (Vector3.Distance(transform.position, player.transform.position) > stopDistance)
-    //    {
-    //        // Calcula a direção do jogador em relação a este objeto.
-    //        Vector3 direction = (player.transform.position - transform.position).normalized;
-
-    //        // Move o objeto em direção ao jogador com a velocidade especificada.
-    //        rb.velocity = direction * speed;
-
-    //        // Aguarda o próximo quadro antes de continuar o movimento.
-    //        yield return null;
-    //    }
-    //}
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -152,7 +156,11 @@ public class TrainerController : MonoBehaviour
             posso_ativar = true; // Garante que nao rode esse codigo novamente
 
             exclamation.SetActive(true); //Mostra a exclamacao
+
             Invoke("ExclamationOff", 0.5f);
+
+            //Checando batalha pela primeira vez
+            CheckForBattle();
         }
     }
 

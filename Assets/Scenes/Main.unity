@@ -24982,6 +24982,7 @@ MonoBehaviour:
   posso_batalha: 0
   PerdiBatalha: 0
   _PlayerCanBattle: 0
+  falei: 0
   target: {fileID: 1473350410}
   playerAnim: {fileID: 1345294330}
 --- !u!114 &713941596
@@ -55295,6 +55296,7 @@ MonoBehaviour:
   posso_batalha: 0
   PerdiBatalha: 0
   _PlayerCanBattle: 0
+  falei: 0
   target: {fileID: 1473350410}
   playerAnim: {fileID: 1345294330}
 --- !u!114 &1477081193
@@ -104686,6 +104688,7 @@ MonoBehaviour:
   posso_batalha: 0
   PerdiBatalha: 0
   _PlayerCanBattle: 0
+  falei: 0
   target: {fileID: 1473350410}
   playerAnim: {fileID: 1345294330}
 --- !u!114 &8499020207172630983
@@ -106199,6 +106202,7 @@ MonoBehaviour:
   posso_batalha: 0
   PerdiBatalha: 0
   _PlayerCanBattle: 0
+  falei: 0
   target: {fileID: 1473350410}
   playerAnim: {fileID: 1345294330}
 --- !u!114 &8835254308630730499
@@ -106294,8 +106298,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9020393, y: 1.757123, z: 8.125674}
-  m_Center: {x: -1.3838592, y: -0.1214385, z: -5.12176}
+  m_Size: {x: 0.034005873, y: 1.757123, z: 8.125674}
+  m_Center: {x: -1.1533267, y: -0.1214385, z: -5.12176}
 --- !u!23 &8835254309367855752
 MeshRenderer:
   m_ObjectHideFlags: 0

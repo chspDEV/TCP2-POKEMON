@@ -264,12 +264,22 @@ public class SistemaDeBatalha : MonoBehaviour
         {
             Debug.Log(treinador_atual);
 
-            var _parar = treinador_atual.GetComponent<TrainerController>();
+            var _treinador = treinador_atual.GetComponent<TrainerController>();
+            var _treinadorcharacter = treinador_atual.GetComponent<Character>();
+
+            //Nao deixa esse treinador batalhar 
+            _treinador.col.enabled = false;
+            _treinador.PerdiBatalha = true;
+            _treinador.posso_batalha = false;
 
             UparPokemon();
 
-            _parar.PerdiBatalha = true;
-            _parar.posso_batalha = false;
+            //Removendo os scripts do treinador logo pra nao dar errado
+            Destroy(_treinador);
+            Destroy(_treinadorcharacter);
+
+            //_parar.gameObject.SetActive(false);
+
             treinador_atual = null;
             //PlayerCanBattle = true;
         }

@@ -54,18 +54,21 @@ public class QuestController : MonoBehaviour
                 //squirtle
                 case 0:
                     Squirtle();
+                    Destroy(mesaCarvalho.GetComponent<MesaCarvalho>());
                     confirmacao = false;
                     break;
 
                 //bulba
                 case 1:
                     Bulbassauro();
+                    Destroy(mesaCarvalho.GetComponent<MesaCarvalho>());
                     confirmacao = false;
                     break;
 
                 //charmand
                 case 2:
                     Charmannder();
+                    Destroy(mesaCarvalho.GetComponent<MesaCarvalho>());
                     confirmacao = false;
                     break;
 
@@ -100,7 +103,6 @@ public class QuestController : MonoBehaviour
 
             //DESTRUINDO ARBUSTOS
             Destroy(Arbursto1);
-
 
             //DESTRUINDO POKEBOLAS
             Destroy(Pokebolas[0]);

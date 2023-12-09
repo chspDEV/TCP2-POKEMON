@@ -32,6 +32,7 @@ public class PcInfoChanger : MonoBehaviour
 
     public void Update()
     {
+        if(pkm_selecionado != null)
         gm.pkm_selecionado = pkm_selecionado;
     }
     public void UpdateTextInfo(Pokemon pkm)

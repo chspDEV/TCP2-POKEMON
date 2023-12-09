@@ -158,21 +158,24 @@ public class PlayerController : MonoBehaviour
             //Para PC
             ComputadorController pc = InteractOBJ.GetComponent<ComputadorController>();
 
-            Debug.Log("Interagi");
+            Debug.Log("Tentei Interagir");
 
             if (interactable != null)
             {
                 yield return interactable.Interact(transform);
+                Debug.Log("Interagi NPC");
             }
 
             if (mesa != null)
             {
                 mesa.Ativar();
+                Debug.Log("Interagi MESA");
             }
 
             if (pc != null)
             {
                 pc.AbrirPC();
+                Debug.Log("Interagi PC");
             }
 
         }
