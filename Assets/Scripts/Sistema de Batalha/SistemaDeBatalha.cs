@@ -177,8 +177,6 @@ public class SistemaDeBatalha : MonoBehaviour
             return null;
         }
         
-        Debug.Log("retornei nulo");
-        return null;
     }
 
     public void StartTrainerBattle(PokemonParty playerParty, PokemonParty trainerParty)

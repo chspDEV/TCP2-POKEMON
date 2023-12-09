@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.EventSystems;
-using System.Runtime.InteropServices.ComTypes;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
@@ -55,7 +51,7 @@ public class SlotMochila : MonoBehaviour
                 if(info.gm.sistemaDeBatalha.enemyUnit.Pokemon != null)
                     info.ControlarBotao(true);
             }
-            else if (info.pkm_selecionado != null)
+            else 
             {
                 info.ControlarBotao(false);
                 info.party.SetActive(true);

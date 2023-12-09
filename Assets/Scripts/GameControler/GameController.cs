@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     public Pokemon pkm_selecionado;
     public List<ItemBase> MOCHILA;
     public Mochila mochila;
+    public Mochila mochilaMenu;
 
     public List<Pokemon> PC;
 
@@ -126,14 +127,36 @@ public class GameController : MonoBehaviour
     public void LimparInfoMochila()
     {
         RemoverItem();
-        mochila.ResetarCorSlot();
-        mochila.GetComponent<PcInfoChanger>().ResetarCorSlots();
-        Debug.Log("LIMPARINFOMOCHILA");
-        mochila.textoItem.text = "";
-        mochila.party.SetActive(false);
+
+       
+
+        NularMochila(mochila);
+        NularMochila(mochilaMenu);
+
         item_atual = null;
         pkm_selecionado = null;
     }
+
+    public void NularMochila(Mochila _mochila)
+    {
+        _mochila.botao.SetActive(false);
+
+        if(_mochila.slot_selecionado != null)
+            _mochila.ResetarCorSlot();
+
+        _mochila.GetComponent<PcInfoChanger>().ResetarCorSlots();
+        Debug.Log("LIMPARINFOMOCHILA");
+        _mochila.textoItem.text = "";
+
+        _mochila.party.SetActive(false);
+
+        _mochila.slot_selecionado = null;
+        _mochila.pkm_selecionado = null;
+        _mochila.item_selecionado = null;
+        _mochila.GetComponent<PcInfoChanger>().slot_selecionado = null;
+        _mochila.GetComponent<PcInfoChanger>().pkm_selecionado = null;
+    }
+
     public void StartBattleTrainer(PokemonParty _tParty)
     {
         state = GameState.Battle;

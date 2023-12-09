@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.EventSystems;
-using System.Runtime.InteropServices.ComTypes;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
@@ -58,18 +55,31 @@ public class SlotPKM : MonoBehaviour
     {
         
         var _pkm = info.DescobrirPkmParty(index);
+        Debug.Log("PKM CLICADO = " + _pkm);
         if (_pkm != null && _pkm.nome != "PlaceHolder")
         {
-
             //Se ja selecionei um item e preciso selecionar um pokemon -> ligar botao usar
-            
-
             info.pkm_selecionado = _pkm;
 
             info.ControlarBotao(false, true);
 
-            if (info.gm.pkm_selecionado == _pkm && info.gm.item_atual != null)
-            info.gm.mochila.botao.SetActive(true);
+            if (info.gm.item_atual != null)
+            {
+                //ativando os dois botao memo e fe
+                Debug.Log("RODEI ATIVAR BOTAO");
+
+                if (info.gm.item_atual.statsUP == STATUS_AUMENTAR.VIDA && _pkm.HP == _pkm.VidaMax)
+                { 
+                    //Nao ativar botao se for usar potion e estiver de vida cheia (coxascode)
+                }
+                else
+                {
+                    info.gm.mochila.botao.SetActive(true);
+                    info.gm.mochilaMenu.botao.SetActive(true);
+                }
+
+            }
+            
 
             //Resetando a cor do slot que vai ser deselecionado
             if (info.slot_selecionado != null)

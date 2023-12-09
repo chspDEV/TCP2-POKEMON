@@ -56,6 +56,16 @@ public class MenuPausa : MonoBehaviour
     public void AbrirMochila()
     {
         Mochila.SetActive(true);
+        var _m = Mochila.GetComponent<Mochila>();
+        var _p = Mochila.GetComponent<PcInfoChanger>();
+
+        for (int i = 0; i < _p.slotsParty.Length; i++)
+        {
+            _p.UpdateSlotParty(i);
+        }
+
+
+
         Menu.SetActive(false);
         menuAberto = false;   
     }

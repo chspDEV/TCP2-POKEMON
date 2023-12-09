@@ -1,11 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.EventSystems;
-using System.Runtime.InteropServices.ComTypes;
-using UnityEngine.EventSystems;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Mochila : MonoBehaviour

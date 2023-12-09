@@ -87,7 +87,7 @@ public class QuestController : MonoBehaviour
 
             //Configurando RIVAL
             BlueParty.pokemons.Remove(pokemonParty.pokemons[0]);
-            BlueParty.pokemons.Add(pokeInicial[2]);
+            BlueParty.pokemons.Add(pokeInicial[1]); //bulbasaur
             BlueParty.pokemons[0].Init();
 
             //Ativando o RIVAL
@@ -130,7 +130,7 @@ public class QuestController : MonoBehaviour
 
             //Configurando RIVAL
             BlueParty.pokemons.Remove(pokemonParty.pokemons[0]);
-            BlueParty.pokemons.Add(pokeInicial[0]);
+            BlueParty.pokemons.Add(pokeInicial[2]); //charmander
             BlueParty.pokemons[0].Init();
 
             //Ativando o RIVAL
@@ -171,7 +171,7 @@ public class QuestController : MonoBehaviour
 
             //Configurando RIVAL
             BlueParty.pokemons.Remove(pokemonParty.pokemons[0]);
-            BlueParty.pokemons.Add(pokeInicial[1]);
+            BlueParty.pokemons.Add(pokeInicial[0]); //squirtle
             BlueParty.pokemons[0].Init();
 
             //Ativando o RIVAL

@@ -1,11 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.EventSystems;
-using System.Runtime.InteropServices.ComTypes;
-using UnityEngine.EventSystems;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PcInfoChanger : MonoBehaviour
@@ -42,6 +36,8 @@ public class PcInfoChanger : MonoBehaviour
             nome.text = pkm.nome;
             lvl.text = $"Lv. {pkm.level}";
             hp.text = $"{pkm.HP}/{pkm.VidaMax}";
+
+            if(descricao != null)
             descricao.text = pkm.Descricao;
 
             for (int i = 0; i < pkm.Moves.Count; i++)
@@ -99,12 +95,12 @@ public class PcInfoChanger : MonoBehaviour
     {
         PokemonParty _pt = player.GetComponent<PokemonParty>();
 
-        if (_index <= _pt.pokemons.Count - 1 && _pt.pokemons[_index].nome != "PlaceHolder")
+        if (_index < _pt.pokemons.Count  && _pt.pokemons[_index].nome != "PlaceHolder")
         {
             //Iniciando o pokemon!
             _pt.pokemons[_index].InitSlot();
 
-            slotsParty[_index].SetActive(true);
+            //slotsParty[_index].SetActive(true);
 
             //Atualizando imagem do pokemon no PC
             slotsParty[_index].GetComponent<SlotPKM>().minhaImagem.sprite = _pt.pokemons[_index].sprite;
@@ -121,7 +117,7 @@ public class PcInfoChanger : MonoBehaviour
         }
         else
         {
-            slotsParty[_index].SetActive(false);
+            //slotsParty[_index].SetActive(false);
             //Se não existe pokemon nesse index, deixe tudo em branco!
             slotsParty[_index].GetComponent<SlotPKM>().minhaImagem.sprite = null;
 
