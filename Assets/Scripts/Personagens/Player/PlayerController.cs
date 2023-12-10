@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask GramaAlta;
     [SerializeField] LayerMask FovLayer; // TRIGER PARA DETECTAR SE O TREINADOR INIMIGO TE VIU
     [SerializeField] LayerMask Interagivel;
-    [SerializeField] private bool TenhoSapato;
+    [SerializeField] private bool TenhoSapato = true;
     public bool seMovendo = false;
 
     public event Action OnEncountered;
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     public bool moveEnabled = true;
     private void Start()
     {
-        TenhoSapato = false;
+        //TenhoSapato = false;
         //anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         rb.velocity = new Vector3(0, -fallSpeed * Time.fixedDeltaTime, 0); // Ajuste os eixos e a velocidade conforme necessário./
@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
             {
                 // Se movendo na diagonal, divide a velocidade por 2
 
-                float diagonalFactor = (Mathf.Abs(horizontal) > 0 && Mathf.Abs(vertical) > 0) ? 1.3f : 1f;
+                float diagonalFactor = (Mathf.Abs(horizontal) > 0 && Mathf.Abs(vertical) > 0) ? 1.1f : 1f;
                 rb.velocity = ((Position * velocidadeCorrida * 10) / diagonalFactor) * Time.fixedDeltaTime;
                 anim.SetBool("andando", false);
                 anim.SetBool("correndo", true);

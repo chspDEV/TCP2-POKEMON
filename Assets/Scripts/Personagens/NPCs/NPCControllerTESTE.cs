@@ -22,8 +22,8 @@ public class NPCControllerTESTE : MonoBehaviour, Interactable//, ISavable
     //public bool startdl;
 
     [SerializeField] NPCState state;
-    float idleTimer = 0f;
-    int currentPattern = 0;
+    public float idleTimer = 0f;
+    public int currentPattern = 0;
     //Quest activeQuest;
 
     Character character;
@@ -38,7 +38,9 @@ public class NPCControllerTESTE : MonoBehaviour, Interactable//, ISavable
 
     private void Awake()
     {
+        if(dialog_manager == null)
         dialog_manager = GetComponent<DialogManager>();
+
         character = GetComponent<Character>();
         //itemGiver = GetComponent<ItemGiver>();
         //pokemonGiver = GetComponent<PokemonGiver>();
@@ -93,8 +95,7 @@ public class NPCControllerTESTE : MonoBehaviour, Interactable//, ISavable
 
             yield return character.Move(movementPattern[currentPattern]);
 
-            if (transform.position != oldPos)
-                currentPattern = (currentPattern + 1) % movementPattern.Count;
+            if (transform.position != oldPos) currentPattern = (currentPattern + 1) % movementPattern.Count;
 
             state = NPCState.Idle;
 
