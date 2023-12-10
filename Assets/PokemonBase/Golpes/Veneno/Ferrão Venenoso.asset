@@ -12,18 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71305e32d1a4e97438c105200787058d, type: 3}
   m_Name: "Ferr\xE3o Venenoso"
   m_EditorClassIdentifier: 
-  nome: feraooo
-  descricao: ATUALIZA AI VICTOR!!!
-  tipo: 1
-  poder: 1
-  precisao: 1
+  nome: "Ferr\xE3o Venenoso"
+  descricao: "Um ferr\xE3o venenoso \xE9 lan\xE7ado sobre o alvo."
+  tipo: 8
+  poder: 15
+  precisao: 100
   sempreAcerta: 0
-  pp: 1
-  prioridade: 1
+  pp: 35
+  prioridade: 0
   categoria: 0
   efeitos:
     boosts: []
     status: 0
     volatileStatus: 0
-  efeitoSecundario: []
+  efeitoSecundario:
+  - boosts: []
+    status: 1
+    volatileStatus: 0
+    chance: 20
+    alvo: 0
   alvo: 0

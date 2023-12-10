@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71305e32d1a4e97438c105200787058d, type: 3}
   m_Name: Ventania
   m_EditorClassIdentifier: 
-  nome: 
-  descricao: 
-  tipo: 0
-  poder: 0
-  precisao: 0
+  nome: Ventania
+  descricao: "Uma onda de vento surge das asas do usu\xE1rio e atinge o alvo em cheio."
+  tipo: 10
+  poder: 40
+  precisao: 100
   sempreAcerta: 0
-  pp: 0
+  pp: 35
   prioridade: 0
-  categoria: 0
+  categoria: 1
   efeitos:
     boosts: []
     status: 0

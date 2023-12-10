@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71305e32d1a4e97438c105200787058d, type: 3}
-  m_Name: Chicote de Vinha
+  m_Name: Chicote de Vinhas
   m_EditorClassIdentifier: 
-  nome: Vine Whip
+  nome: Chicote de Vinhas
   descricao: "O usu\xE1rio acerta o advers\xE1rio com um chicote de vinhas espinhosas."
   tipo: 5
-  poder: 45
+  poder: 35
   precisao: 100
   sempreAcerta: 0
-  pp: 25
+  pp: 10
   prioridade: 0
   categoria: 0
   efeitos:

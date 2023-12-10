@@ -12,17 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71305e32d1a4e97438c105200787058d, type: 3}
   m_Name: Jato de Seda
   m_EditorClassIdentifier: 
-  nome: XNA
-  descricao: ATUALIZA AI GAME DESIGNER !!!!
-  tipo: 1
+  nome: Jato de Seda
+  descricao: "Seda \xE9 arremesada no alvo, atrapalhando o seu movimento. Diminui
+    sua velocidade em um ponto."
+  tipo: 12
   poder: 1
-  precisao: 1
-  sempreAcerta: 1
-  pp: 1
+  precisao: 95
+  sempreAcerta: 0
+  pp: 40
   prioridade: 1
-  categoria: 0
+  categoria: 2
   efeitos:
-    boosts: []
+    boosts:
+    - stat: 4
+      boost: -1
     status: 0
     volatileStatus: 0
   efeitoSecundario: []

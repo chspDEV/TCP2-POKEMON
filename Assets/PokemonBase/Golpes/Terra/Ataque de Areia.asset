@@ -12,17 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71305e32d1a4e97438c105200787058d, type: 3}
   m_Name: Ataque de Areia
   m_EditorClassIdentifier: 
-  nome: 
-  descricao: 
-  tipo: 0
-  poder: 0
-  precisao: 0
+  nome: Ataque de Areia
+  descricao: "Areia \xE9 arremessada sobre a face do advers\xE1rio, atrapalhando
+    a sua vis\xE3o."
+  tipo: 9
+  poder: 1
+  precisao: 100
   sempreAcerta: 0
-  pp: 0
+  pp: 15
   prioridade: 0
-  categoria: 0
+  categoria: 2
   efeitos:
-    boosts: []
+    boosts:
+    - stat: 5
+      boost: -1
     status: 0
     volatileStatus: 0
   efeitoSecundario: []

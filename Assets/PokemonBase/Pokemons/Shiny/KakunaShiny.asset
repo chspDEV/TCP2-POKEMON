@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee4663f244582488d1f24c59264ed9, type: 3}
+  m_Name: KakunaShiny
+  m_EditorClassIdentifier: 
+  nome: Kakuna
+  descricao: "Enquanto aguarda a evolu\xE7\xE3o, ele se esconde sob folhas e galhos."
+  sprite: {fileID: 0}
+  modelo3D: {fileID: 6327751088084423472, guid: 2f69303ad5019904fbc077d2c6314aa7,
+    type: 3}
+  tipo1: 12
+  tipo2: 8
+  vidaMax: 45
+  ataque: 25
+  xpAtual: 0
+  xpGiven: 100
+  chanceCaptura: 120
+  levelEvolucao: 10
+  evolucao:
+    _base: {fileID: 11400000, guid: e71ef86d6d796fe449bd963bec6f7445, type: 2}
+    level: 10
+    sprite: {fileID: 0}
+    nome: Beedrill
+  defesa: 50
+  spAtaque: 25
+  spDefesa: 25
+  velocidade: 35
+  golpesParaAprender:
+  - moveBase: {fileID: 11400000, guid: df1e6829d4647ef44bd594f8de7a8a0d, type: 2}
+    level: 1

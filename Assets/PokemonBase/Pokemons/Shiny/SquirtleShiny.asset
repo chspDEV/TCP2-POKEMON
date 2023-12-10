@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee4663f244582488d1f24c59264ed9, type: 3}
+  m_Name: SquirtleShiny
+  m_EditorClassIdentifier: 
+  nome: Squirtle
+  descricao: "Quando ele retrai o seu pesco\xE7o longo para dentro de seu casco,
+    libera \xE1gua com uma for\xE7a vigorosa."
+  sprite: {fileID: 1636362622, guid: 48b10665ff38aec489c131f1bf5522c9, type: 3}
+  modelo3D: {fileID: 1592286831538756772, guid: b364a17b200e1ec488516a8f2c275bbd,
+    type: 3}
+  tipo1: 3
+  tipo2: 0
+  vidaMax: 44
+  ataque: 48
+  xpAtual: 0
+  xpGiven: 100
+  chanceCaptura: 255
+  levelEvolucao: 16
+  evolucao:
+    _base: {fileID: 11400000, guid: 77ca78f0f416fdc43849964d0823f918, type: 2}
+    level: 16
+    sprite: {fileID: 0}
+    nome: Wartortle
+  defesa: 65
+  spAtaque: 50
+  spDefesa: 64
+  velocidade: 43
+  golpesParaAprender:
+  - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 2c6381610df8b0e4182c70b1a638d568, type: 2}
+    level: 4
+  - moveBase: {fileID: 11400000, guid: add97b25840204d4ea671c0b060269d1, type: 2}
+    level: 7
+  - moveBase: {fileID: 11400000, guid: 1046878292cf35644925e1f64ed363af, type: 2}
+    level: 13

@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71305e32d1a4e97438c105200787058d, type: 3}
   m_Name: Grunhido
   m_EditorClassIdentifier: 
-  nome: asdasdadas
-  descricao: 
+  nome: Grunhido
+  descricao: Um grunhido agudo desestabiliza seus inimigos.
   tipo: 1
   poder: 1
-  precisao: 1
+  precisao: 85
   sempreAcerta: 0
-  pp: 1
-  prioridade: 1
-  categoria: 0
+  pp: 40
+  prioridade: 0
+  categoria: 2
   efeitos:
-    boosts: []
+    boosts:
+    - stat: 1
+      boost: -1
     status: 0
     volatileStatus: 0
   efeitoSecundario: []

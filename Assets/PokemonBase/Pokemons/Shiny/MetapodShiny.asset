@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee4663f244582488d1f24c59264ed9, type: 3}
+  m_Name: MetapodShiny
+  m_EditorClassIdentifier: 
+  nome: Metapod
+  descricao: "Est\xE1 esperando o momento de evoluir. Nesta fase, ele s\xF3 pode
+    endurecer, por isso permanece im\xF3vel para evitar ataques."
+  sprite: {fileID: 0}
+  modelo3D: {fileID: 5500827617507080933, guid: b88e34d8e0f117041b524d70213781b4,
+    type: 3}
+  tipo1: 12
+  tipo2: 0
+  vidaMax: 50
+  ataque: 20
+  xpAtual: 0
+  xpGiven: 100
+  chanceCaptura: 120
+  levelEvolucao: 10
+  evolucao:
+    _base: {fileID: 11400000, guid: fe24e33986303714d8004d56d6ed3da9, type: 2}
+    level: 10
+    sprite: {fileID: 0}
+    nome: Butterfree
+  defesa: 55
+  spAtaque: 25
+  spDefesa: 25
+  velocidade: 30
+  golpesParaAprender:
+  - moveBase: {fileID: 11400000, guid: df1e6829d4647ef44bd594f8de7a8a0d, type: 2}
+    level: 1

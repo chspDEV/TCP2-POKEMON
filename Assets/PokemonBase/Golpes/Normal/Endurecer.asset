@@ -13,17 +13,20 @@ MonoBehaviour:
   m_Name: Endurecer
   m_EditorClassIdentifier: 
   nome: Endurecer
-  descricao: 
+  descricao: "O usu\xE1rio enrijece todos os m\xFAsculos do seu corpo, aumentando
+    a sua defesa."
   tipo: 1
   poder: 1
-  precisao: 1
+  precisao: 100
   sempreAcerta: 1
-  pp: 1
-  prioridade: 1
-  categoria: 0
+  pp: 30
+  prioridade: 0
+  categoria: 2
   efeitos:
-    boosts: []
+    boosts:
+    - stat: 1
+      boost: 1
     status: 0
     volatileStatus: 0
   efeitoSecundario: []
-  alvo: 0
+  alvo: 1

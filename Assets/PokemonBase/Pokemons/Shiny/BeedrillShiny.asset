@@ -10,32 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fee4663f244582488d1f24c59264ed9, type: 3}
-  m_Name: Weedle
+  m_Name: BeedrillShiny
   m_EditorClassIdentifier: 
-  nome: Weedle
-  descricao: "Cuidado com o ferr\xE3o afiado em sua cabe\xE7a. Ele se esconde em
-    grama e arbusto, onde se alimenta de folhas."
+  nome: Beedrill
+  descricao: "Possui tr\xEAs ferr\xF5es venenosos nas patas dianteiras e cauda. Eles
+    s\xE3o usados para golpear repetidamente o inimigo."
   sprite: {fileID: 0}
-  modelo3D: {fileID: 3432028734424772452, guid: 5978ac332489cfe4da95ca5b767f7a3d,
-    type: 3}
+  modelo3D: {fileID: 474077055603685574, guid: bca2d0222ea7e164eb2f174dcddb0ffb, type: 3}
   tipo1: 12
   tipo2: 8
-  vidaMax: 40
-  ataque: 35
+  vidaMax: 65
+  ataque: 80
   xpAtual: 0
   xpGiven: 100
-  chanceCaptura: 255
-  levelEvolucao: 7
+  chanceCaptura: 0
+  levelEvolucao: 999
   evolucao:
-    _base: {fileID: 11400000, guid: daa49d0ca8da2d24aad5357fc9ff053c, type: 2}
-    level: 7
+    _base: {fileID: 0}
+    level: 999
     sprite: {fileID: 0}
-    nome: Kakuna
-  defesa: 30
-  spAtaque: 20
-  spDefesa: 20
-  velocidade: 50
+    nome: 
+  defesa: 40
+  spAtaque: 45
+  spDefesa: 80
+  velocidade: 75
   golpesParaAprender:
+  - moveBase: {fileID: 11400000, guid: df1e6829d4647ef44bd594f8de7a8a0d, type: 2}
+    level: 1
   - moveBase: {fileID: 11400000, guid: 6267e59f36c12ac45be3a39de95148d4, type: 2}
     level: 1
   - moveBase: {fileID: 11400000, guid: 057a6257ad6793345837e7130870927e, type: 2}

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71305e32d1a4e97438c105200787058d, type: 3}
   m_Name: "Rev\xF3lver D'\xC1gua"
   m_EditorClassIdentifier: 
-  nome: Water Gun
-  descricao: 
+  nome: "Rev\xF3lver D'\xC1gua"
+  descricao: "O advers\xE1rio \xE9 anvejado por uma poderosa torrente de \xE1gua."
   tipo: 3
   poder: 40
   precisao: 100
@@ -25,10 +25,5 @@ MonoBehaviour:
     boosts: []
     status: 0
     volatileStatus: 0
-  efeitoSecundario:
-  - boosts: []
-    status: 0
-    volatileStatus: 0
-    chance: 0
-    alvo: 0
+  efeitoSecundario: []
   alvo: 0

@@ -10,33 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fee4663f244582488d1f24c59264ed9, type: 3}
-  m_Name: Weedle
+  m_Name: CaterpieShiny
   m_EditorClassIdentifier: 
-  nome: Weedle
-  descricao: "Cuidado com o ferr\xE3o afiado em sua cabe\xE7a. Ele se esconde em
-    grama e arbusto, onde se alimenta de folhas."
+  nome: Caterpie
+  descricao: "Seus p\xE9s curtos possuem ventosas nas pontas que lhe permitem escalar
+    encostas e paredes incansavelmente. "
   sprite: {fileID: 0}
-  modelo3D: {fileID: 3432028734424772452, guid: 5978ac332489cfe4da95ca5b767f7a3d,
+  modelo3D: {fileID: 5819440830934589885, guid: 69562b2fe459dc64aab92ae8cffd47d9,
     type: 3}
   tipo1: 12
-  tipo2: 8
-  vidaMax: 40
-  ataque: 35
+  tipo2: 0
+  vidaMax: 45
+  ataque: 30
   xpAtual: 0
   xpGiven: 100
   chanceCaptura: 255
   levelEvolucao: 7
   evolucao:
-    _base: {fileID: 11400000, guid: daa49d0ca8da2d24aad5357fc9ff053c, type: 2}
+    _base: {fileID: 11400000, guid: d105b31b526ff9245baeb2a314d983ba, type: 2}
     level: 7
     sprite: {fileID: 0}
-    nome: Kakuna
-  defesa: 30
+    nome: Metapod
+  defesa: 35
   spAtaque: 20
   spDefesa: 20
-  velocidade: 50
+  velocidade: 45
   golpesParaAprender:
-  - moveBase: {fileID: 11400000, guid: 6267e59f36c12ac45be3a39de95148d4, type: 2}
+  - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
     level: 1
   - moveBase: {fileID: 11400000, guid: 057a6257ad6793345837e7130870927e, type: 2}
     level: 1

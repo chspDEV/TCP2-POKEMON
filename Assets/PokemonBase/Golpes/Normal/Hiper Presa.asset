@@ -12,18 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71305e32d1a4e97438c105200787058d, type: 3}
   m_Name: Hiper Presa
   m_EditorClassIdentifier: 
-  nome: asdasdr
-  descricao: 
+  nome: Hiper Presa
+  descricao: "O usu\xE1rio morde o advers\xE1rio com presas afiadas, podendo o deixar
+    paralisado de dor."
   tipo: 1
-  poder: 1
-  precisao: 1
-  sempreAcerta: 1
-  pp: 1
-  prioridade: 1
+  poder: 80
+  precisao: 90
+  sempreAcerta: 0
+  pp: 15
+  prioridade: 0
   categoria: 0
   efeitos:
     boosts: []
     status: 0
     volatileStatus: 0
-  efeitoSecundario: []
+  efeitoSecundario:
+  - boosts: []
+    status: 4
+    volatileStatus: 0
+    chance: 10
+    alvo: 0
   alvo: 0

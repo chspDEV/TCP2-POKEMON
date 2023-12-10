@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee4663f244582488d1f24c59264ed9, type: 3}
+  m_Name: IvysaurShiny
+  m_EditorClassIdentifier: 
+  nome: Ivysaur
+  descricao: "Quando o bulbo em suas costas cresce, ele parece perder a capacidade
+    de ficar em p\xE9 com as patas traseiras."
+  sprite: {fileID: 0}
+  modelo3D: {fileID: 3157114688547254816, guid: 91761b666585b484b94facb828091920,
+    type: 3}
+  tipo1: 5
+  tipo2: 8
+  vidaMax: 60
+  ataque: 62
+  xpAtual: 0
+  xpGiven: 100
+  chanceCaptura: 0
+  levelEvolucao: 999
+  evolucao:
+    _base: {fileID: 0}
+    level: 999
+    sprite: {fileID: 0}
+    nome: 
+  defesa: 63
+  spAtaque: 80
+  spDefesa: 80
+  velocidade: 60
+  golpesParaAprender:
+  - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 00c1e85973175f741a9b1e2c0d16cacf, type: 2}
+    level: 4
+  - moveBase: {fileID: 11400000, guid: 3f551c76e870b2e4eaa184aba4478ea1, type: 2}
+    level: 7
+  - moveBase: {fileID: 11400000, guid: 88cf8bb2c5e3f9d408626db3bdf4dd51, type: 2}
+    level: 13

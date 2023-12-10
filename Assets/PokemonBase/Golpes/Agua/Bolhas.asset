@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bolhas
   m_EditorClassIdentifier: 
   nome: Bolhas
-  descricao: 
+  descricao: "Uma onda de incont\xE1veis bolhas s\xE3o arremessadas sobre o alvo. "
   tipo: 3
   poder: 20
   precisao: 100
@@ -22,7 +22,9 @@ MonoBehaviour:
   prioridade: 0
   categoria: 1
   efeitos:
-    boosts: []
+    boosts:
+    - stat: 4
+      boost: -1
     status: 0
     volatileStatus: 0
   efeitoSecundario: []

@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71305e32d1a4e97438c105200787058d, type: 3}
   m_Name: Garra de Metal
   m_EditorClassIdentifier: 
-  nome: Metal Claw
-  descricao: 
+  nome: Garra de Metal
+  descricao: "O advers\xE1rio \xE9 cortado por garras m\xE9t\xE1licas grandes e afiadas."
   tipo: 17
-  poder: 60
-  precisao: 80
-  pp: 20
+  poder: 50
+  precisao: 95
+  sempreAcerta: 0
+  pp: 35
+  prioridade: 0
   categoria: 0
   efeitos:
     boosts: []
     status: 0
+    volatileStatus: 0
+  efeitoSecundario: []
   alvo: 0

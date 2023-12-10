@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: "Lan\xE7amento de Rocha"
   m_EditorClassIdentifier: 
   nome: 
-  descricao: 
-  tipo: 0
-  poder: 0
-  precisao: 0
+  descricao: "O usu\xE1rio agarra e arremessa uma pedra em dire\xE7\xE3o ao alvo."
+  tipo: 13
+  poder: 50
+  precisao: 90
   sempreAcerta: 0
-  pp: 0
+  pp: 15
   prioridade: 0
   categoria: 0
   efeitos:

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Investida
   m_EditorClassIdentifier: 
   nome: Investida
-  descricao: 
+  descricao: "Um avan\xE7o veloz contra o alvo usando seu pr\xF3prio corpo como arma."
   tipo: 1
-  poder: 40
-  precisao: 100
+  poder: 35
+  precisao: 95
   sempreAcerta: 0
   pp: 35
   prioridade: 0
