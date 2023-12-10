@@ -74,18 +74,26 @@ public class PlayerController : MonoBehaviour
 
             Position = new Vector3(horizontal, -fallSpeed, vertical);
 
+            // Atualizando a var seMovendo
+            seMovendo = Position.sqrMagnitude > 0.1f;
+
             // Correr se estiver apertando shift
             if (Input.GetKey(KeyCode.LeftShift) && TenhoSapato)
             {
                 // Se movendo na diagonal, divide a velocidade por 2
+
                 float diagonalFactor = (Mathf.Abs(horizontal) > 0 && Mathf.Abs(vertical) > 0) ? 1.3f : 1f;
                 rb.velocity = ((Position * velocidadeCorrida * 10) / diagonalFactor) * Time.fixedDeltaTime;
+                anim.SetBool("andando", false);
+                anim.SetBool("correndo", true);
             }
             else // Não tenho sapato T-T
             {
                 // Se movendo na diagonal, divide a velocidade por 2
                 float diagonalFactor = (Mathf.Abs(horizontal) > 0 && Mathf.Abs(vertical) > 0) ? 2f : 1f;
                 rb.velocity = ((Position * velocidade * 10)/diagonalFactor) * Time.fixedDeltaTime;
+                anim.SetBool("correndo", false);
+                anim.SetBool("andando", seMovendo);
             }
 
             // nathan: simplifiquei a gambiarra 
@@ -97,9 +105,8 @@ public class PlayerController : MonoBehaviour
                 transform.rotation = currentRotation;
             }
 
-            // Atualizando a var seMovendo
-            seMovendo = Position.sqrMagnitude > 0.1f;
-            anim.SetBool("andando", seMovendo);
+            
+            
             OnMoveOver();
         }
     }
