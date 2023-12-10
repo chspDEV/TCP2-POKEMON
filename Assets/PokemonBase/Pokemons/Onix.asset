@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee4663f244582488d1f24c59264ed9, type: 3}
+  m_Name: Onix
+  m_EditorClassIdentifier: 
+  nome: Onix
+  descricao: "Enquanto escava atrav\xE9s do solo, ele absorve muitos objetos duros.
+    Esse \xE9 o motivo dele ter um corpo t\xE3o s\xF3lido."
+  sprite: {fileID: 0}
+  modelo3D: {fileID: 4797254583952715833, guid: e3d0f38ca21a28c4f85a3c7f8965c2aa,
+    type: 3}
+  tipo1: 13
+  tipo2: 0
+  vidaMax: 35
+  ataque: 45
+  xpAtual: 0
+  xpGiven: 100
+  chanceCaptura: 0
+  levelEvolucao: 999
+  evolucao:
+    _base: {fileID: 0}
+    level: 999
+    sprite: {fileID: 0}
+    nome: 
+  defesa: 160
+  spAtaque: 30
+  spDefesa: 45
+  velocidade: 70
+  golpesParaAprender:
+  - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: fdd71628d102ad847ac187fc544141c1, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 5aed6a8ae5fcc8144a498bf4c15bbb4f, type: 2}
+    level: 12

@@ -16,7 +16,7 @@ MonoBehaviour:
   descricao: "Seus p\xE9s curtos possuem ventosas nas pontas que lhe permitem escalar
     encostas e paredes incansavelmente. "
   sprite: {fileID: 0}
-  modelo3D: {fileID: 5475724060017869066, guid: 39163e1101d4a0441a4f6de85198318e,
+  modelo3D: {fileID: 4464179718292469985, guid: 8e88c870de333fa4d9fca21cc4d25e84,
     type: 3}
   tipo1: 12
   tipo2: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   descricao: "Vai rosnar para tudo com as suas presas. Se voc\xEA ver um, pode ter
     certeza que mais quarenta est\xE3o por perto."
   sprite: {fileID: 0}
-  modelo3D: {fileID: 5280530170345657644, guid: 47a7560ffca65f94995164fe83d3dbbf,
+  modelo3D: {fileID: 5870404591552230126, guid: a699cc7ca44462644bfcd1cc1399bab4,
     type: 3}
   tipo1: 1
   tipo2: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   descricao: "Est\xE1 esperando o momento de evoluir. Nesta fase, ele s\xF3 pode
     endurecer, por isso permanece im\xF3vel para evitar ataques."
   sprite: {fileID: 0}
-  modelo3D: {fileID: 8825188213955645411, guid: 9eb60a047a4a40b4bb8751fe3a2de230,
+  modelo3D: {fileID: 3820554809612988172, guid: 2715028415f06c64a9e09dddcaca8f73,
     type: 3}
   tipo1: 12
   tipo2: 0

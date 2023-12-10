@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee4663f244582488d1f24c59264ed9, type: 3}
+  m_Name: Butterfree
+  m_EditorClassIdentifier: 
+  nome: Butterfree
+  descricao: "Ele ama o nectar das flores e pode localizar manchas de flores que
+    contenham at\xE9 mesmo pequenas quantidades de p\xF3len."
+  sprite: {fileID: 0}
+  modelo3D: {fileID: 7814914454057377707, guid: acfab9ae5f7a29341a8cb49ac7a041bd,
+    type: 3}
+  tipo1: 12
+  tipo2: 10
+  vidaMax: 60
+  ataque: 45
+  xpAtual: 0
+  xpGiven: 100
+  chanceCaptura: 0
+  levelEvolucao: 999
+  evolucao:
+    _base: {fileID: 0}
+    level: 999
+    sprite: {fileID: 0}
+    nome: 
+  defesa: 50
+  spAtaque: 80
+  spDefesa: 80
+  velocidade: 70
+  golpesParaAprender:
+  - moveBase: {fileID: 11400000, guid: 1d8c7ccfe6a40544eaf7aae92fb300e4, type: 2}
+    level: 1
+  - moveBase: {fileID: 11400000, guid: 6267e59f36c12ac45be3a39de95148d4, type: 2}
+    level: 13
+  - moveBase: {fileID: 11400000, guid: e79ff21f506d6e449b1119cca5b05acf, type: 2}
+    level: 14

@@ -16,7 +16,7 @@ MonoBehaviour:
   descricao: "Muito d\xF3cil. Se atacado, geralmente vai jogar areia para se proteger
     do que lutar de volta."
   sprite: {fileID: 0}
-  modelo3D: {fileID: 3027997980262278042, guid: f452db6697b3aef4c99e3f92b3fdd416,
+  modelo3D: {fileID: 8962149906311332856, guid: fb2889c12c6930d42848d018a914ce63,
     type: 3}
   tipo1: 1
   tipo2: 10

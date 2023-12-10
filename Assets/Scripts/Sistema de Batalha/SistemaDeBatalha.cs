@@ -15,7 +15,7 @@ public class SistemaDeBatalha : MonoBehaviour
     [SerializeField] TextMeshProUGUI textoAcao;
     [SerializeField]  QuestController quest;
     [SerializeField]  GameController gm;
-    [SerializeField]  GameObject textPokebola;
+    //[SerializeField]  GameObject textPokebola;
 
     [Header("Dialogo")]
     [Space(15)]
@@ -26,6 +26,8 @@ public class SistemaDeBatalha : MonoBehaviour
     [SerializeField] Pokemon pokemonSelvagem;
     public BattleUnit playerUnit;
     public BattleUnit enemyUnit;
+    public GameObject cenarioFloresta;
+    public GameObject cenarioBrock;
     
 
     [Header("Pokemon na Party")]
@@ -146,6 +148,9 @@ public class SistemaDeBatalha : MonoBehaviour
         playerUnit.Setup(playerParty.GetHealthyPokemon());
         enemyUnit.Setup(pokemonSelvagem);
 
+        cenarioFloresta.SetActive(true);
+        cenarioBrock.SetActive(false);
+
         playerUnit.Hud.SetarVida(playerUnit.Pokemon);
 
         partyScreen.Init();
@@ -208,6 +213,17 @@ public class SistemaDeBatalha : MonoBehaviour
     {
         playerUnit.Setup(playerParty.GetHealthyPokemon());
         enemyUnit.Setup(trainerParty.GetHealthyPokemon());
+
+        if (treinador_atual.name == "Brock")
+        {
+            cenarioFloresta.SetActive(false);
+            cenarioBrock.SetActive(true);
+        }
+        else
+        {
+            cenarioFloresta.SetActive(true);
+            cenarioBrock.SetActive(false);
+        }
 
         playerUnit.Hud.SetarVida(playerUnit.Pokemon);
 

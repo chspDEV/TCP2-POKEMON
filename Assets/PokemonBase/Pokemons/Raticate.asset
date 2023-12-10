@@ -16,7 +16,7 @@ MonoBehaviour:
   descricao: "Suas patas traseiras s\xE3o palmadas, agindo como nadadeiras para que
     possam nadar em rios e ca\xE7ar presas."
   sprite: {fileID: 0}
-  modelo3D: {fileID: 7772185001361392912, guid: 3aac36d4f53caf0499b686833ad70db5,
+  modelo3D: {fileID: 4411090586448949722, guid: dc22c783a2c0ec54d891a6facd089b68,
     type: 3}
   tipo1: 1
   tipo2: 0

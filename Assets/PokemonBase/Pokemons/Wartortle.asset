@@ -16,8 +16,7 @@ MonoBehaviour:
   descricao: "Ele \xE9 reconhecido como um s\xEDmbolo de longevidade. Se o seu casco
     tem alga nele, esse wartortle \xE9 muito velho."
   sprite: {fileID: 0}
-  modelo3D: {fileID: 4766020222414239909, guid: 876ad7ece15dba5429b2fce8d9279c0c,
-    type: 3}
+  modelo3D: {fileID: 84282931114086364, guid: 76807dbf9c70145489785888a2a152b3, type: 3}
   tipo1: 3
   tipo2: 0
   vidaMax: 59

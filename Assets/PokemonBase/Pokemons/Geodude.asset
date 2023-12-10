@@ -16,7 +16,7 @@ MonoBehaviour:
   descricao: "Geralmente visto em trilhas montanhosas e semelhantes. Se voc\xEA pisar
     em um por acidente, ele ficar\xE1 bravo."
   sprite: {fileID: 0}
-  modelo3D: {fileID: 7562797709509656274, guid: 15941fde01d3987459c6cf9bbd5c5a87,
+  modelo3D: {fileID: 1428153068772813803, guid: 6744b92c4e0b899468a758ac48fb7c1e,
     type: 3}
   tipo1: 13
   tipo2: 0

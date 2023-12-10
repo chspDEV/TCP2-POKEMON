@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71305e32d1a4e97438c105200787058d, type: 3}
   m_Name: "Ataque R\xE1pido"
   m_EditorClassIdentifier: 
-  nome: Quick Attack
+  nome: "Ataque R\xE1pido"
   descricao: "O usu\xE1rio atinge uma velocidade extrema o deixando quase invis\xEDvel
     e acerta o advers\xE1rio com tudo. Sempre atinge primeiro no turno."
   tipo: 1
