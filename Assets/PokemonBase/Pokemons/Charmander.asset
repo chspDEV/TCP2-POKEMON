@@ -16,7 +16,7 @@ MonoBehaviour:
   descricao: "Ele tem prefer\xEAncia por coisas quentes. Quando chove, dizem que
     fuma\xE7a surge da ponta da sua cauda."
   sprite: {fileID: 1901833353, guid: 48b10665ff38aec489c131f1bf5522c9, type: 3}
-  modelo3D: {fileID: 2367900409435859178, guid: 22b46d1dd40db4e469e26b845b81c74c,
+  modelo3D: {fileID: 5113291843088706031, guid: 8d13f77631f49034dae2c0193d735b4c,
     type: 3}
   tipo1: 2
   tipo2: 0

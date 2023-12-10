@@ -16,7 +16,7 @@ MonoBehaviour:
   descricao: "Uma semente curiosa foi plantada em suas costas desde o nascimento.
     Uma planta germina e cresce junto a esse pok\xE9mon."
   sprite: {fileID: 238551887, guid: 48b10665ff38aec489c131f1bf5522c9, type: 3}
-  modelo3D: {fileID: 6384733546732319797, guid: 24bc6a50f6c736f4d8f4a32112a8b180,
+  modelo3D: {fileID: 3917028581629488351, guid: 5a15fb17b8f4ed1409fccff60f5d90fb,
     type: 3}
   tipo1: 5
   tipo2: 8

@@ -16,7 +16,7 @@ MonoBehaviour:
   descricao: "Quando ele retrai o seu pesco\xE7o longo para dentro de seu casco,
     libera \xE1gua com uma for\xE7a vigorosa."
   sprite: {fileID: 1636362622, guid: 48b10665ff38aec489c131f1bf5522c9, type: 3}
-  modelo3D: {fileID: 4069354838987687669, guid: 61b232defb06bcd4cac1d047fe0f8c46,
+  modelo3D: {fileID: 6433410506907800480, guid: 061779b710b2f914f83920e4a6cdf73b,
     type: 3}
   tipo1: 3
   tipo2: 0
