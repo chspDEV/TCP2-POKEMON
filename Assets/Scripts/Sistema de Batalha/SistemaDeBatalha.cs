@@ -317,6 +317,7 @@ public class SistemaDeBatalha : MonoBehaviour
                 p.HP = p.VidaMax;
             }
             PlayerCanBattle = true;
+            Debug.Log("Rodei");
         }
         else if (won == false && quest.centroPokemon == true)
         {
@@ -724,14 +725,13 @@ public class SistemaDeBatalha : MonoBehaviour
             }
             else
             {
-                PlayerCanBattle = false;
-                BattleOver(false);
+                PlayerCanBattle = true;
+                BattleOver(true);
             }
         }
         else
         {
             BattleOver(true);
-
             PlayerCanBattle = true;
             
         }
