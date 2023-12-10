@@ -126,6 +126,7 @@ public class GameController : MonoBehaviour
 
     public void LimparInfoMochila()
     {
+
         RemoverItem();
 
        
@@ -139,6 +140,15 @@ public class GameController : MonoBehaviour
 
     public void NularMochila(Mochila _mochila)
     {
+        //Primeiro atualizar a mochila
+        var _p = _mochila.GetComponent<PcInfoChanger>();
+
+        for (int i = 0; i < _p.slotsParty.Length; i++)
+        {
+            _p.UpdateSlotParty(i);
+        }
+
+        //Agora reseta oq tem que ser resetado
         _mochila.botao.SetActive(false);
 
         if(_mochila.slot_selecionado != null)

@@ -15,7 +15,8 @@ MonoBehaviour:
   nome: Kakuna
   descricao: "Enquanto aguarda a evolu\xE7\xE3o, ele se esconde sob folhas e galhos."
   sprite: {fileID: 0}
-  modelo3D: {fileID: 0}
+  modelo3D: {fileID: 8158618964603223079, guid: 22f85ff127d8a19428f8150f3d2d0c34,
+    type: 3}
   tipo1: 12
   tipo2: 8
   vidaMax: 45

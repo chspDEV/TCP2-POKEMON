@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71305e32d1a4e97438c105200787058d, type: 3}
   m_Name: Jato de Seda
   m_EditorClassIdentifier: 
-  nome: 
-  descricao: 
-  tipo: 0
-  poder: 0
-  precisao: 0
-  sempreAcerta: 0
-  pp: 0
-  prioridade: 0
+  nome: XNA
+  descricao: ATUALIZA AI GAME DESIGNER !!!!
+  tipo: 1
+  poder: 1
+  precisao: 1
+  sempreAcerta: 1
+  pp: 1
+  prioridade: 1
   categoria: 0
   efeitos:
     boosts: []

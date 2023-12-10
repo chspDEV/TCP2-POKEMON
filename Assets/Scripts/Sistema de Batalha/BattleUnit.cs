@@ -15,8 +15,6 @@ public class BattleUnit : MonoBehaviour
     public bool IsPlayerUnit {get { return isPlayerUnit; } }
     public HudBatalha Hud { get { return hud; } }
 
-
-
     public Pokemon Pokemon { get; set; }
     //public Pokemon pokeatual;
     public int HP;
@@ -29,6 +27,7 @@ public class BattleUnit : MonoBehaviour
     public void Setup(Pokemon pokemon)
     {
         Pokemon = pokemon;
+        Debug.Log(pokemon.nome);
         pokemon.Init();
 
         if (isPlayerUnit)

@@ -19,6 +19,17 @@ public class PokemonParty : MonoBehaviour
 
     public Pokemon GetHealthyPokemon()
     {
-       return pokemons.Where(x => x.HP > 0).FirstOrDefault();
+        //return pokemons.Where(x => x.HP > 0).FirstOrDefault();
+
+        for (int i = 0; i < pokemons.Count; i++)
+        {
+            if (pokemons[i].HP > 0)
+            {
+                Debug.Log(pokemons[i].nome);
+                return pokemons[i];
+            }
+        }
+
+        return null;
     }
 }

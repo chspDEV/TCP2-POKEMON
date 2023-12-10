@@ -685,12 +685,26 @@ public class SistemaDeBatalha : MonoBehaviour
 
     void CheckForBattleOver(BattleUnit faintedUnit)
     {
-        if (faintedUnit.IsPlayerUnit)
+        if (faintedUnit.IsPlayerUnit) //JOGADOR
         {
             var nextPokemon = playerParty.GetHealthyPokemon();
             if (nextPokemon != null)
             {
                 OpenPartyScreenAfterDead();
+            }
+            else
+            {
+                PlayerCanBattle = false;
+                BattleOver(false);
+            }
+        }
+        else if (faintedUnit.IsPlayerUnit == false && treinador_atual != null) //INIMIGO TREINADOR
+        {
+            var nextPokemon = treinador_atual.GetComponent<PokemonParty>().GetHealthyPokemon();
+
+            if (nextPokemon != null)
+            {
+                enemyUnit.Setup(nextPokemon);
             }
             else
             {
@@ -1018,6 +1032,14 @@ public class SistemaDeBatalha : MonoBehaviour
             dialogBox.AtivarSelecaoAcao(false);
             dialogBox.AtivarSelecaoMochila(true);
         }
+
+        var _p = gm.mochila.GetComponent<PcInfoChanger>();
+
+        for (int i = 0; i < _p.slotsParty.Length; i++)
+        {
+            _p.UpdateSlotParty(i);
+        }
+
         //StartCoroutine(TryToCatch());
     }
 
