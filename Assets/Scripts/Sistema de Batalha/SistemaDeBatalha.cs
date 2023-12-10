@@ -720,6 +720,7 @@ public class SistemaDeBatalha : MonoBehaviour
                 treinador_atual.GetComponent<TrainerController>().posso_batalha = false;
                 treinador_atual.GetComponent<TrainerController>().PerdiBatalha = false;
                 treinador_atual.GetComponent<TrainerController>().falei = false;
+                treinador_atual.GetComponent<TrainerController>().col.enabled = true;
             }
         }
         else if (faintedUnit.IsPlayerUnit == false && treinador_atual != null) //INIMIGO TREINADOR
