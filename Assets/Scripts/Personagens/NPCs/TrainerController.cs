@@ -21,8 +21,8 @@ public class TrainerController : MonoBehaviour
     [SerializeField] GameController gm;
     [SerializeField] SistemaDeBatalha sistema;
 
-    [SerializeField] bool posso_mostrar = false;
-    [SerializeField] bool posso_ativar = false;
+    [SerializeField] public bool posso_mostrar = false;
+    [SerializeField] public bool posso_ativar = false;
     public bool posso_batalha = false;
     public bool PerdiBatalha = false;
     public bool _PlayerCanBattle = false;
@@ -77,6 +77,8 @@ public class TrainerController : MonoBehaviour
         }
 
     }
+
+   
 
     public void CheckForBattle()
     {

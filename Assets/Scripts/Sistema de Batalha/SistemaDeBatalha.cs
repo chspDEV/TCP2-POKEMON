@@ -50,6 +50,7 @@ public class SistemaDeBatalha : MonoBehaviour
     public GameObject treinador_atual;
     public bool isTrainerBattle = false;
     bool InimigoAtaca = true;
+    
 
     [Header("Camera e Transicao")]
     [Space(15)]
@@ -711,8 +712,14 @@ public class SistemaDeBatalha : MonoBehaviour
             }
             else
             {
-                PlayerCanBattle = false;
+                
+                PlayerCanBattle = true;
                 BattleOver(false);
+                treinador_atual.GetComponent<TrainerController>().posso_mostrar = false;
+                treinador_atual.GetComponent<TrainerController>().posso_ativar = false;
+                treinador_atual.GetComponent<TrainerController>().posso_batalha = false;
+                treinador_atual.GetComponent<TrainerController>().PerdiBatalha = false;
+                treinador_atual.GetComponent<TrainerController>().falei = false;
             }
         }
         else if (faintedUnit.IsPlayerUnit == false && treinador_atual != null) //INIMIGO TREINADOR
@@ -727,7 +734,8 @@ public class SistemaDeBatalha : MonoBehaviour
             {
                 PlayerCanBattle = true;
                 BattleOver(true);
-            }
+
+               }
         }
         else
         {
