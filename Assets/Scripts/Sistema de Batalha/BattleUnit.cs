@@ -6,9 +6,11 @@ public class BattleUnit : MonoBehaviour
 {
    
     [SerializeField] GameObject posicaoDeInstancia;
+    [SerializeField] SistemaDeBatalha s;
     [SerializeField] bool isPlayerUnit;
     [SerializeField] HudBatalha hud;
     [SerializeField] private GameObject instantiatedModel;
+    [SerializeField] private GameObject myModelTrainer;
 
     public bool IsPlayerUnit {get { return isPlayerUnit; } }
     public HudBatalha Hud { get { return hud; } }
@@ -33,6 +35,15 @@ public class BattleUnit : MonoBehaviour
         {
             instantiatedModel = Instantiate(pokemon.Base.Modelo3D, posicaoDeInstancia.transform.position, pokemon.Base.Modelo3D.transform.rotation);
 
+            if (s.treinador_atual != null)
+
+            {
+                var _ref = GameObject.Find("Ref_treinador");
+                var _model = s.treinador_atual.GetComponent<TrainerController>().modelo3D;
+                myModelTrainer = Instantiate(_model, _ref.transform.position, _model.transform.rotation);
+
+            }
+
             var  _pPoke = instantiatedModel.GetComponent<LookRef>();
             _pPoke.IsPlayer = true;
         }
@@ -55,6 +66,11 @@ public class BattleUnit : MonoBehaviour
         {
             Destroy(instantiatedModel);
         }
-        
+
+        if (myModelTrainer)
+        {
+            Destroy(myModelTrainer);
+        }
+
     }
 }

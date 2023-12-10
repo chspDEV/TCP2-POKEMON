@@ -53,6 +53,7 @@ public class Caminhos : MonoBehaviour
             StopCoroutine(changeTrackCoroutine);
         }
         changeTrackCoroutine = StartCoroutine(ChangeTrack());
+        virtualCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView = Random.Range(40, 80);
     }
 
     private void StopChangeTrackCoroutine()
@@ -99,10 +100,12 @@ public class Caminhos : MonoBehaviour
         {
             Transform currentTarget = targets[currentTargetIndex];
             virtualCamera.LookAt = currentTarget;
+            
             yield return new WaitForSeconds(velCam);
 
             if (shouldRestartSwitchTargets)
             {
+                
                 currentTargetIndex = (currentTargetIndex + 1) % targets.Length;
             }
         }

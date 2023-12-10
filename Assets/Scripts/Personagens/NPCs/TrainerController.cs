@@ -15,6 +15,7 @@ public class TrainerController : MonoBehaviour
     [SerializeField] GameObject batalha;
     [SerializeField] GameObject eu;
     [SerializeField] GameObject canvasDialogo;
+    public GameObject modelo3D;
 
     //
     [SerializeField] GameController gm;
