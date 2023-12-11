@@ -165,6 +165,11 @@ public class PlayerController : MonoBehaviour
             //Para PC
             ComputadorController pc = InteractOBJ.GetComponent<ComputadorController>();
 
+
+            Vendedora vendedora = InteractOBJ.GetComponent<Vendedora>();
+
+
+
             Debug.Log("Tentei Interagir");
 
             if (interactable != null)
@@ -183,6 +188,11 @@ public class PlayerController : MonoBehaviour
             {
                 pc.AbrirPC();
                 Debug.Log("Interagi PC");
+            }
+
+            if (vendedora != null)
+            {
+                vendedora.pokemart.ControlCanvas(true);
             }
 
         }

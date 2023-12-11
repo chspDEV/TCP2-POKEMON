@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MenuPausa : MonoBehaviour
 {
     public GameObject Menu;
-    public GameObject Pokedex;
+    //public GameObject Pokedex;
     public GameObject Controles;
     public GameObject Mochila;
 
@@ -28,7 +28,7 @@ public class MenuPausa : MonoBehaviour
             {
                 Debug.Log("Menu aberto");
                 
-                FecharPokedex();
+                //FecharPokedex();
                 FecharControles();
                 FecharMochila();
                 AbrirMenu();
@@ -37,7 +37,7 @@ public class MenuPausa : MonoBehaviour
             {
                 Debug.Log("Menu fechado");
                 
-                FecharPokedex();
+                //FecharPokedex();
                 FecharControles();
                 FecharMochila();
                 FecharMenu();
@@ -48,7 +48,7 @@ public class MenuPausa : MonoBehaviour
 
     public void AbrirPokedex()
     { 
-        Pokedex.SetActive(true);
+        //Pokedex.SetActive(true);
         Menu.SetActive(false);
         menuAberto = false;
     }
@@ -92,7 +92,7 @@ public class MenuPausa : MonoBehaviour
 
     public void FecharPokedex()
     {
-        Pokedex.SetActive(false);
+        //Pokedex.SetActive(false);
         menuAberto = true;
     }
 
