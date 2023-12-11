@@ -54,13 +54,13 @@ public class PlayerController : MonoBehaviour
         Move();
 
         #region HACK
-        if (Input.GetKeyDown(KeyCode.Keypad1)) { transform.position = new Vector3(-109.15f, 0.52f, -0.38f); }//casa
-        if (Input.GetKeyDown(KeyCode.Keypad2)) { transform.position = new Vector3(-6.12f, 3.66f, 0f); }//meio pallet
-        if (Input.GetKeyDown(KeyCode.Keypad3)) { transform.position = new Vector3(-143.13f, 0.52f, -0.38f); }//laboratorio
-        if (Input.GetKeyDown(KeyCode.Keypad4)) { transform.position = new Vector3(-127f, 0.52f, -2.42f); }//pokecenter
-        if (Input.GetKeyDown(KeyCode.Keypad5)) { transform.position = new Vector3(-159.4f, 0.52f, -2.42f); }//pokemart
-        if (Input.GetKeyDown(KeyCode.Keypad6)) { transform.position = new Vector3(-82.5f, 0.37f, -5.42f); }//ginasio
-        if (Input.GetKeyDown(KeyCode.Keypad7)) { transform.position = new Vector3(-2.4f, 8.75f, 143.86f); }//viridian
+        if (Input.GetKeyDown(KeyCode.Keypad1)) { transform.position = new Vector3(-306.35f, 0.71f, -4.14f); }//casa
+        if (Input.GetKeyDown(KeyCode.Keypad2)) { transform.position = new Vector3(-14.58f, 3.52f, -4.14f); }//meio pallet
+        if (Input.GetKeyDown(KeyCode.Keypad3)) { transform.position = new Vector3(-372.57f, 1.52f, -9.22f); }//laboratorio
+        if (Input.GetKeyDown(KeyCode.Keypad4)) { transform.position = new Vector3(-350.89f, 3.52f, -9.22f); }//pokecenter
+        if (Input.GetKeyDown(KeyCode.Keypad5)) { transform.position = new Vector3(-405.7f, 1.52f, -5f); }//pokemart
+        if (Input.GetKeyDown(KeyCode.Keypad6)) { transform.position = new Vector3(-251.8f, 1.52f, -11.45f); }//ginasio
+        if (Input.GetKeyDown(KeyCode.Keypad7)) { transform.position = new Vector3(-2f, 9.53f, 219.08f); }//viridian
         #endregion
     }
 
