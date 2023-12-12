@@ -274,8 +274,8 @@ public class GameController : MonoBehaviour
             // Outro código do Update, se necessário
         }
         //REINICIANDO O JOGO
-        if (Input.GetKeyDown(KeyCode.Keypad8)) { AdicionarItem(item_atual); }
-        if (Input.GetKeyDown(KeyCode.Keypad9)) { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
+        //if (Input.GetKeyDown(KeyCode.Keypad8)) { AdicionarItem(item_atual); }
+        //if (Input.GetKeyDown(KeyCode.Keypad9)) { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
         
         if (state == GameState.FreeRoam)
         {
