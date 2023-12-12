@@ -736,7 +736,7 @@ public class SistemaDeBatalha : MonoBehaviour
                 PlayerCanBattle = true;
                 BattleOver(true);
 
-               }
+            }
         }
         else
         {

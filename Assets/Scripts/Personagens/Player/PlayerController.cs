@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Keypad4)) { transform.position = new Vector3(-350.89f, 3.52f, -9.22f); }//pokecenter
         if (Input.GetKeyDown(KeyCode.Keypad5)) { transform.position = new Vector3(-405.7f, 1.52f, -5f); }//pokemart
         if (Input.GetKeyDown(KeyCode.Keypad6)) { transform.position = new Vector3(-251.8f, 1.52f, -11.45f); }//ginasio
-        if (Input.GetKeyDown(KeyCode.Keypad7)) { transform.position = new Vector3(-2f, 9.53f, 219.08f); }//viridian
+        if (Input.GetKeyDown(KeyCode.Keypad7)) { transform.position = new Vector3(34.1f, 11.52f, 283.9f); }//viridian
         #endregion
     }
 

@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     [SerializeField] BattleUnit PlayerBattleUnit;
     [SerializeField] BattleUnit EnemyBattleUnit;
     [SerializeField] Caminhos caminhos;
+    [SerializeField] public GameObject arbusto;
+    [SerializeField] public GameObject arbusto2;
 
     //MOCHILA
     public ItemBase item_atual;
@@ -37,6 +39,7 @@ public class GameController : MonoBehaviour
     {
         playerController.OnEncountered += StartBattle;
         sistemaDeBatalha.OnBattleOver += EndBattle;
+        
 
         DialogManager.Instance.OnShowDialog += () =>
         {
@@ -49,6 +52,32 @@ public class GameController : MonoBehaviour
         };
 
     }
+    void deletarArbusto()
+    {
+        if (sistemaDeBatalha.treinador_atual.name == "Brock")
+        {
+            Debug.Log("Deletando arbustos");
+
+            if (arbusto != null)
+            {
+                Debug.Log("Destruindo arbusto");
+                Destroy(arbusto);
+            }
+
+            if (arbusto2 != null)
+            {
+                Debug.Log("Destruindo arbusto2");
+                Destroy(arbusto2);
+            }
+            else
+            {
+                Debug.LogWarning("Arbusto2 é nulo!");
+            }
+        }
+        
+        return;
+    }
+
 
     void StartBattle()
     {
@@ -239,6 +268,11 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+        if (sistemaDeBatalha != null && sistemaDeBatalha.treinador_atual != null)
+        {
+            deletarArbusto();
+            // Outro código do Update, se necessário
+        }
         //REINICIANDO O JOGO
         if (Input.GetKeyDown(KeyCode.Keypad8)) { AdicionarItem(item_atual); }
         if (Input.GetKeyDown(KeyCode.Keypad9)) { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
