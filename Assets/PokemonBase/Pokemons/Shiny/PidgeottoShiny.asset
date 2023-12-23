@@ -16,7 +16,8 @@ MonoBehaviour:
   descricao: "Esse pok\xE9mon \xE9 cheio de vitalidade. Ele constantemente voa ao
     redor de seu vasto territ\xF3rio em busca de presas."
   sprite: {fileID: 21300000, guid: aaf8241083868164a9f6c011b5f1f8e6, type: 3}
-  modelo3D: {fileID: 990579957413227738, guid: 6f5e59fb6cc7ec144a2d5fa1f135fe29, type: 3}
+  modelo3D: {fileID: 5777142270708614331, guid: d957225ebc827c143880a614dd4f95f4,
+    type: 3}
   tipo1: 1
   tipo2: 10
   vidaMax: 63
