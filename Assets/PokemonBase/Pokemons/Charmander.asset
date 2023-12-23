@@ -24,7 +24,7 @@ MonoBehaviour:
   ataque: 51
   xpAtual: 0
   xpGiven: 100
-  chanceCaptura: 0
+  chanceCaptura: 200
   levelEvolucao: 16
   evolucao:
     _base: {fileID: 11400000, guid: f35ddc6599676d441b8a959543147093, type: 2}
