@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Charmander
   descricao: "Ele tem prefer\xEAncia por coisas quentes. Quando chove, dizem que
     fuma\xE7a surge da ponta da sua cauda."
-  sprite: {fileID: 1901833353, guid: 48b10665ff38aec489c131f1bf5522c9, type: 3}
+  sprite: {fileID: 1577348539, guid: 821e5ad0090bdb04f803b64924545f28, type: 3}
   modelo3D: {fileID: 1490907180869299109, guid: 58bea969d6b39134abf05882165fde1f,
     type: 3}
   tipo1: 2
@@ -25,16 +25,16 @@ MonoBehaviour:
   xpAtual: 0
   xpGiven: 100
   chanceCaptura: 0
-  levelEvolucao: 16
+  levelEvolucao: 999
   evolucao:
-    _base: {fileID: 11400000, guid: 7d4a83648ef46804f9e4de6445ef28ad, type: 2}
-    level: 16
+    _base: {fileID: 0}
+    level: 0
     sprite: {fileID: 0}
-    nome: Charmeleon
-  defesa: 47
-  spAtaque: 60
-  spDefesa: 50
-  velocidade: 65
+    nome: 0
+  defesa: 0
+  spAtaque: 0
+  spDefesa: 0
+  velocidade: 0
   golpesParaAprender:
   - moveBase: {fileID: 11400000, guid: 057f4473d0c79e04bad27174e89b300c, type: 2}
     level: 1

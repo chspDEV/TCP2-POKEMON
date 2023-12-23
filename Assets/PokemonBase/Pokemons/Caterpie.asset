@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Caterpie
   descricao: "Seus p\xE9s curtos possuem ventosas nas pontas que lhe permitem escalar
     encostas e paredes incansavelmente. "
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 1e1d0f4df5c012f4bb79ac32b1a054f0, type: 3}
   modelo3D: {fileID: 4464179718292469985, guid: 8e88c870de333fa4d9fca21cc4d25e84,
     type: 3}
   tipo1: 12

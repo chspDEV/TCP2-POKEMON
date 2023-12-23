@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Pidgeotto
   descricao: "Esse pok\xE9mon \xE9 cheio de vitalidade. Ele constantemente voa ao
     redor de seu vasto territ\xF3rio em busca de presas."
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: aaf8241083868164a9f6c011b5f1f8e6, type: 3}
   modelo3D: {fileID: 990579957413227738, guid: 6f5e59fb6cc7ec144a2d5fa1f135fe29, type: 3}
   tipo1: 1
   tipo2: 10
@@ -27,13 +27,13 @@ MonoBehaviour:
   levelEvolucao: 999
   evolucao:
     _base: {fileID: 0}
-    level: 999
+    level: 0
     sprite: {fileID: 0}
-    nome: 
-  defesa: 55
-  spAtaque: 50
-  spDefesa: 50
-  velocidade: 71
+    nome: 0
+  defesa: 0
+  spAtaque: 0
+  spDefesa: 0
+  velocidade: 0
   golpesParaAprender:
   - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
     level: 1

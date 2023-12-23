@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Squirtle
   descricao: "Quando ele retrai o seu pesco\xE7o longo para dentro de seu casco,
     libera \xE1gua com uma for\xE7a vigorosa."
-  sprite: {fileID: 1636362622, guid: 48b10665ff38aec489c131f1bf5522c9, type: 3}
+  sprite: {fileID: 561801555, guid: 821e5ad0090bdb04f803b64924545f28, type: 3}
   modelo3D: {fileID: 1592286831538756772, guid: b364a17b200e1ec488516a8f2c275bbd,
     type: 3}
   tipo1: 3
@@ -25,16 +25,16 @@ MonoBehaviour:
   xpAtual: 0
   xpGiven: 100
   chanceCaptura: 255
-  levelEvolucao: 16
+  levelEvolucao: 999
   evolucao:
-    _base: {fileID: 11400000, guid: 77ca78f0f416fdc43849964d0823f918, type: 2}
-    level: 16
+    _base: {fileID: 0}
+    level: 0
     sprite: {fileID: 0}
-    nome: Wartortle
-  defesa: 65
-  spAtaque: 50
-  spDefesa: 64
-  velocidade: 43
+    nome: 0
+  defesa: 0
+  spAtaque: 0
+  spDefesa: 0
+  velocidade: 0
   golpesParaAprender:
   - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
     level: 1

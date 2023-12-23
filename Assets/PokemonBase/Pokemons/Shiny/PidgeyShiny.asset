@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Pidgey
   descricao: "Muito d\xF3cil. Se atacado, geralmente vai jogar areia para se proteger
     do que lutar de volta."
-  sprite: {fileID: 0}
+  sprite: {fileID: 1618326599, guid: 821e5ad0090bdb04f803b64924545f28, type: 3}
   modelo3D: {fileID: 990579957413227738, guid: 6f5e59fb6cc7ec144a2d5fa1f135fe29, type: 3}
   tipo1: 1
   tipo2: 10
@@ -24,16 +24,16 @@ MonoBehaviour:
   xpAtual: 0
   xpGiven: 100
   chanceCaptura: 255
-  levelEvolucao: 18
+  levelEvolucao: 999
   evolucao:
-    _base: {fileID: 11400000, guid: f996ab5d6cd0f3844bd303bcafe25cc1, type: 2}
-    level: 18
+    _base: {fileID: 0}
+    level: 0
     sprite: {fileID: 0}
-    nome: Pidgeotto
-  defesa: 40
-  spAtaque: 35
-  spDefesa: 35
-  velocidade: 56
+    nome: 0
+  defesa: 0
+  spAtaque: 0
+  spDefesa: 0
+  velocidade: 0
   golpesParaAprender:
   - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
     level: 1

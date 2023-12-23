@@ -69,7 +69,7 @@ public class Pokemon
 
         HP = VidaMax;
         
-        XpGiven = Mathf.RoundToInt(UnityEngine.Random.Range(58 + (2 * level) ,68 + (5 * level) ) / 10);
+        XpGiven = Mathf.RoundToInt(UnityEngine.Random.Range(100 + (10 * level) ,200 + (20 * level) ) );
 
         ResetStatBoost();
 

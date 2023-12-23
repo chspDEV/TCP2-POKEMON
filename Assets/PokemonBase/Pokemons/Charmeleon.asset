@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Charmeleon
   descricao: "Ele tem uma natureza barb\xE1rica. Em batalha, balan\xE7a sua cauda
     flamejante e corta com suas garras afiadas."
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 18617b5a22b940f4d9f5753ad8612e45, type: 3}
   modelo3D: {fileID: 111448243375542714, guid: d4554b02cd7e45849b386f33e0d60abc, type: 3}
   tipo1: 2
   tipo2: 0

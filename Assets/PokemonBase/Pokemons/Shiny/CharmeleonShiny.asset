@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Charmeleon
   descricao: "Ele tem uma natureza barb\xE1rica. Em batalha, balan\xE7a sua cauda
     flamejante e corta com suas garras afiadas."
-  sprite: {fileID: 0}
+  sprite: {fileID: -791619302, guid: 821e5ad0090bdb04f803b64924545f28, type: 3}
   modelo3D: {fileID: 3422520799616215614, guid: 3871bd44bc5a9d54a8195c3891dcdc8b,
     type: 3}
   tipo1: 2
@@ -28,13 +28,13 @@ MonoBehaviour:
   levelEvolucao: 999
   evolucao:
     _base: {fileID: 0}
-    level: 999
+    level: 0
     sprite: {fileID: 0}
-    nome: 
-  defesa: 61
-  spAtaque: 80
-  spDefesa: 65
-  velocidade: 80
+    nome: 0
+  defesa: 0
+  spAtaque: 0
+  spDefesa: 0
+  velocidade: 0
   golpesParaAprender:
   - moveBase: {fileID: 11400000, guid: 057f4473d0c79e04bad27174e89b300c, type: 2}
     level: 1

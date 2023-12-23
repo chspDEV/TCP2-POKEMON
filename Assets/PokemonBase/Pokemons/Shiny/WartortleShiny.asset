@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Wartortle
   descricao: "Ele \xE9 reconhecido como um s\xEDmbolo de longevidade. Se o seu casco
     tem alga nele, esse wartortle \xE9 muito velho."
-  sprite: {fileID: 0}
+  sprite: {fileID: -119776774, guid: 821e5ad0090bdb04f803b64924545f28, type: 3}
   modelo3D: {fileID: 3304300182149433478, guid: a2313837efb038b40b708ece21b42077,
     type: 3}
   tipo1: 3
@@ -28,13 +28,13 @@ MonoBehaviour:
   levelEvolucao: 999
   evolucao:
     _base: {fileID: 0}
-    level: 999
+    level: 0
     sprite: {fileID: 0}
-    nome: 
-  defesa: 80
-  spAtaque: 65
-  spDefesa: 80
-  velocidade: 58
+    nome: 0
+  defesa: 0
+  spAtaque: 0
+  spDefesa: 0
+  velocidade: 0
   golpesParaAprender:
   - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
     level: 1

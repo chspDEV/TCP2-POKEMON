@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Onix
   descricao: "Enquanto escava atrav\xE9s do solo, ele absorve muitos objetos duros.
     Esse \xE9 o motivo dele ter um corpo t\xE3o s\xF3lido."
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: a75410d4f727a5948bdab252940c0271, type: 3}
   modelo3D: {fileID: 4797254583952715833, guid: e3d0f38ca21a28c4f85a3c7f8965c2aa,
     type: 3}
   tipo1: 13

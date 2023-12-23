@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Butterfree
   descricao: "Ele ama o nectar das flores e pode localizar manchas de flores que
     contenham at\xE9 mesmo pequenas quantidades de p\xF3len."
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 1b5a780e2cf16054b8b1f3e8783e5f1a, type: 3}
   modelo3D: {fileID: 7814914454057377707, guid: acfab9ae5f7a29341a8cb49ac7a041bd,
     type: 3}
   tipo1: 12

@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Rattata
   descricao: "Vai rosnar para tudo com as suas presas. Se voc\xEA ver um, pode ter
     certeza que mais quarenta est\xE3o por perto."
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: e78b49a3cf21d414ea7302bba04efad5, type: 3}
   modelo3D: {fileID: 5870404591552230126, guid: a699cc7ca44462644bfcd1cc1399bab4,
     type: 3}
   tipo1: 1

@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Ivysaur
   descricao: "Quando o bulbo em suas costas cresce, ele parece perder a capacidade
     de ficar em p\xE9 com as patas traseiras."
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: b83cee54f971a984e813d483d3bcb15f, type: 3}
   modelo3D: {fileID: 4670711478798630195, guid: 586502a004106714eb423ddd6a8ef063,
     type: 3}
   tipo1: 5

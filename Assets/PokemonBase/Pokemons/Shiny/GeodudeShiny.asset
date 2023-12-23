@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Geodude
   descricao: "Geralmente visto em trilhas montanhosas e semelhantes. Se voc\xEA pisar
     em um por acidente, ele ficar\xE1 bravo."
-  sprite: {fileID: 0}
+  sprite: {fileID: -601270197, guid: 821e5ad0090bdb04f803b64924545f28, type: 3}
   modelo3D: {fileID: 901776307562063529, guid: 90e6fad2906142942be03d48a3587f95, type: 3}
   tipo1: 13
   tipo2: 0
@@ -27,13 +27,13 @@ MonoBehaviour:
   levelEvolucao: 999
   evolucao:
     _base: {fileID: 0}
-    level: 999
+    level: 0
     sprite: {fileID: 0}
-    nome: 
-  defesa: 100
-  spAtaque: 30
-  spDefesa: 30
-  velocidade: 20
+    nome: 0
+  defesa: 0
+  spAtaque: 0
+  spDefesa: 0
+  velocidade: 0
   golpesParaAprender:
   - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
     level: 1

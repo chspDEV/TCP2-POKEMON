@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Rattata
   descricao: "Vai rosnar para tudo com as suas presas. Se voc\xEA ver um, pode ter
     certeza que mais quarenta est\xE3o por perto."
-  sprite: {fileID: 0}
+  sprite: {fileID: -1094475588, guid: 821e5ad0090bdb04f803b64924545f28, type: 3}
   modelo3D: {fileID: 2393289114118558499, guid: 9cbe7993c4e1570429ae5e6607293fb8,
     type: 3}
   tipo1: 1
@@ -25,16 +25,16 @@ MonoBehaviour:
   xpAtual: 0
   xpGiven: 100
   chanceCaptura: 255
-  levelEvolucao: 20
+  levelEvolucao: 999
   evolucao:
-    _base: {fileID: 11400000, guid: 58d6f0eda51a85043a7eb25a9277b7e6, type: 2}
-    level: 20
+    _base: {fileID: 0}
+    level: 0
     sprite: {fileID: 0}
-    nome: Raticate
-  defesa: 35
-  spAtaque: 25
-  spDefesa: 35
-  velocidade: 72
+    nome: 0
+  defesa: 0
+  spAtaque: 0
+  spDefesa: 0
+  velocidade: 0
   golpesParaAprender:
   - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
     level: 1

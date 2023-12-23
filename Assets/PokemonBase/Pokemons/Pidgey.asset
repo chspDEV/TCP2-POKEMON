@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Pidgey
   descricao: "Muito d\xF3cil. Se atacado, geralmente vai jogar areia para se proteger
     do que lutar de volta."
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: fd2709fa0c61095448fb0daade21f2bc, type: 3}
   modelo3D: {fileID: 8962149906311332856, guid: fb2889c12c6930d42848d018a914ce63,
     type: 3}
   tipo1: 1

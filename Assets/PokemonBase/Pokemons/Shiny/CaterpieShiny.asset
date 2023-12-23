@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Caterpie
   descricao: "Seus p\xE9s curtos possuem ventosas nas pontas que lhe permitem escalar
     encostas e paredes incansavelmente. "
-  sprite: {fileID: 0}
+  sprite: {fileID: -251900102, guid: 821e5ad0090bdb04f803b64924545f28, type: 3}
   modelo3D: {fileID: 5819440830934589885, guid: 69562b2fe459dc64aab92ae8cffd47d9,
     type: 3}
   tipo1: 12
@@ -25,16 +25,16 @@ MonoBehaviour:
   xpAtual: 0
   xpGiven: 100
   chanceCaptura: 255
-  levelEvolucao: 7
+  levelEvolucao: 999
   evolucao:
-    _base: {fileID: 11400000, guid: d105b31b526ff9245baeb2a314d983ba, type: 2}
-    level: 7
+    _base: {fileID: 0}
+    level: 0
     sprite: {fileID: 0}
-    nome: Metapod
-  defesa: 35
-  spAtaque: 20
-  spDefesa: 20
-  velocidade: 45
+    nome: 0
+  defesa: 0
+  spAtaque: 0
+  spDefesa: 0
+  velocidade: 0
   golpesParaAprender:
   - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
     level: 1

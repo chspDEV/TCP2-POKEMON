@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Raticate
   descricao: "Suas patas traseiras s\xE3o palmadas, agindo como nadadeiras para que
     possam nadar em rios e ca\xE7ar presas."
-  sprite: {fileID: 0}
+  sprite: {fileID: -1094475588, guid: 821e5ad0090bdb04f803b64924545f28, type: 3}
   modelo3D: {fileID: 1001054214054348144, guid: 570ddc5470834b54682f9d4eaef26dda,
     type: 3}
   tipo1: 1
@@ -28,13 +28,13 @@ MonoBehaviour:
   levelEvolucao: 999
   evolucao:
     _base: {fileID: 0}
-    level: 999
+    level: 0
     sprite: {fileID: 0}
-    nome: 
-  defesa: 60
-  spAtaque: 50
-  spDefesa: 70
-  velocidade: 97
+    nome: 0
+  defesa: 0
+  spAtaque: 0
+  spDefesa: 0
+  velocidade: 0
   golpesParaAprender:
   - moveBase: {fileID: 11400000, guid: 684956ffa02660c459aa434dd4c77e1b, type: 2}
     level: 1

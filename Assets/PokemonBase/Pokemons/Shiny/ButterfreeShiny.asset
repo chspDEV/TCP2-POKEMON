@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Butterfree
   descricao: "Ele ama o nectar das flores e pode localizar manchas de flores que
     contenham at\xE9 mesmo pequenas quantidades de p\xF3len."
-  sprite: {fileID: 0}
+  sprite: {fileID: 418606729, guid: 821e5ad0090bdb04f803b64924545f28, type: 3}
   modelo3D: {fileID: 2741256717624151462, guid: 65d736beebe48ba418e0871638394e39,
     type: 3}
   tipo1: 12
@@ -28,13 +28,13 @@ MonoBehaviour:
   levelEvolucao: 999
   evolucao:
     _base: {fileID: 0}
-    level: 999
+    level: 0
     sprite: {fileID: 0}
-    nome: 
-  defesa: 50
-  spAtaque: 80
-  spDefesa: 80
-  velocidade: 70
+    nome: 0
+  defesa: 0
+  spAtaque: 0
+  spDefesa: 0
+  velocidade: 0
   golpesParaAprender:
   - moveBase: {fileID: 11400000, guid: 1d8c7ccfe6a40544eaf7aae92fb300e4, type: 2}
     level: 1

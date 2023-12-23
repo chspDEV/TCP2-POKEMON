@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Beedrill
   descricao: "Possui tr\xEAs ferr\xF5es venenosos nas patas dianteiras e cauda. Eles
     s\xE3o usados para golpear repetidamente o inimigo."
-  sprite: {fileID: 0}
+  sprite: {fileID: 507222859, guid: 821e5ad0090bdb04f803b64924545f28, type: 3}
   modelo3D: {fileID: 474077055603685574, guid: bca2d0222ea7e164eb2f174dcddb0ffb, type: 3}
   tipo1: 12
   tipo2: 8
@@ -27,13 +27,13 @@ MonoBehaviour:
   levelEvolucao: 999
   evolucao:
     _base: {fileID: 0}
-    level: 999
+    level: 0
     sprite: {fileID: 0}
-    nome: 
-  defesa: 40
-  spAtaque: 45
-  spDefesa: 80
-  velocidade: 75
+    nome: 0
+  defesa: 0
+  spAtaque: 0
+  spDefesa: 0
+  velocidade: 0
   golpesParaAprender:
   - moveBase: {fileID: 11400000, guid: df1e6829d4647ef44bd594f8de7a8a0d, type: 2}
     level: 1

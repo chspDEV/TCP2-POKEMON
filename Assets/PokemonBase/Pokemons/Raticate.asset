@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Raticate
   descricao: "Suas patas traseiras s\xE3o palmadas, agindo como nadadeiras para que
     possam nadar em rios e ca\xE7ar presas."
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 77d75a2436c61834cb3c0505ab5dab58, type: 3}
   modelo3D: {fileID: 4411090586448949722, guid: dc22c783a2c0ec54d891a6facd089b68,
     type: 3}
   tipo1: 1

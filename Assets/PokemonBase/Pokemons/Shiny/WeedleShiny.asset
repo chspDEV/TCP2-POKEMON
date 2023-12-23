@@ -15,7 +15,7 @@ MonoBehaviour:
   nome: Weedle
   descricao: "Cuidado com o ferr\xE3o afiado em sua cabe\xE7a. Ele se esconde em
     grama e arbusto, onde se alimenta de folhas."
-  sprite: {fileID: 0}
+  sprite: {fileID: 1952644739, guid: 821e5ad0090bdb04f803b64924545f28, type: 3}
   modelo3D: {fileID: 6469985511785854011, guid: a554ece80495fa4488285c38b0fd4ff1,
     type: 3}
   tipo1: 12
@@ -25,16 +25,16 @@ MonoBehaviour:
   xpAtual: 0
   xpGiven: 100
   chanceCaptura: 255
-  levelEvolucao: 7
+  levelEvolucao: 999
   evolucao:
-    _base: {fileID: 11400000, guid: 1a2fa1cad1d3bb84fbca99ce4155da53, type: 2}
-    level: 7
+    _base: {fileID: 0}
+    level: 0
     sprite: {fileID: 0}
-    nome: Kakuna
-  defesa: 30
-  spAtaque: 20
-  spDefesa: 20
-  velocidade: 50
+    nome: 0
+  defesa: 0
+  spAtaque: 0
+  spDefesa: 0
+  velocidade: 0
   golpesParaAprender:
   - moveBase: {fileID: 11400000, guid: 6267e59f36c12ac45be3a39de95148d4, type: 2}
     level: 1
